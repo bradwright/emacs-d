@@ -28,3 +28,6 @@
 (add-to-list 'load-path dotfiles-dir)
 
 (load "grail")
+
+;; IDO is stupid
+(setq ido-use-filename-at-point nil)
