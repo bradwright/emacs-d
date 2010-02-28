@@ -2,6 +2,14 @@
 ;;
 ;; Intended to be robust and usable across platforms
 
+;; load on startup
+(require 'cl)
+(require 'saveplace)
+(require 'ffap)
+(require 'uniquify)
+(require 'ansi-color)
+(require 'recentf)
+
 ;; No tabs
 (setq-default indent-tabs-mode nil)
 
@@ -21,11 +29,11 @@
    kept-old-versions 2
    version-control t)   ; Use versioned backups
 
-;; Load other files, C/O Emacs Starter Kit
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
+;; show trailing whitespace
+(setq show-trailing-whitespace t)
 
-(add-to-list 'load-path dotfiles-dir)
+;; JS2 mode, not espresso
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; IDO is stupid
 (setq ido-use-filename-at-point nil)
