@@ -4,7 +4,9 @@
 
 As my editor of choice I run Emacs. One of the benefits of Emacs is that it'll install basically anywhere.
 
-This configuration is designed to run in shells as well as on desktops. There are some platform specific optimisations as well.
+This configuration is designed to run in shells as well as on desktops. There are some platform specific optimisations as well. Most of the configuration is down to Grail_: I can't claim any of the coding that makes this configuration fork by platform.
+
+.. _Grail: http://www.emacswiki.org/emacs/Grail
 
 Installing this Emacs
 =====================
