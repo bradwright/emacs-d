@@ -12,5 +12,6 @@ Installing this Emacs
 Because we're using Grail, you need to perform some trickery to get this to work:
 
 ::
+    
     ln -s $HOME/Projects/emacs-d/grail.el ~/.emacs
     export USER_ELISP=/Users/bradleyw/Projects/emacs-d/
