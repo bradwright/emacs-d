@@ -10,6 +10,9 @@
 (require 'ansi-color)
 (require 'recentf)
 
+(setq inhibit-startup-screen t)
+(setq initial-buffer-choice t)
+
 ;; No tabs
 (setq-default indent-tabs-mode nil)
 
