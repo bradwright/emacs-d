@@ -10,11 +10,33 @@
 (require 'ansi-color)
 (require 'recentf)
 
+;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
 
+;; You really don't need this; trust me.
+(menu-bar-mode -1)
+
+;; Save a list of recent files visited.
+(recentf-mode 1)
+
+;; Highlight matching parentheses when the point is on them.
+(show-paren-mode 1)
+
+;; Hippie expand: at times perhaps too hip
+(delete 'try-expand-line hippie-expand-try-functions-list)
+(delete 'try-expand-list hippie-expand-try-functions-list)
+
 ;; No tabs
 (setq-default indent-tabs-mode nil)
+
+;; IDO mode is awesome
+(ido-mode t)
+(setq ido-enable-prefix nil
+    ido-enable-flex-matching t
+    ido-create-new-buffer 'always
+    ido-use-filename-at-point t
+    ido-max-prospects 10)
 
 ;; UTF-8 please!
 (set-terminal-coding-system 'utf-8)
@@ -34,6 +56,7 @@
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
+(whitespace-mode t)
 
 ;; JS2 mode, not espresso
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
