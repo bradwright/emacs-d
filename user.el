@@ -35,7 +35,7 @@
 (setq ido-enable-prefix nil
     ido-enable-flex-matching t
     ido-create-new-buffer 'always
-    ido-use-filename-at-point t
+    ido-use-filename-at-point nil
     ido-max-prospects 10)
 
 ;; UTF-8 please!
@@ -62,5 +62,6 @@
 (load-file "~/.emacs-d/dist/elisp/js2.el")
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-;; IDO is stupid
-(setq ido-use-filename-at-point nil)
+;; Jinja mode is a bit crap, really
+(load-file "~/.emacs-d/dist/elisp/jinja.el")
+(add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
