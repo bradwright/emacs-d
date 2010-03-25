@@ -59,6 +59,7 @@
 (whitespace-mode t)
 
 ;; JS2 mode, not espresso
+(load-file "~/.emacs-d/dist/elisp/js2.el")
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; IDO is stupid
