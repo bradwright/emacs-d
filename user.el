@@ -59,7 +59,7 @@
 (whitespace-mode t)
 
 ;; JS2 mode, not espresso
-(load-file "~/.emacs-d/dist/elisp/js2.el")
+(autoload 'js2-mode "~/.emacs-d/dist/elisp/js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; Jinja mode is a bit crap, really

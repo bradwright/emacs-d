@@ -11,9 +11,17 @@ This configuration is designed to run in shells as well as on desktops. There ar
 Installing this Emacs
 =====================
 
-Because we're using Grail, you need to perform some trickery to get this to work. Assuming you've checked out this repository in ``~/Projects/emacs-d``:
+Because we're using Grail, you need to perform some trickery to get this to work. Assuming you've checked out this repository in ``~/.emacs-d``:
 
 ::
     
-    ln -s $HOME/Projects/emacs-d/grail.el ~/.emacs
-    export USER_ELISP=$HOME/Projects/emacs-d/
+    ln -s $HOME/.emacs-d/grail.el ~/.emacs
+    export USER_ELISP=$HOME/.emacs-d/
+    
+Then you need to compile JS2-mode:
+
+::
+
+    cd ~/.emacs-d/dist/elisp/
+    emacs --batch --eval '(byte-compile-file "js2.el")'
+    
