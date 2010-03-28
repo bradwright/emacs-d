@@ -23,5 +23,9 @@ Then you need to compile JS2-mode:
 ::
 
     cd ~/.emacs-d/dist/elisp/
-    emacs --batch --eval '(byte-compile-file "js2.el")'
+    emacs -q --batch --eval '(byte-compile-file "js2.el")'
+
+Running Emacs in quiet mode is required because of `this issue`_.
+
+.. _this issue: http://code.google.com/p/js2-mode/issues/detail?id=68
     
