@@ -27,16 +27,19 @@
 (delete 'try-expand-line hippie-expand-try-functions-list)
 (delete 'try-expand-list hippie-expand-try-functions-list)
 
+;; I got sick of typing "yes"
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; No tabs
 (setq-default indent-tabs-mode nil)
 
 ;; IDO mode is awesome
 (ido-mode t)
 (setq ido-enable-prefix nil
-    ido-enable-flex-matching t
-    ido-create-new-buffer 'always
-    ido-use-filename-at-point nil
-    ido-max-prospects 10)
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point nil
+      ido-max-prospects 10)
 
 ;; UTF-8 please!
 (set-terminal-coding-system 'utf-8)
@@ -58,10 +61,16 @@
 (setq show-trailing-whitespace t)
 (whitespace-mode t)
 
+
+;; Load external files
+(add-to-list 'load-path "~/.emacs-d/dist/elisp")
+
 ;; JS2 mode, not espresso
-(autoload 'js2-mode "~/.emacs-d/dist/elisp/js2" nil t)
+(autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq js2-highlight-level 3
+      js2-basic-offset 4)
 
 ;; Jinja mode is a bit crap, really
-(load-file "~/.emacs-d/dist/elisp/jinja.el")
+(load "jinja")
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))

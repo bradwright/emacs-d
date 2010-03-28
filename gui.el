@@ -2,7 +2,8 @@
 
 (require 'color-theme)
 (setq color-theme-is-global t)
-(load-file "~/.emacs-d/dist/elisp/color-theme-twilight.el")
+(add-to-list 'load-path "~/.emacs-d/dist/elisp")
+(load "color-theme-twilight")
 (color-theme-twilight)
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
