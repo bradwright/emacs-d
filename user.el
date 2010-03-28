@@ -74,3 +74,9 @@
 ;; Jinja mode is a bit crap, really
 (load "jinja")
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
+
+;; Show colours in magit
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green3")
+     (set-face-foreground 'magit-diff-del "red3")))
