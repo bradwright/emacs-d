@@ -2,6 +2,9 @@
 ;;
 ;; Intended to be robust and usable across platforms
 
+;; Load external files
+(add-to-list 'load-path "~/.emacs-d/dist/elisp")
+
 ;; load on startup
 (require 'cl)
 (require 'saveplace)
@@ -9,6 +12,7 @@
 (require 'uniquify)
 (require 'ansi-color)
 (require 'recentf)
+(require 'magit)
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
@@ -60,10 +64,6 @@
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
 (whitespace-mode t)
-
-
-;; Load external files
-(add-to-list 'load-path "~/.emacs-d/dist/elisp")
 
 ;; JS2 mode, not espresso
 (autoload 'js2-mode "js2" nil t)
