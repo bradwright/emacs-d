@@ -89,3 +89,10 @@
 ;; Restructured text
 (require 'rst)
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
+
+;; Platform specific stuff
+(when window-system
+    (load "gui"))
+
+(when (eq system-type 'darwin)
+    (load "darwin"))
