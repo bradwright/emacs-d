@@ -73,7 +73,7 @@
 (setq auto-fill-mode nil)
 
 ;; nXhtml
-(load "nxhtml/autostart.el")
+;;(load "nxhtml/autostart.el")
 
 ;; JS2 mode, not espresso
 (autoload 'js2-mode "js2" nil t)
