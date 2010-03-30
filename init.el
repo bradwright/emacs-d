@@ -67,7 +67,6 @@
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
-(whitespace-mode t)
 
 ;; Fuck auto fill
 (setq auto-fill-mode nil)
