@@ -93,6 +93,12 @@
 (require 'rst)
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
 
+;; My functions
+(load "elisp")
+
+;; My keyboard shortcuts
+(load "keys")
+
 ;; Platform specific stuff
 (when window-system
     (load "gui"))
