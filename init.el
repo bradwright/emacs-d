@@ -84,3 +84,7 @@
   '(progn
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
+
+;; Restructured text
+(require 'rst)
+(add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
