@@ -67,6 +67,10 @@
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
+(whitespace-mode t)
+(setq whitespace-style '(trailing lines space-before-tab
+                         indentation space-after-tab)
+      whitespace-line-column 100)
 
 ;; Fuck auto fill
 (setq auto-fill-mode nil)
