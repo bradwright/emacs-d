@@ -70,6 +70,9 @@
 (setq show-trailing-whitespace t)
 (whitespace-mode t)
 
+;; Fuck auto fill
+(setq auto-fill-mode nil)
+
 ;; JS2 mode, not espresso
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
