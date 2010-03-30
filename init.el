@@ -73,6 +73,9 @@
 ;; Fuck auto fill
 (setq auto-fill-mode nil)
 
+;; nXhtml
+(load "nxhtml/autostart.el")
+
 ;; JS2 mode, not espresso
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -80,8 +83,8 @@
       js2-basic-offset 4)
 
 ;; Jinja mode is a bit crap, really
-(load "jinja")
-(add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
+;;(load "jinja")
+;;(add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 
 ;; Show colours in magit
 (eval-after-load 'magit
