@@ -58,7 +58,7 @@
 ;; Keep backups in same dir
 (setq
    backup-by-copying t  ; Don't clobber symlinks
-   backup-directory-alist '(("." . "backups/")) ; Don't litter FS
+   backup-directory-alist '(("." . (concat dotfiles-dir "backups/"))) ; Don't litter FS
    auto-save-file-name-transforms '((".*" "autosaves/" t))
    delete-old-versions t
    kept-new-versions 6
