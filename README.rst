@@ -12,6 +12,7 @@ Installing this Emacs
 Just check it out straight to the right directory:
 
 ::
+    
     git clone [git url] ~/.emacs.d
     
 Then you need to compile JS2-mode:
