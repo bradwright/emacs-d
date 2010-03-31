@@ -82,6 +82,12 @@
 ;; Fuck auto fill
 (setq auto-fill-mode nil)
 
+;; Show line-number in the mode line
+(line-number-mode 1)
+
+;; Show column-number in the mode line
+(column-number-mode 1)
+
 ;; nXhtml
 ;;(load "nxhtml/autostart.el")
 
