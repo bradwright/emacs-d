@@ -10,6 +10,6 @@
 (setq ns-command-modifier (quote meta))
 
 ;; Edit path crap
-(setenv "PATH" (concat "/Users/bradleyw/bin:/Users/bradleyw/Projects/homebrew/bin;"(getenv "PATH")))
+(setenv "PATH" (concat "/Users/bradleyw/bin:/Users/bradleyw/Projects/homebrew/bin:"(getenv "PATH")))
 (setq magit-git-executable "/Users/bradleyw/Projects/homebrew/bin/git")
 
