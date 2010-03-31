@@ -8,6 +8,7 @@
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
+(setq custom-file (concat dotfiles-dir "custom.el"))
 
 ;; load on startup
 (require 'cl)
