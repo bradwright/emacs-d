@@ -97,6 +97,21 @@
 ;; Jinja mode is a bit crap, really
 ;;(load "jinja")
 ;;(add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
+;; Replace Jinja mode with HTML mode, since Jinja mode sucks
+(add-to-list 'auto-mode-alist '("\\.jinja$" . html-mode))
+
+(defun my-html-mode-hook ()
+  (setq tab-width 4)
+  (auto-fill-mode 0)
+  (define-key html-mode-map (kbd "<tab>") 'my-insert-tab)
+  (define-key html-mode-map (kbd "C->") 'sgml-close-tag))
+
+;; just insert tabs
+(defun my-insert-tab (&optional arg)
+  (interactive "P")
+  (insert-tab arg))
+
+(add-hook 'html-mode-hook 'my-html-mode-hook)
 
 ;; Show colours in magit
 (eval-after-load 'magit
