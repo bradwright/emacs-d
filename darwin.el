@@ -8,9 +8,3 @@
 ;; Free up the option key for special characters
 (setq ns-alternate-modifer (quote none))
 (setq ns-command-modifier (quote meta))
-;; set default startup
-(setq default-directory "~")
-
-;; Edit path crap
-(setenv "PATH" (concat "/Users/bradleyw/bin:/Users/bradleyw/Projects/homebrew/bin;"(getenv "PATH")))
-(setq magit-git-executable "/Users/bradleyw/Projects/homebrew/bin/git")
