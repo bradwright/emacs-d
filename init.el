@@ -72,6 +72,12 @@
                          indentation space-after-tab)
       whitespace-line-column 100)
 
+;; show path rather than <2>
+(setq uniquify-buffer-name-style 'forward)
+
+;; show keystrokes immediately
+(setq echo-keystrokes 0.1)
+
 ;; Fuck auto fill
 (setq auto-fill-mode nil)
 
