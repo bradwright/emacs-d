@@ -17,6 +17,7 @@
 (require 'ansi-color)
 (require 'recentf)
 (require 'magit)
+(require 'whitespace)
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
@@ -68,7 +69,7 @@
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
-(whitespace-mode t)
+(setq global-whitespace-mode t)
 (setq whitespace-style '(trailing lines space-before-tab
                          indentation space-after-tab)
       whitespace-line-column 100)
