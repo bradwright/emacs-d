@@ -136,9 +136,16 @@
 ;; My keyboard shortcuts
 (load "keys")
 
-;; Platform specific stuff
-(when window-system
-    (load "gui"))
-
-(when (eq system-type 'darwin)
-    (load "darwin"))
+(defun check-gui ()
+  "Try and load GUI stuff"
+  ;; Platform specific stuff
+  ;; this is C/O: http://stackoverflow.com/questions/2548673/how-do-i-get-emacs-to-evaluate-a-file-when-a-frame-is-raised
+  (progn
+    (when window-system
+      (load "gui"))
+    (when (eq system-type 'darwin)
+      (load "darwin"))
+    (remove-hook 'before-make-frame-hook 'check-gui)))
+(add-hook 'before-make-frame-hook 'check-gui)
+;; run the file anyway just in case...
+(check-gui)
