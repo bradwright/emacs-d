@@ -25,6 +25,7 @@
 
 ;; You really don't need this; trust me.
 (menu-bar-mode -1)
+(tool-bar-mode -1)
 
 ;; Save a list of recent files visited.
 (recentf-mode 1)
@@ -136,16 +137,18 @@
 ;; My keyboard shortcuts
 (load "keys")
 
-(defun check-gui ()
-  "Try and load GUI stuff"
-  ;; Platform specific stuff
-  ;; this is C/O: http://stackoverflow.com/questions/2548673/how-do-i-get-emacs-to-evaluate-a-file-when-a-frame-is-raised
-  (progn
+;; Platform specific stuff
+;; this is C/O: http://stackoverflow.com/questions/2548673/how-do-i-get-emacs-to-evaluate-a-file-when-a-frame-is-raised
+(add-hook 'after-make-frame-functions
+  (lambda (frame)
+    (set-variable 'color-theme-is-global nil)
+    (select-frame frame)
     (when window-system
       (load "gui"))
     (when (eq system-type 'darwin)
       (load "darwin"))
-    (remove-hook 'before-make-frame-hook 'check-gui)))
-(add-hook 'before-make-frame-hook 'check-gui)
+    ))
 ;; run the file anyway just in case...
-(check-gui)
+(if window-system
+    (progn
+      (run-hook-with-args 'after-make-frame-functions (car (frame-list)))))
