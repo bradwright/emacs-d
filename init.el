@@ -24,7 +24,7 @@
 (setq initial-buffer-choice t)
 
 ;; You really don't need this; trust me.
-(menu-bar-mode -1)
+(menu-bar-mode)
 (tool-bar-mode -1)
 
 ;; Save a list of recent files visited.
