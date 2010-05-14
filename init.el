@@ -19,12 +19,16 @@
 (require 'magit)
 (require 'whitespace)
 
+;; auto decrypt PGP encrypted files
+(require 'epa-file)
+(epa-file-enable)
+
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
 
 ;; You really don't need this; trust me.
-(menu-bar-mode)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; Save a list of recent files visited.
