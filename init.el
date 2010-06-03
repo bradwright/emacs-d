@@ -141,6 +141,9 @@
 ;; My keyboard shortcuts
 (load "keys")
 
+;; start a server
+(server-start)
+
 ;; Platform specific stuff
 ;; this is C/O: http://stackoverflow.com/questions/2548673/how-do-i-get-emacs-to-evaluate-a-file-when-a-frame-is-raised
 (add-hook 'after-make-frame-functions
