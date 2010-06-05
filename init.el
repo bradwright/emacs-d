@@ -20,7 +20,7 @@
 (require 'whitespace)
 
 ;; auto decrypt PGP encrypted files
-(require 'epa-file)
+(require 'epa)
 (epa-file-enable)
 
 ;; kill all start up stuff
