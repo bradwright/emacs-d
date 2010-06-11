@@ -3,3 +3,4 @@ tramp
 backups
 \#!*
 custom.el
+auto-save-list
