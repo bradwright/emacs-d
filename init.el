@@ -74,7 +74,8 @@
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
-(setq global-whitespace-mode t)
+(global-whitespace-mode t)
+(whitespace-mode t)
 (setq whitespace-style '(trailing lines space-before-tab
                          indentation space-after-tab)
       whitespace-line-column 100)
