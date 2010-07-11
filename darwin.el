@@ -17,6 +17,7 @@
 (setq magit-git-executable "/Users/bradleyw/Projects/homebrew/bin/git")
 
 ;; Make Emacs behave like a Mac app
+;; Gotten from: http://github.com/samsonjs/config/blob/master/emacs
 (global-set-key "\M-o" 'find-file)
 (global-set-key "\M-s" 'save-buffer)
 (global-set-key "\M-z" 'undo)
