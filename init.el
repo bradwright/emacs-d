@@ -3,8 +3,10 @@
 ;; Intended to be robust and usable across platforms
 
 ;; Load external files
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
+(setq
+ dotfiles-dir
+ (file-name-directory
+  (or (buffer-file-name) load-file-name)))
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
@@ -38,8 +40,10 @@
 (show-paren-mode 1)
 
 ;; Hippie expand: at times perhaps too hip
-(delete 'try-expand-line hippie-expand-try-functions-list)
-(delete 'try-expand-list hippie-expand-try-functions-list)
+(delete
+ 'try-expand-line hippie-expand-try-functions-list)
+(delete
+ 'try-expand-list hippie-expand-try-functions-list)
 
 ;; I got sick of typing "yes"
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -50,11 +54,12 @@
 
 ;; IDO mode is awesome
 (ido-mode t)
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point nil
-      ido-max-prospects 10)
+(setq
+ ido-enable-prefix nil
+ ido-enable-flex-matching t
+ ido-create-new-buffer 'always
+ ido-use-filename-at-point nil
+ ido-max-prospects 10)
 
 ;; UTF-8 please!
 (set-terminal-coding-system 'utf-8)
@@ -64,20 +69,21 @@
 ;; Stop autosaves and backups from littering the filesystem
 ;; Keep backups in same dir
 (setq
-   backup-by-copying t  ; Don't clobber symlinks
-   backup-directory-alist `((".*" . ,(concat dotfiles-dir "backups")))
-   auto-save-file-name-transforms `((".*" ,(concat dotfiles-dir "autosaves") t))
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t)   ; Use versioned backups
+ backup-by-copying t  ; Don't clobber symlinks
+ backup-directory-alist `((".*" . ,(concat dotfiles-dir "backups")))
+ auto-save-file-name-transforms `((".*" ,(concat dotfiles-dir "autosaves") t))
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)   ; Use versioned backups
 
 ;; show trailing whitespace
 (setq show-trailing-whitespace t)
 (global-whitespace-mode t)
 (whitespace-mode t)
-(setq whitespace-style '(trailing lines space-before-tab
-                         indentation space-after-tab)
+(setq whitespace-style '
+      (trailing lines space-before-tab
+                indentation space-after-tab)
       whitespace-line-column 100)
 
 ;; show path rather than <2>
@@ -104,8 +110,9 @@
 ;; JS2 mode, not espresso
 (autoload 'js2-mode "js2" nil t)
 ;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(setq js2-highlight-level 3
-      js2-basic-offset 4)
+(setq
+ js2-highlight-level 3
+ js2-basic-offset 4)
 
 ;; Jinja mode is a bit crap, really
 ;;(load "jinja")
