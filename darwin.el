@@ -23,6 +23,10 @@
 ;;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
+;; do the Chrome thing
+(require 'edit-server)
+(edit-server-start)
+
 ;; Edit path crap
 (setenv "PATH" (concat "/Users/bradleyw/bin:/Users/bradleyw/Projects/homebrew/bin:"(getenv "PATH")))
 (setq magit-git-executable "/Users/bradleyw/Projects/homebrew/bin/git")
