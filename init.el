@@ -34,6 +34,8 @@
 (tool-bar-mode -1)
 
 ;; Save a list of recent files visited.
+;; disable auto-clean before we start recentf so Tramp doesn't block emacs
+(setq recentf-auto-cleanup 'never)
 (recentf-mode 1)
 
 ;; Highlight matching parentheses when the point is on them.
