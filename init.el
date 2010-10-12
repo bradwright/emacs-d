@@ -20,6 +20,7 @@
 (require 'recentf)
 (require 'magit)
 (require 'whitespace)
+(require 'tramp)
 
 ;; auto decrypt PGP encrypted files
 (require 'epa)
