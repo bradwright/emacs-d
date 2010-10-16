@@ -80,14 +80,30 @@
  kept-old-versions 2
  version-control t)   ; Use versioned backups
 
-;; show trailing whitespace
-(setq show-trailing-whitespace t)
+
+;; Whitespace mode from:
+;; http://ruslanspivak.com/2010/09/27/keep-track-of-whitespaces-and-column-80-overflow/
+
+;; nuke trailing whitespaces when writing to a file
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
+;; display only tails of lines longer than 80 columns, tabs and
+;; trailing whitespaces
+(setq whitespace-line-column 80
+      whitespace-style '(tabs trailing lines-tail))
+
+;; face for long lines' tails
+(set-face-attribute 'whitespace-line nil)
+
+;; face for Tabs
+(set-face-attribute 'whitespace-tab nil
+                    :background "red1"
+                    :foreground "yellow"
+                    :weight 'bold)
+
+;; enable whitespace mode
 (global-whitespace-mode t)
 (whitespace-mode t)
-(setq whitespace-style '
-      (trailing lines space-before-tab
-                indentation space-after-tab)
-      whitespace-line-column 100)
 
 ;; show path rather than <2>
 (setq uniquify-buffer-name-style 'forward)
