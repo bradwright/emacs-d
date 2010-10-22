@@ -10,7 +10,6 @@
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
-(setq custom-file (concat dotfiles-dir "custom.el"))
 
 ;; load on startup
 (require 'cl)
@@ -195,3 +194,7 @@
 (if window-system
     (progn
       (run-hook-with-args 'after-make-frame-functions (car (frame-list)))))
+
+;; Load custom file last
+(setq custom-file (concat dotfiles-dir "custom.el"))
+(load-file custom-file)
