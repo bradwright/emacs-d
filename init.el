@@ -197,5 +197,7 @@
       (run-hook-with-args 'after-make-frame-functions (car (frame-list)))))
 
 ;; Load custom file last
-(setq custom-file (concat dotfiles-dir "custom.el"))
-(load-file custom-file)
+(if (file-exists-p (concat dotfiles-dir "custom.el"))
+    (progn
+      (setq custom-file (concat dotfiles-dir "custom.el"))
+      (load-file custom-file)))
