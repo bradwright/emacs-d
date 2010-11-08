@@ -1,3 +1,6 @@
 [submodule "vendor/nxhtml"]
 	path = vendor/nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
+[submodule "src/magit"]
+	path = src/magit
+	url = git://github.com/philjackson/magit.git
