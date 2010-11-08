@@ -10,6 +10,7 @@
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 
 ;; load on startup
 (require 'cl)
