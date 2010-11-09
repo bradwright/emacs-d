@@ -28,8 +28,8 @@
 (edit-server-start)
 
 ;; Edit path crap
-(setenv "PATH" (concat "/Users/bradleyw/bin:/Users/bradleyw/Projects/homebrew/bin:"(getenv "PATH")))
-(setq magit-git-executable "/Users/bradleyw/Projects/homebrew/bin/git")
+(push "/Users/bradleyw/bin" exec-path)
+(push "/Users/bradleyw/Projects/homebrew/bin" exec-path)
 
 ;; switch to the next window, in any visible frame
 (defun other-window-in-any-frame (&optional arg)
