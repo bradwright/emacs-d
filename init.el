@@ -26,6 +26,11 @@
 (require 'epa)
 (epa-file-enable)
 
+;; textmate mode
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate.el"))
+(require 'textmate)
+(textmate-mode)
+
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
