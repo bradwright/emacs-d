@@ -6,8 +6,9 @@
     ;; set my favourite Mac font as the default font
     (set-face-font 'default "-apple-inconsolata-medium-r-normal--15-150-72-72-m-150-iso10646-1"))
   ;; Free up the option key for special characters
-  (setq ns-alternate-modifier (quote none))
-  (setq ns-command-modifier (quote meta))
+  (setq ns-alternate-modifier 'none)
+  (setq ns-command-modifier 'meta)
+  (setq ns-function-modifier 'super)
   ;; Make Emacs behave like a Mac app
   ;; Gotten from: http://github.com/samsonjs/config/blob/master/emacs
   (global-set-key "\M-o" 'find-file)
