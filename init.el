@@ -39,6 +39,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; always highlight syntax
+(global-font-lock-mode t)
+(setq font-lock-maximum-decoration t)
+
 ;; Save a list of recent files visited.
 ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
 (setq recentf-auto-cleanup 'never)
