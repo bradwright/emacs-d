@@ -190,21 +190,10 @@
              '((regexp-quote (system-name)) nil nil))
 
 ;; Platform specific stuff
-;; this is C/O: http://stackoverflow.com/questions/2548673/how-do-i-get-emacs-to-evaluate-a-file-when-a-frame-is-raised
-(add-hook 'after-make-frame-functions
-  (lambda (frame)
-    (set-variable 'color-theme-is-global nil)
-    (select-frame frame)
-    (when window-system
-      (load "gui"))
-    (when (eq system-type 'darwin)
-      (load "darwin"))
-    ))
-
-;; run the file anyway just in case...
-(if window-system
-    (progn
-      (run-hook-with-args 'after-make-frame-functions (car (frame-list)))))
+(when window-system
+  (load "gui"))
+(when (eq system-type 'darwin)
+  (load "darwin"))
 
 ;; Load custom file last
 (if (file-exists-p (concat dotfiles-dir "custom.el"))
