@@ -148,6 +148,9 @@
 ;; Replace Jinja mode with HTML mode, since Jinja mode sucks
 (add-to-list 'auto-mode-alist '("\\.jinja$" . html-mode))
 
+;; JSON files
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+
 (defun my-html-mode-hook ()
   (setq tab-width 4)
   (auto-fill-mode 0)
