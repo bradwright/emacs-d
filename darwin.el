@@ -48,3 +48,6 @@ If N is non-nil switch to the nth next window."
             (select-frame-set-input-focus frame))))
       (select-window window))
     (decf arg)))
+
+;; Open any new buffers in the existing frame
+(setq ns-pop-up-frames nil)
