@@ -19,14 +19,23 @@
   (global-set-key [(meta right)] 'end-of-line)
   (global-set-key [(meta left)] 'beginning-of-line)
   ;; can't seem to un-hijack cmd-`, so make it do something useful
-  (global-set-key "\M-`" 'other-window-in-any-frame))
+  (global-set-key "\M-`" 'other-window-in-any-frame)
+  ;; Set cmd-H to hide Emacs and cmd-shift-h to hide others, as usual in Mac OS
+  ;; X. Usually bound to mark-paragraph
+  (global-set-key "\M-h" 'ns-do-hide-emacs)
+  (global-set-key "\M-H" 'ns-do-hide-others))
+
+
+;;; In Emacs 23 (Cocoa) in Snow Leopard, Apple delete key deletes backward, not
+;;; forward as is usual. This fixes this behaviour.
+(normal-erase-is-backspace-mode 1)
 
 ;;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
-;; do the Chrome thing
-(require 'edit-server)
-(edit-server-start)
+;;; Use default Mac OS X browser, and move to trash when deleting stuff
+(setq browse-url-browser-function 'browse-url-default-macosx-browser
+      delete-by-moving-to-trash t)
 
 ;; Edit path crap
 (push "/Users/bradleyw/bin" exec-path)
