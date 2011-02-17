@@ -182,6 +182,10 @@
 ;; start a server
 (server-start)
 
+;; new Python mode
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/python.el"))
+(require 'python)
+
 ;; Tramp mode: allow me to SSH to hosts and edit as sudo like:
 ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
 ;; from: http://www.gnu.org/software/tramp/#Multi_002dhops
