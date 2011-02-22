@@ -29,6 +29,8 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate.el"))
 (require 'textmate)
 (textmate-mode)
+;; use Git to find files efficiently
+(setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
