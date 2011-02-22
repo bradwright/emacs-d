@@ -40,7 +40,8 @@
 ;; Edit path crap
 (push "/Users/bradleyw/bin" exec-path)
 (push "/Users/bradleyw/Projects/homebrew/bin" exec-path)
-
+;; try this
+(setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
 ;; switch to the next window, in any visible frame
 (defun other-window-in-any-frame (&optional arg)
   "Switch to the next window using `next-window', with ALL-FRAMES
@@ -57,6 +58,9 @@ If N is non-nil switch to the nth next window."
             (select-frame-set-input-focus frame))))
       (select-window window))
     (decf arg)))
+
+;; update PATH
+(set-exec-path-from-shell-PATH)
 
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
