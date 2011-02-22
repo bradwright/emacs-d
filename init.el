@@ -142,7 +142,7 @@
  js2-basic-offset 4)
 
 ;; Jinja mode is a bit crap, really
-;;(load "jinja")
+(load "jinja")
 ;;(add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 ;; Replace Jinja mode with HTML mode, since Jinja mode sucks
 (add-to-list 'auto-mode-alist '("\\.jinja$" . html-mode))
