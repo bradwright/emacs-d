@@ -41,7 +41,7 @@
 (push "/Users/bradleyw/bin" exec-path)
 (push "/Users/bradleyw/Projects/homebrew/bin" exec-path)
 ;; try this
-(setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
+;;(setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
 ;; switch to the next window, in any visible frame
 (defun other-window-in-any-frame (&optional arg)
   "Switch to the next window using `next-window', with ALL-FRAMES
