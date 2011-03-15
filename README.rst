@@ -9,20 +9,9 @@ This configuration is designed to run in shells as well as on desktops. There ar
 Installing this Emacs
 =====================
 
-Just check it out straight to the right directory:
-
-::
-    
-    git clone [git url] ~/.emacs.d
-    
-Then you need to compile JS2-mode:
+Just check it out straight to the right directory, and use Make to install it:
 
 ::
 
-    cd ~/.emacs.d/vendor/
-    emacs -q --batch --eval '(byte-compile-file "js2.el")'
+    make install
 
-Running Emacs in quiet mode is required because of `this issue`_.
-
-.. _this issue: http://code.google.com/p/js2-mode/issues/detail?id=68
-    
