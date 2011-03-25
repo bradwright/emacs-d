@@ -1,8 +1,8 @@
 ;; Color themes and graphical embellishment
 
 (require 'color-theme)
-(add-to-list 'load-path "~/.emacs-d/dist/elisp")
-(load "color-theme-twilight")
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/themes"))
+(load "twilight")
 (color-theme-twilight)
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
