@@ -7,3 +7,6 @@
 [submodule "vendor/textmate.el"]
 	path = vendor/textmate.el
 	url = git://github.com/defunkt/textmate.el.git
+[submodule "vendor/js2-mode"]
+	path = vendor/js2-mode
+	url = git://github.com/mooz/js2-mode.git
