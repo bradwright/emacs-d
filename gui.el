@@ -2,8 +2,8 @@
 
 (require 'color-theme)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/themes"))
-(load "twilight")
-(color-theme-twilight)
+(load "solarized")
+(color-theme-sanityinc-solarized-dark)
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 (tooltip-mode -1)
