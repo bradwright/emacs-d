@@ -135,7 +135,8 @@
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
 ;; JS2 mode, not espresso
-(autoload 'js2-mode "js2" nil t)
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/js2-mode"))
+(load "js2-mode")
 ;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq
  js2-highlight-level 3
