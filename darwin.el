@@ -4,6 +4,7 @@
 (when window-system
   (progn
     ;; set my favourite Mac font as the default font
+    ;; -apple-Andale_Mono-medium-normal-normal-*-14-*-*-*-m-0-iso10646-1
     (set-face-font 'default "-apple-inconsolata-medium-r-normal--15-150-72-72-m-150-iso10646-1"))
   ;; Free up the option key for special characters
   (setq ns-alternate-modifier 'none)
