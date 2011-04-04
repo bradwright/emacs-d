@@ -97,6 +97,8 @@
 
 ;; display only tails of lines longer than 80 columns, tabs and
 ;; trailing whitespaces
+
+;; style information is here: http://www.emacswiki.org/emacs/WhiteSpace
 (setq whitespace-line-column 80
       whitespace-style '(face tabs trailing lines-tail))
 
