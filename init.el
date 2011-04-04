@@ -140,7 +140,9 @@
 ;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq
  js2-highlight-level 3
- js2-basic-offset 4)
+ js2-basic-offset 4
+ js2-use-ast-for-indentation-p t
+ js2-consistent-level-indent-inner-bracket-p t)
 
 ;; Jinja mode is a bit crap, really
 (load "jinja")
