@@ -30,6 +30,10 @@
 (require 'textmate)
 (textmate-mode)
 
+;; PHP mode
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/php-mode"))
+(require 'php-mode)
+
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)

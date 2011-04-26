@@ -10,3 +10,6 @@
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = git://github.com/mooz/js2-mode.git
+[submodule "vendor/php-mode"]
+	path = vendor/php-mode
+	url = https://github.com/emacsmirror/php-mode.git
