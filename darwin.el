@@ -43,6 +43,7 @@
 (push "/Users/bradleyw/Projects/homebrew/bin" exec-path)
 ;; try this
 ;;(setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
+
 ;; switch to the next window, in any visible frame
 (defun other-window-in-any-frame (&optional arg)
   "Switch to the next window using `next-window', with ALL-FRAMES
@@ -51,14 +52,19 @@ switch to that frame first using `select-frame-set-input-focus'.
 
 If N is non-nil switch to the nth next window."
   (interactive "p")
-  (while (> arg 0)
-    (let ((window (next-window (selected-window) nil 'visible)))
-      (when (not (member window (window-list)))
-        (dolist (frame (delq (selected-frame) (frame-list)))
-          (when (member window (window-list frame))
-            (select-frame-set-input-focus frame))))
-      (select-window window))
-    (decf arg)))
+  (setq arg (or arg 1))
+  (let ((gt-or-lt (if (> arg 0) #'> #'<))
+        (sign (if (> arg 0) 1 -1)))
+    (while (apply gt-or-lt arg '(0))
+      (let ((window (if (= sign 1)
+                        (next-window (selected-window) nil 'visible)
+                      (previous-window (selected-window) nil 'visible))))
+        (when (not (member window (window-list)))
+      (dolist (frame (delq (selected-frame) (frame-list)))
+        (when (member window (window-list frame))
+          (select-frame-set-input-focus frame))))
+        (select-window window))
+      (setq arg (- arg sign)))))
 
 ;; update PATH
 (set-exec-path-from-shell-PATH)
