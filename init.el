@@ -37,10 +37,9 @@
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
-
-;; You really don't need this; trust me.
-(menu-bar-mode -1)
-(tool-bar-mode -1)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; always highlight syntax
 (global-font-lock-mode t)
