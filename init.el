@@ -34,6 +34,10 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/php-mode"))
 (require 'php-mode)
 
+;; vimpulse
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/vimpulse"))
+;;(require 'vimpulse)
+
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)

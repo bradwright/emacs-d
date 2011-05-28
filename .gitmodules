@@ -16,3 +16,6 @@
 [submodule "vendor/themes/color-theme-solarized"]
 	path = vendor/themes/color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
+[submodule "vendor/vimpulse"]
+	path = vendor/vimpulse
+	url = git://gitorious.org/vimpulse/vimpulse.git
