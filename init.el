@@ -38,6 +38,9 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/vimpulse"))
 ;;(require 'vimpulse)
 
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/mustache-mode.el"))
+(require 'mustache-mode)
+
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
