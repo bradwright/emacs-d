@@ -1,7 +1,10 @@
 ;; Keybindings, lots stolen from Emacs Starter Kit
+;; also some wisdom taken from https://sites.google.com/site/steveyegge2/effective-emacs
 
 ;; You know, like Readline.
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-x C-k") 'kill-region)
+(global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -27,3 +30,7 @@
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-S-tab] (lambda () (interactive) (other-window -1)))
+
+;; map M-x to C-x C-m and C-c C-m
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "C-c C-m") 'execute-extended-command)
