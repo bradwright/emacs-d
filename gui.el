@@ -4,9 +4,10 @@
 ;; general color themes
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/themes"))
 ;; Solarized theme with light/dark versions
+(load-file (concat dotfiles-dir "/vendor/themes/twilight.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/themes/color-theme-solarized"))
 (require 'color-theme-solarized)
-(color-theme-solarized-dark)
+(color-theme-twilight)
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 (tooltip-mode -1)
