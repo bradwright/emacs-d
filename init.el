@@ -52,6 +52,9 @@
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 
+;; highlight the current line
+(hl-line-mode 1)
+
 ;; Save a list of recent files visited.
 ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
 (setq recentf-auto-cleanup 'never)
