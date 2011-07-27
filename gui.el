@@ -15,3 +15,9 @@
 
 ;; stop beeping at me
 (setq visible-bell t)
+
+;; hide fringes
+;;(fringe-mode 0)
+
+;; if we do use line numbers, format them
+(setq linum-format " %d ")
