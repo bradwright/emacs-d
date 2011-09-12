@@ -4,6 +4,7 @@ all: clean install
 install:
 	git submodule init
 	git submodule update
+	cd vendor/magit && make
 	ln -s `pwd` ~/.emacs.d
 	emacs -q --batch --eval '(byte-recompile-directory "~/.emacs.d/vendor/js2-mode" 0)'
 
