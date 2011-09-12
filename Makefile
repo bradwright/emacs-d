@@ -9,6 +9,6 @@ install:
 
 clean:
 	# unlink the directory
-	rm ~/.emacs.d
+	rm -f ~/.emacs.d
 	# remove old compiled files
 	rm -rf *.elc
