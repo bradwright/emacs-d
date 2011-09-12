@@ -13,5 +13,5 @@ Just check it out straight to the right directory, and use Make to install it:
 
 ::
 
-    make install
+    cd ~/Projects/emacs-d && make
 
