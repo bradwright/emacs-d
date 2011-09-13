@@ -187,6 +187,11 @@
   '(progn
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
+;; force wrap commit messages
+(add-hook 'magit-log-edit-mode-hook
+          (lambda ()
+            (setq fill-column 72)
+            (turn-on-auto-fill)))
 
 ;; Restructured text
 (require 'rst)
