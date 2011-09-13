@@ -76,3 +76,8 @@ If N is non-nil switch to the nth next window."
 
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
+
+;; Even though we may have set the Mac OS X Terminal's Alt key as the emacs Meta key ...
+;; ... we want to be able to insert a '#' using Alt-3 in emacs as we would in other programs
+(fset 'insertPound "#")
+(define-key global-map "\M-3" 'insertPound)
