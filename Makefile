@@ -1,6 +1,7 @@
 # makefile to install my Emacs
 all: clean install
 
+# check out submodules, install vendor files, and compile JS2 mode
 install:
 	git submodule init
 	git submodule update
@@ -8,8 +9,7 @@ install:
 	ln -s `pwd` ~/.emacs.d
 	emacs -q --batch --eval '(byte-recompile-directory "~/.emacs.d/vendor/js2-mode" 0)'
 
+# remove old directory and clean files
 clean:
-	# unlink the directory
 	rm -f ~/.emacs.d
-	# remove old compiled files
 	find . -name "*.elc" -delete
