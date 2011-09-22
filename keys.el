@@ -34,3 +34,12 @@
 ;; map M-x to C-x C-m and C-c C-m
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-c C-m") 'execute-extended-command)
+
+;; force myself to stop using M-x
+(defun stop-m-x ()
+  "Echo out message to echo area"
+  (interactive)
+  (message "Use C-x C-m!")
+  )
+
+(global-set-key (kbd "M-x") 'stop-m-x)
