@@ -40,14 +40,15 @@
 
 ;; Edit path crap
 (push "/Users/bradleyw/bin" exec-path)
-(push "/Users/bradleyw/Projects/homebrew/bin" exec-path)
+(when (file-accessible-directory-p "/Users/bradleyw/Projects/homebrew/bin")
+  (push "/Users/bradleyw/Projects/homebrew/bin" exec-path))
 
-(add-to-list 'load-path "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/lib/tools-2.6.6.3/emacs")
-(setq erlang-root-dir "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang")
-(setq exec-path (cons "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/bin" exec-path))
-(require 'erlang-start)
-;; try this
-;;(setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
+;; None of this works anyway, as I don't have Erlang at home any more
+(when (file-exists-p "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/lib/tools-2.6.6.3/emacs")
+  (add-to-list 'load-path "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/lib/tools-2.6.6.3/emacs")
+  (setq erlang-root-dir "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang")
+  (setq exec-path (cons "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/bin" exec-path))
+  (require 'erlang-start))
 
 ;; switch to the next window, in any visible frame
 (defun other-window-in-any-frame (&optional arg)
