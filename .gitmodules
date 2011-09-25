@@ -28,3 +28,6 @@
 [submodule "vendor/mustache-mode"]
 	path = vendor/mustache-mode
 	url = git://github.com/mustache/emacs.git
+[submodule "vendor/json-mode"]
+	path = vendor/json-mode
+	url = git://github.com/joshwnj/json-mode.git
