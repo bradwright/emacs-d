@@ -16,9 +16,6 @@
 [submodule "vendor/themes/color-theme-solarized"]
 	path = vendor/themes/color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "vendor/vimpulse"]
-	path = vendor/vimpulse
-	url = git://gitorious.org/vimpulse/vimpulse.git
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = https://github.com/magit/magit.git
@@ -31,3 +28,6 @@
 [submodule "vendor/json-mode"]
 	path = vendor/json-mode
 	url = git://github.com/joshwnj/json-mode.git
+[submodule "vendor/evil"]
+	path = vendor/evil
+	url = git://gitorious.org/evil/evil.git

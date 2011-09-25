@@ -40,9 +40,10 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/php-mode"))
 (require 'php-mode)
 
-;; vimpulse
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/vimpulse"))
-;;(require 'vimpulse)
+;; 'Evil' Vi emulation mode
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/evil"))
+(require 'evil)
+;; (evil-mode 1)
 
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/mustache-mode"))
 (require 'mustache-mode)
