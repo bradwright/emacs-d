@@ -4,8 +4,8 @@
 [submodule "src/magit"]
 	path = src/magit
 	url = git://github.com/philjackson/magit.git
-[submodule "vendor/textmate.el"]
-	path = vendor/textmate.el
+[submodule "vendor/textmate-mode"]
+	path = vendor/textmate-mode
 	url = git://github.com/defunkt/textmate.el.git
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
@@ -22,3 +22,9 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = https://github.com/magit/magit.git
+[submodule "vendor/haskell-mode"]
+	path = vendor/haskell-mode
+	url = git://github.com/emacsmirror/haskell-mode.git
+[submodule "vendor/mustache-mode"]
+	path = vendor/mustache-mode
+	url = git://github.com/mustache/emacs.git
