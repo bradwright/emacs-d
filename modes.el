@@ -96,3 +96,9 @@
 
 ;; Random missing file tyoes
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
+
+;; Try HTML5 mode
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/html5-mode"))
+(eval-after-load "rng-loc"
+  '(add-to-list 'rng-schema-locating-files (concat vendor-dotfiles-dir "/schemas.xml")))
+(require 'whattf-dt)

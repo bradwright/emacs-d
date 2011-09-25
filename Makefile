@@ -6,6 +6,7 @@ install:
 	git submodule init
 	git submodule update
 	cd vendor/magit && make
+	cd vendor/html5-mode && make relaxng
 	ln -s `pwd` ~/.emacs.d
 	emacs -q --batch --eval '(byte-recompile-directory "~/.emacs.d/vendor/js2-mode" 0)'
 

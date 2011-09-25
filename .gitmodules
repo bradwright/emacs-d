@@ -34,3 +34,6 @@
 [submodule "vendor/undo-tree"]
 	path = vendor/undo-tree
 	url = git://github.com/emacsmirror/undo-tree.git
+[submodule "vendor/html5-mode"]
+	path = vendor/html5-mode
+	url = git://github.com/hober/html5-el.git
