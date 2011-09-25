@@ -88,3 +88,6 @@
 ;; Restructured text
 (require 'rst)
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
+
+;; Random missing file tyoes
+(add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
