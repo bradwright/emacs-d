@@ -49,8 +49,14 @@
 (require 'evil)
 ;; (evil-mode 1)
 
+;; mustache templating
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/mustache-mode"))
 (require 'mustache-mode)
+
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/haskell-mode"))
+(load "haskell-site-file.el")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;; JS2 mode, not espresso
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
