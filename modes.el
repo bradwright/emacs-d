@@ -40,6 +40,10 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/php-mode"))
 (require 'php-mode)
 
+;; Undo tree
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/undo-tree"))
+(require 'undo-tree)
+
 ;; 'Evil' Vi emulation mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/evil"))
 (require 'evil)
