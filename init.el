@@ -9,8 +9,6 @@
   (or (buffer-file-name) load-file-name)))
 
 (add-to-list 'load-path dotfiles-dir)
-(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/magit"))
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 
 ;; load on startup
@@ -19,27 +17,37 @@
 (require 'uniquify)
 (require 'ansi-color)
 (require 'recentf)
-(require 'magit)
 (require 'whitespace)
 (require 'tramp)
 
 ;; auto decrypt PGP encrypted files
-(require 'epa)
+;;(require 'epa)
+
+;; vendor files
+(setq
+ vendor-dotfiles-dir
+ (concat dotfiles-dir "/vendor"))
+(add-to-list 'load-path vendor-dotfiles-dir)
+
+;; magit is awesome, always load
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/magit"))
+(require 'magit)
 
 ;; textmate mode
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate.el"))
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/textmate-mode"))
 (require 'textmate)
+;; Textmate mode is on for everything
 (textmate-mode)
 
 ;; PHP mode
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/php-mode"))
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/php-mode"))
 (require 'php-mode)
 
 ;; vimpulse
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/vimpulse"))
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/vimpulse"))
 ;;(require 'vimpulse)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/mustache-mode.el"))
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/mustache-mode"))
 (require 'mustache-mode)
 
 ;; kill all start up stuff
