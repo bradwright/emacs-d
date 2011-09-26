@@ -1,12 +1,15 @@
 ;; Color themes and graphical embellishment
 
 (require 'color-theme)
-;; general color themes
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/themes"))
-;; Solarized theme with light/dark versions
-(load-file (concat dotfiles-dir "/vendor/themes/twilight.el"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/themes/color-theme-solarized"))
-(require 'color-theme-solarized)
+
+;; Theme files
+(setq
+ theme-dotfiles-dir
+ (concat dotfiles-dir "/themes"))
+(add-to-list 'load-path theme-dotfiles-dir)
+
+(add-to-list 'load-path (concat theme-dotfiles-dir "/twilight"))
+(require 'color-theme-twilight)
 (color-theme-twilight)
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
