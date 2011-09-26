@@ -40,3 +40,6 @@
 [submodule "vendor/less-css-mode"]
 	path = vendor/less-css-mode
 	url = git://github.com/purcell/less-css-mode.git
+[submodule "vendor/themes/zenburn"]
+	path = vendor/themes/zenburn
+	url = git://github.com/bbatsov/zenburn-emacs.git
