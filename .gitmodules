@@ -37,3 +37,6 @@
 [submodule "vendor/html5-mode"]
 	path = vendor/html5-mode
 	url = git://github.com/hober/html5-el.git
+[submodule "vendor/less-css-mode"]
+	path = vendor/less-css-mode
+	url = git://github.com/purcell/less-css-mode.git

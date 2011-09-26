@@ -40,6 +40,10 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/php-mode"))
 (require 'php-mode)
 
+;; Less CSS mode
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/less-css-mode"))
+(require 'less-css-mode)
+
 ;; Undo tree
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/undo-tree"))
 (require 'undo-tree)
