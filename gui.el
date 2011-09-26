@@ -5,7 +5,7 @@
 ;; Theme files
 (setq
  theme-dotfiles-dir
- (concat dotfiles-dir "/themes"))
+ (concat dotfiles-dir "/vendor/themes"))
 (add-to-list 'load-path theme-dotfiles-dir)
 
 (add-to-list 'load-path (concat theme-dotfiles-dir "/twilight"))
