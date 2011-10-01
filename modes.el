@@ -46,7 +46,8 @@
 
 ;; Undo tree
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/undo-tree"))
-(require 'undo-tree)
+;; we don't actually want undo-tree by default...
+;;(require 'undo-tree)
 
 ;; 'Evil' Vi emulation mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/evil"))
