@@ -34,6 +34,12 @@
 ;; highlight the current line
 (global-hl-line-mode 1)
 
+;; hook to turn off hl-line-mode
+(defun local-hl-line-mode-off ()
+  (interactive)
+  (make-local-variable 'global-hl-line-mode)
+  (setq global-hl-line-mode nil))
+
 ;; Save a list of recent files visited.
 ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
 (setq recentf-auto-cleanup 'never)

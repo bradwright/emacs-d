@@ -30,6 +30,8 @@
             (setq fill-column 72)
             (turn-on-auto-fill)))
 
+(add-hook 'magit-mode-hook 'local-hl-line-mode-off)
+
 ;; textmate mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/textmate-mode"))
 (require 'textmate)
