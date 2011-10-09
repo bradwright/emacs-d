@@ -32,3 +32,6 @@
 
 ;; if we do use line numbers, format them
 (setq linum-format " %d ")
+
+;; highlight the current line
+(global-hl-line-mode 1)

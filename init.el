@@ -31,9 +31,6 @@
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 
-;; highlight the current line
-(global-hl-line-mode 1)
-
 ;; hook to turn off hl-line-mode
 (defun local-hl-line-mode-off ()
   (interactive)
