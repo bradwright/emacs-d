@@ -145,6 +145,10 @@
   (load "gui"))
 (when (eq system-type 'darwin)
   (load "darwin"))
+(when (and (eq system-type 'darwin) (not window-system))
+  (load "darwin-cli"))
+(when (and (eq system-type 'darwin) (window-system))
+  (load "darwin-gui"))
 
 ;; Load custom file last
 (if (file-exists-p (concat dotfiles-dir "custom.el"))
