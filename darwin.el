@@ -82,3 +82,7 @@ If N is non-nil switch to the nth next window."
 ;; ... we want to be able to insert a '#' using Alt-3 in emacs as we would in other programs
 (fset 'insertPound "#")
 (define-key global-map "\M-3" 'insertPound)
+
+;; load growl.el
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/emacs-growl"))
+(require 'growl)
