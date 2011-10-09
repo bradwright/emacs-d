@@ -129,7 +129,8 @@
 (load "modes")
 
 ;; start a server
-(server-start)
+(load "server")
+(unless (server-running-p) (server-start))
 
 ;; Tramp mode: allow me to SSH to hosts and edit as sudo like:
 ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
