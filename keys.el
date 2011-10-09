@@ -42,3 +42,44 @@
   (message "Use C-x C-m!"))
 
 (global-set-key (kbd "M-x") 'stop-m-x)
+
+;; anti-n00b mode
+(defun toggle-noob-mode ()
+  "Toggles turning off of arrow keys"
+  (interactive)
+  (if (not (boundp 'noob-keyboard-mode))
+      (setq noob-keyboard-mode nil))
+  (if noob-keyboard-mode
+      (setq noob-keyboard-mode nil)
+    (setq noob-keyboard-mode t))
+  (if noob-keyboard-mode
+      ;; real Emacs hackers don't use the arrow keys
+      (progn
+        (global-set-key
+         (kbd "<up>")
+         (lambda ()
+           (interactive)
+           (message "Arrow key navigation is disabled. Use C-p instead.")))
+        (global-set-key
+         (kbd "<down>")
+         (lambda ()
+           (interactive)
+           (message "Arrow key navigation is disabled. Use C-n instead.")))
+        (global-set-key
+         (kbd "<left>")
+         (lambda ()
+           (interactive)
+           (message "Arrow key navigation is disabled. Use C-b instead.")))
+        (global-set-key
+         (kbd "<right>")
+         (lambda ()
+           (interactive)
+           (message "Arrow key navigation is disabled. Use C-f instead."))))
+    (progn
+      (global-set-key (kbd "<up>") 'previous-line)
+      (global-set-key (kbd "<down>") 'next-line)
+      (global-set-key (kbd "<left>") 'backward-char)
+      (global-set-key (kbd "<right>") 'forward-char)))
+  (message "Noob mode toggled"))
+
+(toggle-noob-mode)
