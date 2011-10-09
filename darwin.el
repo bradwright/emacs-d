@@ -40,8 +40,6 @@
 
 ;; Edit path crap
 (push "/Users/bradleyw/bin" exec-path)
-(when (file-accessible-directory-p "/Users/bradleyw/Projects/homebrew/bin")
-  (push "/Users/bradleyw/Projects/homebrew/bin" exec-path))
 
 ;; None of this works anyway, as I don't have Erlang at home any more
 (when (file-exists-p "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/lib/tools-2.6.6.3/emacs")
