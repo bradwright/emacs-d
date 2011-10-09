@@ -36,12 +36,11 @@
 (global-set-key (kbd "C-c C-m") 'execute-extended-command)
 
 ;; force myself to stop using M-x
-(defun stop-m-x ()
-  "Echo out message to echo area"
-  (interactive)
-  (message "Use C-x C-m!"))
-
-(global-set-key (kbd "M-x") 'stop-m-x)
+(global-set-key
+ (kbd "M-x")
+ (lambda ()
+   (interactive)
+   (message "Use C-x C-m!")))
 
 ;; anti-n00b mode
 (defun toggle-noob-mode ()
