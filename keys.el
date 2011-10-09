@@ -39,7 +39,6 @@
 (defun stop-m-x ()
   "Echo out message to echo area"
   (interactive)
-  (message "Use C-x C-m!")
-  )
+  (message "Use C-x C-m!"))
 
 (global-set-key (kbd "M-x") 'stop-m-x)
