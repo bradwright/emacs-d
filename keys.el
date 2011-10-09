@@ -73,12 +73,13 @@
          (kbd "<right>")
          (lambda ()
            (interactive)
-           (message "Arrow key navigation is disabled. Use C-f instead."))))
+           (message "Arrow key navigation is disabled. Use C-f instead.")))
+        (message "Arrow keys now disabled"))
     (progn
       (global-set-key (kbd "<up>") 'previous-line)
       (global-set-key (kbd "<down>") 'next-line)
       (global-set-key (kbd "<left>") 'backward-char)
-      (global-set-key (kbd "<right>") 'forward-char)))
-  (message "Noob mode toggled"))
+      (global-set-key (kbd "<right>") 'forward-char)
+      (message "Arrow keys now work"))))
 
 (toggle-noob-mode)
