@@ -53,7 +53,7 @@
 
 ;; 'Evil' Vi emulation mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/evil"))
-(require 'evil)
+;; (require 'evil)
 ;; (evil-mode 1)
 
 ;; mustache templating
