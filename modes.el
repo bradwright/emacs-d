@@ -31,6 +31,7 @@
             (turn-on-auto-fill)))
 
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
+(add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
 
 ;; textmate mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/textmate-mode"))
