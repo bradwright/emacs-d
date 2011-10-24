@@ -30,8 +30,14 @@
             (setq fill-column 72)
             (turn-on-auto-fill)))
 
+;; TODO: make all these modes a list and operate on those
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
 (add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
+
+;; turn off hl-line-mode for compilation mode
+(add-hook 'compilation-mode-hook 'local-hl-line-mode-off)
+;; turn off hl-line-mode for shells
+(add-hook 'term-mode-hook 'local-hl-line-mode-off)
 
 ;; textmate mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/textmate-mode"))
