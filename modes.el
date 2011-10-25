@@ -71,6 +71,7 @@
 (load "haskell-site-file.el")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)
 
 ;; JS2 mode, not espresso
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
