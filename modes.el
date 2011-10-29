@@ -123,3 +123,15 @@
 (eval-after-load "rng-loc"
   '(add-to-list 'rng-schema-locating-files (concat vendor-dotfiles-dir "/schemas.xml")))
 (require 'whattf-dt)
+
+;; try Erlang mode
+;; TODO: make this try and dynamically detect which/where Erlang
+(setq
+ erlang-base-dir
+ "/usr/local/Cellar/erlang/R14B04")
+(when (file-exists-p erlang-base-dir)
+  (add-to-list 'load-path (concat erlang-base-dir "/lib/erlang/lib/tools-2.6.6.5/emacs"))
+  (setq erlang-root-dir erlang-base-dir)
+  (add-to-list 'exec-path (concat erlang-base-dir "/bin"))
+  (require 'erlang-start))
+

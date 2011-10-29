@@ -6,13 +6,6 @@
 ;; Edit path crap
 (push "/Users/bradleyw/bin" exec-path)
 
-;; None of this works anyway, as I don't have Erlang at home any more
-(when (file-exists-p "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/lib/tools-2.6.6.3/emacs")
-  (add-to-list 'load-path "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/lib/tools-2.6.6.3/emacs")
-  (setq erlang-root-dir "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang")
-  (setq exec-path (cons "/Users/bradleyw/Projects/homebrew/Cellar/erlang/R14B02/lib/erlang/bin" exec-path))
-  (require 'erlang-start))
-
 ;; update PATH, because Darwin Emacs doesn't get PATH from bash
 (set-exec-path-from-shell-PATH)
 
