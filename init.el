@@ -122,9 +122,6 @@
 ;; My keyboard shortcuts
 (load "keys")
 
-;; Major/minor modes
-(load "modes")
-
 ;; start a server
 (load "server")
 (unless (server-running-p) (server-start))
@@ -147,6 +144,10 @@
   (load "darwin-cli"))
 (when (and (eq system-type 'darwin) (window-system))
   (load "darwin-gui"))
+
+;; we load modes last, because things above might have changed how we load them
+;; Major/minor modes
+(load "modes")
 
 ;; Load custom file last
 (if (file-exists-p (concat dotfiles-dir "custom.el"))
