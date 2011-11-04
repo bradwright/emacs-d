@@ -133,5 +133,6 @@
   (add-to-list 'load-path (concat erlang-base-dir "/lib/erlang/lib/tools-2.6.6.5/emacs"))
   (setq erlang-root-dir erlang-base-dir)
   (add-to-list 'exec-path (concat erlang-base-dir "/bin"))
+  (setq erlang-man-root-dir (concat erlang-base-dir "/share/man"))
   (require 'erlang-start))
 
