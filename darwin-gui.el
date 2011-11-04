@@ -50,8 +50,5 @@ If N is non-nil switch to the nth next window."
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
 
-;;; Use default Mac OS X browser
-(setq browse-url-browser-function 'browse-url-default-macosx-browser)
-
-;; move to trash when deleting files
-(setq delete-by-moving-to-trash t)
+;; run solarized on Macs
+(color-theme-solarized-dark)

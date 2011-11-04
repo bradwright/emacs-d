@@ -9,6 +9,12 @@
 ;; update PATH, because Darwin Emacs doesn't get PATH from bash
 (set-exec-path-from-shell-PATH)
 
+;;; Use default Mac OS X browser
+(setq browse-url-browser-function 'browse-url-default-macosx-browser)
+
+;; move to trash when deleting files
+(setq delete-by-moving-to-trash t)
+
 ;; Even though we may have set the Mac OS X Terminal's Alt key as the emacs Meta key ...
 ;; ... we want to be able to insert a '#' using Alt-3 in emacs as we would in other programs
 (fset 'insertPound "#")
