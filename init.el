@@ -11,6 +11,12 @@
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 
+;; vendor files
+(setq
+ vendor-dotfiles-dir
+ (concat dotfiles-dir "/vendor"))
+(add-to-list 'load-path vendor-dotfiles-dir)
+
 ;; load on startup
 (require 'cl)
 (require 'saveplace)
@@ -135,6 +141,10 @@
 (add-to-list 'tramp-default-proxies-alist
              '((regexp-quote (system-name)) nil nil))
 
+;; we load modes last, because things above might have changed how we load them
+;; Major/minor modes
+(load "modes")
+
 ;; Platform specific stuff
 (when window-system
   (load "gui"))
@@ -144,10 +154,6 @@
   (load "darwin-cli"))
 (when (and (eq system-type 'darwin) (window-system))
   (load "darwin-gui"))
-
-;; we load modes last, because things above might have changed how we load them
-;; Major/minor modes
-(load "modes")
 
 ;; Load custom file last
 (if (file-exists-p (concat dotfiles-dir "custom.el"))

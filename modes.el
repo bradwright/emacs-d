@@ -9,12 +9,6 @@
  ido-use-filename-at-point nil
  ido-max-prospects 10)
 
-;; vendor files
-(setq
- vendor-dotfiles-dir
- (concat dotfiles-dir "/vendor"))
-(add-to-list 'load-path vendor-dotfiles-dir)
-
 ;; magit is awesome, always load
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/magit"))
 (require 'magit)
