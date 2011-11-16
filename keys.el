@@ -24,7 +24,7 @@
 
 ;; External applications
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x t") 'ansi-term)
+(global-set-key (kbd "C-x t") 'bw-start-term)
 
 ;; Window movement
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one

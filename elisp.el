@@ -29,6 +29,11 @@ by using nxml's indentation rules."
       (indent-region begin end))
     (message "Ah, much better!"))
 
+(defun bw-start-term (buffer-name)
+  "Start a terminal and rename buffer."
+  (interactive "sbuffer name: ")
+  (ansi-term "/bin/bash")
+  (rename-buffer (concatenate 'string "*term: " buffer-name "*") t))
 
 
 
