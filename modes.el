@@ -128,7 +128,11 @@
   (setq erlang-root-dir erlang-base-dir)
   (add-to-list 'exec-path (concat erlang-base-dir "/bin"))
   (setq erlang-man-root-dir (concat erlang-base-dir "/share/man"))
-  (require 'erlang-start))
+  (require 'erlang-start)
+  ;; distel
+  (add-to-list 'load-path (concat vendor-dotfiles-dir "/distel/elisp"))
+  (require 'distel)
+  (distel-setup))
 
 ;; ansi-term stuff
 ;; force ansi-term to be utf-8 after it launches
