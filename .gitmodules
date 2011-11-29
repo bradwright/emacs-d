@@ -52,3 +52,6 @@
 [submodule "vendor/emacs-growl"]
 	path = vendor/emacs-growl
 	url = https://github.com/elim/emacs-growl.git
+[submodule "vendor/distel"]
+	path = vendor/distel
+	url = https://github.com/massemanet/distel.git
