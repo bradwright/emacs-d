@@ -86,3 +86,10 @@
       (message "Arrow keys now work"))))
 
 (toggle-noob-mode)
+
+;; prompt before killing emacs
+(global-set-key (kbd "C-x C-c")
+  (function
+   (lambda () (interactive)
+     (cond ((y-or-n-p "Quit? ")
+       (save-buffers-kill-emacs))))))
