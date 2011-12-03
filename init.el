@@ -17,6 +17,11 @@
  (concat dotfiles-dir "/vendor"))
 (add-to-list 'load-path vendor-dotfiles-dir)
 
+;; tmp directory for storing stupid crap
+(setq
+ tmp-local-dir
+ (concat dotfiles-dir "/.tmp"))
+
 ;; load on startup
 (require 'cl)
 (require 'saveplace)
@@ -73,8 +78,8 @@
 ;; Keep backups in same dir
 (setq
  backup-by-copying t  ; Don't clobber symlinks
- backup-directory-alist `((".*" . ,(concat dotfiles-dir "backups")))
- auto-save-file-name-transforms `((".*" ,(concat dotfiles-dir "autosaves") t))
+ backup-directory-alist `((".*" . ,(concat tmp-local-dir "/backups")))
+ auto-save-file-name-transforms `((".*" ,(concat tmp-local-dir "/autosaves") t))
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2

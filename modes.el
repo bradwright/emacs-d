@@ -109,7 +109,7 @@
 (require 'rst)
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
 
-;; Random missing file tyoes
+;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
 
 ;; Try HTML5 mode
@@ -142,3 +142,10 @@
 
 ;; since I use Magit, disable vc-mode for Git
 (delete 'Git vc-handled-backends)
+
+;; Saveplace
+;;   - places cursor in the last place you edited file
+(require 'saveplace)
+(setq-default save-place t)
+;; Keep places in the load path
+(setq save-place-file (concat tmp-local-dir "/emacs-places"))
