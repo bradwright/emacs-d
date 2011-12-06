@@ -127,6 +127,9 @@
 ;; Show column-number in the mode line
 (column-number-mode 1)
 
+;; going past the bottom of the bugger adds a new line
+(setq next-line-add-newlines t)
+
 ;; My functions
 (load "elisp")
 
