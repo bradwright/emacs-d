@@ -108,6 +108,10 @@
 ;; Restructured text
 (require 'rst)
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
+(add-hook 'rst-mode-hook
+          (lambda ()
+            (setq fill-column 72)
+            (turn-on-auto-fill)))
 
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
