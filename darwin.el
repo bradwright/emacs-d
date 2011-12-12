@@ -23,3 +23,6 @@
 ;; load growl.el
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/emacs-growl"))
 (require 'growl)
+
+;; ispell isn't available on OS X, but aspell is via Homebrew
+(setq-default ispell-program-name "aspell")
