@@ -157,3 +157,11 @@
 ;; python-mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/python-mode"))
 (require 'python-mode)
+
+;; yasnippet
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/yasnippet"))
+(require 'yasnippet)
+
+(setq yas/root-directory "~/Dropbox/.emacs/yasnippets")
+(yas/load-directory yas/root-directory)
+(yas/initialize)
