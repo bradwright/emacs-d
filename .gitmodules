@@ -55,3 +55,6 @@
 [submodule "vendor/distel"]
 	path = vendor/distel
 	url = https://github.com/massemanet/distel.git
+[submodule "vendor/python-mode"]
+	path = vendor/python-mode
+	url = https://github.com/emacsmirror/python-mode.git
