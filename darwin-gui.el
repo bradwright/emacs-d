@@ -6,15 +6,6 @@
 (setq ns-alternate-modifier 'none)
 (setq ns-command-modifier 'meta)
 (setq ns-function-modifier 'super)
-;; Make Emacs behave like a Mac app
-;; Gotten from: http://github.com/samsonjs/config/blob/master/emacs
-(global-set-key "\M-o" 'find-file)
-(global-set-key "\M-s" 'save-buffer)
-(global-set-key "\M-z" 'undo)
-(global-set-key [(meta down)] 'end-of-buffer)
-(global-set-key [(meta up)] 'beginning-of-buffer)
-(global-set-key [(meta right)] 'end-of-line)
-(global-set-key [(meta left)] 'beginning-of-line)
 ;; can't seem to un-hijack cmd-`, so make it do something useful
 (global-set-key "\M-`" 'other-window-in-any-frame)
 ;; Set cmd-H to hide Emacs and cmd-shift-h to hide others, as usual in Mac OS
