@@ -36,6 +36,9 @@
 ;; stupid GNUs
 (global-set-key (kbd "C-x m") 'execute-extended-command)
 
+;; on Mac this is Cmd+t, I don't use transpose words anyway
+(global-set-key (kbd "M-t") 'textmate-goto-file)
+
 ;; force myself to stop using M-x
 (global-set-key
  (kbd "M-x")
