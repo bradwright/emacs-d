@@ -29,7 +29,6 @@
 (require 'ansi-color)
 (require 'recentf)
 (require 'whitespace)
-(require 'tramp)
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
@@ -139,15 +138,6 @@
 ;; start a server
 (load "server")
 (unless (server-running-p) (server-start))
-
-;; Tramp mode: allow me to SSH to hosts and edit as sudo like:
-;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
-;; from: http://www.gnu.org/software/tramp/#Multi_002dhops
-(setq tramp-default-method "ssh")
-(add-to-list 'tramp-default-proxies-alist
-             '(nil "\\`root\\'" "/ssh:%h:"))
-(add-to-list 'tramp-default-proxies-alist
-             '((regexp-quote (system-name)) nil nil))
 
 ;; we load modes last, because things above might have changed how we load them
 ;; Major/minor modes
