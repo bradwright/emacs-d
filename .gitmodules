@@ -34,9 +34,6 @@
 [submodule "vendor/themes/zenburn"]
 	path = vendor/themes/zenburn
 	url = git://github.com/bbatsov/zenburn-emacs.git
-[submodule "vendor/themes/twilight"]
-	path = vendor/themes/twilight
-	url = git://github.com/crafterm/twilight-emacs.git
 [submodule "vendor/markdown-mode"]
 	path = vendor/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
