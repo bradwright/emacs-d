@@ -1,6 +1,3 @@
-[submodule "vendor/nxhtml"]
-	path = vendor/nxhtml
-	url = git://github.com/emacsmirror/nxhtml.git
 [submodule "src/magit"]
 	path = src/magit
 	url = git://github.com/philjackson/magit.git
@@ -34,9 +31,6 @@
 [submodule "vendor/undo-tree"]
 	path = vendor/undo-tree
 	url = git://github.com/emacsmirror/undo-tree.git
-[submodule "vendor/html5-mode"]
-	path = vendor/html5-mode
-	url = git://github.com/hober/html5-el.git
 [submodule "vendor/less-css-mode"]
 	path = vendor/less-css-mode
 	url = git://github.com/purcell/less-css-mode.git

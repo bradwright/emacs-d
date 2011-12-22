@@ -99,9 +99,6 @@
 
 (add-hook 'html-mode-hook 'my-html-mode-hook)
 
-;; nXhtml - which I don't use
-;;(load "nxhtml/autostart.el")
-
 (autoload 'yaml-mode "yaml" nil t)
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
@@ -115,12 +112,6 @@
 
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
-
-;; Try HTML5 mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/html5-mode"))
-(eval-after-load "rng-loc"
-  '(add-to-list 'rng-schema-locating-files (concat vendor-dotfiles-dir "/schemas.xml")))
-(require 'whattf-dt)
 
 ;; try Erlang mode
 ;; TODO: make this try and dynamically detect which/where Erlang
