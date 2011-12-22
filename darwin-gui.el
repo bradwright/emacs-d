@@ -41,5 +41,5 @@ If N is non-nil switch to the nth next window."
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
 
-;; run solarized on Macs
-(color-theme-solarized-dark)
+;; Use Solarized-dark on OS X
+(load-theme 'solarized-dark)

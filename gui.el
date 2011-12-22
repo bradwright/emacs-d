@@ -1,7 +1,5 @@
 ;; Color themes and graphical embellishment
 
-(require 'color-theme)
-
 ;; Theme files
 (setq
  theme-dotfiles-dir
@@ -9,16 +7,9 @@
 (add-to-list 'load-path theme-dotfiles-dir)
 
 ;; make sure all themes are loaded
-(add-to-list 'load-path (concat theme-dotfiles-dir "/twilight"))
-(add-to-list 'load-path (concat theme-dotfiles-dir "/color-theme-solarized"))
-(add-to-list 'load-path (concat theme-dotfiles-dir "/zenburn"))
-(load-file (concat theme-dotfiles-dir "/blackboard.el"))
-(require 'color-theme-twilight)
-(require 'color-theme-solarized)
-(require 'color-theme-zenburn)
-
-;; use color theme
-(color-theme-twilight)
+(add-to-list 'load-path (concat theme-dotfiles-dir "/solarized"))
+(add-to-list 'custom-theme-load-path (concat theme-dotfiles-dir "/solarized"))
+(add-to-list 'custom-theme-load-path (concat theme-dotfiles-dir "/zenburn"))
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 (tooltip-mode -1)
