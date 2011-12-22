@@ -52,3 +52,6 @@
 [submodule "vendor/yasnippet"]
 	path = vendor/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "vendor/themes/solarized"]
+	path = vendor/themes/solarized
+	url = https://github.com/bbatsov/solarized-emacs.git
