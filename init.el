@@ -149,7 +149,5 @@
     (load "darwin-gui")))
 
 ;; Load custom file last
-(if (file-exists-p (concat dotfiles-dir "custom.el"))
-    (progn
-      (setq custom-file (concat dotfiles-dir "custom.el"))
-      (load-file custom-file)))
+(setq custom-file (concat dotfiles-dir "custom.el"))
+(load custom-file 'noerror)
