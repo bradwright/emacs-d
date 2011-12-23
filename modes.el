@@ -14,6 +14,10 @@
 (require 'magit)
 
 ;; Show colours in magit
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green")
+     (set-face-foreground 'magit-diff-del "red")))
 ;; force wrap commit messages
 (add-hook 'magit-log-edit-mode-hook
           (lambda ()
