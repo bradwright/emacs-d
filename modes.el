@@ -105,6 +105,8 @@
           (lambda ()
             (setq fill-column 72)
             (turn-on-auto-fill)))
+(set-face-background 'rst-level-1-face nil)
+(set-face-background 'rst-level-2-face nil)
 
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
