@@ -41,12 +41,6 @@
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 
-;; hook to turn off hl-line-mode
-(defun local-hl-line-mode-off ()
-  (interactive)
-  (make-local-variable 'global-hl-line-mode)
-  (setq global-hl-line-mode nil))
-
 ;; Save a list of recent files visited.
 ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
 (setq recentf-auto-cleanup 'never)
@@ -83,7 +77,6 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)   ; Use versioned backups
-
 
 ;; Whitespace mode from:
 ;; http://ruslanspivak.com/2010/09/27/keep-track-of-whitespaces-and-column-80-overflow/
@@ -143,15 +136,17 @@
 ;; Major/minor modes
 (load "modes")
 
-;; Platform specific stuff
+;; load generic GUI configuration
 (when window-system
   (load "gui"))
+
+;; OSX specific code
 (when (eq system-type 'darwin)
-  (load "darwin"))
-(when (and (eq system-type 'darwin) (not window-system))
-  (load "darwin-cli"))
-(when (and (eq system-type 'darwin) (window-system))
-  (load "darwin-gui"))
+  (load "darwin")
+  (when (not window-system)
+    (load "darwin-cli"))
+  (when (window-system)
+    (load "darwin-gui")))
 
 ;; Load custom file last
 (if (file-exists-p (concat dotfiles-dir "custom.el"))

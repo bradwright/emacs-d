@@ -35,5 +35,8 @@ by using nxml's indentation rules."
   (ansi-term "/bin/bash")
   (rename-buffer (concatenate 'string "*term: " buffer-name "*") t))
 
-
-
+;; hook to turn off hl-line-mode
+(defun local-hl-line-mode-off ()
+  (interactive)
+  (make-local-variable 'global-hl-line-mode)
+  (setq global-hl-line-mode nil))
