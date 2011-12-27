@@ -158,3 +158,7 @@
              '(nil "\\`root\\'" "/ssh:%h:"))
 (add-to-list 'tramp-default-proxies-alist
              '((regexp-quote (system-name)) nil nil))
+
+
+;; Clojure mode, installed via Elpa
+(add-hook 'clojure-mode-hook 'turn-on-paredit)

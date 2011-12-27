@@ -40,3 +40,7 @@ by using nxml's indentation rules."
   (interactive)
   (make-local-variable 'global-hl-line-mode)
   (setq global-hl-line-mode nil))
+
+;; turns on paredit selectively
+(defun turn-on-paredit ()
+  (paredit-mode 1))

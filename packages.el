@@ -20,7 +20,9 @@
 
 (defvar packages-to-install
   '(clojure-mode
-    haskell-mode))
+    clojure-test-mode
+    haskell-mode
+    paredit))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
