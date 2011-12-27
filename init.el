@@ -132,6 +132,9 @@
 (load "server")
 (unless (server-running-p) (server-start))
 
+;; packages
+(load "packages")
+
 ;; we load modes last, because things above might have changed how we load them
 ;; Major/minor modes
 (load "modes")
