@@ -1,12 +1,12 @@
 [submodule "src/magit"]
 	path = src/magit
-	url = git://github.com/philjackson/magit.git
+	url = https://github.com/philjackson/magit.git
 [submodule "vendor/textmate-mode"]
 	path = vendor/textmate-mode
-	url = git://github.com/defunkt/textmate.el.git
+	url = https://github.com/defunkt/textmate.el.git
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
-	url = git://github.com/mooz/js2-mode.git
+	url = https://github.com/mooz/js2-mode.git
 [submodule "vendor/php-mode"]
 	path = vendor/php-mode
 	url = https://github.com/emacsmirror/php-mode.git
@@ -15,22 +15,22 @@
 	url = https://github.com/magit/magit.git
 [submodule "vendor/haskell-mode"]
 	path = vendor/haskell-mode
-	url = git://github.com/emacsmirror/haskell-mode.git
+	url = https://github.com/emacsmirror/haskell-mode.git
 [submodule "vendor/mustache-mode"]
 	path = vendor/mustache-mode
-	url = git://github.com/mustache/emacs.git
+	url = https://github.com/mustache/emacs.git
 [submodule "vendor/json-mode"]
 	path = vendor/json-mode
-	url = git://github.com/joshwnj/json-mode.git
+	url = https://github.com/joshwnj/json-mode.git
 [submodule "vendor/less-css-mode"]
 	path = vendor/less-css-mode
-	url = git://github.com/purcell/less-css-mode.git
+	url = https://github.com/purcell/less-css-mode.git
 [submodule "vendor/themes/zenburn"]
 	path = vendor/themes/zenburn
-	url = git://github.com/bbatsov/zenburn-emacs.git
+	url = https://github.com/bbatsov/zenburn-emacs.git
 [submodule "vendor/markdown-mode"]
 	path = vendor/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
+	url = https://jblevins.org/git/markdown-mode.git
 [submodule "vendor/emacs-growl"]
 	path = vendor/emacs-growl
 	url = https://github.com/elim/emacs-growl.git
