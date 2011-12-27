@@ -2,6 +2,10 @@
 ;;
 ;; Intended to be robust and usable across platforms
 
+;; add my custom hook
+(defvar bw-after-custom-load-hook nil
+  "Hook called after the custom file is loaded")
+
 ;; Load external files
 (setq
  dotfiles-dir
@@ -154,3 +158,6 @@
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
 (load custom-file 'noerror)
+
+;; load my custom hooks
+(run-hooks 'bw-after-custom-load-hook)

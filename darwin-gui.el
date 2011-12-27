@@ -41,5 +41,9 @@ If N is non-nil switch to the nth next window."
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
 
+
 ;; Use Solarized-dark on OS X
-(load-theme 'solarized-dark)
+;; but load it after custom has loaded, so it's marked safe
+(add-hook 'bw-after-custom-load-hook
+          (lambda ()
+            (load-theme 'solarized-dark)))
