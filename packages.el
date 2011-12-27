@@ -29,7 +29,9 @@
     php-mode
     mustache-mode
     magit
-    js2-mode))
+    js2-mode
+    yasnippet
+    python-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
