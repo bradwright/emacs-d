@@ -1,9 +1,6 @@
 [submodule "src/magit"]
 	path = src/magit
 	url = https://github.com/philjackson/magit.git
-[submodule "vendor/textmate-mode"]
-	path = vendor/textmate-mode
-	url = https://github.com/defunkt/textmate.el.git
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = https://github.com/mooz/js2-mode.git

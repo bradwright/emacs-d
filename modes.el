@@ -33,9 +33,6 @@
 ;; turn off hl-line-mode for shells
 (add-hook 'term-mode-hook 'local-hl-line-mode-off)
 
-;; textmate mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/textmate-mode"))
-(require 'textmate)
 ;; Textmate mode is on for everything
 (textmate-mode)
 

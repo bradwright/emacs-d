@@ -22,6 +22,7 @@
   '(clojure-mode
     clojure-test-mode
     haskell-mode
+    textmate
     paredit))
 
 ;; install everything in that list
