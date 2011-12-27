@@ -23,7 +23,8 @@
     clojure-test-mode
     haskell-mode
     textmate
-    paredit))
+    paredit
+    yaml-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
