@@ -1,6 +1,3 @@
-[submodule "vendor/js2-mode"]
-	path = vendor/js2-mode
-	url = https://github.com/mooz/js2-mode.git
 [submodule "vendor/json-mode"]
 	path = vendor/json-mode
 	url = https://github.com/joshwnj/json-mode.git

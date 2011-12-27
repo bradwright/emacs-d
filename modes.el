@@ -38,8 +38,6 @@
 (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)
 
 ;; JS2 mode, not espresso
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
-(require 'js2-mode)
 (setq
  js2-highlight-level 3
  js2-basic-offset 4

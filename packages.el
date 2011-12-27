@@ -28,7 +28,8 @@
     less-css-mode
     php-mode
     mustache-mode
-    magit))
+    magit
+    js2-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
