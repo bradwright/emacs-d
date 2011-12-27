@@ -51,8 +51,7 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/mustache-mode"))
 (require 'mustache-mode)
 
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/haskell-mode"))
-(load "haskell-site-file.el")
+;; haskell mode, loaded via Elpa
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)

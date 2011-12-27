@@ -13,9 +13,6 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = https://github.com/magit/magit.git
-[submodule "vendor/haskell-mode"]
-	path = vendor/haskell-mode
-	url = https://github.com/emacsmirror/haskell-mode.git
 [submodule "vendor/mustache-mode"]
 	path = vendor/mustache-mode
 	url = https://github.com/mustache/emacs.git

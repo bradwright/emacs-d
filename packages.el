@@ -18,7 +18,9 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar packages-to-install '())
+(defvar packages-to-install
+  '(clojure-mode
+    haskell-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
