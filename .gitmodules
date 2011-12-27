@@ -1,24 +1,9 @@
-[submodule "src/magit"]
-	path = src/magit
-	url = https://github.com/philjackson/magit.git
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = https://github.com/mooz/js2-mode.git
-[submodule "vendor/php-mode"]
-	path = vendor/php-mode
-	url = https://github.com/emacsmirror/php-mode.git
-[submodule "vendor/magit"]
-	path = vendor/magit
-	url = https://github.com/magit/magit.git
-[submodule "vendor/mustache-mode"]
-	path = vendor/mustache-mode
-	url = https://github.com/mustache/emacs.git
 [submodule "vendor/json-mode"]
 	path = vendor/json-mode
 	url = https://github.com/joshwnj/json-mode.git
-[submodule "vendor/less-css-mode"]
-	path = vendor/less-css-mode
-	url = https://github.com/purcell/less-css-mode.git
 [submodule "vendor/themes/zenburn"]
 	path = vendor/themes/zenburn
 	url = https://github.com/bbatsov/zenburn-emacs.git

@@ -24,7 +24,11 @@
     haskell-mode
     textmate
     paredit
-    yaml-mode))
+    yaml-mode
+    less-css-mode
+    php-mode
+    mustache-mode
+    magit))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

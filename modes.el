@@ -10,10 +10,6 @@
  ido-max-prospects 10)
 
 ;; magit is awesome, always load
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/magit"))
-(require 'magit)
-
-;; Show colours in magit
 (eval-after-load 'magit
   '(progn
      (set-face-foreground 'magit-diff-add "green")
@@ -36,18 +32,6 @@
 ;; Textmate mode is on for everything
 (textmate-mode)
 
-;; PHP mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/php-mode"))
-(require 'php-mode)
-
-;; Less CSS mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/less-css-mode"))
-(require 'less-css-mode)
-
-;; mustache templating
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/mustache-mode"))
-(require 'mustache-mode)
-
 ;; haskell mode, loaded via Elpa
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
@@ -68,8 +52,6 @@
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 
 ;; JSON files
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/json-mode"))
-(require 'json-mode)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 (defun my-html-mode-hook ()
@@ -85,7 +67,7 @@
 
 (add-hook 'html-mode-hook 'my-html-mode-hook)
 
-(autoload 'yaml-mode "yaml" nil t)
+;; load yaml files correctly
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
 ;; Restructured text
@@ -157,7 +139,6 @@
              '(nil "\\`root\\'" "/ssh:%h:"))
 (add-to-list 'tramp-default-proxies-alist
              '((regexp-quote (system-name)) nil nil))
-
 
 ;; Clojure mode, installed via Elpa
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
