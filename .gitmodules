@@ -1,9 +1,6 @@
 [submodule "vendor/themes/zenburn"]
 	path = vendor/themes/zenburn
 	url = https://github.com/bbatsov/zenburn-emacs.git
-[submodule "vendor/markdown-mode"]
-	path = vendor/markdown-mode
-	url = https://jblevins.org/git/markdown-mode.git
 [submodule "vendor/emacs-growl"]
 	path = vendor/emacs-growl
 	url = https://github.com/elim/emacs-growl.git
