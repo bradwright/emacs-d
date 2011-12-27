@@ -1,6 +1,3 @@
-[submodule "vendor/json-mode"]
-	path = vendor/json-mode
-	url = https://github.com/joshwnj/json-mode.git
 [submodule "vendor/themes/zenburn"]
 	path = vendor/themes/zenburn
 	url = https://github.com/bbatsov/zenburn-emacs.git
