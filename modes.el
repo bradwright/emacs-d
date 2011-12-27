@@ -47,16 +47,6 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/less-css-mode"))
 (require 'less-css-mode)
 
-;; Undo tree
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/undo-tree"))
-;; we don't actually want undo-tree by default...
-;;(require 'undo-tree)
-
-;; 'Evil' Vi emulation mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/evil"))
-;; (require 'evil)
-;; (evil-mode 1)
-
 ;; mustache templating
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/mustache-mode"))
 (require 'mustache-mode)
