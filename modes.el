@@ -81,26 +81,6 @@
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
 
-;; try Erlang mode
-;; TODO: make this try and dynamically detect which/where Erlang
-(setq
- erlang-root-dir
- (car
-  (file-expand-wildcards "/usr/local/Cellar/erlang/R*")))
-(when (file-exists-p erlang-root-dir)
-  (add-to-list
-   'load-path
-   (car (file-expand-wildcards
-         (concat erlang-root-dir "/lib/erlang/lib/tools-*/emacs"))))
-  (add-to-list 'exec-path (concat erlang-root-dir "/bin"))
-  (setq erlang-man-root-dir (concat erlang-root-dir "/share/man"))
-  (require 'erlang-start)
-
-  ;; distel
-  (add-to-list 'load-path (concat vendor-dotfiles-dir "/distel/elisp"))
-  (require 'distel)
-  (distel-setup))
-
 ;; ansi-term stuff
 ;; force ansi-term to be utf-8 after it launches
 (defadvice ansi-term
@@ -137,3 +117,8 @@
 
 ;; Clojure mode, installed via Elpa
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
+
+;; load erlang
+(add-hook 'bw-after-custom-load-hook
+          (lambda ()
+            (load "modes/erlang-mode.el")))
