@@ -84,13 +84,16 @@
 ;; try Erlang mode
 ;; TODO: make this try and dynamically detect which/where Erlang
 (setq
- erlang-base-dir
- "/usr/local/Cellar/erlang/R14B04")
-(when (file-exists-p erlang-base-dir)
-  (add-to-list 'load-path (concat erlang-base-dir "/lib/erlang/lib/tools-2.6.6.5/emacs"))
-  (setq erlang-root-dir erlang-base-dir)
-  (add-to-list 'exec-path (concat erlang-base-dir "/bin"))
-  (setq erlang-man-root-dir (concat erlang-base-dir "/share/man"))
+ erlang-root-dir
+ (car
+  (file-expand-wildcards "/usr/local/Cellar/erlang/R*")))
+(when (file-exists-p erlang-root-dir)
+  (add-to-list
+   'load-path
+   (car (file-expand-wildcards
+         (concat erlang-root-dir "/lib/erlang/lib/tools-*/emacs"))))
+  (add-to-list 'exec-path (concat erlang-root-dir "/bin"))
+  (setq erlang-man-root-dir (concat erlang-root-dir "/share/man"))
   (require 'erlang-start)
 
   ;; distel
