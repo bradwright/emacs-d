@@ -27,3 +27,17 @@
   (add-to-list 'load-path (concat vendor-dotfiles-dir "/distel/elisp"))
   (require 'distel)
   (distel-setup))
+
+(setq auto-mode-alist
+  (append auto-mode-alist
+    '(("\\.rel$" . erlang-mode)
+      ("\\.app$" . erlang-mode)
+      ("\\.appSrc$" . erlang-mode)
+      ("\\.app.src$" . erlang-mode)
+      ("rebar.config" . erlang-mode)
+      ("sys.config" . erlang-mode)
+      ("app.config" . erlang-mode)
+      ("Emakefile" . erlang-mode)
+      ("\\.hrl$" . erlang-mode)
+      ("\\.erl$" . erlang-mode)
+      ("\\.yrl$" . erlang-mode))))
