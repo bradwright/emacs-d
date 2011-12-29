@@ -1,13 +1,5 @@
 ;; Load erlang mode
 
-;; TODO: make this try and dynamically detect which/where Erlang
-;; (message (file-truename
-;;           (concat
-;;            (file-name-directory
-;;             (file-truename
-;;              (executable-find "erl")))
-;;            "../../..")))
-
 ;; find the `erl` executable
 ;; we use file-truename as it's probably symlinked
 (setq erlang-bin
