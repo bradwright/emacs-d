@@ -31,7 +31,8 @@
     magit
     js2-mode
     yasnippet
-    python-mode))
+    python-mode
+    flymake-cursor))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

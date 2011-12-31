@@ -43,7 +43,7 @@
  js2-basic-offset 4
  js2-consistent-level-indent-inner-bracket-p t
  js2-pretty-multiline-decl-indentation-p t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; Jinja mode is a bit crap, really
 (require 'jinja)
@@ -118,7 +118,12 @@
 ;; Clojure mode, installed via Elpa
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
 
+;; load Flymake cursor
+(when (load "flymake" t)
+  (require 'flymake-cursor))
+
 ;; load erlang
 (add-hook 'bw-after-custom-load-hook
           (lambda ()
-            (load "modes/erlang-mode.el")))
+            (load "modes/erlang-mode.el")
+            (load "modes/js-mode.el")))
