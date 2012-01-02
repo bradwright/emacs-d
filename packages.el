@@ -32,7 +32,8 @@
     js2-mode
     yasnippet
     python-mode
-    flymake-cursor))
+    flymake-cursor
+    markdown-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

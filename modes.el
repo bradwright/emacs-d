@@ -127,3 +127,7 @@
           (lambda ()
             (load "modes/erlang-mode.el")
             (load "modes/js-mode.el")))
+
+;; markdown
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
