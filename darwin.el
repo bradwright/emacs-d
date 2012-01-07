@@ -3,9 +3,6 @@
 ;;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
-;; Edit path crap
-(push "/Users/bradleyw/bin" exec-path)
-
 ;; update PATH, because Darwin Emacs doesn't get PATH from bash
 (set-exec-path-from-shell-PATH)
 
