@@ -10,3 +10,6 @@
 [submodule "vendor/themes/solarized"]
 	path = vendor/themes/solarized
 	url = https://github.com/bbatsov/solarized-emacs.git
+[submodule "vendor/python-mode"]
+	path = vendor/python-mode
+	url = https://github.com/emacsmirror/python-mode.git

@@ -122,6 +122,10 @@
 (when (load "flymake" t)
   (require 'flymake-cursor))
 
+;; new python-mode IDE
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/python-mode"))
+(require 'python-mode)
+
 ;; load erlang
 (add-hook 'bw-after-custom-load-hook
           (lambda ()

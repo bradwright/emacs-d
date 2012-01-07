@@ -31,7 +31,6 @@
     magit
     js2-mode
     yasnippet
-    python-mode
     flymake-cursor
     markdown-mode))
 
