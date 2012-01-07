@@ -7,3 +7,5 @@ auto-save-list
 # Emacs 24 packages
 .elpa
 .tmp
+# swank-clojure
+swank/
