@@ -126,6 +126,10 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/python-mode"))
 (require 'python-mode)
 
+;; js2-mode in case I need it
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
+(require 'js2-mode)
+
 ;; load erlang
 (add-hook 'bw-after-custom-load-hook
           (lambda ()
