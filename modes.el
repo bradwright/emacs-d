@@ -117,6 +117,9 @@
 
 ;; Clojure mode, installed via Elpa
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (setq inferior-lisp-program "lein repl")))
 
 ;; load Flymake cursor
 (when (load "flymake" t)
