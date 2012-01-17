@@ -29,7 +29,6 @@
     php-mode
     mustache-mode
     magit
-    js2-mode
     yasnippet
     flymake-cursor
     markdown-mode))
