@@ -17,7 +17,9 @@
     (erc-track-switch-buffer 1) ;; yes: switch to last active
     (when (y-or-n-p "Start ERC? ") ;; no: maybe start ERC
       ;; I use ZNC so I need to hit my server
-      (erc :server "brewdog.bradleywright.net" :port 60667 :nick "intranation" (get-keychain-password "freenode-znc")))))
+      (erc :server "brewdog.bradleywright.net" :port 60667 :nick "intranation")
+      (erc :server "brewdog.bradleywright.net" :port 60667 :nick "brad")
+)))
 
 ;; switch to ERC with Ctrl+c e
 (global-set-key (kbd "C-c e") 'djcb-erc-start-or-switch) ;; ERC
