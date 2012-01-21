@@ -9,3 +9,5 @@ auto-save-list
 .tmp
 # swank-clojure
 swank/
+# generated cookies (?)
+url/
