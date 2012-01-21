@@ -46,3 +46,12 @@ by using nxml's indentation rules."
 (defun turn-on-paredit ()
   "Turn paredit-mode on locally"
   (paredit-mode 1))
+
+(defun get-keychain-password (account-name)
+  "Gets `account` keychain password from OS X Keychain"
+  (shell-command-to-string
+   (concatenate
+    'string
+    "security 2>&1 >/dev/null find-generic-password -ga "
+    account-name
+    "| sed 's/^password: \\\"\\(.*\\)\\\"/\\1/'")))
