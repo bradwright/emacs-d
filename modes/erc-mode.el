@@ -21,5 +21,21 @@
       (erc :server "brewdog.bradleywright.net" :port 60667 :nick "brad")
 )))
 
+(defun znc-send-passwords (proc parsed)
+  "Sends all passwords from the keychain to ZNC"
+  (if (string-match "brewdog.bradleywright.net" (buffer-name (erc-server-buffer)))
+      (erc-server-send (format "PASS %s:%s"
+                               (erc-current-nick)
+                               ;; get password from keychain
+                               (get-keychain-password
+                                ;; it's stored as "znc-NICKNAME"
+                                (concatenate
+                                 'string
+                                 "znc-"
+                                 (erc-current-nick))))))
+  nil)
+
+(add-hook 'erc-server-NOTICE-functions 'znc-send-passwords)
+
 ;; switch to ERC with Ctrl+c e
 (global-set-key (kbd "C-c e") 'djcb-erc-start-or-switch) ;; ERC
