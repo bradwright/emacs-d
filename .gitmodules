@@ -1,15 +1,9 @@
-[submodule "vendor/themes/zenburn"]
-	path = vendor/themes/zenburn
-	url = https://github.com/bbatsov/zenburn-emacs.git
 [submodule "vendor/emacs-growl"]
 	path = vendor/emacs-growl
 	url = https://github.com/elim/emacs-growl.git
 [submodule "vendor/distel"]
 	path = vendor/distel
 	url = https://github.com/massemanet/distel.git
-[submodule "vendor/themes/solarized"]
-	path = vendor/themes/solarized
-	url = https://github.com/bbatsov/solarized-emacs.git
 [submodule "vendor/python-mode"]
 	path = vendor/python-mode
 	url = https://github.com/emacsmirror/python-mode.git

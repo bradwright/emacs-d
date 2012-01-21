@@ -7,9 +7,7 @@
 (add-to-list 'load-path theme-dotfiles-dir)
 
 ;; make sure all themes are loaded
-(add-to-list 'load-path (concat theme-dotfiles-dir "/solarized"))
-(add-to-list 'custom-theme-load-path (concat theme-dotfiles-dir "/solarized"))
-(add-to-list 'custom-theme-load-path (concat theme-dotfiles-dir "/zenburn"))
+;; no themes right now
 
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 (tooltip-mode -1)

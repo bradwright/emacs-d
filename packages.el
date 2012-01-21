@@ -31,7 +31,9 @@
     magit
     yasnippet
     flymake-cursor
-    markdown-mode))
+    markdown-mode
+    solarized-theme
+    zenburn-theme))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
