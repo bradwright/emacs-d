@@ -47,11 +47,19 @@ by using nxml's indentation rules."
   "Turn paredit-mode on locally"
   (paredit-mode 1))
 
+(defun chomp (str)
+  "Chomp leading and tailing whitespace from STR."
+  (while (string-match "\\`\n+\\|^\\s-+\\|\\s-+$\\|\n+\\'"
+                       str)
+    (setq str (replace-match "" t t str)))
+  str)
+
 (defun get-keychain-password (account-name)
   "Gets `account` keychain password from OS X Keychain"
-  (shell-command-to-string
-   (concatenate
-    'string
-    "security 2>&1 >/dev/null find-generic-password -ga "
-    account-name
-    "| sed 's/^password: \\\"\\(.*\\)\\\"/\\1/'")))
+  (chomp
+   (shell-command-to-string
+    (concatenate
+     'string
+     "security 2>&1 >/dev/null find-generic-password -ga "
+     account-name
+     "| sed 's/^password: \\\"\\(.*\\)\\\"/\\1/'"))))
