@@ -66,6 +66,8 @@
 (add-hook 'html-mode-hook 'my-html-mode-hook)
 
 ;; load yaml files correctly
+;; yaml-mode doesn't auto-load for some reason
+(require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
 ;; Restructured text
