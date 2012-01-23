@@ -77,6 +77,7 @@
           (lambda ()
             (setq fill-column 72)
             (turn-on-auto-fill)))
+;; kill stupid heading faces
 (set-face-background 'rst-level-1-face nil)
 (set-face-background 'rst-level-2-face nil)
 
