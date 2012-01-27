@@ -39,6 +39,9 @@
 ;; on Mac this is Cmd+t, I don't use transpose words anyway
 (global-set-key (kbd "M-t") 'textmate-goto-file)
 
+;; flymake next error
+(global-set-key (kbd "C-x `") 'flymake-goto-next-error)
+
 ;; force myself to stop using M-x
 (global-set-key
  (kbd "M-x")
