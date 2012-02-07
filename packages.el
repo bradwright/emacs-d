@@ -33,7 +33,8 @@
     flymake-cursor
     markdown-mode
     solarized-theme
-    zenburn-theme))
+    zenburn-theme
+    coffee-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
