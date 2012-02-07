@@ -146,3 +146,6 @@
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+
+;; PHP
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
