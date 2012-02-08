@@ -53,6 +53,9 @@
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
 
+;; show lines after end of buffer
+(setq indicate-empty-lines t)
+
 ;; Hippie expand: at times perhaps too hip
 (delete
  'try-expand-line hippie-expand-try-functions-list)
