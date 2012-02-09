@@ -28,11 +28,7 @@
 
 ;; load on startup
 (require 'cl)
-(require 'saveplace)
-(require 'uniquify)
 (require 'ansi-color)
-(require 'recentf)
-(require 'whitespace)
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
@@ -47,6 +43,7 @@
 
 ;; Save a list of recent files visited.
 ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
+(require 'recentf)
 (setq recentf-auto-cleanup 'never)
 (recentf-mode 1)
 
@@ -85,6 +82,9 @@
  kept-old-versions 2
  version-control t)   ; Use versioned backups
 
+
+;; Whitespace mode
+(require 'whitespace)
 ;; Whitespace mode from:
 ;; http://ruslanspivak.com/2010/09/27/keep-track-of-whitespaces-and-column-80-overflow/
 
@@ -112,6 +112,7 @@
 (whitespace-mode t)
 
 ;; show path rather than <2>
+(require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
 ;; show keystrokes immediately
@@ -126,9 +127,6 @@
 ;; Show column-number in the mode line
 (column-number-mode 1)
 
-;; going past the bottom of the bugger adds a new line
-(setq next-line-add-newlines t)
-
 ;; My functions
 (load "elisp")
 
@@ -137,7 +135,8 @@
 
 ;; start a server
 (load "server")
-(unless (server-running-p) (server-start))
+(unless (server-running-p)
+  (server-start))
 
 ;; packages
 (load "packages")
