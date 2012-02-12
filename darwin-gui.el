@@ -46,4 +46,8 @@ If N is non-nil switch to the nth next window."
 ;; but load it after custom has loaded, so it's marked safe
 (add-hook 'bw-after-custom-load-hook
           (lambda ()
-            (load-theme 'solarized-dark)))
+            (load-theme 'solarized-dark)
+            ;; we can turn hl-line-mode on...
+            (global-hl-line-mode 1)
+            ;; ... because we clobber the region style
+            (set-face-attribute 'region nil :background "#d33682" :foreground "#fdf6e3")))
