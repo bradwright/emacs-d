@@ -28,7 +28,6 @@
 
 ;; load on startup
 (require 'cl)
-(require 'ansi-color)
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)

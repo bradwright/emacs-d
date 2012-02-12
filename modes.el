@@ -91,6 +91,10 @@
   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (ad-activate 'ansi-term)
 
+(when (require 'ansi-color nil t)
+  (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+  (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on))
+
 ;; since I use Magit, disable vc-mode for Git
 (delete 'Git vc-handled-backends)
 
