@@ -49,10 +49,8 @@ by using nxml's indentation rules."
 
 (defun chomp (str)
   "Chomp leading and tailing whitespace from STR."
-  (while (string-match "\\`\n+\\|^\\s-+\\|\\s-+$\\|\n+\\'"
-                       str)
-    (setq str (replace-match "" t t str)))
-  str)
+  (while (string-match "\\`\n+\\|^\\s-+\\|\\s-+$\\|\n+\\'" str)
+    (setq str (replace-match "" t t str))) str)
 
 (defun get-keychain-password (account-name)
   "Gets `account` keychain password from OS X Keychain"
