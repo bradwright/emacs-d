@@ -170,3 +170,6 @@
        (coffee-cos-mode t)))
 
 (add-hook 'coffee-mode-hook 'coffee-custom)
+
+;; emacs lisp
+(add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
