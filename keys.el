@@ -97,3 +97,6 @@
    (lambda () (interactive)
      (cond ((y-or-n-p "Quit? ")
        (save-buffers-kill-emacs))))))
+
+;; Org-mode
+(global-set-key (kbd "C-M-r") 'org-capture)
