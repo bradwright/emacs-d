@@ -10,3 +10,6 @@
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "vendor/themes/color-theme-solarized"]
+	path = vendor/themes/color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized.git

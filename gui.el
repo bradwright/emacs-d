@@ -3,8 +3,9 @@
 ;; Theme files
 (setq
  theme-dotfiles-dir
- (concat dotfiles-dir "/vendor/themes"))
+ (concat dotfiles-dir "vendor/themes"))
 (add-to-list 'load-path theme-dotfiles-dir)
+;;(add-to-list 'custom-theme-load-path (concat theme-dotfiles-dir "/color-theme-solarized/"))
 
 ;; make sure all themes are loaded
 ;; no themes right now
