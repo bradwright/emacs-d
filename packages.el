@@ -34,7 +34,8 @@
     markdown-mode
     solarized-theme
     zenburn-theme
-    coffee-mode))
+    coffee-mode
+    gist))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
