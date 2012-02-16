@@ -50,4 +50,5 @@ If N is non-nil switch to the nth next window."
             ;; we can turn hl-line-mode on...
             (global-hl-line-mode 1)
             ;; ... because we clobber the region style
-            (set-face-attribute 'region nil :background "#d33682" :foreground "#fdf6e3")))
+            ;(set-face-attribute 'region nil :background "#d33682" :foreground "#fdf6e3")
+))

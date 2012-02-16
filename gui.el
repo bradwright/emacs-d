@@ -5,7 +5,15 @@
  theme-dotfiles-dir
  (concat dotfiles-dir "vendor/themes"))
 (add-to-list 'load-path theme-dotfiles-dir)
-;;(add-to-list 'custom-theme-load-path (concat theme-dotfiles-dir "/color-theme-solarized/"))
+
+(let ((base theme-dotfiles-dir))
+  (add-to-list 'custom-theme-load-path base)
+  (dolist (f (directory-files base))
+    (let ((name (concat base "/" f)))
+      (when (and (file-directory-p name)
+                 (not (equal f ".."))
+                 (not (equal f ".")))
+        (add-to-list 'custom-theme-load-path name)))))
 
 ;; make sure all themes are loaded
 ;; no themes right now
