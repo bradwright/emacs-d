@@ -48,6 +48,7 @@
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
+(setq show-paren-style 'parenthesis)
 
 ;; show lines after end of buffer
 (setq indicate-empty-lines t)
