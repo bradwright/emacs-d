@@ -1,5 +1,8 @@
 ;; Color themes and graphical embellishment
 
+(defvar bw-after-frame-raise-hook nil
+  "Hook called after the custom file is loaded")
+
 ;; Theme files
 (setq
  theme-dotfiles-dir
@@ -24,6 +27,9 @@
 ;; show help in the echo area instead of as a tooltip
 (tooltip-mode -1)
 
+;; make fringe-mode 4 pixels
+(fringe-mode 4)
+
 ;; Don't blink the cursor
 (blink-cursor-mode -1)
 
@@ -32,3 +38,6 @@
 
 ;; if we do use line numbers, format them
 (setq linum-format " %d ")
+
+;; run my custom frame hook
+(add-hook 'after-make-frame-functions 'bw-after-frame-raise-hook)
