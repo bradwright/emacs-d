@@ -1,7 +1,7 @@
 ;; Color themes and graphical embellishment
 
 (defvar bw-after-frame-raise-hook nil
-  "Hook called after the custom file is loaded")
+  "Hook called after a frame is rasied. Functions receive a single arg, which is the frame that was raised.")
 
 ;; Theme files
 (setq
@@ -41,3 +41,5 @@
 
 ;; run my custom frame hook
 (add-hook 'after-make-frame-functions 'bw-after-frame-raise-hook)
+;; ... and run it now
+(run-hooks 'bw-after-frame-raise-hook)
