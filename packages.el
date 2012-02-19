@@ -32,7 +32,7 @@
     yasnippet
     flymake-cursor
     markdown-mode
-;    solarized-theme
+    solarized-theme
     zenburn-theme
     coffee-mode
     gist))
