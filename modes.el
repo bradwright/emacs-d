@@ -127,6 +127,12 @@
 (add-hook 'clojure-mode-hook
           (lambda ()
             (setq inferior-lisp-program "lein repl")))
+(add-hook 'slime-repl-mode-hook
+          (defun clojure-mode-slime-font-lock ()
+            (let (font-lock-mode)
+              (clojure-mode-font-lock-setup))))
+(add-hook 'slime-repl-mode-hook 'local-hl-line-mode-off)
+(add-hook 'slime-repl-mode-hook 'turn-on-paredit)
 
 ;; load Flymake cursor
 (when (load "flymake" t)
