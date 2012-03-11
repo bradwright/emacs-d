@@ -102,4 +102,4 @@
 (global-set-key (kbd "C-M-r") 'org-capture)
 
 ;; gist mode
-(global-set-key (kbd "C-x C-g") 'gist-region)
+(global-set-key (kbd "C-c g") 'gist-region)
