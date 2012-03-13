@@ -84,6 +84,9 @@
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
 
+;; Puppet manifests
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+
 ;; ansi-term stuff
 ;; force ansi-term to be utf-8 after it launches
 (defadvice ansi-term

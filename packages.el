@@ -35,7 +35,8 @@
     solarized-theme
     zenburn-theme
     coffee-mode
-    gist))
+    gist
+    puppet-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
