@@ -103,3 +103,8 @@
 
 ;; gist mode
 (global-set-key (kbd "C-c g") 'gist-region)
+
+;; anything mode
+(global-set-key (kbd "C-c a") 'anything)
+(global-set-key (kbd "C-c b") 'anything-for-buffers)
+(global-set-key (kbd "C-c f") 'anything-for-files)
