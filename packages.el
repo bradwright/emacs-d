@@ -32,7 +32,6 @@
     yasnippet
     flymake-cursor
     markdown-mode
-    solarized-theme
     zenburn-theme
     coffee-mode
     gist
