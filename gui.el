@@ -11,6 +11,7 @@
 ;; load all custom themes
 (defun load-custom-themes ()
   "Adds custom themes directory to themefiles"
+  (interactive)
   (let ((base theme-dotfiles-dir))
     (add-to-list 'custom-theme-load-path base)
     (dolist (f (directory-files base))
