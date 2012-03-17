@@ -36,10 +36,7 @@
     zenburn-theme
     coffee-mode
     gist
-    puppet-mode
-    anything
-    anything-config
-    anything-match-plugin))
+    puppet-mode))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

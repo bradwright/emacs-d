@@ -145,6 +145,10 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/python-mode"))
 (require 'python-mode)
 
+;; Helm instead of anything
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/helm"))
+(require 'helm-config)
+
 ;; js2-mode in case I need it
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
 (require 'js2-mode)
