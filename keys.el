@@ -105,6 +105,6 @@
 (global-set-key (kbd "C-c g") 'gist-region)
 
 ;; anything mode
-(global-set-key (kbd "C-c a") 'anything)
-(global-set-key (kbd "C-c b") 'anything-for-buffers)
-(global-set-key (kbd "C-c f") 'anything-for-files)
+(global-set-key (kbd "C-c a") 'helm)
+(global-set-key (kbd "C-c b") 'helm-for-buffers)
+(global-set-key (kbd "C-c f") 'helm-for-files)
