@@ -40,15 +40,3 @@ If N is non-nil switch to the nth next window."
 
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
-
-;; Use Solarized-dark on OS X
-;; but load it after custom has loaded, so it's marked safe
-(add-hook 'bw-after-custom-load-hook
-          (lambda ()
-            (load-custom-themes)
-            (load-theme 'solarized-dark nil)
-            ;; we can turn hl-line-mode on...
-            (global-hl-line-mode 1)
-            ;; ... because we clobber the region style
-            (set-face-attribute 'region nil :background "#d33682" :foreground "#fdf6e3")
-))
