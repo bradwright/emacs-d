@@ -27,8 +27,6 @@
 ;; Window movement
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
-(global-set-key [C-tab] 'other-window)
-(global-set-key [C-S-tab] (lambda () (interactive) (other-window -1)))
 
 ;; map M-x to C-x C-m and C-c C-m
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
