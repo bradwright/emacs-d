@@ -20,7 +20,7 @@
 ;; but load it after custom has loaded, so it's marked safe
 (if (or
      (window-system)
-     (string-match (getenv "ITERM_PROFILE") "Emacs"))
+     (search "Solarized" (getenv "ITERM_PROFILE")))
     (add-hook 'bw-after-custom-load-hook
               (lambda ()
                 (load-custom-themes)
