@@ -146,8 +146,7 @@
 (load "modes")
 
 ;; load generic GUI configuration
-(when window-system
-  (load "gui"))
+(load "gui")
 
 ;; OSX specific code
 (when (eq system-type 'darwin)
