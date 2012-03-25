@@ -105,5 +105,5 @@
 
 ;; anything mode
 (global-set-key (kbd "C-c a") 'helm)
-(global-set-key (kbd "C-c b") 'helm-for-buffers)
+(global-set-key (kbd "C-c b") 'helm-buffers-list)
 (global-set-key (kbd "C-c f") 'helm-for-files)
