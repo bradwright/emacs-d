@@ -3,9 +3,10 @@
 ;; set my favourite Mac font as the default font
 (set-face-font 'default "-apple-inconsolata-medium-r-normal--15-150-72-72-m-150-iso10646-1")
 ;; Free up the option key for special characters
-(setq ns-alternate-modifier 'none)
-(setq ns-command-modifier 'meta)
-(setq ns-function-modifier 'super)
+(setq ns-alternate-modifier 'meta)
+(setq ns-right-alternate-modifier nil)
+(setq ns-command-modifier 'super)
+(setq ns-function-modifier 'nil)
 ;; can't seem to un-hijack cmd-`, so make it do something useful
 (global-set-key "\M-`" 'other-window-in-any-frame)
 ;; Set cmd-H to hide Emacs and cmd-shift-h to hide others, as usual in Mac OS
