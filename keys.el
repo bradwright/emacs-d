@@ -39,7 +39,8 @@
 (global-set-key (kbd "M-t") 'textmate-goto-file)
 
 ;; flymake next error
-(global-set-key (kbd "C-x `") 'flymake-goto-next-error)
+(global-set-key (kbd "C-c n") 'flymake-goto-next-error)
+(global-set-key (kbd "C-c p") 'flymake-goto-prev-error)
 
 ;; force myself to stop using M-x
 (global-set-key
