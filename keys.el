@@ -108,3 +108,4 @@
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-c b") 'helm-buffers-list)
 (global-set-key (kbd "C-c f") 'helm-for-files)
+(global-set-key (kbd "C-c o") 'helm-occur)
