@@ -138,7 +138,9 @@
   (require 'flymake-cursor))
 
 ;; new python-mode IDE
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/python-mode"))
+(setq python-mode-path (concat vendor-dotfiles-dir "/python-mode"))
+(add-to-list 'load-path python-mode-path)
+(setq py-install-directory python-mode-path)
 (require 'python-mode)
 
 ;; Helm instead of anything
