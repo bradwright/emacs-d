@@ -109,3 +109,6 @@
 (global-set-key (kbd "C-c b") 'helm-buffers-list)
 (global-set-key (kbd "C-c f") 'helm-for-files)
 (global-set-key (kbd "C-c o") 'helm-occur)
+
+;; imenu is awesome
+(global-set-key (kbd "C-c i") 'imenu)
