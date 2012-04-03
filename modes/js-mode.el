@@ -35,8 +35,14 @@
                '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
                  nil 1 2 3)))
 
-(add-hook 'js-mode-hook
-          (lambda ()
-            (flymake-mode 1)))
+(defun turn-on-js-flymake ()
+  (flymake-mode 1))
+
+(add-hook 'js-mode-hook 'turn-on-js-flymake)
+(add-hook 'js2-mode-hook 'turn-on-js-flymake)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+
+;; Don't highlight missing variables in js2-mode: we have jslint for
+;; that
+(setq js2-highlight-external-variables nil)
