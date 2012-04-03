@@ -43,6 +43,11 @@ by using nxml's indentation rules."
   (make-local-variable 'global-hl-line-mode)
   (setq global-hl-line-mode nil))
 
+(defun turn-on-flymake-mode ()
+  "Turns on flymake-mode locally"
+  (interactive)
+  (flymake-mode 1))
+
 (defun turn-on-paredit ()
   "Turn paredit-mode on locally"
   (paredit-mode 1))
@@ -61,3 +66,12 @@ by using nxml's indentation rules."
      "security 2>&1 >/dev/null find-generic-password -ga "
      account-name
      "| sed 's/^password: \\\"\\(.*\\)\\\"/\\1/'"))))
+
+(defun get-buffer-line-length ()
+  "Counts the number of lines in the current buffer"
+  (count-lines (point-min) (point-max)))
+
+(defun change-mode-if-not-in-mode (mode)
+  "Changes to a mode if we're not already in that mode"
+  (when (not (eq mode major-mode))
+    (funcall mode)))

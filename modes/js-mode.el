@@ -35,11 +35,16 @@
                '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
                  nil 1 2 3)))
 
-(defun turn-on-js-flymake ()
-  (flymake-mode 1))
+(defun pick-javascript-mode ()
+  "Picks Javascript mode based on buffer length, because js2-mode
+can crash on large files"
+  (interactive)
+  (if (> (get-buffer-line-length) 1000)
+      (change-mode-if-not-in-mode 'js-mode)
+    (change-mode-if-not-in-mode 'js2-mode)))
 
-(add-hook 'js-mode-hook 'turn-on-js-flymake)
-(add-hook 'js2-mode-hook 'turn-on-js-flymake)
+(add-hook 'js-mode-hook 'turn-on-flymake-mode)
+(add-hook 'js2-mode-hook 'turn-on-flymake-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
