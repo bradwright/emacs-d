@@ -110,5 +110,5 @@
 (global-set-key (kbd "C-c f") 'helm-for-files)
 (global-set-key (kbd "C-c o") 'helm-occur)
 
-;; imenu is awesome
-(global-set-key (kbd "C-c i") 'imenu)
+;; use ido search over imenu
+(global-set-key (kbd "C-c i") 'idomenu)

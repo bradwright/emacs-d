@@ -35,7 +35,8 @@
     zenburn-theme
     coffee-mode
     gist
-    puppet-mode))
+    puppet-mode
+    idomenu))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
