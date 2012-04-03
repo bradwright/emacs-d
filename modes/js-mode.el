@@ -46,6 +46,10 @@ can crash on large files"
 (add-hook 'js-mode-hook 'turn-on-flymake-mode)
 (add-hook 'js2-mode-hook 'turn-on-flymake-mode)
 
+;; flip between modes
+(add-hook 'js-mode-hook 'pick-javascript-mode)
+(add-hook 'js2-mode-hook 'pick-javascript-mode)
+
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
 ;; Don't highlight missing variables in js2-mode: we have jslint for
