@@ -9,12 +9,9 @@
  ido-use-filename-at-point nil
  ido-max-prospects 10)
 
-;; magit is awesome, always load
-;; force wrap commit messages
-(add-hook 'magit-log-edit-mode-hook
-          (lambda ()
-            (setq fill-column 72)
-            (turn-on-auto-fill)))
+;; force wrap magit commit messages
+(add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
+(add-hook 'magit-log-edit-mode-hook 'magit-fill-column)
 
 ;; TODO: make all these modes a list and operate on those
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
@@ -69,10 +66,9 @@
 ;; Restructured text
 (require 'rst)
 (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
-(add-hook 'rst-mode-hook
-          (lambda ()
-            (setq fill-column 72)
-            (turn-on-auto-fill)))
+(add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
+(add-hook 'rst-mode-hook 'magit-fill-column)
+
 ;; kill stupid heading faces
 (set-face-background 'rst-level-1-face nil)
 (set-face-background 'rst-level-2-face nil)
@@ -123,13 +119,8 @@
 
 ;; Clojure mode, installed via Elpa
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
-(add-hook 'clojure-mode-hook
-          (lambda ()
-            (setq inferior-lisp-program "lein repl")))
-(add-hook 'slime-repl-mode-hook
-          (defun clojure-mode-slime-font-lock ()
-            (let (font-lock-mode)
-              (clojure-mode-font-lock-setup))))
+(add-hook 'clojure-mode-hook 'bw-clojure-repl-program)
+(add-hook 'slime-repl-mode-hook 'bw-clojure-slime-repl-font-lock)
 (add-hook 'slime-repl-mode-hook 'local-hl-line-mode-off)
 (add-hook 'slime-repl-mode-hook 'turn-on-paredit)
 
@@ -152,11 +143,13 @@
 (require 'js2-mode)
 
 ;; load erlang
-(add-hook 'bw-after-custom-load-hook
-          (lambda ()
-            (load "modes/erlang-mode.el")
-            (load "modes/js-mode.el")
-            (load "modes/erc-mode.el")))
+(defun bw-load-post-load-files ()
+  "Loads some files that depend on custom.el being loaded"
+  (load "modes/erlang-mode.el")
+  (load "modes/js-mode.el")
+  (load "modes/erc-mode.el"))
+
+(add-hook 'bw-after-custom-load-hook 'bw-load-post-load-files)
 
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))

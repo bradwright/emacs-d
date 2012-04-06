@@ -109,3 +109,20 @@ the value, e.g. (\"VAR\" . \"VAL\")"
 as launched by `/bin/bash -ic' (or shell-cmd) to the current
 environment."
   (mapc 'setenv-from-cons (interactive-env-alist shell-cmd env-cmd)))
+
+;; hook related functions, since anonymous functions can't be
+;; guaranteed to not be added multiple times
+(defun magit-fill-column ()
+  (setq fill-column 72))
+
+(defun bw-turn-on-auto-fill ()
+  (turn-on-auto-fill))
+
+(defun bw-clojure-repl-program ()
+  "Changes lisp function to use Leiningen repl"
+  (setq inferior-lisp-program "lein repl"))
+
+(defun bw-clojure-slime-repl-font-lock ()
+  "Gives us Clojure font lock in the repl"
+  (let (font-lock-mode)
+    (clojure-mode-font-lock-setup)))
