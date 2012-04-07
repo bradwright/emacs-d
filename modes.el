@@ -176,10 +176,10 @@
 (setq org-src-tab-acts-natively t)
 
 ;; load some other modules
-(defun bw-load-post-load-files ()
-  "Loads some files that depend on custom.el being loaded"
-  (load "modes/erlang-mode.el")
-  (load "modes/js-mode.el")
-  (load "modes/erc-mode.el"))
+(defun bw-load-mode-files ()
+  "Loads all files resident in the `modes` directory"
+  ;; TODO: should I just use dotfiles-dir here?
+  (let ((modes-dir (concat (file-name-directory (or (buffer-file-name) load-file-name)) "/modes")))
+    (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
 
-(add-hook 'bw-after-custom-load-hook 'bw-load-post-load-files)
+(add-hook 'bw-after-custom-load-hook 'bw-load-mode-files)
