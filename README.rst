@@ -46,3 +46,10 @@ OS X CLI in iTerm2
 * Mouse highlighting works via xTerm capabilities
 
 .. _`Solarized Dark iTerm2 theme`: https://github.com/altercation/solarized/blob/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
+
+Included libraries
+------------------
+
+* This library includes (not as a submodule), `Tomorrow`, an Emacs theme
+
+.. _`Tomorrow`: https://github.com/ChrisKempson/Tomorrow-Theme
