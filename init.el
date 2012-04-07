@@ -32,9 +32,6 @@
  tmp-local-dir
  (concat dotfiles-dir "/.tmp"))
 
-;; load on startup
-(require 'cl)
-
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
