@@ -160,6 +160,14 @@
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
 
+;; eshell
+(eval-after-load 'esh-opt
+  '(progn
+     ;; we need this to override visual commands
+     (require 'em-term)
+     ;; If I try to SSH from an eshell, launch it in ansi-term instead
+     (add-to-list 'eshell-visual-commands "ssh")))
+
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
