@@ -59,3 +59,15 @@ via package install or via a Git submodule:
 
 .. _`Emacs Starter Kit`: https://github.com/technomancy/emacs-starter-kit
 .. _`Tomorrow`: https://github.com/ChrisKempson/Tomorrow-Theme
+
+License and copyright
+=====================
+
+Copyright 2010-2012 Bradley Wright.
+
+Files are licensed under the same license as Emacs (GNU) unless
+otherwise specified. See the `COPYING` file for more information.
+
+Any external/third party works included in this work are licensed under
+their own licenses - refer to the submodules or packages for more
+information.
