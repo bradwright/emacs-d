@@ -133,11 +133,6 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/helm"))
 (require 'helm-config)
 
-;; js2-mode in case I need it
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
-(require 'js2-mode)
-
-
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
