@@ -111,9 +111,10 @@
 (global-whitespace-mode t)
 (whitespace-mode t)
 
-;; show path rather than <2>
-(require 'uniquify)
+;; this shows foo/bar and baz/bar when two files are named bar
 (setq uniquify-buffer-name-style 'forward)
+;; strip common suffixes
+(setq uniquify-strip-common-suffix t)
 
 ;; show keystrokes immediately
 (setq echo-keystrokes 0.1)
@@ -151,10 +152,9 @@
 ;; OSX specific code
 (when (eq system-type 'darwin)
   (load "darwin")
-  (when (not window-system)
-    (load "darwin-cli"))
-  (when (window-system)
-    (load "darwin-gui")))
+  (if (window-system)
+      (load "darwin-gui")
+    (load "darwin-cli'")))
 
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
