@@ -48,8 +48,11 @@ OS X CLI in iTerm2
 .. _`Solarized Dark iTerm2 theme`: https://github.com/altercation/solarized/blob/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
 
 Included libraries
-------------------
+==================
 
-* This library includes (not as a submodule), `Tomorrow`_, an Emacs theme
+The following libraries are included in non-attributable ways, i.e not
+via package install or via a Git submodule:
+
+* `Tomorrow`_, an Emacs theme;
 
 .. _`Tomorrow`: https://github.com/ChrisKempson/Tomorrow-Theme
