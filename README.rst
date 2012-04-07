@@ -50,6 +50,6 @@ OS X CLI in iTerm2
 Included libraries
 ------------------
 
-* This library includes (not as a submodule), `Tomorrow`, an Emacs theme
+* This library includes (not as a submodule), `Tomorrow`_, an Emacs theme
 
 .. _`Tomorrow`: https://github.com/ChrisKempson/Tomorrow-Theme
