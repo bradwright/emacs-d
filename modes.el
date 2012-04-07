@@ -11,7 +11,7 @@
 
 ;; force wrap magit commit messages
 (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
-(add-hook 'magit-log-edit-mode-hook 'magit-fill-column)
+(add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
 
 ;; TODO: make all these modes a list and operate on those
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
@@ -31,11 +31,6 @@
 (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)
 
 ;; JS2 mode, not espresso
-(setq
- js2-highlight-level 3
- js2-basic-offset 4
- js2-consistent-level-indent-inner-bracket-p t
- js2-pretty-multiline-decl-indentation-p t)
 ;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; Jinja mode is a bit crap, really
@@ -142,14 +137,6 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
 (require 'js2-mode)
 
-;; load erlang
-(defun bw-load-post-load-files ()
-  "Loads some files that depend on custom.el being loaded"
-  (load "modes/erlang-mode.el")
-  (load "modes/js-mode.el")
-  (load "modes/erc-mode.el"))
-
-(add-hook 'bw-after-custom-load-hook 'bw-load-post-load-files)
 
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
@@ -187,3 +174,12 @@
 ;; edit inline code blocks natively
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
+
+;; load some other modules
+(defun bw-load-post-load-files ()
+  "Loads some files that depend on custom.el being loaded"
+  (load "modes/erlang-mode.el")
+  (load "modes/js-mode.el")
+  (load "modes/erc-mode.el"))
+
+(add-hook 'bw-after-custom-load-hook 'bw-load-post-load-files)

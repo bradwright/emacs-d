@@ -112,7 +112,7 @@ environment."
 
 ;; hook related functions, since anonymous functions can't be
 ;; guaranteed to not be added multiple times
-(defun magit-fill-column ()
+(defun bw-fill-column ()
   (setq fill-column 72))
 
 (defun bw-turn-on-auto-fill ()
