@@ -2,6 +2,12 @@
 ;;
 ;; Intended to be robust and usable across platforms
 
+;; from emacs-starter-kit
+(progn
+  ;; Turn off mouse interface early in startup to avoid momentary display
+  (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+    (when (fboundp mode) (funcall mode -1))))
+
 ;; add my custom hook
 (defvar bw-after-custom-load-hook nil
   "Hook called after the custom file is loaded")
@@ -32,9 +38,6 @@
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
 (setq initial-buffer-choice t)
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; always highlight syntax
 (global-font-lock-mode t)

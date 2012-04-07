@@ -53,6 +53,9 @@ Included libraries
 The following libraries are included in non-attributable ways, i.e not
 via package install or via a Git submodule:
 
+* `Emacs Starter Kit`_ was a very big early influence, and continues to
+  be helpful;
 * `Tomorrow`_, an Emacs theme;
 
+.. _`Emacs Starter Kit`: https://github.com/technomancy/emacs-starter-kit
 .. _`Tomorrow`: https://github.com/ChrisKempson/Tomorrow-Theme
