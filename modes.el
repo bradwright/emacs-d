@@ -137,7 +137,7 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
-;; PHP
+;; PHP - why doesn't PHP-mode do this already?
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 
 ;; iced coffee script
