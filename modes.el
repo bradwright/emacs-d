@@ -165,16 +165,6 @@
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
 
-;; org-mode
-(org-babel-do-load-languages
- 'org-babel-load-languages
- ;; load emacs-lisp natively
- '((emacs-lisp . t)))
-
-;; edit inline code blocks natively
-(setq org-src-fontify-natively t)
-(setq org-src-tab-acts-natively t)
-
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
