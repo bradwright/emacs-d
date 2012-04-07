@@ -16,6 +16,3 @@
 [submodule "vendor/helm"]
 	path = vendor/helm
 	url = https://github.com/emacs-helm/helm.git
-[submodule "vendor/themes/tomorrow-theme"]
-	path = vendor/themes/tomorrow-theme
-	url = https://github.com/chriskempson/tomorrow-theme.git
