@@ -140,23 +140,6 @@
 ;; PHP - why doesn't PHP-mode do this already?
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 
-;; iced coffee script
-(add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
-
-(defun coffee-custom ()
-  "coffee-mode-hook"
-
-  ;; CoffeeScript uses two spaces.
-  (make-local-variable 'tab-width)
-  (set 'tab-width 2)
-
-  ;; Compile '.coffee' files on every save
-  (and (file-exists-p (buffer-file-name))
-       (file-exists-p (coffee-compiled-file-name))
-       (coffee-cos-mode t)))
-
-(add-hook 'coffee-mode-hook 'coffee-custom)
-
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
 
