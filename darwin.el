@@ -4,7 +4,10 @@
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
 ;; update PATH, because Darwin Emacs doesn't get PATH from bash
-(set-exec-path-from-shell-PATH)
+(setenv-from-shell-environment)
+;; copy PATH across to exec-path
+;; TODO: handle paths with spaces in them
+(setq exec-path (split-string (getenv "PATH") path-separator))
 
 ;;; Use default Mac OS X browser
 (setq browse-url-browser-function 'browse-url-default-macosx-browser)
