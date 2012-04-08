@@ -151,6 +151,12 @@
      ;; If I try to SSH from an eshell, launch it in ansi-term instead
      (add-to-list 'eshell-visual-commands "ssh")))
 
+;; Ruby mode
+
+;; this variable is stupid - apparently Ruby needs its own indent
+;; variable
+(setq ruby-indent-level 2)
+
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
