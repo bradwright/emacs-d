@@ -79,7 +79,6 @@ cons cell containing (\"VAR\" . \"VAL\")."
 (defun interactive-env-alist (&optional shell-cmd env-cmd)
   "launch /usr/bin/env or the equivalent from an interactive
 shell, parsing and returning the environment as an alist."
-  (interactive)
   (let ((cmd (concat (or shell-cmd "/bin/bash -ic")
                      " "
                      (or env-cmd "/usr/bin/env"))))
@@ -89,13 +88,12 @@ shell, parsing and returning the environment as an alist."
                (string-equal str ""))
              (split-string (shell-command-to-string cmd) "[\r\n]")))))
 
+;; modified this function to be a bit more readable
 (defun setenv-from-cons (var-val)
   "set an environment variable from a cons cell containing
 two strings, where the car is the variable name and cdr is
 the value, e.g. (\"VAR\" . \"VAL\")"
-  (let ((key (car var-val))
-        (value (cdr var-val)))
-    (setenv key value)))
+    (setenv (car var-val) (cdr var-val)))
 
 (defun setenv-from-shell-environment (&optional shell-cmd env-cmd)
   "apply the environment reported by `/usr/bin/env' (or env-cmd)
