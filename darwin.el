@@ -3,9 +3,14 @@
 ;;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
-;; copy PATH across to exec-path
-;; TODO: handle paths with spaces in them
-(setq exec-path (split-string (getenv "PATH") path-separator))
+;; copy shell PATH across to exec-path
+
+(defun set-darwin-path ()
+  "Get PATH from the shell, as the OSX environment is broken and weird"
+  (let ((darwin-path (env-var-from-login-shell "PATH")))
+    (setq exec-path (split-string darwin-path path-separator))
+    (setenv "PATH" darwin-path)))
+(set-darwin-path)
 
 ;;; Use default Mac OS X browser
 (setq browse-url-browser-function 'browse-url-default-macosx-browser)

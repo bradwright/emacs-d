@@ -66,6 +66,11 @@ by using nxml's indentation rules."
   (when (not (eq mode major-mode))
     (funcall mode)))
 
+(defun env-var-from-login-shell (var)
+  "Fetches a named variable from a login shell"
+  (interactive "sENV variable: ")
+  (let ((command-to-run (concat "$SHELL -l -c 'echo $" var "'")))
+    (chomp (shell-command-to-string command-to-run))))
 
 ;; next 4 defuns from: http://paste.lisp.org/display/111574
 (defun env-line-to-cons (env-line)
