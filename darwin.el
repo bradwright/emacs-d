@@ -3,8 +3,6 @@
 ;;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
-;; update PATH, because Darwin Emacs doesn't get PATH from bash
-(setenv-from-shell-environment)
 ;; copy PATH across to exec-path
 ;; TODO: handle paths with spaces in them
 (setq exec-path (split-string (getenv "PATH") path-separator))
