@@ -114,6 +114,7 @@
 (global-whitespace-mode t)
 (whitespace-mode t)
 
+(require 'uniquify)
 ;; this shows foo/bar and baz/bar when two files are named bar
 (setq uniquify-buffer-name-style 'forward)
 ;; strip common suffixes
