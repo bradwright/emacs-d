@@ -24,14 +24,16 @@
 
 ;; Use Solarized-dark on OS X
 ;; but load it after custom has loaded, so it's marked safe
+(defun load-solarized-dark-theme ()
+  "Loads the solarized-dark theme"
+  ;; this puts the theme on the correct path
+  (load-custom-themes)
+  (load-theme 'solarized-dark nil))
+
 (if (or
      (window-system)
      (search "Solarized" (getenv "ITERM_PROFILE")))
-    (add-hook 'bw-after-custom-load-hook
-              (lambda ()
-                (load-custom-themes)
-                (load-theme 'solarized-dark nil)
-                )))
+    (add-hook 'bw-after-custom-load-hook 'load-solarized-dark-theme))
 
 ;; Even though we may have set the Mac OS X Terminal's Alt key as the
 ;; emacs Meta key ...
