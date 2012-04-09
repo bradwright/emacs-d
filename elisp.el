@@ -49,6 +49,7 @@ by using nxml's indentation rules."
 
 (defun get-keychain-password (account-name)
   "Gets `account` keychain password from OS X Keychain"
+  (interactive "sAccount name: ")
   (chomp
    (shell-command-to-string
     (concatenate
