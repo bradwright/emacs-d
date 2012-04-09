@@ -68,7 +68,6 @@ by using nxml's indentation rules."
 
 
 ;; next 4 defuns from: http://paste.lisp.org/display/111574
-
 (defun env-line-to-cons (env-line)
   "convert a string of the form \"VAR=VAL\" to a
 cons cell containing (\"VAR\" . \"VAL\")."

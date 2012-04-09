@@ -12,6 +12,9 @@
 (defvar bw-after-custom-load-hook nil
   "Hook called after the custom file is loaded")
 
+;; annoying, a lot of stuff uses this
+(require 'cl)
+
 ;; Load external files
 (setq
  dotfiles-dir

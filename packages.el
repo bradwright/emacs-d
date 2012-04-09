@@ -37,7 +37,8 @@
     coffee-mode
     gist
     puppet-mode
-    idomenu))
+    idomenu
+    helm))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
