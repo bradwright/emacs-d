@@ -19,8 +19,7 @@ by using nxml's indentation rules."
     (goto-char begin)
     (while (search-forward-regexp "\>[ \\t]*\<" nil t)
       (backward-char) (insert "\n"))
-    (indent-region begin end))
-  (message "Ah, much better!"))
+    (indent-region begin end)))
 
 (defun bw-start-term (buffer-name)
   "Start a terminal and rename buffer."
