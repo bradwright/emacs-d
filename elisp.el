@@ -25,7 +25,7 @@ by using nxml's indentation rules."
   "Start a terminal and rename buffer."
   (interactive "sbuffer name: ")
   (ansi-term "/bin/bash")
-  (rename-buffer (concatenate 'string "*term: " buffer-name "*") t))
+  (rename-buffer (concat "*term: " buffer-name "*") t))
 
 (defun local-hl-line-mode-off ()
   "Turn hl-line-mode off locally to a buffer"
@@ -52,8 +52,7 @@ by using nxml's indentation rules."
   (interactive "sAccount name: ")
   (chomp
    (shell-command-to-string
-    (concatenate
-     'string
+    (concat
      "security 2>&1 >/dev/null find-generic-password -ga "
      account-name
      "| sed 's/^password: \\\"\\(.*\\)\\\"/\\1/'"))))
