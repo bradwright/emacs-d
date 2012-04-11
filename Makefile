@@ -7,7 +7,6 @@ compile:
 	git submodule update
 	-cd vendor/distel && make
 	-cd vendor/js2-mode && ~/Applications/Emacs.app/Contents/MacOS/Emacs -Q --batch -f batch-byte-compile js2-mode.el
-	-cd vendor/helm && ~/Applications/Emacs.app/Contents/MacOS/Emacs -Q --batch -L . -f batch-byte-compile helm-config.el helm-match-plugin.el helm.el
 
 # make sure we're linked into the $USER Emacs sitefile
 install:
