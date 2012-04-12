@@ -7,6 +7,13 @@
 ;; Use Node.js REPL for JS shells
 (setq inferior-js-program-command "node")
 
+;; Add node_modules to exec-path
+(progn
+  (let ((node-bin (concat dotfiles-dir "node_modules/.bin")))
+    (add-to-list 'exec-path node-bin)
+    (setenv "PATH" (concat node-bin ":" (getenv "PATH")))))
+
+;; modify js-related modes at runtime
 (defun bw-js-mode-hook ()
   "Setup for JS inferior mode"
   ;; We like nice colors
