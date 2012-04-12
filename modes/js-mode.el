@@ -44,6 +44,8 @@
 (when (load "flymake" t)
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.js\\'" flymake-jslint-init))
+  ;; jslint lines look like:
+  ;; jslint:25:45:Missing trailing ; character
   (add-to-list 'flymake-err-line-patterns
                '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
                  nil 1 2 3)))
@@ -52,6 +54,8 @@
   "Picks Javascript mode based on buffer length, because js2-mode
 can crash on large files"
   (interactive)
+  ;; 1000 is an arbitrary number, but it's around there that I get
+  ;; crashes.
   (if (> (get-buffer-line-length) 1000)
       (change-mode-if-not-in-mode 'js-mode)
     (change-mode-if-not-in-mode 'js2-mode)))
