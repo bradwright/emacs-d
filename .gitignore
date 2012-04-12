@@ -11,3 +11,5 @@ auto-save-list
 swank/
 # generated cookies (?)
 url/
+# node modules
+node_modules

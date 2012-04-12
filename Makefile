@@ -7,6 +7,7 @@ compile:
 	git submodule update
 	-cd vendor/distel && make
 	-cd vendor/js2-mode && ~/Applications/Emacs.app/Contents/MacOS/Emacs -Q --batch -f batch-byte-compile js2-mode.el
+	-npm install
 
 # make sure we're linked into the $USER Emacs sitefile
 install:
