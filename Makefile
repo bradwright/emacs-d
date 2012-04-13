@@ -3,8 +3,8 @@ all: clean compile install
 
 # check out submodules, install vendor files, and compile JS2 mode
 compile:
-	git submodule init
-	git submodule update
+	git submodule sync
+	git submodule update --init
 	-cd vendor/distel && make
 	-cd vendor/js2-mode && ~/Applications/Emacs.app/Contents/MacOS/Emacs -Q --batch -f batch-byte-compile js2-mode.el
 	-npm install
