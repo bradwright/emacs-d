@@ -36,7 +36,8 @@
     coffee-mode
     gist
     puppet-mode
-    idomenu))
+    idomenu
+    find-file-in-project))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
