@@ -104,11 +104,5 @@
 ;; gist mode
 (global-set-key (kbd "C-c g") 'gist-region)
 
-;; anything mode
-(global-set-key (kbd "C-c h") 'helm-mini)
-(global-set-key (kbd "C-c b") 'helm-buffers-list)
-(global-set-key (kbd "C-c f") 'helm-for-files)
-(global-set-key (kbd "C-c o") 'helm-occur)
-
 ;; use ido search over imenu
 (global-set-key (kbd "C-c i") 'idomenu)

@@ -10,8 +10,6 @@
 (setq package-user-dir (concat dotfiles-dir "/.elpa"))
 
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
@@ -38,8 +36,7 @@
     coffee-mode
     gist
     puppet-mode
-    idomenu
-    helm))
+    idomenu))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

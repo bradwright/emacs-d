@@ -129,10 +129,6 @@
 (setq py-install-directory python-mode-path)
 (require 'python-mode)
 
-;; Helm instead of anything
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/helm"))
-(require 'helm-config)
-
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
