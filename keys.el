@@ -109,3 +109,6 @@
 
 ;; find-file-in-project
 (global-set-key (kbd "C-c f") 'find-file-in-project)
+
+;; use hippie expand instead of dabbrev
+(global-set-key (kbd "M-/") 'hippie-expand)
