@@ -26,8 +26,9 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; External applications
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x t") 'bw-start-term)
+(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-c t") 'bw-start-term)
+(global-set-key (kbd "C-x g") (lambda () (interactive) (message "Use C-c g!")))
 
 ;; map M-x to C-x C-m and C-c C-m
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
@@ -100,9 +101,6 @@
 
 ;; Org-mode
 (global-set-key (kbd "C-M-r") 'org-capture)
-
-;; gist mode
-(global-set-key (kbd "C-c g") 'gist-region)
 
 ;; use ido search over imenu
 (global-set-key (kbd "C-c i") 'idomenu)
