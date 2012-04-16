@@ -106,3 +106,6 @@
 
 ;; use ido search over imenu
 (global-set-key (kbd "C-c i") 'idomenu)
+
+;; find-file-in-project
+(global-set-key (kbd "C-c f") 'find-file-in-project)
