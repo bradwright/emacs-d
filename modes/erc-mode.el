@@ -21,5 +21,5 @@
       (erc :server "brewdog.bradleywright.net" :port 60667 :nick "brad" :password (format "brad:%s" (get-keychain-password "znc-brad")))
 )))
 
-;; switch to ERC with Ctrl+c e
-(global-set-key (kbd "C-c e") 'djcb-erc-start-or-switch) ;; ERC
+;; switch to ERC with Ctrl+c Ctrl+e
+(global-set-key (kbd "C-c C-e") 'djcb-erc-start-or-switch) ;; ERC

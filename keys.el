@@ -112,3 +112,6 @@
 
 ;; use hippie expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+;; we want an eshell easily
+(global-set-key (kbd "C-c e") 'eshell)
