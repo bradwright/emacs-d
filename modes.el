@@ -7,7 +7,8 @@
  ido-enable-flex-matching t
  ido-create-new-buffer 'always
  ido-use-filename-at-point nil
- ido-max-prospects 10)
+ ido-max-prospects 10
+ ido-case-fold t)
 
 ;; force wrap magit commit messages
 (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
