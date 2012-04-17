@@ -120,3 +120,18 @@ environment."
   "Gives us Clojure font lock in the repl"
   (let (font-lock-mode)
     (clojure-mode-font-lock-setup)))
+
+;; http://paste.lisp.org/display/129008
+(defun quit-or-hide ()
+  (interactive)
+  (if (boundp 'server-name)
+      (if (> (length server-clients) 1)
+          (delete-frame)
+        (make-frame-invisible nil t))
+    (bw-kill-emacs)))
+
+(defun bw-kill-emacs ()
+  "Warn before exiting Emacs"
+  (interactive)
+  (cond ((y-or-n-p "Quit Emacs? ")
+         (save-buffers-kill-emacs))))

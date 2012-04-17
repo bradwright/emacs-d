@@ -57,13 +57,6 @@
 ;; anti-n00b mode - turn off arrow keys
 (mapc 'global-unset-key [[up] [down] [left] [right]])
 
-;; prompt before killing emacs
-(defun bw-kill-emacs ()
-  "Warn before exiting Emacs"
-  (interactive)
-  (cond ((y-or-n-p "Quit Emacs? ")
-         (save-buffers-kill-emacs))))
-
 (global-set-key (kbd "C-x C-c") 'bw-kill-emacs)
 (global-set-key (kbd "C-c x") 'server-edit)
 
