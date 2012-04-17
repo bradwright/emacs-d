@@ -54,47 +54,8 @@
 
 (global-set-key (kbd "M-x") 'bw-prevent-m-x)
 
-;; anti-n00b mode
-(defun toggle-noob-mode ()
-  "Toggles turning off of arrow keys"
-  (interactive)
-  (if (not (boundp 'noob-keyboard-mode))
-      (setq noob-keyboard-mode nil))
-  (if noob-keyboard-mode
-      (setq noob-keyboard-mode nil)
-    (setq noob-keyboard-mode t))
-  (if noob-keyboard-mode
-      ;; real Emacs hackers don't use the arrow keys
-      (progn
-        (global-set-key
-         (kbd "<up>")
-         (lambda ()
-           (interactive)
-           (message "Arrow key navigation is disabled. Use C-p instead.")))
-        (global-set-key
-         (kbd "<down>")
-         (lambda ()
-           (interactive)
-           (message "Arrow key navigation is disabled. Use C-n instead.")))
-        (global-set-key
-         (kbd "<left>")
-         (lambda ()
-           (interactive)
-           (message "Arrow key navigation is disabled. Use C-b instead.")))
-        (global-set-key
-         (kbd "<right>")
-         (lambda ()
-           (interactive)
-           (message "Arrow key navigation is disabled. Use C-f instead.")))
-        (message "Arrow keys now disabled"))
-    (progn
-      (global-set-key (kbd "<up>") 'previous-line)
-      (global-set-key (kbd "<down>") 'next-line)
-      (global-set-key (kbd "<left>") 'backward-char)
-      (global-set-key (kbd "<right>") 'forward-char)
-      (message "Arrow keys now work"))))
-
-(toggle-noob-mode)
+;; anti-n00b mode - turn off arrow keys
+(mapc 'global-unset-key [[up] [down] [left] [right]])
 
 ;; prompt before killing emacs
 (defun bw-kill-emacs ()
