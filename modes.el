@@ -129,6 +129,8 @@
 (add-to-list 'load-path python-mode-path)
 (setq py-install-directory python-mode-path)
 (require 'python-mode)
+;; don't launch a Python shell all the time
+(setq py-start-run-py-shell nil)
 
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
