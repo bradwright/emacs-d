@@ -28,7 +28,13 @@
 ;; External applications
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c t") 'bw-start-term)
-(global-set-key (kbd "C-x g") (lambda () (interactive) (message "Use C-c g!")))
+
+(defun bw-prevent-old-magit ()
+  "Warns me about the keyboard shortcut changing"
+  (interactive)
+  (message "Use C-c g!"))
+
+(global-set-key (kbd "C-x g") 'bw-prevent-old-magit)
 
 ;; map M-x to C-x C-m and C-c C-m
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
