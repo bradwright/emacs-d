@@ -17,7 +17,7 @@
 
 ;; File finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
-(global-set-key (kbd "C-c C-f") 'find-file-in-project)
+(global-set-key (kbd "C-c f") 'find-file-in-project)
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-x C-p") 'find-file-at-point)
 (global-set-key (kbd "C-c y") 'bury-buffer)
@@ -110,9 +110,6 @@
 
 ;; use ido search over imenu
 (global-set-key (kbd "C-c i") 'idomenu)
-
-;; find-file-in-project
-(global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; use hippie expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
