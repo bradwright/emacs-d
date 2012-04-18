@@ -3,6 +3,7 @@ all: clean compile install
 
 # check out submodules, install vendor files, and compile JS2 mode
 compile:
+	-mkdir -p .tmp/desktops
 	git submodule sync
 	git submodule update --init
 	-cd vendor/distel && make
