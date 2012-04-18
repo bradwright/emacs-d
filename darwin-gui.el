@@ -1,7 +1,8 @@
 ;; OS X Window System configuration - fonts, meta keys etc.
 
 ;; set my favourite Mac font as the default font
-(set-face-font 'default "-apple-inconsolata-medium-r-normal--15-150-72-72-m-150-iso10646-1")
+(set-face-attribute 'default nil
+                    :foundry "apple" :family "Inconsolata" :height 150)
 
 ;; This makes left-option do M-
 (setq ns-alternate-modifier 'meta)
