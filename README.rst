@@ -65,7 +65,7 @@ License and copyright
 
 Copyright 2010-2012 Bradley Wright.
 
-Files are licensed under the same license as Emacs (GNU) unless
+Files are licensed under the same license as Emacs (GPL) unless
 otherwise specified. See the `COPYING` file for more information.
 
 Any external/third party works included in this work are licensed under
