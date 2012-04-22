@@ -39,8 +39,3 @@
 
 ;; if we do use line numbers, format them
 (setq linum-format " %d ")
-
-;; run my custom frame hook
-(add-hook 'after-make-frame-functions 'bw-after-frame-raise-hook)
-;; ... and run it now
-(run-hooks 'bw-after-frame-raise-hook)
