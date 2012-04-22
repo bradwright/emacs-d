@@ -170,6 +170,7 @@
 
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally
+      ediff-diff-options          "-w"
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; load some other modules
