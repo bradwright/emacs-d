@@ -168,6 +168,10 @@
       desktop-load-locked-desktop nil)
 (desktop-save-mode 1)
 
+;; ediff
+(setq ediff-split-window-function 'split-window-horizontally
+      ediff-window-setup-function 'ediff-setup-windows-plain)
+
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
