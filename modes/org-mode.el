@@ -9,3 +9,6 @@
 ;; edit inline code blocks natively
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
+
+;; auto-wrap
+(add-hook 'org-mode-hook 'bw-turn-on-auto-fill)
