@@ -29,10 +29,8 @@
     php-mode
     mustache-mode
     magit
-    yasnippet
     flymake-cursor
     markdown-mode
-    zenburn-theme
     coffee-mode
     gist
     puppet-mode
