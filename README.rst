@@ -25,8 +25,8 @@ Platform specific configuration
 OS X desktop (Emacs.app)
 ------------------------
 
-* Left `option` key is remapped to `M-`
-* `M-3` prints a literal `#` (UK Mac keyboards being weird)
+* Left ``option`` key is remapped to ``M-``
+* ``M-3`` prints a literal ``#`` (UK Mac keyboards being weird)
 * We use the `Solarized Dark`_ theme
 * Font is `Inconsolata`_
 
@@ -37,12 +37,12 @@ OS X CLI in iTerm2
 ------------------
 
 * When the `Solarized Dark iTerm2 theme`_ is installed, we use the
-  `solarized-dark` color theme
+  ``solarized-dark`` color theme
 
-  * Re-map left `option` key to `+Esc`
+  * Re-map left ``option`` key to ``+Esc``
 
 * Cut/paste are made to write/read from the clipboard (via
-  `pbcopy` and `pbpaste`)
+  ``pbcopy`` and ``pbpaste``)
 * Mouse highlighting works via xTerm capabilities
 
 .. _`Solarized Dark iTerm2 theme`: https://github.com/altercation/solarized/blob/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
@@ -66,7 +66,7 @@ License and copyright
 Copyright 2010-2012 Bradley Wright.
 
 Files are licensed under the same license as Emacs (GPL) unless
-otherwise specified. See the `COPYING` file for more information.
+otherwise specified. See the ``COPYING`` file for more information.
 
 Any external/third party works included in this work are licensed under
 their own licenses - refer to the submodules or packages for more
