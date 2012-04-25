@@ -96,12 +96,6 @@
 ;; Keep places in the load path
 (setq save-place-file (concat tmp-local-dir "/emacs-places"))
 
-;; yasnippet
-(require 'yasnippet)
-(setq yas/root-directory "~/Dropbox/.emacs/yasnippets")
-(yas/load-directory yas/root-directory)
-(yas/initialize)
-
 ;; setup tramp mode
 ;; Tramp mode: allow me to SSH to hosts and edit as sudo like:
 ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
