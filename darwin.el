@@ -28,7 +28,7 @@
   "Loads the solarized-dark theme"
   ;; this puts the theme on the correct path
   (load-custom-themes)
-  (load-theme 'solarized-dark nil))
+  (load-theme 'solarized-dark t))
 
 (if (or
      (window-system)
