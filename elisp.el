@@ -96,7 +96,11 @@ shell, parsing and returning the environment as an alist."
   "set an environment variable from a cons cell containing
 two strings, where the car is the variable name and cdr is
 the value, e.g. (\"VAR\" . \"VAL\")"
-    (setenv (car var-val) (cdr var-val)))
+  (let ((key (car var-val))
+        (val (cdr var-val)))
+    ;; for whatever reason this can be nil
+    (when (not (eq key nil))
+      (setenv key val))))
 
 (defun setenv-from-shell-environment (&optional shell-cmd env-cmd)
   "apply the environment reported by `/usr/bin/env' (or env-cmd)
