@@ -171,8 +171,7 @@
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
   ;; TODO: should I just use dotfiles-dir here?
-  (let ((modes-dir (concat (file-name-directory
-                            (or (buffer-file-name) load-file-name)) "/modes")))
+  (let ((modes-dir (concat dotfiles-dir "/modes")))
     (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
 
 (add-hook 'bw-after-custom-load-hook 'bw-load-mode-files)
