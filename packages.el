@@ -35,7 +35,8 @@
     gist
     puppet-mode
     idomenu
-    find-file-in-project))
+    find-file-in-project
+    znc))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
