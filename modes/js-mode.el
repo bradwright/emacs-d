@@ -50,23 +50,8 @@
                '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
                  nil 1 2 3)))
 
-(defun bw-pick-javascript-mode ()
-  "Picks Javascript mode based on buffer length, because js2-mode
-can crash on large files"
-  (interactive)
-  ;; 1000 is an arbitrary number, but it's around there that I get
-  ;; crashes.
-  (if (> (get-buffer-line-length) 1000)
-      (change-mode-if-not-in-mode 'js-mode)
-    (change-mode-if-not-in-mode 'js2-mode)))
-
 (add-hook 'js-mode-hook 'turn-on-flymake-mode)
 (add-hook 'js2-mode-hook 'turn-on-flymake-mode)
-
-;; flip between modes
-;; TODO: make me able to switch later
-(add-hook 'js-mode-hook 'bw-pick-javascript-mode)
-(add-hook 'js2-mode-hook 'bw-pick-javascript-mode)
 
 (setq
  ;; highlight everything
@@ -83,4 +68,4 @@ can crash on large files"
  ;; jslint shows missing semi-colons
  js2-strict-missing-semi-warning nil)
 
-(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
