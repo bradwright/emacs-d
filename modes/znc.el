@@ -12,7 +12,6 @@
 (global-set-key (kbd "C-c C-e") 'znc-all) ;; ERC
 
 (setq znc-servers
-      (quote
-       (("brewdog.bradleywright.net" 60667 nil
-         ((freenode\.net "intranation" (get-keychain-password "znc-intranation"))
-          (redsrc "brad" (get-keychain-password "znc-brad")))))))
+      `(("brewdog.bradleywright.net" 60667 nil
+        ((freenode\.net "intranation" ,(get-keychain-password "znc-intranation"))
+         (redsrc "brad" ,(get-keychain-password "znc-brad"))))))
