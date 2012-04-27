@@ -13,3 +13,6 @@
 [submodule "vendor/themes/color-theme-solarized"]
 	path = vendor/themes/color-theme-solarized
 	url = https://github.com/bradleywright/emacs-color-theme-solarized.git
+[submodule "vendor/themes/twilight-theme"]
+	path = vendor/themes/twilight-theme
+	url = https://github.com/developernotes/twilight-theme.git
