@@ -104,12 +104,6 @@
 ;; face for long lines' tails
 (set-face-attribute 'whitespace-line nil)
 
-;; face for Tabs
-(set-face-attribute 'whitespace-tab nil
-                    :background "red1"
-                    :foreground "yellow"
-                    :weight 'bold)
-
 ;; enable whitespace mode
 (global-whitespace-mode t)
 (whitespace-mode t)
