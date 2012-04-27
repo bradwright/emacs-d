@@ -79,6 +79,8 @@ can crash on large files"
  js2-pretty-multiline-decl-indentation-p t
  ;; Don't highlight missing variables in js2-mode: we have jslint for
  ;; that
- js2-highlight-external-variables nil)
+ js2-highlight-external-variables nil
+ ;; jslint shows missing semi-colons
+ js2-strict-missing-semi-warning nil)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
