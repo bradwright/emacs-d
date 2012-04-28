@@ -1,12 +1,13 @@
 ;; erc configuration for IRC
 
-(require 'erc)
-
-(require 'erc-services nil t)
-(erc-services-mode 1)
-
-;; don't show join/part etc.
-(setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+(eval-after-load 'erc
+  '(progn
+     (setq erc-prompt ">"
+           erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+     (require 'erc-services nil t)
+     (require 'erc-hl-nicks)
+     (erc-services-mode 1)
+     (add-to-list 'erc-modules 'hl-nicks)))
 
 ;; switch to ERC with Ctrl+c Ctrl+e
 (global-set-key (kbd "C-c C-e") 'znc-all) ;; ERC
