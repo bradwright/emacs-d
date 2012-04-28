@@ -156,6 +156,10 @@
       ediff-diff-options          "-w"
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;; eproject mode
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/eproject-mode"))
+(require 'eproject)
+
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
