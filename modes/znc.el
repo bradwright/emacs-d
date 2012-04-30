@@ -5,9 +5,7 @@
      (setq erc-prompt ">"
            erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
      (require 'erc-services nil t)
-     (require 'erc-hl-nicks)
-     (erc-services-mode 1)
-     (add-to-list 'erc-modules 'hl-nicks)))
+     (erc-services-mode 1)))
 
 ;; switch to ERC with Ctrl+c Ctrl+e
 (global-set-key (kbd "C-c C-e") 'znc-all) ;; ERC
