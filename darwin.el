@@ -39,5 +39,5 @@
 ;; emacs Meta key ...
 ;; ... we want to be able to insert a '#' using
 ;; Alt-3 in emacs as we would in other programs
-(fset 'insertPound "#")
-(define-key global-map "\M-3" 'insertPound)
+(fset 'insert-pound "#")
+(define-key global-map "\M-3" 'insert-pound)
