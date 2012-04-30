@@ -155,7 +155,7 @@
   (load "darwin")
   (if (window-system)
       (load "darwin-gui")
-    (load "darwin-cli'")))
+    (load "darwin-cli")))
 
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
