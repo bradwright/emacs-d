@@ -158,6 +158,17 @@
 ;; 2-space indent is idiomatic
 (setq ruby-indent-level 2)
 
+;; http://stackoverflow.com/a/4485083/61435
+;; Automatically save and restore sessions
+(setq desktop-dirname             "~/.emacs.d/.tmp/desktops/"
+      desktop-base-file-name      "emacs.desktop"
+      desktop-base-lock-name      "lock"
+      desktop-path                (list desktop-dirname)
+      desktop-save                t
+      desktop-files-not-to-save   "^$" ;reload tramp paths
+      desktop-load-locked-desktop nil)
+(desktop-save-mode 1)
+
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally
       ediff-diff-options          "-w"
@@ -170,6 +181,7 @@
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
+  ;; TODO: should I just use dotfiles-dir here?
   (let ((modes-dir (concat dotfiles-dir "/modes")))
     (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
 
