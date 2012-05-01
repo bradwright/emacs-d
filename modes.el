@@ -18,6 +18,13 @@
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
 (add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
 
+;; magit settings
+(setq
+ ;; use ido to look for branches
+ magit-completing-read-function 'magit-ido-completing-read
+ ;; don't put "origin-" in front of new branch names by default
+ magit-default-tracking-name-function 'magit-default-tracking-name-branch-only)
+
 ;; turn off hl-line-mode for compilation mode
 (add-hook 'compilation-mode-hook 'local-hl-line-mode-off)
 ;; turn off hl-line-mode for shells
