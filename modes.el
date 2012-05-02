@@ -46,7 +46,16 @@
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 
 ;; JSON files
+(add-to-list 'load-path (concat vendor-dotfiles-dir "/json-mode"))
+(require 'json-mode)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+;; from: http://stackoverflow.com/a/7934783
+(defun beautify-json ()
+  (interactive)
+  (let ((b (if mark-active (min (point) (mark)) (point-min)))
+        (e (if mark-active (max (point) (mark)) (point-max))))
+    (shell-command-on-region b e
+                             "python -mjson.tool" (current-buffer) t)))
 
 (defun my-html-mode-hook ()
   (setq tab-width 4)

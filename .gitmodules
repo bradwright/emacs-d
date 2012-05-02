@@ -19,3 +19,6 @@
 [submodule "vendor/eproject-mode"]
 	path = vendor/eproject-mode
 	url = https://github.com/jrockway/eproject.git
+[submodule "vendor/json-mode"]
+	path = vendor/json-mode
+	url = https://github.com/joshwnj/json-mode.git
