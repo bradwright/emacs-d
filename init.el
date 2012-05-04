@@ -153,7 +153,7 @@
 ;; OSX specific code
 (when (eq system-type 'darwin)
   (load "darwin")
-  (if (window-system)
+  (if (display-graphic-p)
       (load "darwin-gui")
     (load "darwin-cli")))
 
