@@ -29,30 +29,17 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c t") 'bw-start-term)
 
-(defun bw-prevent-old-magit ()
-  "Warns me about the keyboard shortcut changing"
-  (interactive)
-  (message "Use C-c g!"))
-
-(global-set-key (kbd "C-x g") 'bw-prevent-old-magit)
-
 ;; map M-x to C-x C-m and C-c C-m
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-c C-m") 'execute-extended-command)
 ;; Unset GNUs since it clashes with above and I don't use it
 (global-unset-key (kbd "C-x m"))
+;; unset M-x due to above
+(global-unset-key (kbd "M-x"))
 
 ;; Navigation Flymake errors
 (global-set-key (kbd "C-c n") 'flymake-goto-next-error)
 (global-set-key (kbd "C-c p") 'flymake-goto-prev-error)
-
-;; force myself to stop using M-x
-(defun bw-prevent-m-x ()
-  "Stop me from using M-x by warning me"
-  (interactive)
-  (message "Use C-x C-m!"))
-
-(global-set-key (kbd "M-x") 'bw-prevent-m-x)
 
 ;; anti-n00b mode - turn off arrow keys
 (mapc 'global-unset-key [[up] [down] [left] [right]])
