@@ -152,7 +152,7 @@
 
 ;; OSX specific code
 (when (eq system-type 'darwin)
-  (load "darwin")
+  (org-babel-load-file (expand-file-name "darwin.org" dotfiles-dir))
   (if (display-graphic-p)
       (load "darwin-gui")
     (load "darwin-cli")))
