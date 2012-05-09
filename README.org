@@ -26,10 +26,14 @@ install it:
 
 - When the [[https://github.com/altercation/solarized/blob/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors][Solarized Dark iTerm2 theme]] is installed, we use the
   =solarized-dark= color theme
-- Re-map left =option= key to =+Esc=
 - Cut/paste are made to write/read from the clipboard (via =pbcopy=
   and =pbpaste=)
 - Mouse highlighting works via xTerm capabilities
+
+**** Required iTerm 2 Configuration
+
+     - Re-map left =option= key to =+Esc=
+     - Untick =Smart cursor color=
 
 ** Included libraries
 
