@@ -31,7 +31,7 @@
   (load-theme 'solarized-dark t))
 
 (if (or
-     (window-system)
+     (display-graphic-p)
      (search "Solarized" (getenv "ITERM_PROFILE")))
     (add-hook 'bw-after-custom-load-hook 'load-solarized-dark-theme))
 
