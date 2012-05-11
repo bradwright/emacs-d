@@ -16,9 +16,9 @@
 
 (package-initialize)
 
-;; some packages we want to be boring and just use Marmalade
-(setq package-archive-exclude-alist
-      '(("melpa" clojure-mode clojure-test-mode haskell-mode slime paredit)))
+;; Only some packages we want bleeding edge
+(setq package-archive-enable-alist
+      '(("melpa" melpa magit gist)))
 
 ;; make sure we're up to date with archives
 (when (null package-archive-contents)
