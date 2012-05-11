@@ -11,6 +11,8 @@
 
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
 
@@ -19,7 +21,8 @@
   (package-refresh-contents))
 
 (defvar packages-to-install
-  '(clojure-mode
+  '(melpa
+    clojure-mode
     clojure-test-mode
     haskell-mode
     textmate
