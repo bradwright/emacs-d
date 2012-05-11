@@ -16,6 +16,10 @@
 
 (package-initialize)
 
+;; some packages we want to be boring and just use Marmalade
+(setq package-archive-exclude-alist
+      '(("melpa" clojure-mode clojure-test-mode haskell-mode slime paredit)))
+
 ;; make sure we're up to date with archives
 (when (null package-archive-contents)
   (package-refresh-contents))
