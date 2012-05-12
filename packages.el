@@ -20,13 +20,18 @@
 (setq package-archive-enable-alist
       '(("melpa" melpa magit gist)))
 
-;; make sure we're up to date with archives
+;; refresh archives
 (when (null package-archive-contents)
   (package-refresh-contents))
 
+;; install melpa first so we can filter packages
+(when (not (package-installed-p 'melpa))
+  (package-install 'melpa)
+  (package-refresh-contents))
+
+;; packages I install
 (defvar packages-to-install
-  '(melpa
-    clojure-mode
+  '(clojure-mode
     clojure-test-mode
     haskell-mode
     textmate
