@@ -7,15 +7,9 @@
 [submodule "vendor/python-mode"]
 	path = vendor/python-mode
 	url = https://github.com/emacsmirror/python-mode.git
-[submodule "vendor/js2-mode"]
-	path = vendor/js2-mode
-	url = https://github.com/mooz/js2-mode.git
 [submodule "vendor/themes/color-theme-solarized"]
 	path = vendor/themes/color-theme-solarized
 	url = https://github.com/bradleywright/emacs-color-theme-solarized.git
-[submodule "vendor/themes/twilight-theme"]
-	path = vendor/themes/twilight-theme
-	url = https://github.com/developernotes/twilight-theme.git
 [submodule "vendor/eproject-mode"]
 	path = vendor/eproject-mode
 	url = https://github.com/jrockway/eproject.git

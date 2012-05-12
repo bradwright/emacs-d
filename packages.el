@@ -18,7 +18,14 @@
 
 ;; Only some packages we want bleeding edge
 (setq package-archive-enable-alist
-      '(("melpa" melpa magit gist)))
+      '(("melpa"
+         melpa
+         magit
+         gist
+         php-mode
+         twilight-theme
+         less-css-mode
+         js2-mode)))
 
 ;; refresh archives
 (when (null package-archive-contents)
@@ -36,6 +43,7 @@
     haskell-mode
     textmate
     paredit
+    js2-mode
     yaml-mode
     less-css-mode
     php-mode
@@ -48,7 +56,8 @@
     puppet-mode
     idomenu
     find-file-in-project
-    znc))
+    znc
+    twilight-theme))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
