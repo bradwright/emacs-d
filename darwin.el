@@ -30,11 +30,10 @@
   (load-custom-themes)
   (load-theme 'solarized-dark t))
 
-(if (or
+(when (or
      (display-graphic-p)
      (search "Solarized" (getenv "ITERM_PROFILE")))
-    (add-hook 'bw-after-custom-load-hook 'load-solarized-dark-theme)
-  (load-theme 'twilight t))
+    (add-hook 'bw-after-custom-load-hook 'load-solarized-dark-theme))
 
 ;; Even though we may have set the Mac OS X Terminal's Alt key as the
 ;; emacs Meta key ...
