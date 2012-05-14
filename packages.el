@@ -17,15 +17,14 @@
 (package-initialize)
 
 ;; Only some packages we want bleeding edge
-(setq package-archive-enable-alist
+(setq package-archive-exclude-alist
       '(("melpa"
-         melpa
-         magit
-         gist
-         php-mode
-         twilight-theme
-         less-css-mode
-         js2-mode)))
+         clojure-mode
+         slime ;; slime is attached to clojure-mode
+         clojure-test-mode
+         haskell-mode
+         idomenu
+         znc)))
 
 ;; refresh archives
 (when (null package-archive-contents)
