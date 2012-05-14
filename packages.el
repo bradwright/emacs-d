@@ -1,10 +1,8 @@
 ;; packages.el - manages packages and lists of packages
 
 ;; conditional for the O.G emacs
-;;(when (not (require 'package nil t))
-;;  (require 'package "package-23.el"))
-
-(require 'package)
+(when (not (require 'package nil t))
+  (require 'package "vendor/package-23.el"))
 
 ;; override my package directory
 (setq package-user-dir (concat dotfiles-dir "/.elpa"))
