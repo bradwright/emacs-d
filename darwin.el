@@ -2,6 +2,9 @@
 
 ;;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
+;; # FIXME: this is to ignore Dropbox "Icon" files that seem to be
+;; "Icon", but I can't figure out how to ignore that.
+(add-to-list 'ido-ignore-files "Icon")
 
 ;; copy shell PATH across to exec-path
 
