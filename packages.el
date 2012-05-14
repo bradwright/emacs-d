@@ -9,22 +9,42 @@
 
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
 
-;; make sure we're up to date with archives
+;; Only some packages we want bleeding edge
+(setq package-archive-exclude-alist
+      '(("melpa"
+         clojure-mode
+         slime ;; slime is attached to clojure-mode
+         clojure-test-mode
+         haskell-mode
+         idomenu
+         znc)))
+
+;; refresh archives
 (when (null package-archive-contents)
   (package-refresh-contents))
 
+;; install melpa first so we can filter packages
+(when (not (package-installed-p 'melpa))
+  (package-install 'melpa)
+  (package-refresh-contents))
+
+;; packages I install
 (defvar packages-to-install
   '(clojure-mode
     clojure-test-mode
     haskell-mode
     textmate
     paredit
+    js2-mode
     yaml-mode
     less-css-mode
     php-mode
+    python-mode
     mustache-mode
     magit
     flymake-cursor
@@ -34,7 +54,8 @@
     puppet-mode
     idomenu
     find-file-in-project
-    znc))
+    znc
+    twilight-theme))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

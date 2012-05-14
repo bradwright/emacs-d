@@ -1,7 +1,6 @@
 ;; special configuration for JS-mode
 
 ;; js2-mode in case I need it
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/js2-mode"))
 (require 'js2-mode)
 
 ;; Use Node.js REPL for JS shells
