@@ -46,6 +46,7 @@
     yaml-mode
     less-css-mode
     php-mode
+    python-mode
     mustache-mode
     magit
     flymake-cursor
