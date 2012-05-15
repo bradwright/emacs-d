@@ -29,7 +29,6 @@
 (defun load-solarized-dark-theme ()
   "Loads the solarized-dark theme"
   ;; this puts the theme on the correct path
-  (load-custom-themes)
   (load-theme 'solarized-dark t))
 
 (when (or

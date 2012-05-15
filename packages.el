@@ -55,7 +55,7 @@
     idomenu
     find-file-in-project
     znc
-    twilight-theme))
+    color-theme-solarized))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

@@ -4,9 +4,6 @@
 [submodule "vendor/distel"]
 	path = vendor/distel
 	url = https://github.com/massemanet/distel.git
-[submodule "vendor/themes/color-theme-solarized"]
-	path = vendor/themes/color-theme-solarized
-	url = https://github.com/bradleywright/emacs-color-theme-solarized.git
 [submodule "vendor/eproject-mode"]
 	path = vendor/eproject-mode
 	url = https://github.com/jrockway/eproject.git
