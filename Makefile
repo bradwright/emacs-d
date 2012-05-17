@@ -7,7 +7,6 @@ compile:
 	@git submodule sync
 	@git submodule update --init
 	@-cd vendor/distel && make
-	-cd vendor/js2-mode && emacs -Q --batch -f batch-byte-compile js2-mode.el
 	@npm install
 
 # make sure we're linked into the $USER Emacs sitefile
