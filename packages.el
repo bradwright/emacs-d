@@ -50,7 +50,6 @@
     flymake-cursor
     markdown-mode
     coffee-mode
-    gist
     puppet-mode
     idomenu
     find-file-in-project
