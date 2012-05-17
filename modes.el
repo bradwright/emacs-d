@@ -31,7 +31,8 @@
 (add-hook 'term-mode-hook 'local-hl-line-mode-off)
 
 ;; Textmate mode is on for everything
-(textmate-mode)
+(when (fboundp 'textmate-mode)
+  (textmate-mode))
 
 ;; haskell mode, loaded via Elpa
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)

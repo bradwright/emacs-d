@@ -32,13 +32,11 @@
 (when (not (package-installed-p 'melpa))
   (package-install 'melpa)
   (package-refresh-contents))
-
 ;; packages I install
 (defvar packages-to-install
   '(clojure-mode
     clojure-test-mode
     haskell-mode
-    textmate
     paredit
     js2-mode
     yaml-mode
@@ -53,8 +51,15 @@
     puppet-mode
     idomenu
     find-file-in-project
-    znc
     color-theme-solarized))
+
+;; Some packages I install aren't Emacs 23 compatible
+(if (eq emacs-major-version "24")
+    (progn
+      (add-to-list 'packages-to-install 'znc)
+      (add-to-list 'packages-to-install 'textmate))
+  (progn
+    (add-to-list 'packages-to-install 'org)))
 
 ;; install everything in that list
 (dolist (p packages-to-install)
