@@ -36,6 +36,7 @@
 (defvar packages-to-install
   '(clojure-mode
     clojure-test-mode
+    git-commit
     haskell-mode
     paredit
     js2-mode

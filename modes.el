@@ -13,6 +13,8 @@
 ;; force wrap magit commit messages
 (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
 (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
+(add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
+(add-hook 'git-commit-mode-hook 'bw-fill-column)
 
 ;; TODO: make all these modes a list and operate on those
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
