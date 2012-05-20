@@ -56,7 +56,7 @@
     color-theme-solarized))
 
 ;; Some packages I install aren't Emacs 23 compatible
-(if (eq emacs-major-version "24")
+(if (eq emacs-major-version 24)
     (progn
       (add-to-list 'packages-to-install 'znc)
       (add-to-list 'packages-to-install 'textmate))
