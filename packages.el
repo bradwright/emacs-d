@@ -32,6 +32,7 @@
 (when (not (package-installed-p 'melpa))
   (package-install 'melpa)
   (package-refresh-contents))
+
 ;; packages I install
 (defvar packages-to-install
   '(clojure-mode
@@ -66,3 +67,14 @@
 (dolist (p packages-to-install)
   (when (not (package-installed-p p))
     (package-install p)))
+
+;; if color-theme is installed, we need to bootstrap the "themes" directory
+(when (eq emacs-major-version 23)
+  (progn
+    (let* ((color-theme-base (file-name-directory (locate-library "color-theme")))
+           (color-theme-base-themes (concat color-theme-base "themes")))
+      (message color-theme-base-themes)
+      (unless (file-exists-p color-theme-base-themes)
+        (dired-create-directory color-theme-base-themes)
+        (color-theme-initialize))
+      )))
