@@ -73,7 +73,6 @@
   (progn
     (let* ((color-theme-base (file-name-directory (locate-library "color-theme")))
            (color-theme-base-themes (concat color-theme-base "themes")))
-      (message color-theme-base-themes)
       (unless (file-exists-p color-theme-base-themes)
         (dired-create-directory color-theme-base-themes)
         (color-theme-initialize))
