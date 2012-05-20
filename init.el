@@ -157,6 +157,10 @@
       (load "darwin-gui")
     (load "darwin-cli")))
 
+(when (eq system-type 'gnu/linux)
+  (unless (display-graphic-p)
+    (load "linux-cli")))
+
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
 (load custom-file 'noerror)
