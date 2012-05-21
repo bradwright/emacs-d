@@ -15,6 +15,6 @@ install:
 
 # remove old directory and clean files
 clean:
-	rm -f ~/.emacs.d
+	rm -rf ~/.emacs.d
 	git clean -qfxd
 	find . -name "*.elc" -delete
