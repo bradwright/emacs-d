@@ -7,7 +7,7 @@ compile:
 	@git submodule sync
 	@git submodule update --init
 	@-cd vendor/distel && make
-	@npm install
+	@-npm install
 
 # make sure we're linked into the $USER Emacs sitefile
 install:
