@@ -25,12 +25,12 @@
 ;; TODO: what does this do?
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 
-;; show help in the echo area instead of as a tooltip
-(tooltip-mode -1)
-
-;; make fringe-mode 4 pixels
-(fringe-mode 4)
-
+(when (display-graphic-p)
+  ;; show help in the echo area instead of as a tooltip
+  (tooltip-mode -1)
+  ;; make fringe-mode 4 pixels
+  (fringe-mode 4)
+)
 ;; Don't blink the cursor
 (blink-cursor-mode -1)
 
