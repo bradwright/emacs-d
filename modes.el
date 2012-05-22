@@ -93,6 +93,7 @@
 
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
 ;; Puppet manifests
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
