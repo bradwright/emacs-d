@@ -79,14 +79,17 @@
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
 ;; Restructured text
-(require 'rst)
-(add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
-(add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
-(add-hook 'rst-mode-hook 'magit-fill-column)
 
-;; kill stupid heading faces
-(set-face-background 'rst-level-1-face nil)
-(set-face-background 'rst-level-2-face nil)
+;; rst-mode isn't always around in HEAD Emacs
+(ignore-errors (require 'rst nil t)
+  (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
+  (add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
+  (add-hook 'rst-mode-hook 'magit-fill-column)
+
+  ;; kill stupid heading faces
+  (set-face-background 'rst-level-1-face nil)
+  (set-face-background 'rst-level-2-face nil)
+)
 
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
