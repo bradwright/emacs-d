@@ -8,10 +8,6 @@
   (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
     (when (fboundp mode) (funcall mode -1))))
 
-;; add my custom hook
-(defvar bw-after-custom-load-hook nil
-  "Hook called after the custom file is loaded")
-
 ;; annoying, a lot of stuff uses this
 (require 'cl)
 
@@ -164,6 +160,3 @@
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
 (load custom-file 'noerror)
-
-;; load my custom hooks
-(run-hooks 'bw-after-custom-load-hook)

@@ -201,4 +201,4 @@
   (let ((modes-dir (concat dotfiles-dir "/modes")))
     (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
 
-(add-hook 'bw-after-custom-load-hook 'bw-load-mode-files)
+(add-hook 'after-init-hook 'bw-load-mode-files)
