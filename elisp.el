@@ -30,8 +30,13 @@ by using nxml's indentation rules."
 (defun local-hl-line-mode-off ()
   "Turn hl-line-mode off locally to a buffer"
   (interactive)
+  (hl-line-mode -1))
+
+(defun local-hl-line-mode-on ()
+  "Turn hl-line-mode off locally to a buffer"
+  (interactive)
   (make-local-variable 'global-hl-line-mode)
-  (setq global-hl-line-mode nil))
+  (hl-line-mode))
 
 (defun turn-on-flymake-mode ()
   "Turns on flymake-mode locally"
