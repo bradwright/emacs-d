@@ -174,6 +174,8 @@
 ;; 2-space indent is idiomatic
 (setq ruby-indent-level 2)
 
+(add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
+
 ;; http://stackoverflow.com/a/4485083/61435
 ;; Automatically save and restore sessions
 (setq desktop-dirname             "~/.emacs.d/.tmp/desktops/"
