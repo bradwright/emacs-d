@@ -84,7 +84,6 @@
 (ignore-errors (require 'rst nil t)
   (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
   (add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
-  (add-hook 'rst-mode-hook 'magit-fill-column)
 
   ;; kill stupid heading faces
   (set-face-background 'rst-level-1-face nil)
