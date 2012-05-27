@@ -78,8 +78,6 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
-;; Restructured text
-
 ;; rst-mode isn't always around in HEAD Emacs
 (ignore-errors (require 'rst nil t)
   (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
@@ -87,8 +85,7 @@
 
   ;; kill stupid heading faces
   (set-face-background 'rst-level-1-face nil)
-  (set-face-background 'rst-level-2-face nil)
-)
+  (set-face-background 'rst-level-2-face nil))
 
 ;; Random missing file types
 (add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
