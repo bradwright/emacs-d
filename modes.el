@@ -62,7 +62,6 @@
 
 (defun my-html-mode-hook ()
   (setq tab-width 4)
-  (auto-fill-mode 0)
   (define-key html-mode-map (kbd "<tab>") 'my-insert-tab)
   (define-key html-mode-map (kbd "C->") 'sgml-close-tag))
 
@@ -72,6 +71,7 @@
   (insert-tab arg))
 
 (add-hook 'html-mode-hook 'my-html-mode-hook)
+(add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 ;; load yaml files correctly
 ;; yaml-mode doesn't auto-load for some reason
