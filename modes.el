@@ -88,8 +88,6 @@
   (set-face-background 'rst-level-2-face nil))
 
 ;; Random missing file types
-(add-to-list 'auto-mode-alist '("[vV]agrantfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
 ;; Puppet manifests
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
@@ -162,15 +160,6 @@
      (require 'em-term)
      ;; If I try to SSH from an eshell, launch it in ansi-term instead
      (add-to-list 'eshell-visual-commands "ssh")))
-
-;; Ruby mode
-
-;; this variable is stupid - apparently Ruby needs its own indent
-;; variable
-;; 2-space indent is idiomatic
-(setq ruby-indent-level 2)
-
-(add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
 
 ;; http://stackoverflow.com/a/4485083/61435
 ;; Automatically save and restore sessions
