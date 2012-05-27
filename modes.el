@@ -41,9 +41,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)
 
-;; JS2 mode, not espresso
-;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
 ;; Jinja mode is a bit crap, really
 (require 'jinja)
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
