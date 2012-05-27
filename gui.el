@@ -1,7 +1,8 @@
 ;; Color themes and graphical embellishment
 
-(defvar bw-after-frame-raise-hook nil
-  "Hook called after a frame is rasied. Functions receive a single arg, which is the frame that was raised.")
+(defvar bw-after-frame-raise-hook '()
+  "Hook called after a frame is raised. Functions receive a
+  single arg, which is the frame that was raised.")
 
 ;; Theme files
 (setq
