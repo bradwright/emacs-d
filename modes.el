@@ -184,7 +184,6 @@
 ;; load some other modules
 (defun bw-load-mode-files ()
   "Loads all files resident in the `modes` directory"
-  ;; TODO: should I just use dotfiles-dir here?
   (let ((modes-dir (concat dotfiles-dir "/modes")))
     (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
 
