@@ -23,8 +23,13 @@
           (add-to-list 'custom-theme-load-path name))))))
 
 
-;; TODO: what does this do?
-(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+;; From:
+;; http://emacs-fu.blogspot.co.uk/2011/01/setting-frame-title.html
+(setq frame-title-format
+      '("emacs%@" (:eval (system-name)) ": "
+        (:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 (when (display-graphic-p)
   ;; show help in the echo area instead of as a tooltip
