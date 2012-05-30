@@ -169,6 +169,3 @@ environment."
   "Loads all files resident in the `modes` directory"
   (let ((modes-dir (or load-from (concat dotfiles-dir "modes"))))
     (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
-
-
-
