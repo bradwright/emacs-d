@@ -35,21 +35,17 @@
 
 ;; packages I install
 (defvar packages-to-install
-  '(clojure-mode
-    clojure-test-mode
-    git-commit
-    haskell-mode
+  '(git-commit
     paredit
     js2-mode
     yaml-mode
     less-css-mode
-    php-mode
+    scss-mode
     python-mode
     mustache-mode
     magit
     flymake-cursor
     markdown-mode
-    coffee-mode
     puppet-mode
     idomenu
     find-file-in-project
@@ -61,7 +57,8 @@
       (add-to-list 'packages-to-install 'znc)
       (add-to-list 'packages-to-install 'textmate))
   (progn
-    (add-to-list 'packages-to-install 'org)))
+    (add-to-list 'packages-to-install 'org)
+    (add-to-list 'packages-to-install 'color-theme)))
 
 ;; install everything in that list
 (dolist (p packages-to-install)

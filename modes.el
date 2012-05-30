@@ -37,9 +37,10 @@
   (textmate-mode))
 
 ;; haskell mode, loaded via Elpa
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)
+(when (fboundp 'haskell-mode)
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off))
 
 ;; Jinja mode is a bit crap, really
 (require 'jinja)
@@ -68,7 +69,6 @@
   (insert-tab arg))
 
 (add-hook 'html-mode-hook 'my-html-mode-hook)
-(add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 ;; load yaml files correctly
 ;; yaml-mode doesn't auto-load for some reason
@@ -122,11 +122,12 @@
              '((regexp-quote (system-name)) nil nil))
 
 ;; Clojure mode, installed via Elpa
-(add-hook 'clojure-mode-hook 'turn-on-paredit)
-(add-hook 'clojure-mode-hook 'bw-clojure-repl-program)
-(add-hook 'slime-repl-mode-hook 'bw-clojure-slime-repl-font-lock)
-(add-hook 'slime-repl-mode-hook 'local-hl-line-mode-off)
-(add-hook 'slime-repl-mode-hook 'turn-on-paredit)
+(when (fboundp 'clojure-mode)
+  (add-hook 'clojure-mode-hook 'turn-on-paredit)
+  (add-hook 'clojure-mode-hook 'bw-clojure-repl-program)
+  (add-hook 'slime-repl-mode-hook 'bw-clojure-slime-repl-font-lock)
+  (add-hook 'slime-repl-mode-hook 'local-hl-line-mode-off)
+  (add-hook 'slime-repl-mode-hook 'turn-on-paredit))
 
 ;; load Flymake cursor
 (when (load "flymake" t)
