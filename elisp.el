@@ -150,3 +150,25 @@ environment."
   (make-local-variable 'whitespace-line-column)
   (setq whitespace-line-column nil)
   (whitespace-mode -1))
+
+(defun my-insert-tab (&optional arg)
+  "inserts just whitespace"
+  (interactive "P")
+  (insert-tab arg))
+
+;; from: http://stackoverflow.com/a/7934783
+(defun beautify-json ()
+  "Indents and pretties JSON structures"
+  (interactive)
+  (let ((b (if mark-active (min (point) (mark)) (point-min)))
+        (e (if mark-active (max (point) (mark)) (point-max))))
+    (shell-command-on-region b e
+                             "python -mjson.tool" (current-buffer) t)))
+
+(defun bw-load-mode-files (&optional load-from)
+  "Loads all files resident in the `modes` directory"
+  (let ((modes-dir (or load-from (concat dotfiles-dir "modes"))))
+    (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
+
+
+

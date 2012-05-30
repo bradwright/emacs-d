@@ -50,23 +50,12 @@
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/json-mode"))
 (require 'json-mode)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
-;; from: http://stackoverflow.com/a/7934783
-(defun beautify-json ()
-  (interactive)
-  (let ((b (if mark-active (min (point) (mark)) (point-min)))
-        (e (if mark-active (max (point) (mark)) (point-max))))
-    (shell-command-on-region b e
-                             "python -mjson.tool" (current-buffer) t)))
 
 (defun my-html-mode-hook ()
+  "html-mode enhancements"
   (setq tab-width 4)
   (define-key html-mode-map (kbd "<tab>") 'my-insert-tab)
   (define-key html-mode-map (kbd "C->") 'sgml-close-tag))
-
-;; just insert tabs
-(defun my-insert-tab (&optional arg)
-  (interactive "P")
-  (insert-tab arg))
 
 (add-hook 'html-mode-hook 'my-html-mode-hook)
 
@@ -79,7 +68,6 @@
 (ignore-errors (require 'rst nil t)
   (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
   (add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
-
   ;; kill stupid heading faces
   (set-face-background 'rst-level-1-face nil)
   (set-face-background 'rst-level-2-face nil))
@@ -178,11 +166,5 @@
 ;; eproject mode
 (add-to-list 'load-path (concat vendor-dotfiles-dir "/eproject-mode"))
 (require 'eproject)
-
-;; load some other modules
-(defun bw-load-mode-files ()
-  "Loads all files resident in the `modes` directory"
-  (let ((modes-dir (concat dotfiles-dir "/modes")))
-    (mapc 'load (directory-files modes-dir t "^[^#].*el$"))))
 
 (add-hook 'after-init-hook 'bw-load-mode-files)
