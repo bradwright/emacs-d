@@ -52,6 +52,9 @@
 (add-hook 'js-mode-hook 'turn-on-flymake-mode)
 (add-hook 'js2-mode-hook 'turn-on-flymake-mode)
 
+(add-hook 'js2-mode-hook 'local-hl-line-mode-on)
+
+
 (setq
  ;; highlight everything
  js2-highlight-level 3

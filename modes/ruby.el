@@ -9,3 +9,5 @@
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
 (add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
+
+(add-hook 'ruby-mode-hook 'local-hl-line-mode-on)
