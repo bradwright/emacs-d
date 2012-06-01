@@ -146,6 +146,9 @@
      (require 'em-term)
      ;; If I try to SSH from an eshell, launch it in ansi-term instead
      (add-to-list 'eshell-visual-commands "ssh")))
+;; fix ANSI colour issues from test runners etc.
+(add-hook 'eshell-preoutput-filter-functions
+          'ansi-color-filter-apply)
 
 ;; http://stackoverflow.com/a/4485083/61435
 ;; Automatically save and restore sessions
