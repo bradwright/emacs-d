@@ -41,9 +41,7 @@
 (global-set-key (kbd "C-c n") 'flymake-goto-next-error)
 (global-set-key (kbd "C-c p") 'flymake-goto-prev-error)
 
-;; anti-n00b mode - turn off arrow keys
-(mapc 'global-unset-key [[up] [down] [left] [right]])
-
+;; remap server/client exit commands
 (global-set-key (kbd "C-x C-c") 'bw-kill-emacs)
 (global-set-key (kbd "C-c x") 'server-edit)
 
