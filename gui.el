@@ -22,7 +22,6 @@
                    (not (equal f ".")))
           (add-to-list 'custom-theme-load-path name))))))
 
-
 ;; From:
 ;; http://emacs-fu.blogspot.co.uk/2011/01/setting-frame-title.html
 (setq frame-title-format
