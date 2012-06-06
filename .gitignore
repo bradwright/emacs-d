@@ -13,3 +13,5 @@ swank/
 url/
 # node modules
 node_modules
+# eshell stuff
+eshell/
