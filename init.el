@@ -23,7 +23,7 @@
 (add-to-list 'load-path vendor-dotfiles-dir)
 
 ;; tmp directory for storing stupid crap
-(setq tmp-local-dir (concat dotfiles-dir ".tmp"))
+(setq tmp-local-dir (concat dotfiles-dir ".tmp/"))
 (unless (file-exists-p tmp-local-dir)
   (dired-create-directory tmp-local-dir))
 
