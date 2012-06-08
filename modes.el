@@ -47,7 +47,7 @@
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 
 ;; JSON files
-(add-to-list 'load-path (concat vendor-dotfiles-dir "json-mode"))
+(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "json-mode")))
 (require 'json-mode)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
@@ -96,7 +96,7 @@
 (require 'saveplace)
 (setq-default save-place t)
 ;; Keep places in the load path
-(setq save-place-file (concat tmp-local-dir "/emacs-places"))
+(setq save-place-file (file-name-as-directory (concat tmp-local-dir "emacs-places")))
 
 ;; setup tramp mode
 ;; Tramp mode: allow me to SSH to hosts and edit as sudo like:
@@ -122,7 +122,7 @@
   (require 'flymake-cursor))
 
 ;; new python-mode IDE
-(setq python-mode-path (concat vendor-dotfiles-dir "python-mode"))
+(setq python-mode-path (file-name-as-directory (concat vendor-dotfiles-dir "python-mode")))
 (add-to-list 'load-path python-mode-path)
 (setq py-install-directory python-mode-path)
 (require 'python-mode)
@@ -152,7 +152,7 @@
 
 ;; http://stackoverflow.com/a/4485083/61435
 ;; Automatically save and restore sessions
-(setq desktop-dirname             "~/.emacs.d/.tmp/desktops/"
+(setq desktop-dirname (file-name-as-directory (concat tmp-local-dir "desktops"))
       desktop-base-file-name      "emacs.desktop"
       desktop-base-lock-name      "lock"
       desktop-path                (list desktop-dirname)
@@ -167,7 +167,7 @@
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; eproject mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "eproject-mode"))
+(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "eproject-mode")))
 (require 'eproject)
 
 (add-hook 'after-init-hook 'bw-load-mode-files)

@@ -5,9 +5,8 @@
   (require 'package "vendor/package-23.el"))
 
 ;; override my package directory
-(setq package-user-dir (concat dotfiles-dir ".elpa/"))
-(unless (file-exists-p package-user-dir)
-  (dired-create-directory package-user-dir))
+(setq package-user-dir (file-name-as-directory (concat dotfiles-dir ".elpa/")))
+(make-directory package-user-dir t)
 
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -71,8 +70,6 @@
 (when (eq emacs-major-version 23)
   (progn
     (let* ((color-theme-base (file-name-directory (locate-library "color-theme")))
-           (color-theme-base-themes (concat color-theme-base "themes")))
-      (unless (file-exists-p color-theme-base-themes)
-        (dired-create-directory color-theme-base-themes)
-        (color-theme-initialize))
-      )))
+           (color-theme-base-themes (file-name-as-directory (concat color-theme-base "themes"))))
+      (make-directory color-theme-base-themes t)
+      (color-theme-initialize))))

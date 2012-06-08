@@ -19,13 +19,12 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 
 ;; external libraries I might have collected via submodules etc.
-(setq vendor-dotfiles-dir (concat dotfiles-dir "vendor/"))
+(setq vendor-dotfiles-dir (file-name-as-directory (concat dotfiles-dir "vendor/")))
 (add-to-list 'load-path vendor-dotfiles-dir)
 
 ;; tmp directory for storing stupid crap
-(setq tmp-local-dir (concat dotfiles-dir ".tmp/"))
-(unless (file-exists-p tmp-local-dir)
-  (dired-create-directory tmp-local-dir))
+(setq tmp-local-dir (file-name-as-directory (concat dotfiles-dir ".tmp/")))
+(make-directory tmp-local-dir t)
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
@@ -70,8 +69,8 @@
 ;; Keep backups in same dir
 (setq
  backup-by-copying t  ; Don't clobber symlinks
- backup-directory-alist `((".*" . ,(concat tmp-local-dir "backups")))
- auto-save-file-name-transforms `((".*" ,(concat tmp-local-dir "autosaves") t))
+ backup-directory-alist `((".*" . ,(file-name-as-directory (concat tmp-local-dir "backups"))))
+ auto-save-file-name-transforms `((".*" ,(file-name-as-directory (concat tmp-local-dir "autosaves")) t))
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
