@@ -12,8 +12,7 @@
 ;; Make sure cut/paste works properly. Gotten from:
 ;; http://mindlev.wordpress.com/2011/06/13/emacs-in-a-terminal-on-osx/#comment-20
 (defun copy-from-osx ()
-  "Copies the current clipboard content using the `pbcopy`
-command"
+  "Copies the current clipboard content using the `pbcopy` command"
   (shell-command-to-string "pbpaste"))
 
 (defun paste-to-osx (text &optional push)

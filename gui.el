@@ -5,9 +5,9 @@
   single arg, which is the frame that was raised.")
 
 ;; Theme files
-(setq
- theme-dotfiles-dir
- (concat dotfiles-dir "vendor/themes"))
+(setq theme-dotfiles-dir (concat dotfiles-dir "vendor/themes/"))
+(unless (file-exists-p theme-dotfiles-dir)
+  (dired-create-directory theme-dotfiles-dir))
 
 ;; load all custom themes
 (defun load-custom-themes ()

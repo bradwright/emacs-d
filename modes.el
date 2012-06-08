@@ -47,7 +47,7 @@
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 
 ;; JSON files
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/json-mode"))
+(add-to-list 'load-path (concat vendor-dotfiles-dir "json-mode"))
 (require 'json-mode)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
@@ -122,7 +122,7 @@
   (require 'flymake-cursor))
 
 ;; new python-mode IDE
-(setq python-mode-path (concat vendor-dotfiles-dir "/python-mode"))
+(setq python-mode-path (concat vendor-dotfiles-dir "python-mode"))
 (add-to-list 'load-path python-mode-path)
 (setq py-install-directory python-mode-path)
 (require 'python-mode)
@@ -167,7 +167,7 @@
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; eproject mode
-(add-to-list 'load-path (concat vendor-dotfiles-dir "/eproject-mode"))
+(add-to-list 'load-path (concat vendor-dotfiles-dir "eproject-mode"))
 (require 'eproject)
 
 (add-hook 'after-init-hook 'bw-load-mode-files)

@@ -5,7 +5,9 @@
   (require 'package "vendor/package-23.el"))
 
 ;; override my package directory
-(setq package-user-dir (concat dotfiles-dir "/.elpa"))
+(setq package-user-dir (concat dotfiles-dir ".elpa/"))
+(unless (file-exists-p package-user-dir)
+  (dired-create-directory package-user-dir))
 
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)

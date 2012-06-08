@@ -1,6 +1,7 @@
 ;; Keybindings, lots stolen from Emacs Starter Kit
 
-;; also some wisdom taken from https://sites.google.com/site/steveyegge2/effective-emacs
+;; also some wisdom taken from:
+;; https://sites.google.com/site/steveyegge2/effective-emacs
 
 ;; You know, like Readline.
 (global-set-key (kbd "C-w") 'backward-kill-word)

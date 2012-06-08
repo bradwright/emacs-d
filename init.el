@@ -11,25 +11,21 @@
 ;; annoying, a lot of stuff uses this
 (require 'cl)
 
-;; Load external files
-(setq
- dotfiles-dir
- (file-name-directory
-  (or (buffer-file-name) load-file-name)))
-
+;; `dotfiles-dir` is the current directory
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
+;; FIXME: do I need this?
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 
-;; vendor files
-(setq
- vendor-dotfiles-dir
- (concat dotfiles-dir "/vendor"))
+;; external libraries I might have collected via submodules etc.
+(setq vendor-dotfiles-dir (concat dotfiles-dir "vendor/"))
 (add-to-list 'load-path vendor-dotfiles-dir)
 
 ;; tmp directory for storing stupid crap
-(setq
- tmp-local-dir
- (concat dotfiles-dir "/.tmp"))
+(setq tmp-local-dir (concat dotfiles-dir ".tmp"))
+(unless (file-exists-p tmp-local-dir)
+  (dired-create-directory tmp-local-dir))
 
 ;; kill all start up stuff
 (setq inhibit-startup-screen t)
@@ -74,13 +70,12 @@
 ;; Keep backups in same dir
 (setq
  backup-by-copying t  ; Don't clobber symlinks
- backup-directory-alist `((".*" . ,(concat tmp-local-dir "/backups")))
- auto-save-file-name-transforms `((".*" ,(concat tmp-local-dir "/autosaves") t))
+ backup-directory-alist `((".*" . ,(concat tmp-local-dir "backups")))
+ auto-save-file-name-transforms `((".*" ,(concat tmp-local-dir "autosaves") t))
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
  version-control t)   ; Use versioned backups
-
 
 ;; Whitespace mode
 (require 'whitespace)
