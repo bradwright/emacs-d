@@ -59,3 +59,6 @@
 (global-set-key (kbd "C-c e") 'eshell)
 ;; always pop a new eshell
 (global-set-key (kbd "C-c E") (lambda () (interactive) (eshell t)))
+
+;; open URL
+(global-set-key (kbd "C-c b") 'browse-url)
