@@ -20,3 +20,7 @@
 
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
+
+;; stop minimising the window accidentally
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
