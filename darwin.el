@@ -8,6 +8,12 @@
 ;; "Icon", but I can't figure out how to ignore that.
 (add-to-list 'ido-ignore-files "Icon")
 
+;; toggle-input-method
+(setq default-input-method "MacOSX")
+
+;; fix hostname.local stuff
+(setq system-name (car (split-string system-name "\\.")))
+
 ;; copy shell PATH across to exec-path
 
 (progn
