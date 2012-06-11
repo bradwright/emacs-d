@@ -70,9 +70,16 @@
 ;; Stop autosaves and backups from littering the filesystem
 ;; Keep backups in same dir
 (setq
+ tmp-backups-dir (file-name-as-directory (concat tmp-local-dir "backups"))
+ tmp-autosaves-dir (file-name-as-directory (concat tmp-local-dir "autosaves")))
+
+(make-directory tmp-backups-dir t)
+(make-directory tmp-autosaves-dir t)
+
+(setq
  backup-by-copying t  ; Don't clobber symlinks
- backup-directory-alist `((".*" . ,(file-name-as-directory (concat tmp-local-dir "backups"))))
- auto-save-file-name-transforms `((".*" ,(file-name-as-directory (concat tmp-local-dir "autosaves")) t))
+ backup-directory-alist `((".*" . ,tmp-backups-dir))
+ auto-save-file-name-transforms `((".*" ,tmp-autosaves-dir t))
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
