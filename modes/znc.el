@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; erc configuration for IRC
 
 (eval-after-load 'erc

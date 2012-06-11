@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; OS X Window System configuration - fonts, meta keys etc.
 
 ;; set my favourite Mac font as the default font

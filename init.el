@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; My Emacs.d
 ;;
 ;; Intended to be robust and usable across platforms

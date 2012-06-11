@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; Color themes and graphical embellishment
 
 (defvar bw-after-frame-raise-hook '()

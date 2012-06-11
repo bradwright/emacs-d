@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; special configuration for JS-mode
 
 ;; js2-mode in case I need it

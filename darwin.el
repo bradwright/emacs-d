@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; OS X Specific configuration
 
 ;;; Ignore .DS_Store files with ido mode

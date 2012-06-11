@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; Ruby mode
 
 ;; this variable is stupid - apparently Ruby needs its own indent

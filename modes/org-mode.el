@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; org-mode configuration
 
 ;; Show other programming languages semi-natively when embedded

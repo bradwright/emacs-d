@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; iced coffee script
 (add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
 

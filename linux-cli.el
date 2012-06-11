@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;;; Linux CLI changes
 
 ;; Conditional colour theme loading

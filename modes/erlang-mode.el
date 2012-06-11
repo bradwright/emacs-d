@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; Load erlang mode
 
 ;; find the `erl` executable

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; Configuration to make Emacs run semi-normally in an OS X terminal
 
 ;; XXX: strongly recommended to run in iTerm2, as it's more

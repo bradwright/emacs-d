@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; Keybindings, lots stolen from Emacs Starter Kit
 
 ;; also some wisdom taken from:

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; All my major and minor mode loading and configuration
 
 ;; IDO mode is awesome

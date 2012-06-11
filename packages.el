@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 ;; packages.el - manages packages and lists of packages
 
 ;; conditional for the O.G emacs
