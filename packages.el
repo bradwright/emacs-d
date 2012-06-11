@@ -51,8 +51,7 @@
     markdown-mode
     puppet-mode
     idomenu
-    find-file-in-project
-    color-theme-solarized))
+    find-file-in-project))
 
 ;; Some packages I install aren't Emacs 23 compatible
 (if (eq emacs-major-version 24)

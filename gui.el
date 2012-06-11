@@ -23,6 +23,9 @@
                    (not (equal f ".")))
           (add-to-list 'custom-theme-load-path name))))))
 
+(if (eq emacs-major-version 24)
+    (load-custom-themes))
+
 ;; From:
 ;; http://emacs-fu.blogspot.co.uk/2011/01/setting-frame-title.html
 (setq frame-title-format
