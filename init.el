@@ -39,7 +39,8 @@
 ;; Save a list of recent files visited.
 ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
 (require 'recentf)
-(setq recentf-auto-cleanup 'never)
+(setq recentf-auto-cleanup 'never
+      recentf-exclude '("[/\\]\\.elpa/"))
 (recentf-mode 1)
 
 ;; Highlight matching parentheses when the point is on them.
