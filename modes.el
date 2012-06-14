@@ -173,3 +173,7 @@
 (require 'eproject)
 
 (add-hook 'after-init-hook 'bw-load-mode-files)
+
+;; include YAML in find-file-in-project
+(add-to-list 'ffip-patterns "*.yml")
+(add-to-list 'ffip-patterns "*.yaml")
