@@ -40,9 +40,6 @@
   ;; make fringe-mode 4 pixels
   (fringe-mode 4))
 
-(when (fboundp 'prog-mode)
-  (add-hook 'prog-mode-hook 'local-hl-line-mode-on))
-
 ;; Don't blink the cursor
 (blink-cursor-mode -1)
 
