@@ -174,5 +174,5 @@
 (add-hook 'after-init-hook 'bw-load-mode-files)
 
 ;; include YAML in find-file-in-project
-(add-to-list 'ffip-patterns "*.yml")
-(add-to-list 'ffip-patterns "*.yaml")
+(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.yml"))
+(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.yaml"))
