@@ -176,3 +176,9 @@
 ;; include YAML in find-file-in-project
 (eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.yml"))
 (eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.yaml"))
+;; CSS, Less and SCSS
+(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.css"))
+(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.scss"))
+(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.less"))
+;; ReStructured Text
+(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.rst"))
