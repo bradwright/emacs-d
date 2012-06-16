@@ -12,10 +12,14 @@
  ido-max-prospects 20
  ido-case-fold t)
 
-;; force wrap magit commit messages
+;;; Magit
 (add-to-list 'load-path (concat vendor-dotfiles-dir "magit"))
-(add-to-list 'Info-default-directory-list (concat vendor-dotfiles-dir "magit"))
+;; make sure we get info
+(setq Info-default-directory-list
+      (cons (concat vendor-dotfiles-dir "magit/") Info-default-directory-list))
+
 (require 'magit)
+;; force wrap magit commit messages
 (eval-after-load 'magit '(progn
                            (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
                            (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
