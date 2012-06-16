@@ -13,10 +13,14 @@
  ido-case-fold t)
 
 ;; force wrap magit commit messages
-(add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
-(add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
-(add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
-(add-hook 'git-commit-mode-hook 'bw-fill-column)
+(add-to-list 'load-path (concat vendor-dotfiles-dir "magit"))
+(add-to-list 'Info-default-directory-list (concat vendor-dotfiles-dir "magit"))
+(require 'magit)
+(eval-after-load 'magit '(progn
+                           (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
+                           (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
+                           (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
+                           (add-hook 'git-commit-mode-hook 'bw-fill-column)))
 
 ;; TODO: make all these modes a list and operate on those
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)

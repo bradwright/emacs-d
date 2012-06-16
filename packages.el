@@ -46,7 +46,6 @@
     scss-mode
     python-mode
     mustache-mode
-    magit
     flymake-cursor
     markdown-mode
     puppet-mode

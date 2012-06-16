@@ -7,6 +7,7 @@ compile:
 	@git submodule sync
 	@git submodule update --init
 	@-cd vendor/distel && make
+	@-cd vendor/magit && make
 	@-npm install
 
 # make sure we're linked into the $USER Emacs sitefile
