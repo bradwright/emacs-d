@@ -176,7 +176,9 @@
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; eproject mode
-(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "eproject-mode")))
+(setq eproject-dir (file-name-as-directory (concat vendor-dotfiles-dir "eproject-mode")))
+(add-to-list 'load-path eproject-dir)
+(add-to-list 'load-path (file-name-as-directory (concat eproject-dir "lang")))
 (require 'eproject)
 
 (add-hook 'after-init-hook 'bw-load-mode-files)

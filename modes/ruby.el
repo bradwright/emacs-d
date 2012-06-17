@@ -18,3 +18,6 @@
 (eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.rake"))
 (eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*Gemfile"))
 (eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*Rakefile"))
+
+;; implicit rails project mode
+(eval-after-load 'eproject '(require 'eproject-ruby-on-rails))
