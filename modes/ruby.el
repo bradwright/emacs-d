@@ -21,3 +21,44 @@
 
 ;; implicit rails project mode
 (eval-after-load 'eproject '(require 'eproject-ruby-on-rails))
+
+(defun find-rails-type (predicate title)
+  "Finds a file filtered by predicate"
+  (when (eq (eproject-type) 'ruby-on-rails)
+    (find-file
+     (concat
+      (eproject-root)
+      (ido-completing-read
+       title
+       (mapcar
+        (lambda (e)
+          (replace-regexp-in-string (eproject-root) "" e))
+        (remove-if-not predicate (eproject-list-project-files))))))))
+
+(defun find-controllers-rails ()
+  "Finds controller files in an eproject-rails project"
+  (interactive)
+  (find-rails-type 'is-controller "Controller: "))
+
+(defun find-models-rails ()
+  "Finds model files in an eproject-rails project"
+  (interactive)
+  (find-rails-type 'is-model "Model: "))
+
+(defun find-views-rails ()
+  "Finds view files in an eproject-rails project"
+  (interactive)
+  (find-rails-type 'is-view "View: "))
+
+(defun is-controller (name)
+  "Filters a string"
+  (interactive "sController: ")
+  (not (equal (string-match "app/controller*" name) nil)))
+
+(defun is-model (name)
+  (interactive "sModel: ")
+  (not (equal (string-match "app/models*" name) nil)))
+
+(defun is-view (name)
+  (interactive "sView: ")
+  (not (equal (string-match "app/views*" name) nil)))
