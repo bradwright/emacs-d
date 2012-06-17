@@ -22,6 +22,21 @@
 ;; implicit rails project mode
 (eval-after-load 'eproject '(require 'eproject-ruby-on-rails))
 
+(defun find-rails-file ()
+  "Finds a Rails file"
+  (interactive)
+  (when (eq (eproject-type) 'ruby-on-rails)
+    (find-file
+     (concat
+      (eproject-root)
+      (ido-completing-read
+       "File: "
+       (mapcar
+        (lambda (e)
+          (replace-regexp-in-string (eproject-root) "" e))
+        (eproject-list-project-files)))))))
+
+;; TODO: can we factor this out into a macro?
 (defun find-rails-type (predicate title)
   "Finds a file filtered by predicate"
   (when (eq (eproject-type) 'ruby-on-rails)
