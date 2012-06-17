@@ -40,7 +40,6 @@
 (defvar packages-to-install
   '(git-commit
     paredit
-    js2-mode
     yaml-mode
     less-css-mode
     scss-mode

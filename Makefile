@@ -8,6 +8,7 @@ compile:
 	@git submodule update --init
 	@-cd vendor/distel && make
 	@-cd vendor/magit && make
+	@-cd vendor/js2-mode && make
 	@-npm install
 
 # make sure we're linked into the $USER Emacs sitefile

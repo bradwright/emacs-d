@@ -3,6 +3,8 @@
 ;; special configuration for JS-mode
 
 ;; js2-mode in case I need it
+(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "js2-mode")))
+
 (require 'js2-mode)
 
 ;; Use Node.js REPL for JS shells
@@ -51,7 +53,6 @@
                '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
                  nil 1 2 3)))
 
-(add-hook 'js-mode-hook 'turn-on-flymake-mode)
 (add-hook 'js2-mode-hook 'turn-on-flymake-mode)
 
 (setq

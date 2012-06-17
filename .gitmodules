@@ -16,3 +16,6 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = https://github.com/magit/magit.git
+[submodule "vendor/js2-mode"]
+	path = vendor/js2-mode
+	url = https://github.com/mooz/js2-mode.git
