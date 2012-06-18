@@ -5,9 +5,9 @@
 There's a bug in Darwin hostnames where =.local= or =.config= is
 appended:
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (setq system-name (car (split-string system-name "\\.")))
-#+end_src
+#+END_SRC
 
 We need to ignore =.DS_Store= files in =ido-mode=, or else they
 pollute everything:
