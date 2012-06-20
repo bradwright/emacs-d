@@ -13,10 +13,10 @@
  ido-case-fold t)
 
 ;;; Magit
-(add-to-list 'load-path (concat vendor-dotfiles-dir "magit"))
+(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "magit")))
 ;; make sure we get info
 (setq Info-default-directory-list
-      (cons (concat vendor-dotfiles-dir "magit/") Info-default-directory-list))
+      (cons (file-name-as-directory (concat vendor-dotfiles-dir "magit/")) Info-default-directory-list))
 
 (require 'magit)
 ;; force wrap magit commit messages
