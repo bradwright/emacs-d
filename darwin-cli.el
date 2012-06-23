@@ -5,12 +5,6 @@
 ;; XXX: strongly recommended to run in iTerm2, as it's more
 ;; configurable than Terminal.app.
 
-;; Enable the mouse, gotten from:
-;; http://www.iterm2.com/#/section/faq
-(require 'mouse)
-(xterm-mouse-mode t)
-(defun track-mouse (e))
-
 ;; Make sure cut/paste works properly. Gotten from:
 ;; http://mindlev.wordpress.com/2011/06/13/emacs-in-a-terminal-on-osx/#comment-20
 (defun copy-from-osx ()
