@@ -29,6 +29,9 @@
 ;; TODO: make all these modes a list and operate on those
 (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
 (add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
+;; magit extensions
+;; FIXME: do I even need this?
+(require 'magit-blame)
 
 ;; magit settings
 (setq
