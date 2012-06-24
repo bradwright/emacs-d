@@ -132,9 +132,6 @@
 ;; My functions
 (load "elisp")
 
-;; update PATH, because Darwin Emacs doesn't get PATH from bash
-(setenv-from-shell-environment)
-
 ;; My keyboard shortcuts
 (load "keys")
 
