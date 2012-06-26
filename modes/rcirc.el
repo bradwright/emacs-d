@@ -9,6 +9,15 @@
         ("brewdog.bradleywright.net" :nick "brad"
          :password ,(concat "brad:" (get-keychain-password "znc-brad"))
          :port 60667)))
+(setq rcirc-default-full-name "Brad Wright")
+
+(setq rcirc-authinfo
+      `(("freenode" nickserv "intranation" ,(get-keychain-password "znc-intranation")))
+      rcirc-omit-responses '("JOIN" "PART" "QUIT" "NICK" "MODE" "KICK"))
+
+(eval-after-load "rcirc"
+  '(progn
+     (rcirc-track-minor-mode 1)))
 
 (defun rcirc-detach-buffer ()
   (interactive)
