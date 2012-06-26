@@ -52,10 +52,7 @@
     find-file-in-project))
 
 ;; Some packages I install aren't Emacs 23 compatible
-(if (eq emacs-major-version 24)
-    (progn
-      (add-to-list 'packages-to-install 'znc)
-      (add-to-list 'packages-to-install 'textmate))
+(unless (eq emacs-major-version 24)
   (progn
     (add-to-list 'packages-to-install 'org)
     (add-to-list 'packages-to-install 'color-theme)))
