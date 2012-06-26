@@ -34,4 +34,4 @@
     (setq rcirc-target nil)
     (kill-buffer buffer)))
 
-(define-key rcirc-mode-map (kbd "C-c C-d") 'rcirc-detach-buffer)
+;(define-key rcirc-mode-map (kbd "C-c C-d") 'rcirc-detach-buffer)
