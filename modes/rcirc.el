@@ -9,6 +9,7 @@
         ("brewdog.bradleywright.net" :nick "brad"
          :password ,(concat "brad:" (get-keychain-password "znc-brad"))
          :port 60667)))
+
 (setq rcirc-default-full-name "Brad Wright")
 
 (setq rcirc-authinfo
@@ -17,7 +18,8 @@
 
 (eval-after-load "rcirc"
   '(progn
-     (rcirc-track-minor-mode 1)))
+     (rcirc-track-minor-mode 1)
+     (define-key rcirc-mode-map (kbd "C-c C-d") 'rcirc-detach-buffer)))
 
 (defun rcirc-detach-buffer ()
   (interactive)
@@ -33,5 +35,3 @@
                  (concat "DETACH " rcirc-target))))
     (setq rcirc-target nil)
     (kill-buffer buffer)))
-
-;(define-key rcirc-mode-map (kbd "C-c C-d") 'rcirc-detach-buffer)
