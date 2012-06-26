@@ -23,6 +23,8 @@
 (eval-after-load 'magit '(progn
                            (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
                            (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
+                           (add-hook 'magit-log-edit-mode-hook (lambda ()
+                                                                 (textmate-mode -1)))
                            (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
                            (add-hook 'git-commit-mode-hook 'bw-fill-column)))
 
