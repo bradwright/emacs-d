@@ -13,6 +13,7 @@
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 
 (add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\.erb$" . scss-mode))
 
 ;; make sure we can find Ruby files
 (eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.rake"))
