@@ -38,7 +38,11 @@
  ;; use ido to look for branches
  magit-completing-read-function 'magit-ido-completing-read
  ;; don't put "origin-" in front of new branch names by default
- magit-default-tracking-name-function 'magit-default-tracking-name-branch-only)
+ magit-default-tracking-name-function 'magit-default-tracking-name-branch-only
+ ;; open magit status in same window as current buffer
+ magit-status-buffer-switch-function 'switch-to-buffer
+ ;; highlight word/letter changes in hunk diffs
+ magit-diff-refine-hunk t)
 
 ;; turn off hl-line-mode for compilation mode
 (add-hook 'compilation-mode-hook 'local-hl-line-mode-off)
