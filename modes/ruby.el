@@ -37,6 +37,20 @@
           (replace-regexp-in-string (eproject-root) "" e))
         (eproject-list-project-files)))))))
 
+;; Rails project setup
+(defun eproject-rails-config ()
+  "Various settings for Rails projects"
+
+  ;; We don't want to compile SCSS in Rails because the asset pipeline
+  ;; does it for us
+  (make-local-variable 'scss-compile-at-save)
+  (set 'scss-compile-at-save nil)
+
+  ;; use find in rails to find files
+  (local-set-key (kbd "C-c f") 'find-file-in-rails-project))
+
+(add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
+
 ;; TODO: can we factor this out into a macro?
 (defun find-rails-type (predicate title)
   "Finds a file filtered by predicate"
