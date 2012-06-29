@@ -43,8 +43,7 @@
 
   ;; We don't want to compile SCSS in Rails because the asset pipeline
   ;; does it for us
-  (make-local-variable 'scss-compile-at-save)
-  (set 'scss-compile-at-save nil)
+  (set (make-local-variable 'scss-compile-at-save) nil)
 
   ;; use find in rails to find files
   (local-set-key (kbd "C-c f") 'find-file-in-rails-project))
