@@ -23,7 +23,7 @@
 ;; implicit rails project mode
 (eval-after-load 'eproject '(require 'eproject-ruby-on-rails))
 
-(defun find-rails-file ()
+(defun find-file-in-rails-project ()
   "Finds a Rails file"
   (interactive)
   (when (eq (eproject-type) 'ruby-on-rails)
