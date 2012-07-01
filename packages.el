@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t -*-
 
 ;; packages.el - manages packages and lists of packages
-
+(require 'package)
 ;; override my package directory
 (setq package-user-dir (file-name-as-directory (concat dotfiles-dir ".elpa/")))
 (make-directory package-user-dir t)
