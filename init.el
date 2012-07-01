@@ -136,7 +136,7 @@
 (load "keys")
 
 ;; start a server
-(load "server")
+(require 'server)
 (unless (server-running-p)
   (server-start))
 
