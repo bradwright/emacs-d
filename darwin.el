@@ -31,10 +31,7 @@
   ;; this puts the theme on the correct path
   (load-theme 'solarized-dark t))
 
-(when (or
-       (display-graphic-p)
-       (search "Solarized" (getenv "ITERM_PROFILE")))
-  (add-hook 'after-init-hook 'load-solarized-dark-theme))
+(add-hook 'after-init-hook 'load-solarized-dark-theme)
 
 ;; Even though we may have set the Mac OS X Terminal's Alt key as the
 ;; emacs Meta key ...
