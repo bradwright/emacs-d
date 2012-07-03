@@ -2,9 +2,6 @@
 
 ;; special configuration for JS-mode
 
-;; js2-mode in case I need it
-(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "js2-mode")))
-
 (use-package js2-mode
   :mode ("\\.js\\'" . js2-mode)
   :init

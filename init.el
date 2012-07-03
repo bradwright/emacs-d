@@ -23,9 +23,15 @@
 ;; external libraries I might have collected via submodules etc.
 (setq vendor-dotfiles-dir (file-name-as-directory (concat dotfiles-dir "vendor/")))
 (add-to-list 'load-path vendor-dotfiles-dir)
+;; automatically add everything under vendor to load-path
+(dolist (f (directory-files vendor-dotfiles-dir))
+  (let ((name (concat vendor-dotfiles-dir "/" f)))
+    (when (and (file-directory-p name)
+               (not (equal f ".."))
+               (not (equal f ".")))
+      (add-to-list 'load-path name))))
 
 ;; use-packacge
-(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "use-package")))
 (require 'use-package)
 (eval-when-compile
   (setq use-package-verbose (null byte-compile-current-file)))
