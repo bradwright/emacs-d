@@ -137,11 +137,13 @@
     (setq py-start-run-py-shell nil)))
 
 ;; markdown
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+(use-package markdown-mode
+  :mode (("\\.md$" . markdown-mode)
+         ("\\.markdown$" . markdown-mode)))
 
 ;; PHP - why doesn't PHP-mode do this already?
-(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(use-package php-mode
+  :mode ("\\.php$" . php-mode))
 
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
