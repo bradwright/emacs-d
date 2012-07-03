@@ -4,7 +4,7 @@
 
 (use-package js2-mode
   :mode ("\\.js\\'" . js2-mode)
-  :init
+  :config
   (progn
     ;; Use Node.js REPL for JS shells
     (setq inferior-js-program-command "node")
