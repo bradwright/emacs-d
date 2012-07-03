@@ -205,4 +205,4 @@
     ;; Compile '.coffee' files on every save
     (and (file-exists-p (buffer-file-name))
          (file-exists-p (coffee-compiled-file-name))
-         (coffee-cos-mode t)))))
+         (coffee-cos-mode t))))
