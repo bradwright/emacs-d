@@ -95,7 +95,7 @@
 ;; Saveplace
 ;;   - places cursor in the last place you edited file
 (use-package saveplace
-  :init
+  :config
   (progn
     (setq-default save-place t)
     ;; Keep places in the load path
@@ -106,7 +106,7 @@
 ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
 ;; from: http://www.gnu.org/software/tramp/#Multi_002dhops
 (use-package tramp
-  :init
+  :config
   (progn
     (setq tramp-default-method "ssh")
     (add-to-list 'tramp-default-proxies-alist
