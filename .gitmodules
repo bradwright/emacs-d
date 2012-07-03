@@ -19,3 +19,6 @@
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "vendor/use-package"]
+	path = vendor/use-package
+	url = https://github.com/jwiegley/use-package.git
