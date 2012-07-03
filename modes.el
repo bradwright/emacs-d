@@ -47,10 +47,6 @@
 ;; turn off hl-line-mode for shells
 (add-hook 'term-mode-hook 'local-hl-line-mode-off)
 
-;; Textmate mode is on for everything
-(when (fboundp 'textmate-mode)
-  (textmate-mode))
-
 ;; haskell mode, loaded via Elpa
 (when (fboundp 'haskell-mode)
   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -62,22 +58,13 @@
 (add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
 
 ;; JSON files
-(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "json-mode")))
-(require 'json-mode)
-(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
-
-(defun my-html-mode-hook ()
-  "html-mode enhancements"
-  (setq tab-width 4)
-  (define-key html-mode-map (kbd "<tab>") 'my-insert-tab)
-  (define-key html-mode-map (kbd "C->") 'sgml-close-tag))
-
-(add-hook 'html-mode-hook 'my-html-mode-hook)
+(use-package json-mode
+  :mode ("\\.json\\'" . json-mode))
 
 ;; load yaml files correctly
 ;; yaml-mode doesn't auto-load for some reason
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+(use-package yaml-mode
+  :mode ("\\.ya?ml\\'" . yaml-mode))
 
 ;; rst-mode isn't always around in HEAD Emacs
 (ignore-errors (require 'rst nil t)
@@ -87,10 +74,9 @@
   (set-face-background 'rst-level-1-face nil)
   (set-face-background 'rst-level-2-face nil))
 
-;; Random missing file types
-
 ;; Puppet manifests
-(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+(use-package puppet-mode
+  :mode ("\\.pp$" . puppet-mode))
 
 ;; ansi-term stuff
 ;; force ansi-term to be utf-8 after it launches
@@ -108,41 +94,47 @@
 
 ;; Saveplace
 ;;   - places cursor in the last place you edited file
-(require 'saveplace)
-(setq-default save-place t)
-;; Keep places in the load path
-(setq save-place-file (file-name-as-directory (concat tmp-local-dir "emacs-places")))
+(use-package saveplace
+  :init
+  (progn
+    (setq-default save-place t)
+    ;; Keep places in the load path
+    (setq save-place-file (file-name-as-directory (concat tmp-local-dir "emacs-places")))))
 
 ;; setup tramp mode
 ;; Tramp mode: allow me to SSH to hosts and edit as sudo like:
 ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
 ;; from: http://www.gnu.org/software/tramp/#Multi_002dhops
-(require 'tramp)
-(setq tramp-default-method "ssh")
-(add-to-list 'tramp-default-proxies-alist
-             '(nil "\\`root\\'" "/ssh:%h:"))
-(add-to-list 'tramp-default-proxies-alist
-             '((regexp-quote (system-name)) nil nil))
+(use-package tramp
+  :init
+  (progn
+    (setq tramp-default-method "ssh")
+    (add-to-list 'tramp-default-proxies-alist
+                 '(nil "\\`root\\'" "/ssh:%h:"))
+    (add-to-list 'tramp-default-proxies-alist
+                 '((regexp-quote (system-name)) nil nil))))
 
 ;; Clojure mode, installed via Elpa
-(when (fboundp 'clojure-mode)
-  (add-hook 'clojure-mode-hook 'turn-on-paredit)
-  (add-hook 'clojure-mode-hook 'bw-clojure-repl-program)
-  (add-hook 'slime-repl-mode-hook 'bw-clojure-slime-repl-font-lock)
-  (add-hook 'slime-repl-mode-hook 'local-hl-line-mode-off)
-  (add-hook 'slime-repl-mode-hook 'turn-on-paredit))
+(use-package clojure-mode
+  :mode ("\\.clj\\'" . clojure-mode)
+  :config
+  (progn
+      (add-hook 'clojure-mode-hook 'turn-on-paredit)
+      (add-hook 'clojure-mode-hook 'bw-clojure-repl-program)
+      (add-hook 'slime-repl-mode-hook 'bw-clojure-slime-repl-font-lock)
+      (add-hook 'slime-repl-mode-hook 'local-hl-line-mode-off)
+      (add-hook 'slime-repl-mode-hook 'turn-on-paredit)))
 
 ;; load Flymake cursor
 (when (load "flymake" t)
   (require 'flymake-cursor))
 
 ;; new python-mode IDE
-(setq python-mode-path (file-name-as-directory (concat vendor-dotfiles-dir "python-mode")))
-(add-to-list 'load-path python-mode-path)
-(setq py-install-directory python-mode-path)
-(require 'python-mode)
-;; don't launch a Python shell all the time
-(setq py-start-run-py-shell nil)
+(use-package python-mode
+  :config
+  (progn
+    (setq py-install-directory (concat vendor-dotfiles-dir "python-mode"))
+    (setq py-start-run-py-shell nil)))
 
 ;; markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
@@ -181,19 +173,17 @@
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; eproject mode
-(setq eproject-dir (file-name-as-directory (concat vendor-dotfiles-dir "eproject-mode")))
-(add-to-list 'load-path eproject-dir)
-(add-to-list 'load-path (file-name-as-directory (concat eproject-dir "lang")))
-(require 'eproject)
+(use-package eproject
+  :load-path "vendor/eproject-mode/lang")
 
 (add-hook 'after-init-hook 'bw-load-mode-files)
 
 ;; include YAML in find-file-in-project
-(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.yml"))
-(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.yaml"))
-;; CSS, Less and SCSS
-(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.css"))
-(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.scss"))
-(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.less"))
-;; ReStructured Text
-(eval-after-load 'find-file-in-project '(add-to-list 'ffip-patterns "*.rst"))
+(use-package find-file-in-project
+  :config
+  (progn
+    (add-to-list 'ffip-patterns "*.yml")
+    (add-to-list 'ffip-patterns "*.css")
+    (add-to-list 'ffip-patterns "*.scss")
+    (add-to-list 'ffip-patterns "*.less")
+    (add-to-list 'ffip-patterns "*.rst")))
