@@ -24,6 +24,12 @@
 (setq vendor-dotfiles-dir (file-name-as-directory (concat dotfiles-dir "vendor/")))
 (add-to-list 'load-path vendor-dotfiles-dir)
 
+;; use-packacge
+(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "use-package")))
+(require 'use-package)
+(eval-when-compile
+  (setq use-package-verbose (null byte-compile-current-file)))
+
 ;; tmp directory for storing stupid crap
 (setq tmp-local-dir (file-name-as-directory (concat dotfiles-dir ".tmp/")))
 (make-directory tmp-local-dir t)
