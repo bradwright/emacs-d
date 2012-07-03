@@ -132,6 +132,7 @@
 
 ;; new python-mode IDE
 (use-package python-mode
+  :mode ("\\.py$" . python-mode)
   :config
   (progn
     (setq py-install-directory (concat vendor-dotfiles-dir "python-mode"))
