@@ -13,36 +13,34 @@
  ido-case-fold t)
 
 ;;; Magit
-(add-to-list 'load-path (file-name-as-directory (concat vendor-dotfiles-dir "magit")))
-;; make sure we get info
-(setq Info-default-directory-list
-      (cons (file-name-as-directory (concat vendor-dotfiles-dir "magit/")) Info-default-directory-list))
+(use-package magit
+  :bind ("C-c g" . magit-status)
+  :config
+  (progn
+    ;; force wrap magit commit messages
+    (eval-after-load 'magit '(progn
+                               (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
+                               (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
+                               (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
+                               (add-hook 'git-commit-mode-hook 'bw-fill-column)))
 
-(require 'magit)
-;; force wrap magit commit messages
-(eval-after-load 'magit '(progn
-                           (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
-                           (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
-                           (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
-                           (add-hook 'git-commit-mode-hook 'bw-fill-column)))
+    ;; TODO: make all these modes a list and operate on those
+    (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
+    (add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
+    ;; magit extensions
+    ;; FIXME: do I even need this?
+    (require 'magit-blame)
 
-;; TODO: make all these modes a list and operate on those
-(add-hook 'magit-mode-hook 'local-hl-line-mode-off)
-(add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
-;; magit extensions
-;; FIXME: do I even need this?
-(require 'magit-blame)
-
-;; magit settings
-(setq
- ;; use ido to look for branches
- magit-completing-read-function 'magit-ido-completing-read
- ;; don't put "origin-" in front of new branch names by default
- magit-default-tracking-name-function 'magit-default-tracking-name-branch-only
- ;; open magit status in same window as current buffer
- magit-status-buffer-switch-function 'switch-to-buffer
- ;; highlight word/letter changes in hunk diffs
- magit-diff-refine-hunk t)
+    ;; magit settings
+    (setq
+     ;; use ido to look for branches
+     magit-completing-read-function 'magit-ido-completing-read
+     ;; don't put "origin-" in front of new branch names by default
+     magit-default-tracking-name-function 'magit-default-tracking-name-branch-only
+     ;; open magit status in same window as current buffer
+     magit-status-buffer-switch-function 'switch-to-buffer
+     ;; highlight word/letter changes in hunk diffs
+     magit-diff-refine-hunk t)))
 
 ;; turn off hl-line-mode for compilation mode
 (add-hook 'compilation-mode-hook 'local-hl-line-mode-off)
