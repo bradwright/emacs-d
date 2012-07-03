@@ -116,7 +116,6 @@
 
 ;; Clojure mode, installed via Elpa
 (use-package clojure-mode
-  :mode ("\\.clj\\'" . clojure-mode)
   :config
   (progn
       (add-hook 'clojure-mode-hook 'turn-on-paredit)
@@ -126,8 +125,10 @@
       (add-hook 'slime-repl-mode-hook 'turn-on-paredit)))
 
 ;; load Flymake cursor
-(when (load "flymake" t)
-  (require 'flymake-cursor))
+(use-package flymake
+  :config
+  (progn
+    (use-package flymake-cursor)))
 
 ;; new python-mode IDE
 (use-package python-mode
