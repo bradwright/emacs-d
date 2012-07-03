@@ -189,3 +189,17 @@
     (add-to-list 'ffip-patterns "*.scss")
     (add-to-list 'ffip-patterns "*.less")
     (add-to-list 'ffip-patterns "*.rst")))
+
+;; coffee script and iced coffee
+(use-package coffee-mode
+  :mode (("\\.coffee\'" . coffee-mode)
+         ("\\.iced\'" . coffee-mode))
+  :config
+  (progn
+    (make-local-variable 'tab-width)
+    (set 'tab-width 2)
+
+    ;; Compile '.coffee' files on every save
+    (and (file-exists-p (buffer-file-name))
+         (file-exists-p (coffee-compiled-file-name))
+         (coffee-cos-mode t)))))
