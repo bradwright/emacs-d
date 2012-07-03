@@ -188,12 +188,15 @@
     (add-to-list 'ffip-patterns "*.css")
     (add-to-list 'ffip-patterns "*.scss")
     (add-to-list 'ffip-patterns "*.less")
-    (add-to-list 'ffip-patterns "*.rst")))
+    (add-to-list 'ffip-patterns "*.rst")
+    (add-to-list 'ffip-patterns "*.rake")
+    (add-to-list 'ffip-patterns "*Gemfile")
+    (add-to-list 'ffip-patterns "*Rakefile")))
 
 ;; coffee script and iced coffee
 (use-package coffee-mode
-  :mode (("\\.coffee\'" . coffee-mode)
-         ("\\.iced\'" . coffee-mode))
+  :mode (("\\.coffee\\'" . coffee-mode)
+         ("\\.iced\\'" . coffee-mode))
   :config
   (progn
     (make-local-variable 'tab-width)
