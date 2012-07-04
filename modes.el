@@ -89,9 +89,6 @@
   (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
   (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on))
 
-;; since I use Magit, disable vc-mode for Git
-(delete 'Git vc-handled-backends)
-
 ;; Saveplace
 ;;   - places cursor in the last place you edited file
 (use-package saveplace
