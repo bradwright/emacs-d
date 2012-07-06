@@ -175,7 +175,11 @@
 
 ;; eproject mode
 (use-package eproject
-  :load-path "vendor/eproject-mode/lang")
+  :load-path "vendor/eproject-mode/lang"
+  :config
+  (progn
+    (use-package eproject-extras)
+    (setq eproject-completing-read-function 'eproject--ido-completing-read)))
 
 (add-hook 'after-init-hook 'bw-load-mode-files)
 
