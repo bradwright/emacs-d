@@ -13,30 +13,13 @@
          ("\\.rake$" . ruby-mode))
   :config
   (progn
-    (defun find-file-in-rails-project ()
-      "Finds a Rails file"
-      (interactive)
-      (when (eq (eproject-type) 'ruby-on-rails)
-        (find-file
-         (concat
-          (eproject-root)
-          (ido-completing-read
-           "File: "
-           (mapcar
-            (lambda (e)
-              (replace-regexp-in-string (eproject-root) "" e))
-            (eproject-list-project-files)))))))
-
     ;; Rails project setup
     (defun eproject-rails-config ()
       "Various settings for Rails projects"
 
       ;; We don't want to compile SCSS in Rails because the asset pipeline
       ;; does it for us
-      (set (make-local-variable 'scss-compile-at-save) nil)
-
-      ;; use find in rails to find files
-      (local-set-key (kbd "C-c f") 'find-file-in-rails-project))
+      (set (make-local-variable 'scss-compile-at-save) nil))
 
     (add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
 
@@ -82,8 +65,7 @@
       (interactive "sView: ")
       (not (equal (string-match "app/views*" name) nil)))
 
-    (setq ruby-indent-level 2)
-    (require 'eproject-ruby-on-rails)))
+    (setq ruby-indent-level 2)))
 
 (add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\.erb$" . scss-mode))

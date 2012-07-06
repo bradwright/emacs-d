@@ -178,12 +178,30 @@
   :load-path "vendor/eproject-mode/lang"
   :config
   (progn
-    (use-package eproject-extras)
+    ;; ruby on rails special type
+    (define-project-type ruby-on-rails-git (generic-git)
+      (and (look-for ".git") (look-for "Gemfile") (look-for "config/application.rb"))
+      :main-file "Gemfile")
+
+    (defun bw-eproject-find-files ()
+      "If we're in a Git project, use git ls-files to look up the
+files, because it won't try to open any .gitignored files."
+      (interactive)
+      (if (member (eproject-type) '(generic-git ruby-on-rails-git))
+          (let ((default-directory (eproject-root)))
+            (find-file
+             (concat
+              (eproject-root)
+              (ido-completing-read
+               "Project file: "
+               (split-string (shell-command-to-string "git ls-files"))))))
+        (eproject-find-file)))
+    (use-package eproject-extras
+      :bind ("C-c f" . bw-eproject-find-files))
     (setq eproject-completing-read-function 'eproject--ido-completing-read)))
 
 (add-hook 'after-init-hook 'bw-load-mode-files)
 
-;; include YAML in find-file-in-project
 (use-package find-file-in-project
   :config
   (progn
