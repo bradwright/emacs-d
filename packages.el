@@ -44,8 +44,7 @@
     flymake-cursor
     markdown-mode
     puppet-mode
-    idomenu
-    find-file-in-project))
+    idomenu))
 
 ;; Some packages I install aren't Emacs 23 compatible
 (unless (eq emacs-major-version 24)

@@ -202,18 +202,6 @@ files, because it won't try to open any .gitignored files."
 
 (add-hook 'after-init-hook 'bw-load-mode-files)
 
-(use-package find-file-in-project
-  :config
-  (progn
-    (add-to-list 'ffip-patterns "*.yml")
-    (add-to-list 'ffip-patterns "*.css")
-    (add-to-list 'ffip-patterns "*.scss")
-    (add-to-list 'ffip-patterns "*.less")
-    (add-to-list 'ffip-patterns "*.rst")
-    (add-to-list 'ffip-patterns "*.rake")
-    (add-to-list 'ffip-patterns "*Gemfile")
-    (add-to-list 'ffip-patterns "*Rakefile")))
-
 ;; coffee script and iced coffee
 (use-package coffee-mode
   :mode (("\\.coffee\\'" . coffee-mode)
