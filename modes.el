@@ -193,7 +193,7 @@ files, because it won't try to open any .gitignored files."
              (concat
               (eproject-root)
               (ido-completing-read
-               "Project file: "
+               (format "Find file: %s" (eproject-root))
                (split-string (shell-command-to-string "git ls-files"))))))
         (eproject-find-file)))
     (use-package eproject-extras
