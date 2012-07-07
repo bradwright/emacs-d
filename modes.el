@@ -3,14 +3,17 @@
 ;; All my major and minor mode loading and configuration
 
 ;; IDO mode is awesome
-(ido-mode t)
-(setq
- ido-enable-prefix nil
- ido-enable-flex-matching t
- ido-create-new-buffer 'always
- ido-use-filename-at-point nil
- ido-max-prospects 20
- ido-case-fold t)
+(use-package ido
+  :init (ido-mode t)
+  :config
+  (progn
+    (setq
+     ido-enable-prefix nil
+     ido-enable-flex-matching t
+     ido-create-new-buffer 'always
+     ido-use-filename-at-point nil
+     ido-max-prospects 20
+     ido-case-fold t)))
 
 ;;; Magit
 (use-package magit
@@ -18,18 +21,17 @@
   :config
   (progn
     ;; force wrap magit commit messages
-    (eval-after-load 'magit '(progn
-                               (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
-                               (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
-                               (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
-                               (add-hook 'git-commit-mode-hook 'bw-fill-column)))
+    (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
+    (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
+    (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
+    (add-hook 'git-commit-mode-hook 'bw-fill-column)
 
-    ;; TODO: make all these modes a list and operate on those
+
     (add-hook 'magit-mode-hook 'local-hl-line-mode-off)
     (add-hook 'magit-log-edit-mode-hook 'local-hl-line-mode-off)
     ;; magit extensions
-    ;; FIXME: do I even need this?
-    (require 'magit-blame)
+    (use-package magit-blame
+      :bind ("C-c C-b" . magit-blame-mode))
 
     ;; magit settings
     (setq
@@ -48,14 +50,18 @@
 (add-hook 'term-mode-hook 'local-hl-line-mode-off)
 
 ;; haskell mode, loaded via Elpa
-(when (fboundp 'haskell-mode)
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off))
+(use-package haskell-mode
+  :commands haskell-mode
+  :mode ("\\.l?hs$" . haskell-mode)
+  :config
+  (progn
+    (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+    (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+    (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)))
 
 ;; Jinja mode is a bit crap, really
-(require 'jinja)
-(add-to-list 'auto-mode-alist '("\\.jinja$" . jinja-mode))
+(use-package jinja
+  :mode ("\\.jinja$" . jinja-mode))
 
 ;; JSON files
 (use-package json-mode
@@ -67,12 +73,14 @@
   :mode ("\\.ya?ml\\'" . yaml-mode))
 
 ;; rst-mode isn't always around in HEAD Emacs
-(ignore-errors (require 'rst nil t)
-  (add-to-list 'auto-mode-alist '("\\.rst$" . rst-mode))
-  (add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
-  ;; kill stupid heading faces
-  (set-face-background 'rst-level-1-face nil)
-  (set-face-background 'rst-level-2-face nil))
+(use-package rst
+  :mode ("\\.rst$" . rst-mode)
+  :config
+  (progn
+    (add-hook 'rst-mode-hook 'bw-turn-on-auto-fill)
+    ;; kill stupid heading faces
+    (set-face-background 'rst-level-1-face nil)
+    (set-face-background 'rst-level-2-face nil)))
 
 ;; Puppet manifests
 (use-package puppet-mode
@@ -85,9 +93,11 @@
   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (ad-activate 'ansi-term)
 
-(when (require 'ansi-color nil t)
-  (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-  (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on))
+(use-package ansi-color
+  :config
+  (progn
+    (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+    (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)))
 
 ;; Saveplace
 ;;   - places cursor in the last place you edited file
