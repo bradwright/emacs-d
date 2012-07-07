@@ -32,6 +32,7 @@
     ;; magit extensions
     (use-package magit-blame
       :bind ("C-c C-b" . magit-blame-mode))
+    (use-package rebase-mode)
 
     ;; magit settings
     (setq
