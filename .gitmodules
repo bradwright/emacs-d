@@ -19,3 +19,6 @@
 [submodule "vendor/use-package"]
 	path = vendor/use-package
 	url = https://github.com/jwiegley/use-package.git
+[submodule "vendor/rhtml"]
+	path = vendor/rhtml
+	url = https://github.com/eschulte/rhtml.git

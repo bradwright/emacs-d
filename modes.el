@@ -226,3 +226,6 @@ files, because it won't try to open any .gitignored files."
     (and (file-exists-p (buffer-file-name))
          (file-exists-p (coffee-compiled-file-name))
          (coffee-cos-mode t))))
+
+(use-package rhtml-mode
+  :mode ("\\.html\\.erb\\'" . rhtml-mode))
