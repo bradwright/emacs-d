@@ -31,7 +31,7 @@
                (not (equal f ".")))
       (add-to-list 'load-path name))))
 
-;; use-packacge
+;; use-package
 (require 'use-package)
 (eval-when-compile
   (setq use-package-verbose (null byte-compile-current-file)))
