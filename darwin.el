@@ -21,7 +21,12 @@
 (setq-default ispell-program-name "aspell")
 
 ;; Use Solarized-dark on OS X
-(load-theme 'solarized-dark t)
+(defun load-solarized-theme ()
+  "Loads Solarized dark"
+  (load-theme 'solarized-dark t))
+;; we load the theme after init because we might have changed some
+;; variables in customize
+(add-hook 'after-init-hook 'load-solarized-theme)
 
 ;; Even though we may have set the Mac OS X Terminal's Alt key as the
 ;; emacs Meta key, we want to be able to insert a '#' using Alt-3 in
