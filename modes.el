@@ -20,6 +20,9 @@
   :bind ("C-c g" . magit-status)
   :config
   (progn
+    ;; turn off vc-git mode
+    (delete 'Git vc-handled-backends)
+
     ;; force wrap magit commit messages
     (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
     (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
