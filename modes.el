@@ -199,6 +199,22 @@
            (look-for "config/application.rb"))
       :main-file "Gemfile")
 
+    (defun rails-eproject-test (&optional only-this-file)
+      "Runs local tests"
+      (interactive "P")
+      (if (eq only-this-file nil)
+          (compile "bundle exec rake" t)
+        (compile (concat "bundle exec ruby -I test " (buffer-file-name)) t)))
+
+    (defun rails-eproject-hook ()
+      "Set up some local variables"
+      (make-local-variable 'compile-command)
+      ;; run rake to compile
+      (setq compile-command "bundle exec rake")
+      (local-set-key (kbd "C-c C-t") 'rails-eproject-test))
+
+    (add-hook 'ruby-on-rails-git-project-file-visit-hook 'rails-eproject-hook)
+
     (defun bw-eproject-find-files ()
       "If we're in a Git project, use git ls-files to look up the
 files, because it won't try to open any .gitignored files."
