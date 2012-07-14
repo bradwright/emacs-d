@@ -194,7 +194,9 @@
   (progn
     ;; ruby on rails special type
     (define-project-type ruby-on-rails-git (generic-git)
-      (and (look-for ".git") (look-for "Gemfile") (look-for "config/application.rb"))
+      (and (look-for ".git")
+           (look-for "Gemfile")
+           (look-for "config/application.rb"))
       :main-file "Gemfile")
 
     (defun bw-eproject-find-files ()
