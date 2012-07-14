@@ -250,3 +250,9 @@ files, because it won't try to open any .gitignored files."
 
 (use-package rhtml-mode
   :mode ("\\.html\\.erb\\'" . rhtml-mode))
+
+(use-package paredit
+  :config
+  (progn
+       (define-key paredit-mode-map (kbd "M-)") 'paredit-forward-slurp-sexp)
+       (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
