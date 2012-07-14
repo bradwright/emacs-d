@@ -48,12 +48,14 @@
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 
-;; Save a list of recent files visited.
-;; disable auto-clean before we start recentf so Tramp doesn't block emacs
-(require 'recentf)
-(setq recentf-auto-cleanup 'never
-      recentf-exclude '("[/\\]\\.elpa/"))
-(recentf-mode 1)
+(use-package recentf
+  :init (recentf-mode 1)
+  :config
+  (progn
+    ;; Save a list of recent files visited.
+    ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
+    (setq recentf-auto-cleanup 'never
+          recentf-exclude '("[/\\]\\.elpa/"))))
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
@@ -120,11 +122,13 @@
 (global-whitespace-mode t)
 (whitespace-mode t)
 
-(require 'uniquify)
-;; this shows foo/bar and baz/bar when two files are named bar
-(setq uniquify-buffer-name-style 'forward)
-;; strip common suffixes
-(setq uniquify-strip-common-suffix t)
+(use-package uniquify
+  :config
+  (progn
+    ;; this shows foo/bar and baz/bar when two files are named bar
+    (setq uniquify-buffer-name-style 'forward)
+    ;; strip common suffixes
+    (setq uniquify-strip-common-suffix t)))
 
 ;; show keystrokes immediately
 (setq echo-keystrokes 0.1)
