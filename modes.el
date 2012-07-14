@@ -209,6 +209,8 @@
     (defun rails-eproject-hook ()
       "Set up some local variables"
       (make-local-variable 'compile-command)
+      (add-to-list 'safe-local-variable-values '(scss-sass-command . t))
+
       ;; run rake to compile
       (setq compile-command "bundle exec rake")
       (local-set-key (kbd "C-c C-t") 'rails-eproject-test))
