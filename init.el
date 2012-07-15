@@ -152,9 +152,11 @@
 (load "keys")
 
 ;; start a server
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(use-package server
+  :init
+  (progn
+    (unless (server-running-p)
+      (server-start))))
 
 ;; packages
 (load "packages")
