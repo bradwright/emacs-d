@@ -37,7 +37,6 @@
   '(git-commit
     paredit
     yaml-mode
-    less-css-mode
     scss-mode
     python-mode
     mustache-mode
@@ -47,21 +46,7 @@
     idomenu
     ack-and-a-half))
 
-;; Some packages I install aren't Emacs 23 compatible
-(unless (eq emacs-major-version 24)
-  (progn
-    (add-to-list 'packages-to-install 'org)
-    (add-to-list 'packages-to-install 'color-theme)))
-
 ;; install everything in that list
 (dolist (p packages-to-install)
   (when (not (package-installed-p p))
     (package-install p)))
-
-;; if color-theme is installed, we need to bootstrap the "themes" directory
-(when (eq emacs-major-version 23)
-  (progn
-    (let* ((color-theme-base (file-name-directory (locate-library "color-theme")))
-           (color-theme-base-themes (file-name-as-directory (concat color-theme-base "themes"))))
-      (make-directory color-theme-base-themes t)
-      (color-theme-initialize))))
