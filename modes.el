@@ -263,3 +263,9 @@ files, because it won't try to open any .gitignored files."
   (progn
     (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . t))
     (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root)))
+
+(use-package git-commit
+  :mode (("COMMIT_EDITMSG" . git-commit-mode)
+         ("NOTES_EDITMSG" . git-commit-mode)
+         ("MERGE_MSG" . git-commit-mode)
+         ("TAG_EDITMSG" . git-commit-mode)))

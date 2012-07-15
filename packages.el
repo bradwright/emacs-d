@@ -36,8 +36,7 @@
 
     ;; packages I install
     (defvar packages-to-install
-      '(git-commit
-        paredit
+      '(paredit
         yaml-mode
         scss-mode
         python-mode
