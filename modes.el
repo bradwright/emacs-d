@@ -208,11 +208,10 @@
 
     (defun rails-eproject-hook ()
       "Set up some local variables"
-      (make-local-variable 'compile-command)
       (add-to-list 'safe-local-variable-values '(scss-sass-command . t))
 
       ;; run rake to compile
-      (setq compile-command "bundle exec rake")
+      (set (make-local-variable 'compile-command) "bundle exec rake")
       (local-set-key (kbd "C-c C-t") 'rails-eproject-test))
 
     (add-hook 'ruby-on-rails-git-project-file-visit-hook 'rails-eproject-hook)
@@ -242,8 +241,7 @@ files, because it won't try to open any .gitignored files."
          ("\\.iced\\'" . coffee-mode))
   :config
   (progn
-    (make-local-variable 'tab-width)
-    (set 'tab-width 2)
+    (set (make-local-variable 'tab-width) 2)
 
     ;; Compile '.coffee' files on every save
     (and (file-exists-p (buffer-file-name))

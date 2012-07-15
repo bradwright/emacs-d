@@ -149,8 +149,7 @@ environment."
 
 (defun bw-turn-off-trailing-whitespace ()
   "Turns off trailing whitespace"
-  (make-local-variable 'whitespace-line-column)
-  (setq whitespace-line-column nil)
+  (set (make-local-variable 'whitespace-line-column) nil)
   (whitespace-mode -1))
 
 (defun my-insert-tab (&optional arg)
