@@ -261,4 +261,5 @@ files, because it won't try to open any .gitignored files."
   :bind ("C-c C-f" . ack-and-a-half)
   :config
   (progn
+    (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . t))
     (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root)))
