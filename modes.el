@@ -189,7 +189,6 @@
 
 ;; eproject mode
 (use-package eproject
-  :load-path "vendor/eproject-mode/lang"
   :config
   (progn
     ;; ruby on rails special type
