@@ -20,6 +20,9 @@
 
     (add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
 
+    ;; Ruby has a lot of camel case
+    (subword-mode)
+
     ;; this variable is stupid - apparently Ruby needs its own indent
     ;; variable. 2-space indent is idiomatic
     (setq ruby-indent-level 2)))

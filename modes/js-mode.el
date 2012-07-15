@@ -32,6 +32,9 @@
 
     (add-hook 'inferior-js-mode-hook 'bw-js-mode-hook)
 
+    ;; Camel case is popular in JS
+    (subword-mode)
+
     ;; Flymake uses node.js jslint
     (defun flymake-jslint-init ()
       (let* ((temp-file (flymake-init-create-temp-buffer-copy
