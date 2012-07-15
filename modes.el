@@ -258,3 +258,8 @@ files, because it won't try to open any .gitignored files."
   (progn
        (define-key paredit-mode-map (kbd "M-)") 'paredit-forward-slurp-sexp)
        (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
+
+(use-package ack-and-a-half
+  :config
+  (progn
+    (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root)))
