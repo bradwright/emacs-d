@@ -25,3 +25,6 @@
 [submodule "vendor/git-commit-mode"]
 	path = vendor/git-commit-mode
 	url = https://github.com/rafl/git-commit-mode.git
+[submodule "vendor/ruby-mode"]
+	path = vendor/ruby-mode
+	url = https://github.com/boostpro/ruby-mode.git
