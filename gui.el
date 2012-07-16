@@ -2,6 +2,9 @@
 
 ;; Color themes and graphical embellishment
 
+;; show lines after end of buffer
+(setq indicate-empty-lines t)
+
 (defvar bw-after-frame-raise-hook '()
   "Hook called after a frame is raised. Functions receive a
   single arg, which is the frame that was raised.")
@@ -23,8 +26,7 @@
                    (not (equal f ".")))
           (add-to-list 'custom-theme-load-path name))))))
 
-(if (eq emacs-major-version 24)
-    (load-custom-themes))
+(load-custom-themes)
 
 ;; From:
 ;; http://emacs-fu.blogspot.co.uk/2011/01/setting-frame-title.html

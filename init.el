@@ -61,9 +61,6 @@
 (show-paren-mode 1)
 (setq show-paren-style 'parenthesis)
 
-;; show lines after end of buffer
-(setq indicate-empty-lines t)
-
 ;; Hippie expand: at times perhaps too hip
 (delete
  'try-expand-line hippie-expand-try-functions-list)
