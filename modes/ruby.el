@@ -29,3 +29,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\.erb$" . scss-mode))
+
+;; add a bundle version of IRB shell
+(add-to-list 'inf-ruby-implementations '("bundle-ruby" . "bundle exec irb --inf-ruby-mode -r irb/completion"))

@@ -209,6 +209,8 @@
       "Set up some local variables"
       (add-to-list 'safe-local-variable-values '(scss-sass-command . t))
 
+      (set (make-local-variable 'inf-ruby-default-implementation) "bundle-ruby")
+
       ;; run rake to compile
       (set (make-local-variable 'compile-command) "bundle exec rake")
       (local-set-key (kbd "C-c C-t") 'rails-eproject-test))
