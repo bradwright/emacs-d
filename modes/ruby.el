@@ -24,11 +24,14 @@
     (subword-mode)
 
     ;; this variable is stupid - apparently Ruby needs its own indent
-    ;; variable. 2-space indent is idiomatic
+
     (setq ruby-indent-level 2)))
 
 (add-to-list 'auto-mode-alist '("\\.css\\.erb$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\.erb$" . scss-mode))
 
 ;; add a bundle version of IRB shell
-(add-to-list 'inf-ruby-implementations '("bundle-ruby" . "bundle exec irb --inf-ruby-mode -r irb/completion"))
+(use-package rinari
+  :config
+  (progn
+    (add-to-list 'inf-ruby-implementations '("bundle-ruby" . "bundle exec irb --inf-ruby-mode -r irb/completion"))))
