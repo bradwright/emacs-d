@@ -40,10 +40,10 @@
   ;; show help in the echo area instead of as a tooltip
   (tooltip-mode -1)
   ;; make fringe-mode 4 pixels
-  (fringe-mode 4))
-
-;; Don't blink the cursor
-(blink-cursor-mode -1)
+  (fringe-mode 4)
+  ;; blink the cursor
+  (setq blink-cursor-interval 1.0)
+  (blink-cursor-mode))
 
 ;; stop beeping at me
 (setq visible-bell t)
