@@ -45,7 +45,8 @@
         markdown-mode
         puppet-mode
         idomenu
-        ack-and-a-half))
+        ack-and-a-half
+        rinari))
 
     ;; install everything in that list
     (dolist (p packages-to-install)
