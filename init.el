@@ -61,12 +61,6 @@
 (show-paren-mode 1)
 (setq show-paren-style 'parenthesis)
 
-;; Hippie expand: at times perhaps too hip
-(delete
- 'try-expand-line hippie-expand-try-functions-list)
-(delete
- 'try-expand-list hippie-expand-try-functions-list)
-
 ;; I got sick of typing "yes"
 (defalias 'yes-or-no-p 'y-or-n-p)
 
