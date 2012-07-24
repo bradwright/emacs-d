@@ -277,3 +277,14 @@ files, because it won't try to open any .gitignored files."
          ("NOTES_EDITMSG" . git-commit-mode)
          ("MERGE_MSG" . git-commit-mode)
          ("TAG_EDITMSG" . git-commit-mode)))
+
+(use-package whitespace
+  :init
+  (progn
+    ;; display only tails of lines longer than 80 columns, tabs and
+    ;; trailing whitespaces
+    ;; style information is here: http://www.emacswiki.org/emacs/WhiteSpace
+    (setq whitespace-line-column 80
+          whitespace-style '(face tabs trailing lines-tail))
+
+    (global-whitespace-mode t)))

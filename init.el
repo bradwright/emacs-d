@@ -98,27 +98,8 @@
  kept-old-versions 2
  version-control t)   ; Use versioned backups
 
-;; Whitespace mode
-(require 'whitespace)
-;; Whitespace mode from:
-;; http://ruslanspivak.com/2010/09/27/keep-track-of-whitespaces-and-column-80-overflow/
-
 ;; nuke trailing whitespaces when writing to a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
-
-;; display only tails of lines longer than 80 columns, tabs and
-;; trailing whitespaces
-
-;; style information is here: http://www.emacswiki.org/emacs/WhiteSpace
-(setq whitespace-line-column 80
-      whitespace-style '(face tabs trailing lines-tail))
-
-;; face for long lines' tails
-(set-face-attribute 'whitespace-line nil)
-
-;; enable whitespace mode
-(global-whitespace-mode t)
-(whitespace-mode t)
 
 (use-package uniquify
   :config
