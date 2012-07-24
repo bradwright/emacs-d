@@ -264,10 +264,12 @@ files, because it won't try to open any .gitignored files."
       (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp))))
 
 (use-package ack-and-a-half
+  :init
+  (progn
+    (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . t)))
   :bind ("C-c C-f" . ack-and-a-half)
   :config
   (progn
-    (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . t))
     (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root)))
 
 (use-package git-commit
