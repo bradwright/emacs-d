@@ -4,6 +4,13 @@
 ;;
 ;; Intended to be robust and usable across platforms
 
+;; borrowed from:
+;; https://github.com/purcell/emacs.d/blob/master/init.el
+(setq *is-a-mac* (eq system-type 'darwin))
+(setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
+(setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
+(setq *is-linux* (eq system-type 'gnu/linux))
+
 ;; from emacs-starter-kit
 (progn
   ;; Turn off mouse interface early in startup to avoid momentary display
@@ -160,13 +167,14 @@
 (load "gui")
 
 ;; OSX specific code
-(when (eq system-type 'darwin)
+(when *is-a-mac*
   (load "darwin")
-  (if (display-graphic-p)
+  (if (or *is-carbon-emacs*
+          *is-cocoa-emacs*)
       (load "darwin-gui")
     (load "darwin-cli")))
 
-(when (eq system-type 'gnu/linux)
+(when *is-linux*
   (unless (display-graphic-p)
     (load "linux-cli")))
 
