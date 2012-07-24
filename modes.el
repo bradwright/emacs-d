@@ -2,6 +2,9 @@
 
 ;; All my major and minor mode loading and configuration
 
+;; defer loading of separate mode configuration
+(add-hook 'after-init-hook 'bw-load-mode-files)
+
 ;; IDO mode is awesome
 (use-package ido
   :init (ido-mode t)
@@ -235,8 +238,6 @@ files, because it won't try to open any .gitignored files."
     (use-package eproject-extras
       :bind ("C-c f" . bw-eproject-find-files))
     (setq eproject-completing-read-function 'eproject--ido-completing-read)))
-
-(add-hook 'after-init-hook 'bw-load-mode-files)
 
 ;; coffee script and iced coffee
 (use-package coffee-mode
