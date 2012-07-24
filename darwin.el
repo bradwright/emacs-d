@@ -23,6 +23,10 @@
 ;; Use Solarized-dark on OS X
 (defun load-solarized-theme ()
   "Loads Solarized dark"
+  (when (not (display-graphic-p))
+    (custom-set-faces
+     ;; unset bold in terminal, as solarized-dark breaks it
+     '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
   (load-theme 'solarized-dark t))
 ;; we load the theme after init because we might have changed some
 ;; variables in customize
