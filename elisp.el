@@ -181,3 +181,11 @@ environment."
               (push (prin1-to-string x t) tag-names)))
           tags-completion-table)
     (find-tag (ido-completing-read "Tag: " tag-names))))
+
+(defun load-solarized-theme ()
+  "Loads Solarized dark"
+  (when (not (display-graphic-p))
+    (custom-set-faces
+     ;; unset bold in terminal, as solarized-dark breaks it
+     '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
+  (load-theme 'solarized-dark t))
