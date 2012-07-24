@@ -257,8 +257,10 @@ files, because it won't try to open any .gitignored files."
 (use-package paredit
   :config
   (progn
-    (define-key paredit-mode-map (kbd "M-)") 'paredit-forward-slurp-sexp)
-    (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
+    ;; change keyboard commands only in terminal mode
+    (when (not (display-graphic-p))
+      (define-key paredit-mode-map (kbd "M-)") 'paredit-forward-slurp-sexp)
+      (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp))))
 
 (use-package ack-and-a-half
   :bind ("C-c C-f" . ack-and-a-half)
