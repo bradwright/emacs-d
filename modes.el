@@ -46,7 +46,9 @@
      ;; open magit status in same window as current buffer
      magit-status-buffer-switch-function 'switch-to-buffer
      ;; highlight word/letter changes in hunk diffs
-     magit-diff-refine-hunk t)))
+     magit-diff-refine-hunk t
+     ;; don't always save buffers
+     magit-save-some-buffers nil)))
 
 ;; turn off hl-line-mode for compilation mode
 (add-hook 'compilation-mode-hook 'local-hl-line-mode-off)
