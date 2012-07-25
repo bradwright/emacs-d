@@ -288,3 +288,8 @@ files, because it won't try to open any .gitignored files."
           whitespace-style '(face tabs trailing lines-tail))
 
     (global-whitespace-mode t)))
+
+(use-package smart-tab
+  :diminish smart-tab-mode
+  :init
+  (global-smart-tab-mode t))
