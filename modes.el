@@ -270,7 +270,10 @@ files, because it won't try to open any .gitignored files."
   :bind ("C-c C-f" . ack-and-a-half)
   :config
   (progn
-    (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root)))
+    (add-hook 'eproject-first-buffer-hook (lambda ()
+                                            (when (eproject-root)
+      (set (make-local-variable 'ack-and-a-half-root-directory-functions) 'ack-and-a-half-root-directory-functions)
+      (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root))))))
 
 (use-package git-commit
   :mode (("COMMIT_EDITMSG" . git-commit-mode)
