@@ -9,6 +9,7 @@ compile:
 	@-cd vendor/distel && make
 	@-cd vendor/magit && make
 	@-cd vendor/js2-mode && make
+	@-cd vendor/helm && make
 	@-npm install
 
 # make sure we're linked into the $USER Emacs sitefile

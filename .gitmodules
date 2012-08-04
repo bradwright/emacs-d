@@ -25,3 +25,6 @@
 [submodule "vendor/git-commit-mode"]
 	path = vendor/git-commit-mode
 	url = https://github.com/rafl/git-commit-mode.git
+[submodule "vendor/helm"]
+	path = vendor/helm
+	url = https://github.com/emacs-helm/helm.git
