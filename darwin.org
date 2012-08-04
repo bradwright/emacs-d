@@ -12,31 +12,31 @@ appended:
 We need to ignore =.DS_Store= files in =ido-mode=, or else they
 pollute everything:
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (add-to-list 'ido-ignore-files "\\.DS_Store")
-#+end_src
+#+END_SRC
 
 Even though we may have set the Mac OS X Terminal's Alt key as the
 Emacs =M-= key, we want to be able to insert a =#= using =Option-3= in
 Emacs as we would in other programs.
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (fset 'insert-pound "#")
   (define-key global-map "\M-3" 'insert-pound)
-#+end_src
+#+END_SRC
 
 =ispell= isn't available for OS X, so we use the Homebrew install of
 =aspell= instead:
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (setq-default ispell-program-name "aspell")
-#+end_src
+#+END_SRC
 
 Open any links with whatever OS X thinks is the default browser:
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (setq browse-url-browser-function 'browse-url-default-macosx-browser)
-#+end_src
+#+END_SRC
 
 ** Fix the =PATH= / =exec-path= issue
 
@@ -44,7 +44,7 @@ On Darwin the =PATH= is set by an environment =.plist= rather than
 gotten from a login shell. We want ours from the login shell, as I'll
 already have mangled that to get Homebrew etc. into the right places.
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (defun set-darwin-path ()
     "Get PATH from the shell, as the OSX environment is broken and weird"
     (let ((darwin-path (env-var-from-login-shell "PATH")))
@@ -52,14 +52,14 @@ already have mangled that to get Homebrew etc. into the right places.
       (setenv "PATH" darwin-path)))
 
   (set-darwin-path)
-#+end_src
+#+END_SRC
 
 ** Colour Theme
 
 We only want to load the Solarized Dark theme if we're in an iTerm
 session with the right colouring, or if we're in a GUI.
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (defun load-solarized-dark-theme ()
     "Loads the solarized-dark theme"
     ;; this puts the theme on the correct path
@@ -70,4 +70,4 @@ session with the right colouring, or if we're in a GUI.
        (window-system)
        (search "Solarized" (getenv "ITERM_PROFILE")))
       (add-hook 'bw-after-custom-load-hook 'load-solarized-dark-theme))
-#+end_src
+#+END_SRC
