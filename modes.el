@@ -292,8 +292,4 @@ files, because it won't try to open any .gitignored files."
 
 (use-package helm-config
   :load-path "vendor/eproject-mode/contrib"
-  :bind (("C-c h" . helm-mini)
-         ("C-c o" . helm-eproject))
-  :init
-  (progn
-    (require 'helm-eproject)))
+  :bind (("C-c h" . helm-mini)))
