@@ -8,7 +8,8 @@
          ("[gG]emfile$" . ruby-mode)
          ("[rR]akefile$" . ruby-mode)
          ("\\.rake$" . ruby-mode)
-         ("\\.rabl$" . ruby-mode))
+         ("\\.rabl$" . ruby-mode)
+         ("[cC]apfile$" . ruby-mode))
   :config
   (progn
     ;; Rails project setup
