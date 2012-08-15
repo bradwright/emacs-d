@@ -4,7 +4,7 @@
 
 ;; set my favourite Mac font as the default font
 (set-face-attribute 'default nil :foundry "apple"
-                    :family "Inconsolata" :height 150)
+                    :family "Inconsolata" :height 160)
 
 ;; This makes left-option do M-
 (setq ns-alternate-modifier 'meta)
