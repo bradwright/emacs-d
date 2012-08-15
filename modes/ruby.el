@@ -9,7 +9,8 @@
          ("[rR]akefile$" . ruby-mode)
          ("\\.rake$" . ruby-mode)
          ("\\.rabl$" . ruby-mode)
-         ("[cC]apfile$" . ruby-mode))
+         ("[cC]apfile$" . ruby-mode)
+         ("\\.gemspec$" . ruby-mode))
   :config
   (progn
     ;; Rails project setup
