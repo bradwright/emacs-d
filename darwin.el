@@ -30,3 +30,6 @@
 ;; emacs as we would in other programs.
 (fset 'insert-pound "#")
 (define-key global-map "\M-3" 'insert-pound)
+
+;; OS X ls doesn't support --dired
+(setq dired-use-ls-dired nil)
