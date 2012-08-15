@@ -113,7 +113,7 @@
 (setq echo-keystrokes 0.1)
 
 ;; Fuck auto fill
-(setq auto-fill-mode nil)
+(auto-fill-mode -1)
 
 ;; Show line-number in the mode line
 (line-number-mode 1)
