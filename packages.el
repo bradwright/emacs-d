@@ -23,6 +23,7 @@
              clojure-test-mode
              haskell-mode
              idomenu
+             ruby-mode
              znc)))
 
     ;; refresh archives
