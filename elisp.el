@@ -76,7 +76,7 @@ by using nxml's indentation rules."
 (defun env-var-from-login-shell (var)
   "Fetches a named variable from a login shell"
   (interactive "sENV variable: ")
-  (let ((command-to-run (concat "$SHELL -l -c 'echo $" var "'")))
+  (let ((command-to-run (concat "$SHELL -ic 'echo $" var "'")))
     (chomp (shell-command-to-string command-to-run))))
 
 ;; next 4 defuns from: http://paste.lisp.org/display/111574
