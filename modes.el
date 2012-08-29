@@ -183,7 +183,6 @@
       desktop-path                (list desktop-dirname)
       desktop-save                t
       desktop-load-locked-desktop nil)
-(desktop-save-mode 1)
 
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally
