@@ -1,3 +1,5 @@
+TARGET	:= $(HOME)/.emacs.d
+
 # makefile to install my Emacs
 all: clean compile install
 
@@ -14,11 +16,13 @@ compile:
 	@-npm install
 
 # make sure we're linked into the $USER Emacs sitefile
-install:
-	ln -s `pwd` ~/.emacs.d
+install: clean_dir
+	ln -sf $(CURDIR) $(TARGET)
+
+clean_dir:
+	rm -rf $(TARGET)
 
 # remove old directory and clean files
-clean:
-	rm -rf ~/.emacs.d
+clean: clean_dir
 	git clean -qfxd
 	find . -name "*.elc" -delete
