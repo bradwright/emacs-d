@@ -288,7 +288,3 @@ files, because it won't try to open any .gitignored files."
           whitespace-style '(face tabs trailing lines-tail))
 
     (global-whitespace-mode t)))
-
-(use-package helm-config
-  :load-path "vendor/eproject-mode/contrib"
-  :bind (("C-c h" . helm-mini)))
