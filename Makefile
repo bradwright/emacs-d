@@ -1,5 +1,7 @@
 TARGET	:= $(HOME)/.emacs.d
 
+.PHONY: all compile install clean_dir clean
+
 # makefile to install my Emacs
 all: clean compile install
 
@@ -20,7 +22,7 @@ install: clean_dir
 	ln -sf $(CURDIR) $(TARGET)
 
 clean_dir:
-	rm -rf $(TARGET)
+	unlink $(TARGET)
 
 # remove old directory and clean files
 clean: clean_dir
