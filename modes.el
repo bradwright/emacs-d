@@ -230,7 +230,7 @@ files, because it won't try to open any .gitignored files."
               (eproject-root)
               (ido-completing-read
                (format "Find file: %s" (eproject-root))
-               (split-string (shell-command-to-string "git ls-files"))))))
+               (split-string (shell-command-to-string "git ls-files --exclude-standard -co"))))))
         (eproject-find-file)))
     (use-package eproject-extras
       :bind ("C-c f" . bw-eproject-find-files))
