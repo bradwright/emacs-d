@@ -21,7 +21,7 @@ install: clean_dir
 	ln -sf $(CURDIR) $(TARGET)
 
 clean_dir:
-	unlink $(TARGET)
+	rm -rf $(TARGET)
 
 # remove old directory and clean files
 clean: clean_dir
