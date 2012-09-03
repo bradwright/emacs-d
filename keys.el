@@ -53,3 +53,7 @@
 
 ;; open URL
 (global-set-key (kbd "C-c b") 'browse-url)
+
+;; we pretty much never ever want to background emacs
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
