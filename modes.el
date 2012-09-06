@@ -48,6 +48,8 @@
      magit-status-buffer-switch-function 'switch-to-buffer
      ;; highlight word/letter changes in hunk diffs
      magit-diff-refine-hunk t
+     ;; ask me if I want to include a revision when rewriting
+     magit-rewrite-inclusive 'ask
      ;; don't always save buffers
      magit-save-some-buffers nil)))
 
