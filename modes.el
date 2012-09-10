@@ -177,15 +177,6 @@
 (add-hook 'eshell-preoutput-filter-functions
           'ansi-color-filter-apply)
 
-;; http://stackoverflow.com/a/4485083/61435
-;; Automatically save and restore sessions
-(setq desktop-dirname (file-name-as-directory (concat tmp-local-dir "desktops"))
-      desktop-base-file-name      "emacs.desktop"
-      desktop-base-lock-name      "lock"
-      desktop-path                (list desktop-dirname)
-      desktop-save                t
-      desktop-load-locked-desktop nil)
-
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally
       ediff-diff-options          "-w"
