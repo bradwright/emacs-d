@@ -270,6 +270,7 @@ files, because it won't try to open any .gitignored files."
   :bind ("C-c C-f" . ack-and-a-half)
   :config
   (progn
+    (setq ack-and-a-half-prompt-for-directory t)
     (add-hook 'eproject-first-buffer-hook (lambda ()
                                             (when (eproject-root)
       (set (make-local-variable 'ack-and-a-half-root-directory-functions) 'ack-and-a-half-root-directory-functions)
