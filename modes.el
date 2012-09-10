@@ -293,3 +293,6 @@ files, because it won't try to open any .gitignored files."
           whitespace-style '(face tabs trailing lines-tail))
 
     (global-whitespace-mode t)))
+
+(use-package ace-jump-mode
+  :bind ("C-c SPC" . ace-jump-mode))

@@ -39,6 +39,7 @@
     (defvar packages-to-install
       '(paredit
         diminish
+        ace-jump-mode
         yaml-mode
         scss-mode
         python-mode
