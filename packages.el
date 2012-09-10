@@ -38,6 +38,7 @@
     ;; packages I install
     (defvar packages-to-install
       '(paredit
+        diminish
         yaml-mode
         scss-mode
         python-mode

@@ -193,6 +193,7 @@
 
 ;; eproject mode
 (use-package eproject
+  :diminish eproject-mode
   :config
   (progn
     ;; ruby on rails special type
@@ -282,6 +283,7 @@ files, because it won't try to open any .gitignored files."
 
 (use-package whitespace
   :init
+  :diminish whitespace-mode
   (progn
     ;; display only tails of lines longer than 80 columns, tabs and
     ;; trailing whitespaces
