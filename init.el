@@ -64,7 +64,7 @@
     ;; Save a list of recent files visited.
     ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
     (setq recentf-auto-cleanup 'never
-          recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'"))))
+          recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'" "[/\\]\\.git/"))))
 
 ;; I got sick of typing "yes"
 (defalias 'yes-or-no-p 'y-or-n-p)
