@@ -19,8 +19,5 @@
       (process-send-eof proc))))
 
 ;; Override defaults to use the mac copy and paste
-(unless (getenv "TMUX")
-  ;; tmux breaks pbcopy/pbpaste, see:
-  ;; https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
-  (setq interprogram-cut-function 'paste-to-osx)
-  (setq interprogram-paste-function 'copy-from-osx))
+(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-paste-function 'copy-from-osx)
