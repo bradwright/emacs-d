@@ -6,10 +6,18 @@
 
 ;; borrowed from:
 ;; https://github.com/purcell/emacs.d/blob/master/init.el
-(setq *is-a-mac* (eq system-type 'darwin))
-(setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
-(setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
-(setq *is-linux* (eq system-type 'gnu/linux))
+(defconst *is-a-mac*
+  (eq system-type 'darwin)
+  "Is this running on OS X?")
+(defconst *is-carbon-emacs*
+  (and *is-a-mac* (eq window-system 'mac))
+  "Is this the Carbon port of Emacs?")
+(defconst *is-cocoa-emacs*
+  (and *is-a-mac* (eq window-system 'ns))
+  "Is this the Cocoa version of Emacs?")
+(defconst *is-linux*
+  (eq system-type 'gnu/linux)
+  "Is this running on Linux?")
 
 ;; from emacs-starter-kit
 (progn
