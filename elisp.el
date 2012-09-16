@@ -193,3 +193,9 @@ environment."
 (defun bw-locate-library-dir (library)
   "Locates the directory containing a loaded library"
   (file-name-directory (locate-library library)))
+
+(defun bw-add-to-load-path (dir)
+  (add-to-list 'load-path dir))
+
+(defun bw-join-dirs (prefix suffix)
+  (file-name-as-directory (concat prefix suffix)))

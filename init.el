@@ -24,19 +24,21 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
-;; FIXME: do I need this?
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+
+;; My functions
+(load "elisp")
 
 ;; external libraries I might have collected via submodules etc.
-(setq vendor-dotfiles-dir (file-name-as-directory (concat dotfiles-dir "vendor/")))
-(add-to-list 'load-path vendor-dotfiles-dir)
+(setq vendor-dotfiles-dir (bw-join-dirs dotfiles-dir "vendor"))
+(bw-add-to-load-path vendor-dotfiles-dir)
+
 ;; automatically add everything under vendor to load-path
 (dolist (f (directory-files vendor-dotfiles-dir))
   (let ((name (concat vendor-dotfiles-dir "/" f)))
     (when (and (file-directory-p name)
                (not (equal f ".."))
                (not (equal f ".")))
-      (add-to-list 'load-path name))))
+      (bw-add-to-load-path name))))
 
 ;; use-package
 (require 'use-package)
@@ -44,16 +46,8 @@
   (setq use-package-verbose (null byte-compile-current-file)))
 
 ;; tmp directory for storing stupid crap
-(setq tmp-local-dir (file-name-as-directory (concat dotfiles-dir ".tmp/")))
+(setq tmp-local-dir (bw-join-dirs dotfiles-dir ".tmp/"))
 (make-directory tmp-local-dir t)
-
-;; kill all start up stuff
-(setq inhibit-startup-screen t)
-(setq initial-buffer-choice t)
-
-;; always highlight syntax
-(global-font-lock-mode t)
-(setq font-lock-maximum-decoration t)
 
 (use-package recentf
   :init (recentf-mode 1)
@@ -62,11 +56,7 @@
     ;; Save a list of recent files visited.
     ;; disable auto-clean before we start recentf so Tramp doesn't block emacs
     (setq recentf-auto-cleanup 'never
-          recentf-exclude '("[/\\]\\.elpa/"))))
-
-;; Highlight matching parentheses when the point is on them.
-(show-paren-mode 1)
-(setq show-paren-style 'parenthesis)
+          recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'"))))
 
 ;; I got sick of typing "yes"
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -83,8 +73,8 @@
 ;; Stop autosaves and backups from littering the filesystem
 ;; Keep backups in same dir
 (setq
- tmp-backups-dir (file-name-as-directory (concat tmp-local-dir "backups"))
- tmp-autosaves-dir (file-name-as-directory (concat tmp-local-dir "autosaves")))
+ tmp-backups-dir (bw-join-dirs tmp-local-dir "backups")
+ tmp-autosaves-dir (bw-join-dirs tmp-local-dir "autosaves"))
 
 (make-directory tmp-backups-dir t)
 (make-directory tmp-autosaves-dir t)
@@ -101,41 +91,11 @@
 ;; nuke trailing whitespaces when writing to a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
-(use-package uniquify
-  :config
-  (progn
-    ;; this shows foo/bar and baz/bar when two files are named bar
-    (setq uniquify-buffer-name-style 'forward)
-    ;; strip common suffixes
-    (setq uniquify-strip-common-suffix t)))
-
-;; show keystrokes immediately
-(setq echo-keystrokes 0.1)
-
-;; Fuck auto fill
-(auto-fill-mode -1)
-
-;; Show line-number in the mode line
-(line-number-mode 1)
-
-;; Show column-number in the mode line
-(column-number-mode 1)
-
 ;; always rescan
 (set-default 'imenu-auto-rescan t)
 
-;; My functions
-(load "elisp")
-
 ;; My keyboard shortcuts
 (load "keys")
-
-;; start a server
-(use-package server
-  :init
-  (progn
-    (unless (server-running-p)
-      (server-start))))
 
 ;; packages
 (load "packages")

@@ -2,6 +2,30 @@
 
 ;; Color themes and graphical embellishment
 
+;; kill all start up stuff
+(setq inhibit-startup-screen t)
+(setq initial-buffer-choice t)
+
+;; always highlight syntax
+(global-font-lock-mode t)
+(setq font-lock-maximum-decoration t)
+
+;; Highlight matching parentheses when the point is on them.
+(show-paren-mode 1)
+(setq show-paren-style 'parenthesis)
+
+;; show keystrokes immediately
+(setq echo-keystrokes 0.1)
+
+;; Fuck auto fill
+(auto-fill-mode -1)
+
+;; Show line-number in the mode line
+(line-number-mode 1)
+
+;; Show column-number in the mode line
+(column-number-mode 1)
+
 ;; Theme files
 (setq theme-dotfiles-dir (file-name-as-directory (concat dotfiles-dir "vendor/themes/")))
 (make-directory theme-dotfiles-dir t)

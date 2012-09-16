@@ -293,3 +293,18 @@ files, because it won't try to open any .gitignored files."
 
 (use-package ace-jump-mode
   :bind ("C-c SPC" . ace-jump-mode))
+
+(use-package uniquify
+  :config
+  (progn
+    ;; this shows foo/bar and baz/bar when two files are named bar
+    (setq uniquify-buffer-name-style 'forward)
+    ;; strip common suffixes
+    (setq uniquify-strip-common-suffix t)))
+
+;; always start a server
+(use-package server
+  :init
+  (progn
+    (unless (server-running-p)
+      (server-start))))
