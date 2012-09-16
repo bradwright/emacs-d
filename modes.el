@@ -71,10 +71,6 @@
     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
     (add-hook 'inferior-haskell-mode-hook 'local-hl-line-mode-off)))
 
-;; Jinja mode is a bit crap, really
-(use-package jinja
-  :mode ("\\.jinja$" . jinja-mode))
-
 ;; JSON files
 (use-package json-mode
   :mode ("\\.json\\'" . json-mode))
