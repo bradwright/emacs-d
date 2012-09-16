@@ -189,3 +189,7 @@ environment."
      ;; unset bold in terminal, as solarized-dark breaks it
      '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
   (load-theme 'solarized-dark t))
+
+(defun bw-locate-library-dir (library)
+  "Locates the directory containing a loaded library"
+  (file-name-directory (locate-library library)))

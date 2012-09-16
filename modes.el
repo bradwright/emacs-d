@@ -23,7 +23,7 @@
   :bind ("C-c g" . magit-status)
   :init
   (progn
-    (add-to-list 'Info-default-directory-list (concat vendor-dotfiles-dir "magit/"))
+    (add-to-list 'Info-default-directory-list (bw-locate-library-dir "magit"))
     (delete 'Git vc-handled-backends))
   :config
   (progn
