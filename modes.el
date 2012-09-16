@@ -181,9 +181,12 @@
           'ansi-color-filter-apply)
 
 ;; ediff
-(setq ediff-split-window-function 'split-window-horizontally
-      ediff-diff-options          "-w"
-      ediff-window-setup-function 'ediff-setup-windows-plain)
+(use-package ediff
+  :config
+  (progn
+    (setq ediff-split-window-function 'split-window-horizontally
+          ediff-diff-options          "-w"
+          ediff-window-setup-function 'ediff-setup-windows-plain)))
 
 ;; eproject mode
 (use-package eproject
