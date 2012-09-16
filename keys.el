@@ -52,7 +52,8 @@
 (global-set-key (kbd "C-c E") (lambda () (interactive) (eshell t)))
 
 ;; open URL
-(global-set-key (kbd "C-c b") 'browse-url)
+(when (or *is-a-mac* (display-graphic-p))
+  (global-set-key (kbd "C-c b") 'browse-url))
 
 ;; we pretty much never ever want to background emacs
 (global-unset-key (kbd "C-z"))
