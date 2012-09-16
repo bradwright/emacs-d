@@ -21,7 +21,10 @@
 ;;; Magit
 (use-package magit
   :bind ("C-c g" . magit-status)
-  :init (delete 'Git vc-handled-backends)
+  :init
+  (progn
+    (add-to-list 'Info-default-directory-list (concat vendor-dotfiles-dir "magit/"))
+    (delete 'Git vc-handled-backends))
   :config
   (progn
     ;; force wrap magit commit messages
