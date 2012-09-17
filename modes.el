@@ -207,6 +207,8 @@
       "Set up some local variables"
       (add-to-list 'safe-local-variable-values '(scss-sass-command . t))
 
+      ;; (shell-command "git ls-files | /usr/local/bin/ctags -e -f - -L - 1> TAGS 2> /dev/null")
+
       (set (make-local-variable 'inf-ruby-default-implementation) "bundle-ruby")
 
       ;; run rake to compile
