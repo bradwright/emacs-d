@@ -202,3 +202,12 @@ environment."
 
 (defun bw-join-dirs (prefix suffix)
   (file-name-as-directory (concat prefix suffix)))
+
+;; from:
+;; https://github.com/technomancy/emacs-starter-kit/blob/31c2465712485a54aba6a3ef6d1bef9b564f8f37/starter-kit-defuns.el#L179
+(defun sudo-edit (&optional arg)
+  "Edit this file as sudo"
+  (interactive "P")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo::" (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo::" buffer-file-name))))
