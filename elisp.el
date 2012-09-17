@@ -188,6 +188,9 @@ environment."
     (custom-set-faces
      ;; unset bold in terminal, as solarized-dark breaks it
      '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
+  (when (and (display-graphic-p) *is-a-mac*)
+    ;; My Macs have the --srgb flag set
+    (setq solarized-broken-srgb nil))
   (load-theme 'solarized-dark t))
 
 (defun bw-locate-library-dir (library)
