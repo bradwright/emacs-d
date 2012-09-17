@@ -287,7 +287,9 @@ files, because it won't try to open any .gitignored files."
     (setq whitespace-line-column 80
           whitespace-style '(face tabs trailing lines-tail))
 
-    (global-whitespace-mode t)))
+    (global-whitespace-mode t)
+
+    (setq whitespace-global-modes '(not erc-mode))))
 
 (use-package ace-jump-mode
   :bind ("C-c SPC" . ace-jump-mode))
