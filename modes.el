@@ -261,7 +261,7 @@ files, because it won't try to open any .gitignored files."
 (use-package ack-and-a-half
   :init
   (progn
-    (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . t)))
+    (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . ("--nopager"))))
   :bind ("C-c C-f" . ack-and-a-half)
   :config
   (progn
@@ -269,7 +269,8 @@ files, because it won't try to open any .gitignored files."
     (add-hook 'eproject-first-buffer-hook (lambda ()
                                             (when (eproject-root)
       (set (make-local-variable 'ack-and-a-half-root-directory-functions) 'ack-and-a-half-root-directory-functions)
-      (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root))))))
+      (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root))))
+    (add-to-list 'ack-and-a-half-arguments "--nopager")))
 
 (use-package git-commit
   :mode (("COMMIT_EDITMSG" . git-commit-mode)
