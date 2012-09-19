@@ -18,4 +18,4 @@
 (add-hook 'org-mode-hook 'bw-turn-off-trailing-whitespace)
 
 ;; default directory
-(org-directory "~/Dropbox/Org/")
+(setq org-directory "~/Dropbox/Org/")
