@@ -6,7 +6,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  ;; load emacs-lisp natively
- '((emacs-lisp . t)))
+ '((emacs-lisp . t)
+   (ruby . t)))
 
 ;; edit inline code blocks natively
 (setq org-src-fontify-natively t)
