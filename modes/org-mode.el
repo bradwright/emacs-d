@@ -15,3 +15,6 @@
 ;; auto-wrap
 (add-hook 'org-mode-hook 'bw-turn-on-auto-fill)
 (add-hook 'org-mode-hook 'bw-turn-off-trailing-whitespace)
+
+;; default directory
+(org-directory "~/Dropbox/Org/")
