@@ -60,7 +60,8 @@
         puppet-mode
         idomenu
         ack-and-a-half
-        inf-ruby))
+        inf-ruby
+        expand-region))
 
     ;; install everything in that list
     (dolist (p packages-to-install)

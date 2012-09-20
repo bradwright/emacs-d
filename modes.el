@@ -309,3 +309,7 @@ files, because it won't try to open any .gitignored files."
   (progn
     (unless (server-running-p)
       (server-start))))
+
+;; expand-region
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
