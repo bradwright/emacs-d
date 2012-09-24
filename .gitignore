@@ -17,3 +17,4 @@ node_modules
 eshell/
 /bookmarks
 local/
+/.mc-lists.el

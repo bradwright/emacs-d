@@ -313,3 +313,9 @@ files, because it won't try to open any .gitignored files."
 ;; expand-region
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
+
+;; multiple cursors
+(use-package multiple-cursors
+  :bind (("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))

@@ -61,7 +61,8 @@
         idomenu
         ack-and-a-half
         inf-ruby
-        expand-region))
+        expand-region
+        multiple-cursors))
 
     ;; install everything in that list
     (dolist (p packages-to-install)
