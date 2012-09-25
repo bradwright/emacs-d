@@ -62,7 +62,8 @@
         ack-and-a-half
         inf-ruby
         expand-region
-        multiple-cursors))
+        multiple-cursors
+        browse-kill-ring))
 
     ;; install everything in that list
     (dolist (p packages-to-install)
