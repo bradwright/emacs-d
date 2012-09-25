@@ -312,7 +312,7 @@ files, because it won't try to open any .gitignored files."
 
 ;; expand-region
 (use-package expand-region
-  :bind ("C-=" . er/expand-region))
+  :bind ("C-c =" . er/expand-region))
 
 ;; multiple cursors
 (use-package multiple-cursors
