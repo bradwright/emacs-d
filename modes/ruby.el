@@ -24,8 +24,7 @@
     (add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
 
     ;; Ruby has a lot of camel case
-    (add-hook 'ruby-mode-hook (lambda ()
-                                (subword-mode)))
+    (add-hook 'ruby-mode-hook 'turn-on-subword-mode)
 
     ;; this variable is stupid - apparently Ruby needs its own indent
     (setq ruby-indent-level 2
