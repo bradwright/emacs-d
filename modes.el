@@ -78,7 +78,10 @@
 ;; load yaml files correctly
 ;; yaml-mode doesn't auto-load for some reason
 (use-package yaml-mode
-  :mode ("\\.ya?ml\\'" . yaml-mode))
+  :mode ("\\.ya?ml\\'" . yaml-mode)
+  :config
+  (progn
+    (add-to-list 'safe-local-variable-values '(yaml-indent-offset . 2))))
 
 ;; rst-mode isn't always around in HEAD Emacs
 (use-package rst
