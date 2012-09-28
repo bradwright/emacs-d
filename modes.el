@@ -230,7 +230,7 @@ files, because it won't try to open any .gitignored files."
              (concat
               (eproject-root)
               (ido-completing-read
-               (format "Find file: %s" (eproject-root))
+               (format "Find file: %s" (bw-shorten-dir (eproject-root)))
                (split-string (shell-command-to-string "git ls-files --exclude-standard -co"))))))
         (eproject-find-file)))
     (use-package eproject-extras

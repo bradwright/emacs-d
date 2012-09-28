@@ -215,3 +215,7 @@ environment."
 (defun turn-on-subword-mode ()
   "Turns on subword-mode"
   (subword-mode 1))
+
+(defun bw-shorten-dir (dir)
+  "Shortens a directory path to e.g ~/src"
+  (replace-regexp-in-string (getenv "HOME") "~" dir))
