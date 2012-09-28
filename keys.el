@@ -58,3 +58,6 @@
 ;; we pretty much never ever want to background emacs
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
+
+;; read MAN entries
+(global-set-key (kbd "C-c m") 'manual-entry)
