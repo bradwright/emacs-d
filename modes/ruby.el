@@ -51,3 +51,9 @@
 
     (setq inf-ruby-first-prompt-pattern "^>> $"
           inf-ruby-prompt-pattern       "^>> $")))
+
+(use-package scss-mode
+  :mode (("\\.scss$" . scss-mode))
+  :config
+  (progn
+    (add-to-list 'safe-local-variable-values '(scss-compile-at-save . nil))))
