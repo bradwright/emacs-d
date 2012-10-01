@@ -61,3 +61,6 @@
 
 ;; read MAN entries
 (global-set-key (kbd "C-c m") 'manual-entry)
+
+;; full screen
+(global-set-key (kbd "C-c C-o") 'ns-toggle-fullscreen)
