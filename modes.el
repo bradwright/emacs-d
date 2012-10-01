@@ -294,6 +294,9 @@ files, because it won't try to open any .gitignored files."
 
     (setq whitespace-global-modes '(not erc-mode))))
 
+(use-package abbrev
+  :diminish abbrev-mode)
+
 (use-package ace-jump-mode
   :bind ("C-c SPC" . ace-jump-mode))
 
