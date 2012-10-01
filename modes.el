@@ -80,7 +80,7 @@
   :mode ("\\.ya?ml\\'" . yaml-mode)
   :config
   (progn
-    (add-to-list 'safe-local-variable-values '(yaml-indent-offset . 2))))
+    (put 'yaml-indent-offset 'safe-local-variable 'integerp)))
 
 ;; rst-mode isn't always around in HEAD Emacs
 (use-package rst
@@ -207,7 +207,7 @@
 
     (defun rails-eproject-hook ()
       "Set up some local variables"
-      (add-to-list 'safe-local-variable-values '(scss-sass-command . t))
+      (put 'scss-sass-command 'safe-local-variable 'stringp)
 
       ;; (shell-command "git ls-files | /usr/local/bin/ctags -e -f - -L - 1> TAGS 2> /dev/null")
 
@@ -263,7 +263,7 @@ files, because it won't try to open any .gitignored files."
 (use-package ack-and-a-half
   :init
   (progn
-    (add-to-list 'safe-local-variable-values '(ack-and-a-half-arguments . ("--nopager"))))
+    (put 'ack-and-a-half-arguments 'safe-local-variable 'listp))
   :bind ("C-c C-f" . ack-and-a-half)
   :config
   (progn
