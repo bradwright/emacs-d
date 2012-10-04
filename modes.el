@@ -38,6 +38,8 @@
     ;; magit extensions
     (use-package magit-blame
       :bind ("C-c C-b" . magit-blame-mode))
+    (use-package magithub
+      :init)
     (use-package rebase-mode)
 
     ;; magit settings
