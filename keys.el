@@ -63,3 +63,7 @@
 
 ;; full screen
 (global-set-key (kbd "C-c C-o") 'ns-toggle-fullscreen)
+
+(global-set-key (kbd "C-c o") 'occur)
+
+(global-set-key (kbd "M-/") 'hippie-expand)
