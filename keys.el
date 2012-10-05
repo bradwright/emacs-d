@@ -54,15 +54,16 @@
 (when (or *is-a-mac* (display-graphic-p))
   (global-set-key (kbd "C-c b") 'browse-url))
 
+;; full screen
+(when (and *is-a-mac* (display-graphic-p))
+  (global-set-key (kbd "C-c C-o") 'ns-toggle-fullscreen))
+
 ;; we pretty much never ever want to background emacs
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
 ;; read MAN entries
 (global-set-key (kbd "C-c m") 'manual-entry)
-
-;; full screen
-(global-set-key (kbd "C-c C-o") 'ns-toggle-fullscreen)
 
 (global-set-key (kbd "C-c o") 'occur)
 
