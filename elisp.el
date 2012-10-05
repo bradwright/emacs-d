@@ -221,3 +221,9 @@ environment."
 (defun bw-shorten-dir (dir)
   "Shortens a directory path to e.g ~/src"
   (replace-regexp-in-string (getenv "HOME") "~" dir))
+
+(defun bw-iedit-defun ()
+  "Calls iedit with a prefix of 0"
+  (interactive)
+  (let ((current-prefix-arg '(0)))
+    (call-interactively 'iedit-mode)))

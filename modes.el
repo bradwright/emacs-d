@@ -231,11 +231,13 @@
 (use-package expand-region
   :bind ("C-c =" . er/expand-region))
 
+
+(use-package iedit
+  :bind (("C-;" . iedit-mode)
+         ("C-c ;" . bw-iedit-defun)))
+
 ;; multiple cursors
-(use-package multiple-cursors
-  :bind (("C-;" . mc/mark-next-like-this)
-         ("C-c ;" . mc/mark-previous-like-this)
-         ("C-c C-c ;" . mc/mark-all-like-this)))
+(use-package multiple-cursors)
 
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
