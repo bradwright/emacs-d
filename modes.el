@@ -161,8 +161,8 @@
          (file-exists-p (coffee-compiled-file-name))
          (coffee-cos-mode t))))
 
-(use-package rhtml-mode
-  :mode ("\\.html\\.erb\\'" . rhtml-mode))
+(use-package web-mode
+  :mode ("\\.html\\.erb\\'" . web-mode))
 
 (use-package paredit
   :config

@@ -28,3 +28,6 @@
 [submodule "vendor/magithub"]
 	path = vendor/magithub
 	url = https://github.com/nex3/magithub.git
+[submodule "vendor/web-mode"]
+	path = vendor/web-mode
+	url = https://github.com/fxbois/web-mode.git
