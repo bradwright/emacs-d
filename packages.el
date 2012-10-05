@@ -46,6 +46,7 @@
         expand-region
         flymake-cursor
         idomenu
+        iedit
         multiple-cursors
         paredit))
 

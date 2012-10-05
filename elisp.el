@@ -188,6 +188,8 @@ environment."
     (custom-set-faces
      ;; unset bold in terminal, as solarized-dark breaks it
      '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
+  (custom-set-faces
+   '(iedit-occurrence ((t (:inherit lazy-highlight)))))
   (when (and (display-graphic-p) *is-a-mac*)
     ;; My Macs have the --srgb flag set
     (setq solarized-broken-srgb nil))
