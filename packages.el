@@ -46,7 +46,6 @@
         expand-region
         flymake-cursor
         idomenu
-        magithub
         multiple-cursors
         paredit))
 
