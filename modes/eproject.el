@@ -48,5 +48,5 @@ files, because it won't try to open any .gitignored files."
     (setq eproject-completing-read-function 'eproject--ido-completing-read)
 
     (use-package eproject-extras
-      :init
+      :init "noop"
       :bind ("C-c f" . bw-eproject-find-files))))
