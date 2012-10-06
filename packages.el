@@ -48,7 +48,8 @@
         idomenu
         iedit
         multiple-cursors
-        paredit))
+        paredit
+        yasnippet))
 
     (defun essential-packages-installed-p ()
       (loop for p in essential-packages

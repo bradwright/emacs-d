@@ -253,3 +253,9 @@
                                          try-expand-line
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
+
+(use-package yasnippet
+  :init
+  (progn
+    (yas-global-mode 1)
+    (setq yas/prompt-functions '(yas/ido-prompt yas/completing-prompt))))
