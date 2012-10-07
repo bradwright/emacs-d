@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Test case name
+# key: deftest
+# --
+def test_$1
+  $0
+end

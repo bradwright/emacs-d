@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Given arg1, arg2
+# key: given2
+# --
+Given /^$1 "([^"]*)" $2 "([^"]*)"$/ do |$3, $4|
+  $0
+end
