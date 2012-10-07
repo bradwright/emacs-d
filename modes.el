@@ -255,6 +255,7 @@
                                          try-complete-lisp-symbol))
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :init
   (progn
     (yas-global-mode 1)
