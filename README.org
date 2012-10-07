@@ -41,8 +41,7 @@ The following libraries are included in non-attributable ways, i.e not
 via package install or via a Git submodule:
 
 - [[https://github.com/technomancy/emacs-starter-kit][Emacs Starter Kit]] was a very big early influence, and continues to
-  be helpful;
-- [[https://github.com/ChrisKempson/Tomorrow-Theme][Tomorrow]], an Emacs theme;
+  be helpful.
 
 ** License and copyright
 
