@@ -49,6 +49,7 @@
         iedit
         multiple-cursors
         paredit
+        smooth-scrolling
         yasnippet))
 
     (defun essential-packages-installed-p ()
