@@ -58,10 +58,20 @@
             when (not (package-installed-p p)) do (return nil)
             finally (return t)))
 
+    (defun maybe-package-refresh-contents ()
+      "Conditionally refreshes package archive"
+      (interactive)
+      (unless
+          (and
+           (file-exists-p (concat package-user-dir "archives/marmalade"))
+           (file-exists-p (concat package-user-dir "archives/gnu"))
+           (file-exists-p (concat package-user-dir "archives/melpa")))
+        (package-refresh-contents)))
+
     (defun install-essential-packages ()
       (unless (essential-packages-installed-p)
         (message "%s" "Installing essential packages...")
-        (package-refresh-contents)
+        (maybe-package-refresh-contents)
         (dolist (p essential-packages)
           (unless (package-installed-p p)
             (package-install p)))))
