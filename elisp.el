@@ -148,6 +148,7 @@ by using nxml's indentation rules."
      '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
   (custom-set-faces
    '(iedit-occurrence ((t (:inherit lazy-highlight))))
+   '(match ((t (:inherit lazy-highlight :reverse t))))
    '(erb-face ((t (:background nil))))
    '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
   (when (and (display-graphic-p) *is-a-mac*)
