@@ -26,8 +26,4 @@
 (setq ns-pop-up-frames nil)
 
 ;; copy shell PATH across to exec-path
-(progn
-  "Get PATH from the shell, as the OSX environment is broken and weird"
-  (let ((darwin-path (env-var-from-login-shell "PATH")))
-    (setq exec-path (split-string darwin-path path-separator))
-    (setenv "PATH" darwin-path)))
+(exec-path-from-shell-initialize)

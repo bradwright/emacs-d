@@ -53,6 +53,9 @@
         smooth-scrolling
         yasnippet))
 
+    (if *is-a-mac*
+        (add-to-list 'essential-packages 'exec-path-from-shell))
+
     (defun essential-packages-installed-p ()
       (loop for p in essential-packages
             when (not (package-installed-p p)) do (return nil)
