@@ -176,7 +176,7 @@
   :init
   (progn
     (put 'ack-and-a-half-arguments 'safe-local-variable 'listp))
-  :bind ("C-c s" . ack-and-a-half)
+  :bind ("C-c C-a" . ack-and-a-half)
   :config
   (progn
     (add-to-list 'ack-and-a-half-arguments "--nopager")

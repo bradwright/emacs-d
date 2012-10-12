@@ -68,3 +68,5 @@
 (global-set-key (kbd "C-c o") 'occur)
 
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+(global-set-key (kbd "C-c C-r") 'rgrep)
