@@ -1,4 +1,5 @@
 TARGET	:= $(HOME)/.emacs.d
+EMACS   := emacs
 
 .PHONY: all compile install clean_dir clean
 
@@ -14,7 +15,7 @@ compile:
 	@-cd vendor/distel && make
 	@-cd vendor/magit && make
 	@-cd vendor/js2-mode && make
-	@-cd vendor/web-mode && emacs -batch -f batch-byte-compile *.el
+	@-cd vendor/web-mode && $(EMACS) -batch -f batch-byte-compile *.el
 	@-npm install
 
 # make sure we're linked into the $USER Emacs sitefile
@@ -26,5 +27,7 @@ clean_dir:
 
 # remove old directory and clean files
 clean: clean_dir
-	git clean -qfxd
 	find . -name "*.elc" -delete
+
+clean_all: clean
+	git clean -qfxd
