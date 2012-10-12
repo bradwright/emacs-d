@@ -56,7 +56,7 @@
 
 ;; full screen
 (when (and *is-a-mac* (display-graphic-p))
-  (global-set-key (kbd "C-c C-o") 'ns-toggle-fullscreen))
+  (global-set-key (kbd "C-c C-f") 'ns-toggle-fullscreen))
 
 ;; we pretty much never ever want to background emacs
 (global-unset-key (kbd "C-z"))
