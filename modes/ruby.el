@@ -19,12 +19,7 @@
 
       ;; We don't want to compile SCSS in Rails because the asset pipeline
       ;; does it for us
-      (set (make-local-variable 'scss-compile-at-save) nil)
-
-      (set (make-local-variable 'grep-find-ignored-directories) grep-find-ignored-directories)
-      (add-to-list 'grep-find-ignored-directories "log"))
-
-    (add-to-list 'grep-find-ignored-directories ".bundle")
+      (set (make-local-variable 'scss-compile-at-save) nil))
 
     (add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
 
