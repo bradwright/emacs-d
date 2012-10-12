@@ -141,7 +141,7 @@ by using nxml's indentation rules."
     (find-tag (ido-completing-read "Tag: " tag-names))))
 
 (defun load-solarized-theme ()
-  "Loads Solarized dark"
+  "Loads Solarized dark and customises some faces for it"
   (when (not (display-graphic-p))
     (custom-set-faces
      ;; unset bold in terminal, as solarized-dark breaks it
