@@ -50,7 +50,6 @@
         iedit
         multiple-cursors
         paredit
-        smooth-scrolling
         yasnippet))
 
     (if *is-a-mac*
