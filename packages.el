@@ -45,7 +45,7 @@
         diminish
         expand-region
         flymake-cursor
-        git-commit
+        git-commit-mode
         idomenu
         iedit
         multiple-cursors

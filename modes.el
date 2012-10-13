@@ -186,7 +186,7 @@
       (set (make-local-variable 'ack-and-a-half-root-directory-functions) 'ack-and-a-half-root-directory-functions)
       (add-to-list 'ack-and-a-half-root-directory-functions 'eproject-root))))))
 
-(use-package git-commit
+(use-package git-commit-mode
   :mode (("COMMIT_EDITMSG" . git-commit-mode)
          ("NOTES_EDITMSG" . git-commit-mode)
          ("MERGE_MSG" . git-commit-mode)
