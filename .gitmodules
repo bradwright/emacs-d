@@ -28,3 +28,6 @@
 [submodule "vendor/web-mode"]
 	path = vendor/web-mode
 	url = https://github.com/fxbois/web-mode.git
+[submodule "vendor/xterm-frobs"]
+	path = vendor/xterm-frobs
+	url = https://github.com/emacsmirror/xterm-frobs

@@ -260,3 +260,13 @@
   (progn
     (yas-global-mode 1)
     (setq yas/prompt-functions '(yas/ido-prompt yas/completing-prompt))))
+
+;; set the title on xterm
+(use-package xterm-frobs
+  :init
+  (progn
+    (unless (display-graphic-p)
+      (defun bw-xterm-title ()
+        (xterm-set-window-title (concat "emacs@" (system-name)))
+        (xterm-set-icon-title (buffer-name)))
+      (add-hook 'window-configuration-change-hook 'bw-xterm-title))))
