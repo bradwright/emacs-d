@@ -188,3 +188,8 @@ by using nxml's indentation rules."
   (interactive)
   (let ((current-prefix-arg '(0)))
     (call-interactively 'iedit-mode)))
+
+(defun bw-occur-invalid-chars ()
+  "Finds characters that aren't in the displayable range for ASCII"
+  (interactive)
+  (occur "[^\000-\177]"))
