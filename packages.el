@@ -73,7 +73,7 @@
     (defun install-essential-packages ()
       (unless (essential-packages-installed-p)
         (message "%s" "Installing essential packages...")
-        (maybe-package-refresh-contents)
+        (package-refresh-contents)
         (dolist (p essential-packages)
           (unless (package-installed-p p)
             (package-install p)))))
