@@ -147,11 +147,10 @@ by using nxml's indentation rules."
     (when (or (eq theme-name 'solarized-dark)
               (eq theme-name 'solarized-light))
       (progn
-        (when (not (display-graphic-p))
-          (custom-set-faces
-           ;; unset bold in terminal, as solarized-dark breaks it
-           '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
         (custom-set-faces
+         '(magit-diff-add ((t (:inherit diff-added :weight normal))))
+         '(magit-diff-del ((t (:inherit diff-removed :weight normal))))
+         '(diff-refine-change ((t (:inherit diff-refine-change :background nil))))
          '(iedit-occurrence ((t (:inherit lazy-highlight))))
          '(match ((t (:inherit lazy-highlight :reverse t))))
          '(erb-face ((t (:background nil))))
