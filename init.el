@@ -78,6 +78,9 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; don't clobber copy/paste things
+(setq save-interprogram-paste-before-kill t)
+
 ;; Stop autosaves and backups from littering the filesystem
 ;; Keep backups in same dir
 (setq
