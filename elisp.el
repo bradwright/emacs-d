@@ -140,21 +140,27 @@ by using nxml's indentation rules."
           tags-completion-table)
     (find-tag (ido-completing-read "Tag: " tag-names))))
 
-(defun load-solarized-theme ()
-  "Loads Solarized dark and customises some faces for it"
-  (when (not (display-graphic-p))
-    (custom-set-faces
-     ;; unset bold in terminal, as solarized-dark breaks it
-     '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
-  (custom-set-faces
-   '(iedit-occurrence ((t (:inherit lazy-highlight))))
-   '(match ((t (:inherit lazy-highlight :reverse t))))
-   '(erb-face ((t (:background nil))))
-   '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
-  (when (and (display-graphic-p) *is-a-mac*)
-    ;; My Macs have the --srgb flag set
-    (setq solarized-broken-srgb nil))
-  (load-theme 'solarized-dark t))
+;; customise solarized-dark/light themes
+(defadvice load-theme
+  (before load-theme (theme &optional no-confirm no-enable))
+  (let ((theme-name (ad-get-arg 0)))
+    (when (or (eq theme-name 'solarized-dark)
+              (eq theme-name 'solarized-light))
+      (progn
+        (when (not (display-graphic-p))
+          (custom-set-faces
+           ;; unset bold in terminal, as solarized-dark breaks it
+           '(magit-diff-add ((t (:inherit diff-added :weight normal))))))
+        (custom-set-faces
+         '(iedit-occurrence ((t (:inherit lazy-highlight))))
+         '(match ((t (:inherit lazy-highlight :reverse t))))
+         '(erb-face ((t (:background nil))))
+         '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
+        (when (and (display-graphic-p) *is-a-mac*)
+          ;; My Macs have the --srgb flag set
+          (setq solarized-broken-srgb nil))))))
+
+(ad-activate 'load-theme)
 
 (defun bw-locate-library-dir (library)
   "Locates the directory containing a loaded library"

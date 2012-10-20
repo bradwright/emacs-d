@@ -23,7 +23,7 @@
 ;; Use Solarized-dark on OS X
 ;; we load the theme after init because we might have changed some
 ;; variables in customize
-(add-hook 'after-init-hook 'load-solarized-theme)
+(add-hook 'after-init-hook (lambda () (load-theme 'solarized-dark t)))
 
 ;; Even though we may have set the Mac OS X Terminal's Alt key as the
 ;; emacs Meta key, we want to be able to insert a '#' using Alt-3 in
