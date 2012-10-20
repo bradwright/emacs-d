@@ -142,7 +142,7 @@ by using nxml's indentation rules."
 
 ;; customise solarized-dark/light themes
 (defadvice load-theme
-  (before load-theme (theme &optional no-confirm no-enable))
+  (before load-theme)
   (let ((theme-name (ad-get-arg 0)))
     (when (or (eq theme-name 'solarized-dark)
               (eq theme-name 'solarized-light))
