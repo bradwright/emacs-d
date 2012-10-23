@@ -161,6 +161,19 @@ by using nxml's indentation rules."
 
 (ad-activate 'load-theme)
 
+(defun bw-toggle-solarized ()
+  "Toggles between solarized light and dark"
+  (interactive)
+  (cond
+   ((custom-theme-enabled-p 'solarized-dark)
+    (progn
+      (disable-theme 'solarized-dark)
+      (enable-theme 'solarized-light)))
+   ((custom-theme-enabled-p 'solarized-light)
+    (progn
+      (disable-theme 'solarized-light)
+      (enable-theme 'solarized-dark)))))
+
 (defun bw-locate-library-dir (library)
   "Locates the directory containing a loaded library"
   (file-name-directory (locate-library library)))
