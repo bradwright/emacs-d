@@ -25,5 +25,7 @@
 ;; Open any new buffers in the existing frame
 (setq ns-pop-up-frames nil)
 
+;; copy SHELL correctly
+(add-to-list 'exec-path-from-shell-variables "SHELL")
 ;; copy shell PATH across to exec-path
 (exec-path-from-shell-initialize)

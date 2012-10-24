@@ -26,7 +26,7 @@ by using nxml's indentation rules."
 (defun bw-start-term (buffer-name)
   "Start a terminal and rename buffer."
   (interactive "sbuffer name: ")
-  (ansi-term "/bin/bash")
+  (ansi-term (getenv "SHELL"))
   (rename-buffer (concat "*term: " buffer-name "*") t))
 
 (defun local-hl-line-mode-off ()
