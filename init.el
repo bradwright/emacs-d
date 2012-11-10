@@ -54,8 +54,7 @@
   (setq use-package-verbose (null byte-compile-current-file)))
 
 ;; tmp directory for storing stupid crap
-(setq tmp-local-dir (bw-join-dirs dotfiles-dir ".tmp/"))
-(make-directory tmp-local-dir t)
+(make-directory (setq tmp-local-dir (bw-join-dirs dotfiles-dir ".tmp/")) t)
 
 (use-package recentf
   :init (recentf-mode 1)
@@ -70,8 +69,9 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; No tabs
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(setq-default
+ indent-tabs-mode nil
+ tab-width 4)
 
 ;; UTF-8 please!
 (set-terminal-coding-system 'utf-8)
