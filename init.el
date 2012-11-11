@@ -1,8 +1,5 @@
 ;;; -*- lexical-binding: t -*-
 
-;; cl seems to be used by everything
-(require 'cl)
-
 ;;; general global variables for configuration
 
 ;; base load path
