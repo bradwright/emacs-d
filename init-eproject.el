@@ -39,7 +39,7 @@ files, because it won't try to open any .gitignored files."
              (concat
               (eproject-root)
               (ido-completing-read
-               (format "Find file: %s" (bw-shorten-dir (eproject-root)))
+               (format "Find file: %s" (abbreviate-file-name (eproject-root)))
                files-alist))))
         (eproject-find-file)))
 
