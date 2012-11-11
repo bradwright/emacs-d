@@ -146,6 +146,7 @@
 ;;; Modes
 
 ;; IDO mode
+(message "Loading IDO mode")
 (ido-mode t)
 (ido-everywhere t)
 
