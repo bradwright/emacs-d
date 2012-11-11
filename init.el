@@ -61,6 +61,8 @@
 (require 'init-eshell)
 (require 'init-hippie-expand)
 (require 'init-ruby)
+(require 'init-org)
+(require 'init-recentf)
 
 ;; vendor-ised modes
 (require 'init-magit)
