@@ -72,6 +72,9 @@
 (require 'init-js2)
 (require 'init-eproject)
 
+;; Custom theme support
+(require 'init-themes)
+
 ;;; Global keyboard combinations
 
 ;; map M-x to C-x C-m and C-c C-m, because M-x is in an awkward spot
