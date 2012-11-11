@@ -1,4 +1,6 @@
-;;; custom elisp
+;;; -*- lexical-binding: t -*-
+
+;;; My custom Emacs lisp functions
 
 (defun bw-turn-on-flymake-mode ()
   "Turns on flymake-mode locally"
