@@ -57,6 +57,7 @@
 ;; Mode configuration
 
 ;; built-in modes
+(require 'init-abbrev)
 (require 'init-ansi-color)
 (require 'init-ansi-term)
 (require 'init-ediff)
