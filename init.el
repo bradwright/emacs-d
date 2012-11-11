@@ -40,9 +40,9 @@
 ;; use-package - used in other places
 (require 'init-use-package)
 
+;; Editing and interface changes
 (require 'init-editing)
 (require 'init-interface)
-
 (use-package init-window-gui
              :if (display-graphic-p))
 (use-package init-osx
@@ -50,44 +50,15 @@
 (use-package init-linux
              :if *is-linux*)
 
-;; Modes
+;; Mode configuration
 (require 'init-ido)
-
-;; TRAMP mode
-(eval-after-load 'tramp
-  '(progn
-     (message "Loading TRAMP mode")
-     ;; use SSH by default
-     (setq tramp-default-method "ssh")
-     ;; allow me to SSH to hosts and edit as sudo like:
-     ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
-     ;; from: http://www.gnu.org/software/tramp/#Multi_002dhops
-     (add-to-list 'tramp-default-proxies-alist
-                  '(nil "\\`root\\'" "/ssh:%h:"))
-     (add-to-list 'tramp-default-proxies-alist
-                  '((regexp-quote (system-name)) nil nil))))
-
-;; ediff mode
-(eval-after-load 'ediff
-  '(progn
-     (message "Loading ediff mode")
-     (setq
-      ;; make two side-by-side windows
-      ediff-split-window-function 'split-window-horizontally
-      ;; ignore whitespace diffs
-      ediff-diff-options          "-w"
-      ;; Do everything in one frame always
-      ediff-window-setup-function 'ediff-setup-windows-plain)))
-
-;; uniquify mode
-(message "Loading uniquify configuration")
-(require 'uniquify)
-;; this shows foo/bar and baz/bar when two files are named bar
-(setq uniquify-buffer-name-style 'forward)
-;; strip common buffer suffixes
-(setq uniquify-strip-common-suffix t)
-;; re-uniquify buffer names after killing one
-(setq uniquify-after-kill-buffer-p t)
+(require 'init-tramp)
+(require 'init-ediff)
+(require 'init-uniquify)
+(require 'init-ansi-term)
+(require 'init-eshell)
+(require 'init-hippie-expand)
+(require 'init-ruby)
 
 ;;; Global keyboard combinations
 
