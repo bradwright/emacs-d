@@ -40,6 +40,9 @@
 ;; use-package - used in other places
 (require 'init-use-package)
 
+;; backups and autosaves
+(require 'init-backups)
+
 ;; Editing and interface changes
 (require 'init-editing)
 (require 'init-interface)

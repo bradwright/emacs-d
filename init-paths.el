@@ -15,4 +15,7 @@
                (not (equal f ".")))
       (bw-add-to-load-path name))))
 
+;; tmp directory for storing stupid crap
+(make-directory (setq tmp-local-dir (bw-join-dirs dotfiles-dir ".tmp/")) t)
+
 (provide 'init-paths)
