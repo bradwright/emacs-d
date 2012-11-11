@@ -78,6 +78,11 @@
 ;; Show bell
 (setq visible-bell t)
 
+;; start a server, unless one is already running
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
 ;;; global GUI changes for window systems
 (when (display-graphic-p)
   (progn
