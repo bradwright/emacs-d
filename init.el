@@ -33,32 +33,25 @@
   (eq system-type 'gnu/linux)
   "Is this running on Linux?")
 
+;; Basic paths and variables other things need
 (require 'init-utils)
 (require 'init-paths)
+
+;; use-package - used in other places
+(require 'init-use-package)
+
 (require 'init-editing)
 (require 'init-interface)
-(require 'init-window-gui)
-(require 'init-osx)
-(require 'init-linux)
 
-;;; Modes
+(use-package init-window-gui
+             :if (display-graphic-p))
+(use-package init-osx
+             :if *is-a-mac*)
+(use-package init-linux
+             :if *is-linux*)
 
-;; IDO mode
-(message "Loading IDO mode")
-(ido-mode t)
-(ido-everywhere t)
-
-(setq
- ;; Match arbitrary points in strings
- ido-enable-prefix nil
- ;; Match across entire string
- ido-enable-flex-matching t
- ;; Create a new buffer if there's no match candidate
- ido-create-new-buffer 'always
- ;; Don't try and guess if the string under point is a file
- ido-use-filename-at-point nil
- ;; case-insensitive matching
- ido-case-fold t)
+;; Modes
+(require 'init-ido)
 
 ;; TRAMP mode
 (eval-after-load 'tramp

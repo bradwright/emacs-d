@@ -1,12 +1,11 @@
-(when (display-graphic-p)
-  ;; show help in the echo area instead of as a tooltip
-  (tooltip-mode -1)
+;; show help in the echo area instead of as a tooltip
+(tooltip-mode -1)
 
-  ;; blink the cursor
-  (setq blink-cursor-interval 1.0)
-  (blink-cursor-mode)
+;; blink the cursor
+(setq blink-cursor-interval 1.0)
+(blink-cursor-mode)
 
-  ;; indicate EOF empty lines in the gutter
-  (setq indicate-empty-lines t))
+;; indicate EOF empty lines in the gutter
+(setq indicate-empty-lines t)
 
 (provide 'init-window-gui)
