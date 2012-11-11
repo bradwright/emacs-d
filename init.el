@@ -72,6 +72,7 @@
 (require 'init-magit)
 (require 'init-js2)
 (require 'init-eproject)
+(require 'init-json)
 
 ;; Custom theme support
 (require 'init-themes)
