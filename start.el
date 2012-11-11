@@ -1,8 +1,17 @@
 ;;; -*- lexical-binding: t -*-
 
+;; cl seems to be used by everything
 (require 'cl)
 
 ;;; general global variables for configuration
+
+;; base load path
+(defconst dotfiles-dir
+  (file-name-directory
+   (or (buffer-file-name) load-file-name))
+  "Base path for customised Emacs configuration")
+
+(add-to-list 'load-path dotfiles-dir)
 
 ;; What OS/window system am I using?
 
@@ -23,6 +32,24 @@
 (defconst *is-linux*
   (eq system-type 'gnu/linux)
   "Is this running on Linux?")
+
+;;; custom elisp
+(defun bw-add-to-load-path (dir)
+  "Adds `dir` to load-path"
+  (add-to-list 'load-path dir))
+
+(defun bw-join-dirs (prefix suffix)
+  "Joins `prefix` and `suffix` into a directory"
+  (file-name-as-directory (concat prefix suffix)))
+
+;;; load path stuff
+
+;; external libraries I might have collected via submodules etc.
+(defconst vendor-dotfiles-dir
+  (bw-join-dirs dotfiles-dir "vendor")
+  "Vendorised Emacs libraries")
+
+(bw-add-to-load-path vendor-dotfiles-dir)
 
 ;;; general editing configuration
 
