@@ -57,23 +57,23 @@
 ;; Mode configuration
 
 ;; built-in modes
-(require 'init-ido)
-(require 'init-tramp)
-(require 'init-ediff)
-(require 'init-uniquify)
 (require 'init-ansi-term)
+(require 'init-ediff)
 (require 'init-eshell)
 (require 'init-hippie-expand)
-(require 'init-ruby)
+(require 'init-ido)
 (require 'init-org)
 (require 'init-recentf)
+(require 'init-ruby)
 (require 'init-saveplace)
+(require 'init-tramp)
+(require 'init-uniquify)
 
 ;; vendor-ised modes
-(require 'init-magit)
-(require 'init-js2)
 (require 'init-eproject)
+(require 'init-js2)
 (require 'init-json)
+(require 'init-magit)
 
 ;; Custom theme support
 (require 'init-themes)
