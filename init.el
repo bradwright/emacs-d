@@ -51,6 +51,8 @@
              :if *is-linux*)
 
 ;; Mode configuration
+
+;; built-in modes
 (require 'init-ido)
 (require 'init-tramp)
 (require 'init-ediff)
@@ -59,6 +61,9 @@
 (require 'init-eshell)
 (require 'init-hippie-expand)
 (require 'init-ruby)
+
+;; vendor-ised modes
+(require 'init-magit)
 
 ;;; Global keyboard combinations
 
