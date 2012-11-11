@@ -1,4 +1,9 @@
 ;;; custom elisp
+(defun bw-turn-on-flymake-mode ()
+  "Turns on flymake-mode locally"
+  (interactive)
+  (flymake-mode 1))
+
 (defun bw-locate-library-dir (library)
   "Locates the directory containing a loaded library"
   (file-name-directory (locate-library library)))

@@ -64,6 +64,7 @@
 
 ;; vendor-ised modes
 (require 'init-magit)
+(require 'init-js2)
 
 ;;; Global keyboard combinations
 
