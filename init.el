@@ -67,6 +67,7 @@
 (require 'init-ruby)
 (require 'init-org)
 (require 'init-recentf)
+(require 'init-saveplace)
 
 ;; vendor-ised modes
 (require 'init-magit)
