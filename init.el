@@ -33,82 +33,15 @@
   (eq system-type 'gnu/linux)
   "Is this running on Linux?")
 
-;;; custom elisp
-(defun bw-add-to-load-path (dir)
-  "Adds `dir` to load-path"
-  (add-to-list 'load-path dir))
-
-(defun bw-join-dirs (prefix suffix)
-  "Joins `prefix` and `suffix` into a directory"
-  (file-name-as-directory (concat prefix suffix)))
-
-;;; load path stuff
-
-;; external libraries I might have collected via submodules etc.
-(defconst vendor-dotfiles-dir
-  (bw-join-dirs dotfiles-dir "vendor")
-  "Vendorised Emacs libraries")
-
-(bw-add-to-load-path vendor-dotfiles-dir)
-
-;;; general editing configuration
-
-;; Turn off mouse interface early in startup to avoid momentary flash
-;; of things I don't want.
-(progn
-  (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
-    (when (fboundp mode) (funcall mode -1))))
-
-;; Don't show the splash screen
-(setq inhibit-startup-screen t
-      ;; Show the *scratch* on startup
-      initial-buffer-choice t)
-
-;; I got sick of typing "yes"
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; I prefer spaces over tabs
-(setq-default
- indent-tabs-mode nil
- ;; ... and I prefer 4-space indents
- tab-width 4)
-
-;; UTF-8 please!
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-
-;; Don't clobber things in the system clipboard when killing
-(setq save-interprogram-paste-before-kill t)
-
-;; nuke trailing whitespace when writing to a file
-(add-hook 'write-file-hooks 'delete-trailing-whitespace)
-
-;;; global interface changes
-
-;; always highlight syntax
-(global-font-lock-mode t)
-(setq font-lock-maximum-decoration t)
-
-;; Highlight matching parentheses
-(show-paren-mode 1)
-(setq show-paren-style 'parenthesis)
-
-;; show keystrokes
-(setq echo-keystrokes 0.1)
-
-;; Always show line number in the mode line
-(line-number-mode 1)
-;; ... and show the column number
-(column-number-mode 1)
-
-;; Show bell
-(setq visible-bell t)
-
 ;; start a server, unless one is already running
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+(require 'init-utils)
+(require 'init-paths)
+(require 'init-editing)
+(require 'init-interface)
 
 ;;; global GUI changes for window systems
 (when (display-graphic-p)
