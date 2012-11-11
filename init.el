@@ -70,6 +70,7 @@
 ;; vendor-ised modes
 (require 'init-magit)
 (require 'init-js2)
+(require 'init-eproject)
 
 ;;; Global keyboard combinations
 

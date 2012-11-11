@@ -1,4 +1,8 @@
 ;;; custom elisp
+(defun bw-shorten-dir (dir)
+  "Shortens a directory path to e.g ~/src"
+  (replace-regexp-in-string (getenv "HOME") "~" dir))
+
 (defun bw-turn-on-flymake-mode ()
   "Turns on flymake-mode locally"
   (interactive)
