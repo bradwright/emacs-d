@@ -99,3 +99,7 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+;; Load custom file last
+(setq custom-file (concat dotfiles-dir "custom.el"))
+(load custom-file 'noerror)
