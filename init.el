@@ -70,6 +70,7 @@
 (require 'init-saveplace)
 (require 'init-tramp)
 (require 'init-uniquify)
+(require 'init-whitespace)
 
 ;; vendor-ised modes
 (require 'init-eproject)
