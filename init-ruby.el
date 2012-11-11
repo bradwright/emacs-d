@@ -9,9 +9,6 @@
            "\\.gemspec$"))
   (add-to-list 'auto-mode-alist `(,extension . ruby-mode)))
 
-
-(add-to-list 'auto-mode-
-
 (defun eproject-rails-config ()
   "Various settings for Rails projects"
 
@@ -33,9 +30,11 @@
  ruby-insert-encoding-magic-comment nil)
 
 ;; fix syntax highlighting for Cucumber Step Definition regexps
-(add-to-list 'ruby-font-lock-syntactic-keywords
-             '("\\(\\(\\)\\(\\)\\|Given\\|When\\|Then\\)\\s *\\(/\\)[^/\n\\\\]*\\(\\\\.[^/\n\\\\]*\\)*\\(/\\)"
-               (4 (7 . ?/))
-               (6 (7 . ?/))))
+(eval-after-load 'ruby-mode
+  '(progn
+     (add-to-list 'ruby-font-lock-syntactic-keywords
+                  '("\\(\\(\\)\\(\\)\\|Given\\|When\\|Then\\)\\s *\\(/\\)[^/\n\\\\]*\\(\\\\.[^/\n\\\\]*\\)*\\(/\\)"
+                    (4 (7 . ?/))
+                    (6 (7 . ?/))))))
 
 (provide 'init-ruby)
