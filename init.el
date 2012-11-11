@@ -52,6 +52,7 @@
              :if *is-a-mac*)
 (use-package init-linux
              :if *is-linux*)
+(require 'init-xterm)
 
 ;; Mode configuration
 
