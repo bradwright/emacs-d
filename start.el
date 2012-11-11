@@ -162,6 +162,42 @@
  ;; case-insensitive matching
  ido-case-fold t)
 
+;; TRAMP mode
+(eval-after-load 'tramp
+  '(progn
+     (message "Loading TRAMP mode")
+     ;; use SSH by default
+     (setq tramp-default-method "ssh")
+     ;; allow me to SSH to hosts and edit as sudo like:
+     ;;   C-x C-f /sudo:example.com:/etc/something-owned-by-root
+     ;; from: http://www.gnu.org/software/tramp/#Multi_002dhops
+     (add-to-list 'tramp-default-proxies-alist
+                  '(nil "\\`root\\'" "/ssh:%h:"))
+     (add-to-list 'tramp-default-proxies-alist
+                  '((regexp-quote (system-name)) nil nil))))
+
+;; ediff mode
+(eval-after-load 'ediff
+  '(progn
+     (message "Loading ediff mode")
+     (setq
+      ;; make two side-by-side windows
+      ediff-split-window-function 'split-window-horizontally
+      ;; ignore whitespace diffs
+      ediff-diff-options          "-w"
+      ;; Do everything in one frame always
+      ediff-window-setup-function 'ediff-setup-windows-plain)))
+
+;; uniquify mode
+(message "Loading uniquify configuration")
+(require 'uniquify)
+;; this shows foo/bar and baz/bar when two files are named bar
+(setq uniquify-buffer-name-style 'forward)
+;; strip common buffer suffixes
+(setq uniquify-strip-common-suffix t)
+;; re-uniquify buffer names after killing one
+(setq uniquify-after-kill-buffer-p t)
+
 ;;; Global keyboard combinations
 
 ;; map M-x to C-x C-m and C-c C-m, because M-x is in an awkward spot
