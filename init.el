@@ -74,6 +74,7 @@
 
 ;; Custom theme support
 (require 'init-themes)
+(require 'init-solarized)
 
 ;;; Global keyboard combinations
 
