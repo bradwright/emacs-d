@@ -83,6 +83,7 @@
 
 ;; Packaged modes from ELPA etc.
 (require 'init-ace-jump)
+(require 'init-ack-and-a-half)
 (require 'init-expand-region)
 (require 'init-iedit)
 (require 'init-markdown)
