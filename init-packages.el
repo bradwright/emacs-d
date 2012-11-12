@@ -4,9 +4,18 @@
   :init
   (progn
     ;; override my package directory
-    (setq package-user-dir
-          (file-name-as-directory (concat dotfiles-dir ".elpa/")))
-    (make-directory package-user-dir t)
+    (defconst package-base-dir
+      (bw-join-dirs dotfiles-dir "elpa"))
+    (defconst package-install-dir
+      (bw-join-dirs package-base-dir "installed"))
+
+    (make-directory package-base-dir t)
+    (make-directory package-install-dir t)
+
+    (bw-add-to-load-path package-base-dir)
+
+    ;; this is to set up packages
+    (setq package-user-dir package-install-dir)
 
     ;; I use Marmalade and Melpa
     (add-to-list 'package-archives
