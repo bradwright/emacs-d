@@ -84,6 +84,7 @@
 (require 'init-ace-jump)
 (require 'init-expand-region)
 (require 'init-iedit)
+(require 'init-markdown)
 (require 'init-multiple-cursors)
 (require 'init-paredit)
 (require 'init-puppet)
