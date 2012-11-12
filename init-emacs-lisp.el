@@ -1,3 +1,3 @@
-(add-hook 'emacs-lisp-mode-hook 'bw-turn-on-paredit)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
 (provide 'init-emacs-lisp)

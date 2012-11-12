@@ -73,8 +73,4 @@ by using nxml's indentation rules."
       (backward-char) (insert "\n"))
     (indent-region begin end)))
 
-(defun bw-turn-on-paredit ()
-  "Turn paredit-mode on locally"
-  (paredit-mode 1))
-
 (provide 'init-utils)
