@@ -1,3 +1,11 @@
+;; Magit is an Emacs interface to Git.
+;; (It's awesome)
+;; https://github.com/magit/magit
+
+;; This is vendor-ised because I want the info files to be compiled
+;; along with the Emacs Lisp files, so that I can read the manual in
+;; Emacs.
+
 (use-package magit
   :bind ("C-c g" . magit-status)
   :init

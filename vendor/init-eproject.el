@@ -1,3 +1,6 @@
+;; eproject-mode is a minimal "project" wrapper
+;; https://github.com/jrockway/eproject
+
 (use-package eproject
   :diminish eproject-mode
   :config
