@@ -28,7 +28,8 @@
 
     ;; This makes left-option do M-
     (setq ns-alternate-modifier 'meta)
-    ;; ... and right-option just do option.
+    ;; ... and right-option just do option so I can still type
+    ;; alternate characters.
     (setq ns-right-alternate-modifier nil)
 
     ;; command is super
