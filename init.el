@@ -51,6 +51,8 @@
              :if *is-linux*)
 (require 'init-xterm)
 
+(require 'init-packages)
+
 ;; Mode configuration
 
 ;; built-in modes
