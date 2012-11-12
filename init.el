@@ -67,6 +67,7 @@
 (require 'init-ido)
 (require 'init-org)
 (require 'init-recentf)
+(require 'init-rst)
 (require 'init-ruby)
 (require 'init-saveplace)
 (require 'init-tramp)
