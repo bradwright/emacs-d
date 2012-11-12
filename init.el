@@ -86,6 +86,7 @@
 (require 'init-iedit)
 (require 'init-multiple-cursors)
 (require 'init-paredit)
+(require 'init-yaml)
 (require 'init-yasnippet)
 
 ;; Custom theme support
