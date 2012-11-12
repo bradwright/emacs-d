@@ -62,6 +62,7 @@
 (require 'init-ediff)
 (require 'init-emacs-lisp)
 (require 'init-eshell)
+(require 'init-flymake)
 (require 'init-hippie-expand)
 (require 'init-ido)
 (require 'init-org)
