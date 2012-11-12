@@ -43,6 +43,9 @@
 ;; Editing and interface changes
 (require 'init-editing)
 (require 'init-interface)
+
+(require 'init-packages)
+
 (use-package init-window-gui
              :if (display-graphic-p))
 (use-package init-osx
@@ -50,8 +53,6 @@
 (use-package init-linux
              :if *is-linux*)
 (require 'init-xterm)
-
-(require 'init-packages)
 
 ;; Mode configuration
 

@@ -34,7 +34,20 @@
     ;; command is super
     (setq ns-command-modifier 'super)
     ;; fn does nothing special for Emacs
-    (setq ns-function-modifier 'nil)))
+    (setq ns-function-modifier 'nil)
+
+    ;; Emacs launched from the desktop doesn't inherit the shell
+    ;; env. This package:
+    ;; https://github.com/purcell/exec-path-from-shell automatically
+    ;; mirrors the PATH and other environment variables from a login
+    ;; shell, ensuring that things work correctly.
+    (use-package exec-path-from-shell
+      :init
+      (progn
+        ;; copy SHELL correctly
+        (setq exec-path-from-shell-variables '("PATH" "MANPATH" "SHELL"))
+        ;; copy shell PATH across to exec-path
+        (exec-path-from-shell-initialize)))))
 
 (unless (display-graphic-p)
   (progn
