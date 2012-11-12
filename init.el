@@ -77,6 +77,12 @@
 (require 'init-json)
 (require 'init-magit)
 
+;; Packaged modes from ELPA etc.
+(require 'init-ace-jump)
+(require 'init-iedit)
+(require 'init-multiple-cursors)
+(require 'init-yasnippet)
+
 ;; Custom theme support
 (require 'init-themes)
 (require 'init-solarized)
