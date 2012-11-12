@@ -80,10 +80,11 @@
 
 ;; Packaged modes from ELPA etc.
 (require 'init-ace-jump)
+(require 'init-expand-region)
 (require 'init-iedit)
 (require 'init-multiple-cursors)
-(require 'init-yasnippet)
 (require 'init-paredit)
+(require 'init-yasnippet)
 
 ;; Custom theme support
 (require 'init-themes)
