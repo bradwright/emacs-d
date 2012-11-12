@@ -50,6 +50,7 @@
     ;; essential packages - I always install these
     (defvar essential-packages
       '(ack-and-a-half
+        browse-kill-ring
         diminish
         expand-region
         flymake-cursor
