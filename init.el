@@ -60,6 +60,7 @@
 (require 'init-ansi-color)
 (require 'init-ansi-term)
 (require 'init-ediff)
+(require 'init-emacs-lisp)
 (require 'init-eshell)
 (require 'init-hippie-expand)
 (require 'init-ido)
@@ -82,6 +83,7 @@
 (require 'init-iedit)
 (require 'init-multiple-cursors)
 (require 'init-yasnippet)
+(require 'init-paredit)
 
 ;; Custom theme support
 (require 'init-themes)
