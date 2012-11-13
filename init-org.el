@@ -1,7 +1,3 @@
-;;; -*- lexical-binding: t -*-
-
-;; org-mode configuration
-
 ;; Show other programming languages semi-natively when embedded
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -18,4 +14,6 @@
 (add-hook 'org-mode-hook 'bw-turn-off-trailing-whitespace)
 
 ;; default directory
-(setq org-directory "~/Dropbox/Org/")
+;;(setq org-directory "~/Dropbox/Org/")
+
+(provide 'init-org)

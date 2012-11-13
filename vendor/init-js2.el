@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t -*-
 
-;; special configuration for JS-mode
+;; JS2 mode is a Javascript major mode:
+;; https://github.com/mooz/js2-mode
 
 (use-package js2-mode
   :mode ("\\.js\\'" . js2-mode)
@@ -55,7 +56,7 @@
                    '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
                      nil 1 2 3)))
 
-    (add-hook 'js2-mode-hook 'turn-on-flymake-mode)
+    (add-hook 'js2-mode-hook 'bw-turn-on-flymake-mode)
 
     (setq
      ;; highlight everything
@@ -71,3 +72,5 @@
      js2-highlight-external-variables nil
      ;; jslint shows missing semi-colons
      js2-strict-missing-semi-warning nil)))
+
+(provide 'init-js2)

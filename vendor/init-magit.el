@@ -1,4 +1,10 @@
-;;; Magit
+;; Magit is an Emacs interface to Git.
+;; (It's awesome)
+;; https://github.com/magit/magit
+
+;; This is vendor-ised because I want the info files to be compiled
+;; along with the Emacs Lisp files, so that I can read the manual in
+;; Emacs.
 
 (use-package magit
   :bind ("C-c g" . magit-status)
@@ -8,13 +14,6 @@
     (delete 'Git vc-handled-backends))
   :config
   (progn
-    ;; force wrap magit commit messages
-    (add-hook 'magit-log-edit-mode-hook 'bw-turn-on-auto-fill)
-    (add-hook 'git-commit-mode-hook 'bw-turn-on-auto-fill)
-
-    (add-hook 'magit-log-edit-mode-hook 'bw-fill-column)
-    (add-hook 'git-commit-mode-hook 'bw-fill-column)
-
     ;; magit extensions
     (use-package magit-blame
       :bind ("C-c C-g b" . magit-blame-mode))
@@ -38,3 +37,5 @@
      magit-rewrite-inclusive 'ask
      ;; don't always save buffers
      magit-save-some-buffers nil)))
+
+(provide 'init-magit)

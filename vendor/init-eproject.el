@@ -1,4 +1,5 @@
-;; eproject mode configuration
+;; eproject-mode is a minimal "project" wrapper
+;; https://github.com/jrockway/eproject
 
 (use-package eproject
   :diminish eproject-mode
@@ -41,7 +42,7 @@ files, because it won't try to open any .gitignored files."
              (concat
               (eproject-root)
               (ido-completing-read
-               (format "Find file: %s" (bw-shorten-dir (eproject-root)))
+               (format "Find file: %s" (abbreviate-file-name (eproject-root)))
                files-alist))))
         (eproject-find-file)))
 
@@ -50,3 +51,5 @@ files, because it won't try to open any .gitignored files."
     (use-package eproject-extras
       :init "noop"
       :bind ("C-c f" . bw-eproject-find-files))))
+
+(provide 'init-eproject)

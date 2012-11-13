@@ -1,13 +1,21 @@
 ;;; -*- lexical-binding: t -*-
 
-;; packages.el - manages packages and lists of packages
 (use-package package
   :init
   (progn
     ;; override my package directory
-    (setq package-user-dir
-          (file-name-as-directory (concat dotfiles-dir ".elpa/")))
-    (make-directory package-user-dir t)
+    (defconst package-base-dir
+      (bw-join-dirs dotfiles-dir "elpa"))
+    (defconst package-install-dir
+      (bw-join-dirs package-base-dir "installed"))
+
+    (make-directory package-base-dir t)
+    (make-directory package-install-dir t)
+
+    (bw-add-to-load-path package-base-dir)
+
+    ;; this is to set up packages
+    (setq package-user-dir package-install-dir)
 
     ;; I use Marmalade and Melpa
     (add-to-list 'package-archives
@@ -42,6 +50,7 @@
     ;; essential packages - I always install these
     (defvar essential-packages
       '(ack-and-a-half
+        browse-kill-ring
         diminish
         expand-region
         flymake-cursor
@@ -50,7 +59,9 @@
         iedit
         multiple-cursors
         paredit
-        yasnippet))
+        undo-tree
+        yasnippet)
+      "Packages that I always use")
 
     (if *is-a-mac*
         (add-to-list 'essential-packages 'exec-path-from-shell))
@@ -89,4 +100,7 @@
              haskell-mode
              idomenu
              ruby-mode
+             undo-tree
              znc)))))
+
+(provide 'init-packages)

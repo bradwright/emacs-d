@@ -5,7 +5,7 @@ backups
 custom.el
 auto-save-list
 # Emacs 24 packages
-.elpa
+elpa/installed
 .tmp
 # swank-clojure
 swank/
