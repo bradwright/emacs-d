@@ -59,7 +59,9 @@
         iedit
         multiple-cursors
         paredit
-        yasnippet))
+        undo-tree
+        yasnippet)
+      "Packages that I always use")
 
     (if *is-a-mac*
         (add-to-list 'essential-packages 'exec-path-from-shell))
@@ -98,6 +100,7 @@
              haskell-mode
              idomenu
              ruby-mode
+             undo-tree
              znc)))))
 
 (provide 'init-packages)
