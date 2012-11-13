@@ -76,24 +76,32 @@
 (require 'init-whitespace)
 
 ;; vendor-ised modes
-(require 'init-eproject)
-(require 'init-js2)
-(require 'init-json)
-(require 'init-magit)
+(defconst vendor-modes
+  '(init-eproject
+    init-js2
+    init-json
+    init-magit)
+  "Configuration for vendorised code")
+
+(bw-require-list vendor-modes)
 
 ;; Packaged modes from ELPA etc.
-(require 'init-ace-jump)
-(require 'init-ack-and-a-half)
-(require 'init-browse-kill-ring)
-(require 'init-expand-region)
-(require 'init-iedit)
-(require 'init-markdown)
-(require 'init-multiple-cursors)
-(require 'init-paredit)
-(require 'init-puppet)
-(require 'init-undo-tree)
-(require 'init-yaml)
-(require 'init-yasnippet)
+(defconst elpa-modes
+  '(init-ace-jump
+    init-ack-and-a-half
+    init-browse-kill-ring
+    init-expand-region
+    init-iedit
+    init-markdown
+    init-multiple-cursors
+    init-paredit
+    init-puppet
+    init-undo-tree
+    init-yaml
+    init-yasnippet)
+  "Configuration for modes loaded via package.el")
+
+(bw-require-list elpa-modes)
 
 ;; Custom theme support
 (require 'init-themes)

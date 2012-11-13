@@ -73,4 +73,10 @@ by using nxml's indentation rules."
       (backward-char) (insert "\n"))
     (indent-region begin end)))
 
+(defun bw-require-list (items)
+  "Takes a list of items to require"
+  (interactive)
+  (dolist (item items)
+    (require `,item nil t)))
+
 (provide 'init-utils)
