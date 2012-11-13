@@ -45,6 +45,7 @@
 (require 'init-interface)
 
 (require 'init-packages)
+(require 'init-el-get)
 
 ;; Platform specific configuration
 (use-package init-window-gui
