@@ -10,9 +10,9 @@
 (fset 'insert-pound "#")
 (define-key global-map "\M-3" 'insert-pound)
 
-;; run Solarized Dark on OS X
-(add-hook 'after-init-hook (lambda ()
-                             (load-theme 'solarized-dark t)))
+;; Run Solarized Dark on OS X. Note: this function isn't defined yet,
+;; but is loaded in `init-solarized`
+(add-hook 'after-init-hook 'bw-load-solarized)
 
 (when (or *is-carbon-emacs*
 	      *is-cocoa-emacs*)

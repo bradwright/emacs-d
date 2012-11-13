@@ -32,4 +32,12 @@
       (disable-theme 'solarized-light)
       (enable-theme 'solarized-dark)))))
 
+;; We load the theme after init because we might have changed some
+;; variables in customize.
+(defun bw-load-solarized ()
+  "Loads Solarized light and dark"
+  (interactive)
+  (load-theme 'solarized-light t t)
+  (load-theme 'solarized-dark t))
+
 (provide 'init-solarized)
