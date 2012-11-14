@@ -35,7 +35,7 @@
     ;; command is super
     (setq ns-command-modifier 'super)
     ;; fn does nothing special for Emacs
-    (setq ns-function-modifier 'nil)
+    (setq ns-function-modifier nil)
 
     (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
