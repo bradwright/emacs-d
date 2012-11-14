@@ -37,6 +37,8 @@
     ;; fn does nothing special for Emacs
     (setq ns-function-modifier 'nil)
 
+    (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
+
     ;; Emacs launched from the desktop doesn't inherit the shell
     ;; env. This package:
     ;; https://github.com/purcell/exec-path-from-shell automatically
