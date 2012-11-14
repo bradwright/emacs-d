@@ -39,6 +39,10 @@
 
     (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
+    ;; we pretty much never ever want to background emacs
+    (global-unset-key (kbd "C-z"))
+    (global-unset-key (kbd "C-x C-z"))
+
     ;; Don't open files from the workspace in a new frame
     (setq ns-pop-up-frames nil)
 
