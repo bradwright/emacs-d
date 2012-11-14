@@ -30,5 +30,8 @@
 (global-set-key (kbd "C-c m") 'manual-entry)
 
 (global-set-key (kbd "C-c o") 'occur)
+(define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
+(define-key occur-mode-map (kbd "n") 'next-line)
+(define-key occur-mode-map (kbd "p") 'previous-line)
 
 (provide 'init-keybindings)
