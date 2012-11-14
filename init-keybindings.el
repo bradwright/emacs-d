@@ -8,6 +8,8 @@
 ;; unset M-x due to above
 (global-unset-key (kbd "M-x"))
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;; Use hippie-expand instead of dabbrev
 (global-set-key (kbd "M-/") 'hippie-expand)
 
