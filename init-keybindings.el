@@ -27,4 +27,8 @@
 (global-set-key (kbd "C-x C-c") 'bw-kill-emacs)
 (global-set-key (kbd "C-c x") 'server-edit)
 
+(global-set-key (kbd "C-c m") 'manual-entry)
+
+(global-set-key (kbd "C-c o") 'occur)
+
 (provide 'init-keybindings)
