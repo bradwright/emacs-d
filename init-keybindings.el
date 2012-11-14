@@ -21,4 +21,8 @@
 (global-set-key (kbd "C-c y") 'bury-buffer)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
+;; prompt before quitting
+(global-set-key (kbd "C-x C-c") 'bw-kill-emacs)
+(global-set-key (kbd "C-c x") 'server-edit)
+
 (provide 'init-keybindings)
