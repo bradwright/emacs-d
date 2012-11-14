@@ -92,6 +92,6 @@ by using nxml's indentation rules."
   "Warn before exiting Emacs"
   (interactive)
   (cond ((y-or-n-p "Quit Emacs? ")
-         (save-buffers-kill-emacs))))
+         (save-buffers-kill-terminal))))
 
 (provide 'init-utils)
