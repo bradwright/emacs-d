@@ -39,6 +39,9 @@
 
     (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
+    ;; Don't open files from the workspace in a new frame
+    (setq ns-pop-up-frames nil)
+
     ;; Emacs launched from the desktop doesn't inherit the shell
     ;; env. This package:
     ;; https://github.com/purcell/exec-path-from-shell automatically
