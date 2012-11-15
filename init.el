@@ -46,13 +46,15 @@
 
 (require 'init-packages)
 
+;; Platform specific configuration
 (use-package init-window-gui
-             :if (display-graphic-p))
+  :if (display-graphic-p))
 (use-package init-osx
-             :if *is-a-mac*)
+  :if *is-a-mac*)
 (use-package init-linux
-             :if *is-linux*)
-(require 'init-xterm)
+  :if *is-linux*)
+(use-package init-xterm
+  :if (not (display-graphic-p)))
 
 ;; Mode configuration
 
