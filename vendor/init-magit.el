@@ -18,10 +18,13 @@
     (use-package magit-blame
       :bind ("C-c C-g b" . magit-blame-mode))
 
-    (use-package magithub
-      :init)
-
+    ;; major mode for editing `git rebase -i` files
     (use-package rebase-mode)
+
+    ;; Elisp library to interact with GitHub
+    (use-package magithub
+      ;; init immediately
+      :init)
 
     ;; magit settings
     (setq
