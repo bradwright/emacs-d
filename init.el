@@ -59,23 +59,27 @@
 ;; Mode configuration
 
 ;; built-in modes
-(require 'init-abbrev)
-(require 'init-ansi-color)
-(require 'init-ansi-term)
-(require 'init-ediff)
-(require 'init-emacs-lisp)
-(require 'init-eshell)
-(require 'init-flymake)
-(require 'init-hippie-expand)
-(require 'init-ido)
-(require 'init-org)
-(require 'init-recentf)
-(require 'init-rst)
-(require 'init-ruby)
-(require 'init-saveplace)
-(require 'init-tramp)
-(require 'init-uniquify)
-(require 'init-whitespace)
+(defconst core-modes
+  '(init-abbrev
+    init-ansi-color
+    init-ansi-term
+    init-ediff
+    init-emacs-lisp
+    init-eshell
+    init-flymake
+    init-hippie-expand
+    init-ido
+    init-org
+    init-recentf
+    init-rst
+    init-ruby
+    init-saveplace
+    init-tramp
+    init-uniquify
+    init-whitespace)
+  "Configuration for core Emacs packages")
+
+(bw-require-list core-modes)
 
 ;; vendor-ised modes
 (defconst vendor-modes
