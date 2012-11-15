@@ -116,9 +116,9 @@
 (require 'init-keybindings)
 
 ;; start a server, unless one is already running
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(when (require 'server nil t)
+  (unless (server-running-p)
+    (server-start)))
 
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
