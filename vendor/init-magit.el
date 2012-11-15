@@ -36,6 +36,8 @@
      ;; ask me if I want to include a revision when rewriting
      magit-rewrite-inclusive 'ask
      ;; don't always save buffers
-     magit-save-some-buffers nil)))
+     magit-save-some-buffers nil
+     ;; pop the process buffer if we're taking a while to complete
+     magit-process-popup-time 10)))
 
 (provide 'init-magit)
