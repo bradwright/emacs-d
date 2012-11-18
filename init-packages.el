@@ -22,9 +22,6 @@
                  '("melpa" . "http://melpa.milkbox.net/packages/") t)
     (package-initialize)
 
-    ;; stop keepalives causing weird HTTP errors
-    (setq url-http-attempt-keepalives nil)
-
     ;; This makes heavy use of Melpa, so make sure it's installed
     (when (not (package-installed-p 'melpa))
       (progn
