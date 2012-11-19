@@ -4,8 +4,13 @@
 (bw-add-to-load-path el-get-base-dir)
 (make-directory el-get-base-dir t)
 
-(defconst bw-el-get-packages
-  '((:name magit)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+(defconst el-get-sources
+  '((:name ack-and-a-half :type elpa)
+    (:name expand-region)
+    (:name magit)
     (:name multiple-cursors))
   "Canonical list of packages.")
 
@@ -20,7 +25,7 @@
 (defun bw-sync-packages ()
   "Syncs and cleans up packages"
   (interactive)
-  (let ((my-packages (mapcar 'el-get-source-name bw-el-get-packages)))
+  (let ((my-packages (mapcar 'el-get-source-name el-get-sources)))
     (el-get-cleanup my-packages)
     (el-get 'sync my-packages)))
 
