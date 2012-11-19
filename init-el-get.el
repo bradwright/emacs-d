@@ -5,7 +5,8 @@
 (make-directory el-get-base-dir t)
 
 (defconst bw-el-get-packages
-  '(magit)
+  '((:name magit)
+    (:name multiple-cursors))
   "Canonical list of packages.")
 
 (defun el-get-cleanup (packages)
@@ -19,13 +20,11 @@
 (defun bw-sync-packages ()
   "Syncs and cleans up packages"
   (interactive)
-  (el-get-cleanup bw-el-get-packages)
-  (el-get 'sync bw-el-get-packages))
+  (let ((my-packages (mapcar 'el-get-source-name bw-el-get-packages)))
+    (el-get-cleanup my-packages)
+    (el-get 'sync my-packages)))
 
 (use-package el-get
-  :commands (el-get
-             el-get-install
-             el-get-update
-             el-get-list-packages))
+  :init (bw-sync-packages))
 
 (provide 'init-el-get)

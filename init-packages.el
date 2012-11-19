@@ -52,7 +52,6 @@
         git-commit-mode
         idomenu
         iedit
-        multiple-cursors
         paredit
         smex
         undo-tree
