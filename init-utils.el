@@ -19,6 +19,10 @@
   "Joins `prefix` and `suffix` into a directory"
   (file-name-as-directory (concat prefix suffix)))
 
+(defun bw-turn-on-subword-mode ()
+  "Turns on subword mode for a buffer"
+  (subword-mode 1))
+
 ;; from: http://stackoverflow.com/a/7934783
 (defun beautify-json ()
   "Indents and pretties JSON structures"

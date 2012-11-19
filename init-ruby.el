@@ -19,7 +19,7 @@
 (add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
 
 ;; Ruby has a lot of camel case
-(add-hook 'ruby-mode-hook 'turn-on-subword-mode)
+(add-hook 'ruby-mode-hook 'bw-turn-on-subword-mode)
 
 (setq
  ;; Ruby has its own indentation variable
