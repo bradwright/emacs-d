@@ -4,15 +4,11 @@
 (bw-add-to-load-path el-get-base-dir)
 (make-directory el-get-base-dir t)
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-
 (defconst el-get-sources
-  '((:name ack-and-a-half :type elpa)
-    (:name expand-region)
-    (:name magit)
-    (:name multiple-cursors))
+  '((:name ack-and-a-half :type elpa))
   "Canonical list of packages.")
+
+
 
 (defun el-get-cleanup (packages)
   "Remove packages not explicitly declared"
@@ -25,11 +21,24 @@
 (defun bw-sync-packages ()
   "Syncs and cleans up packages"
   (interactive)
-  (let ((my-packages (mapcar 'el-get-source-name el-get-sources)))
+  (let ((my-packages bw-el-get-packages)
+        (el-get-install-skip-emacswiki-recipes))
     (el-get-cleanup my-packages)
     (el-get 'sync my-packages)))
 
 (use-package el-get
-  :init (bw-sync-packages))
+  :init
+  (progn
+    ;; override default packaging list
+    (setq package-archives
+          '(("gnu" . "http://elpa.gnu.org/packages/")
+            ("marmalade" . "http://marmalade-repo.org/packages/")
+            ("melpa" . "http://melpa.milkbox.net/packages/")))
+    (defconst bw-el-get-packages
+      (append '(expand-region
+                magit
+                multiple-cursors)
+              (mapcar 'el-get-source-name el-get-sources)))
+    (bw-sync-packages)))
 
 (provide 'init-el-get)
