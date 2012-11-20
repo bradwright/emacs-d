@@ -6,10 +6,31 @@
 (setq el-get-dir el-get-base-dir)
 
 (defconst el-get-sources
-  '((:name ack-and-a-half :type elpa))
-  "Canonical list of packages.")
-
-
+  '((:name ack-and-a-half :type elpa)
+    ;; this replaces the built-in package.rcp
+    ;; because it clobbers the package-archives
+    (:name package
+           :builtin 24
+           :features package
+           :post-init
+           (progn
+             (setq package-user-dir
+                   (expand-file-name
+                    (convert-standard-filename
+                     (concat (file-name-as-directory
+                              default-directory)
+                             "elpa")))
+                   package-directory-list
+                   (list (file-name-as-directory package-user-dir)
+                         "/usr/share/emacs/site-lisp/elpa/"))
+             (make-directory package-user-dir t)
+             (unless (boundp 'package-subdirectory-regexp)
+               (defconst package-subdirectory-regexp
+                 "^\\([^.].*\\)-\\([0-9]+\\(?:[.][0-9]+\\)*\\)$"
+                 "Regular expression matching the name of
+ a package subdirectory. The first subexpression is the package
+ name. The second subexpression is the version string.")))))
+    "Canonical list of packages.")
 
 (defun el-get-cleanup (packages)
   "Remove packages not explicitly declared"
