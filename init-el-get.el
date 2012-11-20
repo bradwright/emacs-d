@@ -3,6 +3,7 @@
 
 (bw-add-to-load-path el-get-base-dir)
 (make-directory el-get-base-dir t)
+(setq el-get-dir el-get-base-dir)
 
 (defconst el-get-sources
   '((:name ack-and-a-half :type elpa))
