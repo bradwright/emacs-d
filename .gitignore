@@ -6,7 +6,8 @@ custom.el
 auto-save-list
 # Emacs 24 packages
 elpa/installed
-el-get/
+el-get/*
+!el-get/init-*
 .tmp
 # swank-clojure
 swank/
