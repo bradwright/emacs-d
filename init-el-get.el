@@ -10,6 +10,7 @@
     (:name js2-mode
        :type github
        :branch "emacs24"
+       :pkgname "mooz/js2-mode"
        :prepare (autoload 'js2-mode "js2-mode" nil t))
     ;; this replaces the built-in package.rcp
     ;; because it clobbers the package-archives
