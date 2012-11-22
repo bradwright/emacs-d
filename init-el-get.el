@@ -63,6 +63,7 @@
             ("melpa" . "http://melpa.milkbox.net/packages/")))
     (defconst bw-el-get-packages
       (append '(expand-region
+                git-modes
                 magit
                 multiple-cursors)
               (mapcar 'el-get-source-name el-get-sources)))
