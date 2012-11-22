@@ -1,12 +1,19 @@
+;; el-get configuration
+
+;; init-* files are stored here
 (defconst el-get-base-dir
   (bw-join-dirs dotfiles-dir "el-get"))
 
 (bw-add-to-load-path el-get-base-dir)
 (make-directory el-get-base-dir t)
+
+;; ... but we also want to store installed packages there
 (setq el-get-dir el-get-base-dir)
 
+;; my own packages
 (defconst el-get-sources
   '((:name ack-and-a-half :type elpa)
+    ;; js2-mode changed to be better in Emacs24
     (:name js2-mode
        :type github
        :branch "emacs24"
@@ -19,30 +26,21 @@
            :features package
            :post-init
            (progn
-             (setq package-user-dir
-                   (expand-file-name
-                    (convert-standard-filename
-                     (concat (file-name-as-directory
-                              default-directory)
-                             "elpa")))
-                   package-directory-list
-                   (list (file-name-as-directory package-user-dir)
-                         "/usr/share/emacs/site-lisp/elpa/"))
-             (make-directory package-user-dir t)
-             (unless (boundp 'package-subdirectory-regexp)
-               (defconst package-subdirectory-regexp
-                 "^\\([^.].*\\)-\\([0-9]+\\(?:[.][0-9]+\\)*\\)$"
-                 "Regular expression matching the name of
- a package subdirectory. The first subexpression is the package
- name. The second subexpression is the version string.")))))
-    "Canonical list of packages.")
+             ;; override default packaging list
+             (setq package-archives
+                   '(("gnu" . "http://elpa.gnu.org/packages/")
+                     ("marmalade" . "http://marmalade-repo.org/packages/")
+                     ("melpa" . "http://melpa.milkbox.net/packages/"))))))
+    "Packages I've modified the recipes for.")
 
-(defun el-get-cleanup (packages)
-  "Remove packages not explicitly declared"
-  (let* ((packages-to-keep (el-get-dependencies (mapcar 'el-get-as-symbol packages)))
-         (packages-to-remove (set-difference (mapcar 'el-get-as-symbol
-                                                     (el-get-list-package-names-with-status
-                                                      "installed")) packages-to-keep)))
+(defun bw-el-get-cleanup (packages)
+  "Remove installed packages not explicitly declared"
+  (let* ((packages-to-keep
+          (el-get-dependencies (mapcar 'el-get-as-symbol packages)))
+         (packages-to-remove
+          (set-difference (mapcar 'el-get-as-symbol
+                                  (el-get-list-package-names-with-status
+                                   "installed")) packages-to-keep)))
     (mapc 'el-get-remove packages-to-remove)))
 
 (defun bw-sync-packages ()
@@ -50,17 +48,12 @@
   (interactive)
   (let ((my-packages bw-el-get-packages)
         (el-get-install-skip-emacswiki-recipes))
-    (el-get-cleanup my-packages)
+    (bw-el-get-cleanup my-packages)
     (el-get 'sync my-packages)))
 
 (use-package el-get
   :init
   (progn
-    ;; override default packaging list
-    (setq package-archives
-          '(("gnu" . "http://elpa.gnu.org/packages/")
-            ("marmalade" . "http://marmalade-repo.org/packages/")
-            ("melpa" . "http://melpa.milkbox.net/packages/")))
     (defconst bw-el-get-packages
       (append '(expand-region
                 git-modes
