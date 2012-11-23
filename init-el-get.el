@@ -41,7 +41,20 @@
              (setq package-archives
                    '(("gnu" . "http://elpa.gnu.org/packages/")
                      ("marmalade" . "http://marmalade-repo.org/packages/")
-                     ("melpa" . "http://melpa.milkbox.net/packages/"))))))
+                     ("melpa" . "http://melpa.milkbox.net/packages/")))
+             (defconst package-base-dir
+               (bw-join-dirs dotfiles-dir "elpa"))
+             (defconst package-install-dir
+               (bw-join-dirs package-base-dir "installed"))
+
+             (make-directory package-base-dir t)
+             (make-directory package-install-dir t)
+
+             (bw-add-to-load-path package-base-dir)
+
+             ;; this is to set up packages
+             (setq package-user-dir package-install-dir)))
+    (:name paredit :type elpa))
     "Packages I've modified the recipes for.")
 
 (defun bw-el-get-cleanup (packages)
