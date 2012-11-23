@@ -10,9 +10,12 @@
 ;; ... but we also want to store installed packages there
 (setq el-get-dir el-get-base-dir)
 
-;; my own packages
+;; my own package definitions
 (defconst el-get-sources
   '((:name ack-and-a-half :type elpa)
+    (:name diminish :type elpa)
+    (:name flymake-cursor :type elpa)
+    (:name idomenu :type elpa)
     ;; js2-mode changed to be better in Emacs24
     (:name js2-mode
        :type github
@@ -55,11 +58,15 @@
   :init
   (progn
     (defconst bw-el-get-packages
-      (append '(expand-region
+      (append '(browse-kill-ring
+                expand-region
                 git-modes
                 magit
-                multiple-cursors)
+                multiple-cursors
+                undo-tree
+                yasnippet)
               (mapcar 'el-get-source-name el-get-sources)))
     (bw-sync-packages)))
 
 (provide 'init-el-get)
+                iedit
