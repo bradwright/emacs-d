@@ -29,7 +29,15 @@
            :features package
            :post-init
            (progn
-             ;; override default packaging list
+             ;; Gotten from:
+             ;; https://github.com/purcell/emacs.d/blob/master/init-elpa.el
+             (defadvice package-generate-autoloads
+               (after close-autoloads (name pkg-dir) activate)
+               "Stop package.el from leaving open autoload files lying around."
+               (let ((path (expand-file-name (concat name "-autoloads.el") pkg-dir)))
+                 (with-current-buffer (find-file-existing path)
+                   (kill-buffer nil))))
+
              (setq package-archives
                    '(("gnu" . "http://elpa.gnu.org/packages/")
                      ("marmalade" . "http://marmalade-repo.org/packages/")
