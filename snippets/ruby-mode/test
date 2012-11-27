@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Unit test block
+# key: test
+# --
+test "$1" do
+  $0
+end
