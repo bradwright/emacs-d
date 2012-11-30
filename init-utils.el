@@ -2,6 +2,11 @@
 
 ;;; My custom Emacs lisp functions
 
+(defun bw-enable-hl-line-mode ()
+  "Enables hl-line-mode"
+  (interactive)
+  (hl-line-mode 1))
+
 (defun bw-turn-on-flymake-mode ()
   "Turns on flymake-mode locally"
   (interactive)
