@@ -102,6 +102,7 @@
     init-multiple-cursors
     init-paredit
     init-puppet
+    init-smex
     init-undo-tree
     init-yaml
     init-yasnippet)

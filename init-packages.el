@@ -95,6 +95,7 @@
              haskell-mode
              idomenu
              ruby-mode
+             smex
              undo-tree
              znc)))))
 
