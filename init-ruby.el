@@ -30,11 +30,11 @@
  ruby-insert-encoding-magic-comment nil)
 
 ;; fix syntax highlighting for Cucumber Step Definition regexps
-(eval-after-load 'ruby-mode
-  '(progn
-     (add-to-list 'ruby-font-lock-syntactic-keywords
-                  '("\\(\\(\\)\\(\\)\\|Given\\|When\\|Then\\)\\s *\\(/\\)[^/\n\\\\]*\\(\\\\.[^/\n\\\\]*\\)*\\(/\\)"
-                    (4 (7 . ?/))
-                    (6 (7 . ?/))))))
+;; (eval-after-load 'ruby-mode
+;;   '(progn
+;;      (add-to-list 'ruby-font-lock-syntactic-keywords
+;;                   '("\\(\\(\\)\\(\\)\\|Given\\|When\\|Then\\)\\s *\\(/\\)[^/\n\\\\]*\\(\\\\.[^/\n\\\\]*\\)*\\(/\\)"
+;;                     (4 (7 . ?/))
+;;                     (6 (7 . ?/))))))
 
 (provide 'init-ruby)
