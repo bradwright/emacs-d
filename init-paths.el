@@ -7,6 +7,13 @@
 
 (bw-add-to-load-path vendor-dotfiles-dir)
 
+;; built-in modes
+(defconst modes-dotfiles-dir
+  (bw-join-dirs dotfiles-dir "modes")
+  "Configuration for modes")
+
+(bw-add-to-load-path modes-dotfiles-dir)
+
 ;; automatically add everything under vendor to load-path
 (dolist (f (directory-files vendor-dotfiles-dir))
   (let ((name (concat vendor-dotfiles-dir "/" f)))
