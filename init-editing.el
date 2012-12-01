@@ -48,4 +48,7 @@
       (list (line-beginning-position)
             (line-beginning-position 2)))))
 
+;; enable hl-line-mode for prog-mode
+(add-hook 'prog-mode-hook 'bw-enable-hl-line-mode)
+
 (provide 'init-editing)
