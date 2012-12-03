@@ -51,4 +51,9 @@
 ;; enable hl-line-mode for prog-mode
 (add-hook 'prog-mode-hook 'bw-enable-hl-line-mode)
 
+;; I want to use narrowing
+(put 'narrow-to-defun  'disabled nil)
+(put 'narrow-to-page   'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+
 (provide 'init-editing)
