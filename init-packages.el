@@ -94,6 +94,7 @@
              clojure-test-mode
              haskell-mode
              idomenu
+             multiple-cursors
              ruby-mode
              smex
              undo-tree
