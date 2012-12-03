@@ -8,7 +8,7 @@
         (custom-set-faces
          '(magit-diff-add ((t (:inherit diff-added :weight normal))))
          '(magit-diff-del ((t (:inherit diff-removed :weight normal))))
-         '(diff-refine-change ((t (:inherit diff-refine-change :background nil))))
+         '(diff-refine-change ((t (:inherit diff-refine-change :background nil :weight normal))))
          '(iedit-occurrence ((t (:inherit lazy-highlight))))
          '(match ((t (:inherit lazy-highlight :reverse t))))
          '(erb-face ((t (:background nil))))
