@@ -103,4 +103,11 @@ by using nxml's indentation rules."
   (cond ((y-or-n-p "Quit Emacs? ")
          (save-buffers-kill-terminal))))
 
+;; http://andrewcoxtech.blogspot.co.uk/2009/11/inserting-bom-into-file.html
+(defun bw-insert-bom()
+  "Inserts a valid UTF8 byte order mark"
+  (interactive)
+  (goto-char (point-min))
+  (ucs-insert (string-to-number "FEFF" 16)))
+
 (provide 'init-utils)
