@@ -121,6 +121,9 @@
   (unless (server-running-p)
     (server-start)))
 
+;; local overrides
+(require 'init-local)
+
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
 (load custom-file 'noerror)
