@@ -54,6 +54,7 @@
         iedit
         multiple-cursors
         paredit
+        smex
         undo-tree
         yasnippet)
       "Packages that I always use")
@@ -96,7 +97,6 @@
              idomenu
              multiple-cursors
              ruby-mode
-             smex
              undo-tree
              znc)))))
 

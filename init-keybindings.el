@@ -1,11 +1,8 @@
 ;;; Global keyboard combinations
 
-;; map M-x to C-x C-m and C-c C-m, because M-x is in an awkward spot
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-(global-set-key (kbd "C-c C-m") 'execute-extended-command)
-;; Unset GNUs since it clashes with above and I don't use it
+;; Unset GNUs since it clashes with C-x C-m and I don't use it
 (global-unset-key (kbd "C-x m"))
-;; unset M-x due to above
+;; unset M-x due to smex
 (global-unset-key (kbd "M-x"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
