@@ -98,10 +98,13 @@ by using nxml's indentation rules."
     (bw-kill-emacs)))
 
 (defun bw-kill-emacs ()
-  "Warn before exiting Emacs"
+  "If this buffer is a client, just kill it, otherwise confirm
+the quit."
   (interactive)
-  (cond ((y-or-n-p "Quit Emacs? ")
-         (save-buffers-kill-terminal))))
+  (if (frame-parameter (selected-frame) 'client)
+      (save-buffers-kill-terminal)
+    (cond ((y-or-n-p "Quit Emacs? ")
+           (save-buffers-kill-terminal)))))
 
 ;; http://andrewcoxtech.blogspot.co.uk/2009/11/inserting-bom-into-file.html
 (defun bw-insert-bom()
