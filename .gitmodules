@@ -1,30 +1,9 @@
-[submodule "vendor/eproject-mode"]
-	path = vendor/eproject-mode
-	url = https://github.com/jrockway/eproject.git
 [submodule "vendor/json-mode"]
 	path = vendor/json-mode
 	url = https://github.com/joshwnj/json-mode.git
-[submodule "vendor/themes/solarized"]
-	path = vendor/themes/solarized
-	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "vendor/magit"]
-	path = vendor/magit
-	url = https://github.com/magit/magit.git
-[submodule "vendor/js2-mode"]
-	path = vendor/js2-mode
-	url = https://github.com/mooz/js2-mode.git
 [submodule "vendor/use-package"]
 	path = vendor/use-package
 	url = https://github.com/jwiegley/use-package.git
-[submodule "vendor/rhtml"]
-	path = vendor/rhtml
-	url = https://github.com/eschulte/rhtml.git
-[submodule "vendor/magithub"]
-	path = vendor/magithub
-	url = https://github.com/nex3/magithub.git
-[submodule "vendor/web-mode"]
-	path = vendor/web-mode
-	url = https://github.com/fxbois/web-mode.git
 [submodule "vendor/xterm-frobs"]
 	path = vendor/xterm-frobs
 	url = https://github.com/emacsmirror/xterm-frobs
