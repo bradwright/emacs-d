@@ -85,6 +85,7 @@
                 git-modes
                 magit
                 multiple-cursors
+                smex
                 undo-tree
                 yasnippet)
               (mapcar 'el-get-source-name el-get-sources)))
