@@ -80,6 +80,7 @@
   (progn
     (defconst bw-el-get-packages
       (append '(browse-kill-ring
+                eproject
                 expand-region
                 git-modes
                 magit
