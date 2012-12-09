@@ -93,9 +93,12 @@
                 expand-region
                 git-modes
                 magit
+                magithub
                 multiple-cursors
+                rhtml-mode
                 smex
                 undo-tree
+                web-mode
                 yasnippet)
               (mapcar 'el-get-source-name el-get-sources)))
     (bw-sync-packages)))
