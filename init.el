@@ -127,3 +127,7 @@
 ;; Load custom file last
 (setq custom-file (concat dotfiles-dir "custom.el"))
 (load custom-file 'noerror)
+
+;; make sure we run the init hooks even if we didn't get a proper init
+(when after-init-time
+  (run-hooks 'after-init-hook))
