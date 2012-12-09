@@ -90,4 +90,3 @@
     (bw-sync-packages)))
 
 (provide 'init-el-get)
-                iedit
