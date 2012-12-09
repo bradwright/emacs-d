@@ -13,6 +13,15 @@
 ;; my own package definitions
 (defconst el-get-sources
   '((:name ack-and-a-half :type elpa)
+    (:name color-theme-solarized
+           :type github
+           :pkgname "sellout/emacs-color-theme-solarized"
+           :prepare (progn
+                  (add-to-list 'custom-theme-load-path default-directory)
+                  (autoload 'color-theme-solarized-light "color-theme-solarized"
+                    "color-theme: solarized-light" t)
+                  (autoload 'color-theme-solarized-dark "color-theme-solarized"
+                    "color-theme: solarized-dark" t)))
     (:name diminish :type elpa)
     (:name flymake-cursor :type elpa)
     (:name idomenu :type elpa)
