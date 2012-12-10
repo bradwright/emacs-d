@@ -1,15 +1,5 @@
 ;; el-get configuration
 
-;; init-* files are stored here
-(defconst el-get-base-dir
-  (bw-join-dirs dotfiles-dir "el-get"))
-
-(bw-add-to-load-path el-get-base-dir)
-(make-directory el-get-base-dir t)
-
-;; ... but we also want to store installed packages there
-(setq el-get-dir el-get-base-dir)
-
 ;; my own package definitions
 (defconst el-get-sources
   '((:name ack-and-a-half :type elpa)
@@ -76,17 +66,28 @@
                                    "installed")) packages-to-keep)))
     (mapc 'el-get-remove packages-to-remove)))
 
-(defun bw-sync-packages ()
-  "Syncs and cleans up packages"
-  (interactive)
-  (let ((my-packages bw-el-get-packages)
-        (el-get-install-skip-emacswiki-recipes))
-    (bw-el-get-cleanup my-packages)
-    (el-get 'sync my-packages)))
+;; init-* files are stored here
+(defconst el-get-base-dir
+  (bw-join-dirs dotfiles-dir "el-get"))
 
-(use-package el-get
-  :init
+(bw-add-to-load-path el-get-base-dir)
+(make-directory el-get-base-dir t)
+(setq el-get-dir el-get-base-dir)
+
+(require 'el-get)
+
+(eval-after-load 'el-get
   (progn
+
+    ;; ... but we also want to store installed packages there
+    (defun bw-sync-packages ()
+      "Syncs and cleans up packages"
+      (interactive)
+      (let ((my-packages bw-el-get-packages)
+            (el-get-install-skip-emacswiki-recipes))
+        (bw-el-get-cleanup my-packages)
+        (el-get 'sync my-packages)))
+
     (defconst bw-el-get-packages
       (append '(browse-kill-ring
                 eproject
@@ -98,6 +99,7 @@
                 rhtml-mode
                 smex
                 undo-tree
+                use-package
                 web-mode
                 yasnippet)
               (mapcar 'el-get-source-name el-get-sources)))

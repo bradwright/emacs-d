@@ -34,9 +34,6 @@
 (require 'init-utils)
 (require 'init-paths)
 
-;; use-package - used in other places
-(require 'init-use-package)
-
 ;; backups and autosaves
 (require 'init-backups)
 
@@ -45,6 +42,9 @@
 (require 'init-interface)
 
 (require 'init-el-get)
+
+;; use-package - used in other places
+(require 'init-use-package)
 
 ;; Platform specific configuration
 (use-package init-window-gui
