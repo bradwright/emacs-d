@@ -15,6 +15,7 @@
     (:name diminish :type elpa)
     (:name flymake-cursor :type elpa)
     (:name idomenu :type elpa)
+    (:name iedit :type elpa)
     ;; js2-mode changed to be better in Emacs24
     (:name js2-mode
        :type github
