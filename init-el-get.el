@@ -1,5 +1,9 @@
 ;; el-get configuration
 
+(defconst package-base-dir
+  (bw-join-dirs dotfiles-dir "packages"))
+(bw-add-to-load-path package-base-dir)
+
 ;; my own package definitions
 (defconst el-get-sources
   '((:name ack-and-a-half :type elpa)
@@ -42,10 +46,8 @@
                    '(("gnu" . "http://elpa.gnu.org/packages/")
                      ("marmalade" . "http://marmalade-repo.org/packages/")
                      ("melpa" . "http://melpa.milkbox.net/packages/")))
-             (defconst package-base-dir
-               (bw-join-dirs dotfiles-dir "elpa"))
              (defconst package-install-dir
-               (bw-join-dirs package-base-dir "installed"))
+               (bw-join-dirs package-base-dir "elpa"))
 
              (make-directory package-base-dir t)
              (make-directory package-install-dir t)
@@ -69,10 +71,7 @@
 
 ;; init-* files are stored here
 (defconst el-get-base-dir
-  (bw-join-dirs dotfiles-dir "el-get"))
-
-(bw-add-to-load-path el-get-base-dir)
-(make-directory el-get-base-dir t)
+  (bw-join-dirs package-base-dir "el-get"))
 (setq el-get-dir el-get-base-dir)
 
 (eval-after-load 'el-get
