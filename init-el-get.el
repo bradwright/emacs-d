@@ -2,6 +2,7 @@
 
 (defconst package-base-dir
   (bw-join-dirs dotfiles-dir "packages"))
+(make-directory package-base-dir t)
 (bw-add-to-load-path package-base-dir)
 
 ;; my own package definitions
@@ -49,11 +50,7 @@
              (defconst package-install-dir
                (bw-join-dirs package-base-dir "elpa"))
 
-             (make-directory package-base-dir t)
              (make-directory package-install-dir t)
-
-             (bw-add-to-load-path package-base-dir)
-
              ;; this is to set up packages
              (setq package-user-dir package-install-dir)))
     (:name paredit :type elpa))
