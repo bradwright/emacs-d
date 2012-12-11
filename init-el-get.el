@@ -85,6 +85,8 @@
          (bw-el-get-cleanup my-packages)
          (el-get 'sync my-packages)))
 
+     (setq el-get-git-shallow-clone t)
+
      (defconst bw-el-get-packages
        (append '(browse-kill-ring
                  eproject
