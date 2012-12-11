@@ -69,6 +69,8 @@
 ;; init-* files are stored here
 (defconst el-get-base-dir
   (bw-join-dirs package-base-dir "el-get"))
+
+(make-directory el-get-base-dir t)
 (setq el-get-dir el-get-base-dir)
 
 (eval-after-load 'el-get
