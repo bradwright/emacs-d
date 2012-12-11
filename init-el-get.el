@@ -11,22 +11,23 @@
     (:name color-theme-solarized
            :type github
            :pkgname "sellout/emacs-color-theme-solarized"
-           :prepare (progn
-                  (add-to-list 'custom-theme-load-path default-directory)
-                  (autoload 'color-theme-solarized-light "color-theme-solarized"
-                    "color-theme: solarized-light" t)
-                  (autoload 'color-theme-solarized-dark "color-theme-solarized"
-                    "color-theme: solarized-dark" t)))
+           :prepare
+           (progn
+             (add-to-list 'custom-theme-load-path default-directory)
+             (autoload 'color-theme-solarized-light "color-theme-solarized"
+               "color-theme: solarized-light" t)
+             (autoload 'color-theme-solarized-dark "color-theme-solarized"
+               "color-theme: solarized-dark" t)))
     (:name diminish :type elpa)
     (:name flymake-cursor :type elpa)
     (:name idomenu :type elpa)
     (:name iedit :type elpa)
     ;; js2-mode changed to be better in Emacs24
     (:name js2-mode
-       :type github
-       :branch "emacs24"
-       :pkgname "mooz/js2-mode"
-       :prepare (autoload 'js2-mode "js2-mode" nil t))
+           :type github
+           :branch "emacs24"
+           :pkgname "mooz/js2-mode"
+           :prepare (autoload 'js2-mode "js2-mode" nil t))
     ;; this replaces the built-in package.rcp
     ;; because it clobbers the package-archives
     (:name package
@@ -55,7 +56,7 @@
              (setq package-user-dir package-install-dir)))
     (:name paredit :type elpa)
     (:name undo-tree :type elpa))
-    "Packages I've modified the recipes for.")
+  "Packages I've modified the recipes for.")
 
 (defun bw-el-get-cleanup (packages)
   "Remove installed packages not explicitly declared"
