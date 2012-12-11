@@ -53,7 +53,8 @@
              (make-directory package-install-dir t)
              ;; this is to set up packages
              (setq package-user-dir package-install-dir)))
-    (:name paredit :type elpa))
+    (:name paredit :type elpa)
+    (:name undo-tree :type elpa))
     "Packages I've modified the recipes for.")
 
 (defun bw-el-get-cleanup (packages)
