@@ -47,12 +47,10 @@
       '(ack-and-a-half
         browse-kill-ring
         diminish
-        expand-region
         flymake-cursor
         git-commit-mode
         idomenu
         iedit
-        multiple-cursors
         paredit
         smex
         undo-tree

@@ -34,9 +34,6 @@
 (require 'init-utils)
 (require 'init-paths)
 
-;; use-package - used in other places
-(require 'init-use-package)
-
 ;; backups and autosaves
 (require 'init-backups)
 
@@ -44,7 +41,10 @@
 (require 'init-editing)
 (require 'init-interface)
 
-(require 'init-packages)
+(require 'init-el-get)
+
+;; use-package - used in other places
+(require 'init-use-package)
 
 ;; Platform specific configuration
 (use-package init-window-gui
@@ -83,10 +83,7 @@
 
 ;; vendor-ised modes
 (defconst vendor-modes
-  '(init-eproject
-    init-js2
-    init-json
-    init-magit)
+  '(init-json)
   "Configuration for vendorised code")
 
 (bw-require-list vendor-modes)
@@ -96,8 +93,11 @@
   '(init-ace-jump
     init-ack-and-a-half
     init-browse-kill-ring
+    init-eproject
     init-expand-region
     init-iedit
+    init-js2
+    init-magit
     init-markdown
     init-multiple-cursors
     init-paredit
