@@ -19,4 +19,15 @@
 ;; Show bell
 (setq visible-bell t)
 
+;; auto-pad linum-mode according to length of buffer
+(setq linum-format (lambda (line)
+  (propertize
+   (format (concat " %"
+                   (number-to-string
+                    (length (number-to-string
+                             (line-number-at-pos (point-max)))))
+                   "d ")
+           line)
+   'face 'linum)))
+
 (provide 'init-interface)
