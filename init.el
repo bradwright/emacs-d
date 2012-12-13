@@ -96,6 +96,7 @@
     init-eproject
     init-expand-region
     init-iedit
+    init-idomenu
     init-js2
     init-magit
     init-markdown
