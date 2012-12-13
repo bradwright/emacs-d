@@ -37,7 +37,7 @@
     (shell-command-on-region b e
                              "python -mjson.tool" (current-buffer) t)))
 
-(defun bw-occur-invalid-chars ()
+(defun bw-occur-non-ascii-chars ()
   "Finds characters that aren't in the displayable range for ASCII"
   (interactive)
   (occur "[^\000-\177]"))
