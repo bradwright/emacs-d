@@ -7,6 +7,3 @@
 [submodule "vendor/xterm-frobs"]
 	path = vendor/xterm-frobs
 	url = https://github.com/emacsmirror/xterm-frobs
-[submodule "vendor/el-get"]
-	path = vendor/el-get
-	url = https://github.com/dimitri/el-get.git

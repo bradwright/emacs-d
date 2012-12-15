@@ -74,36 +74,44 @@
 (make-directory el-get-base-dir t)
 (setq el-get-dir el-get-base-dir)
 
+(bw-add-to-load-path (bw-join-dirs el-get-base-dir "el-get"))
+
 (eval-after-load 'el-get
   '(progn
-     ;; ... but we also want to store installed packages there
-     (defun bw-sync-packages ()
-       "Syncs and cleans up packages"
-       (interactive)
-       (let ((my-packages bw-el-get-packages)
-             (el-get-install-skip-emacswiki-recipes))
-         (bw-el-get-cleanup my-packages)
-         (el-get 'sync my-packages)))
+     (setq el-get-git-shallow-clone t)))
 
-     (setq el-get-git-shallow-clone t)
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let ((el-get-master-branch)
+          (el-get-install-skip-emacswiki-recipes))
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
 
-     (defconst bw-el-get-packages
-       (append '(browse-kill-ring
-                 eproject
-                 expand-region
-                 git-modes
-                 magit
-                 magithub
-                 multiple-cursors
-                 rhtml-mode
-                 smex
-                 undo-tree
-                 use-package
-                 web-mode
-                 yasnippet)
-               (mapcar 'el-get-source-name el-get-sources)))
-     (bw-sync-packages)))
+(setq bw-packages
+      '(use-package ; this has to come first
+         ack-and-a-half
+         browse-kill-ring
+         color-theme-solarized
+         diminish
+         eproject
+         expand-region
+         flymake-cursor
+         git-modes
+         idomenu
+         iedit
+         js2-mode
+         magit
+         magithub
+         multiple-cursors
+         paredit
+         rhtml-mode
+         smex
+         undo-tree
+         web-mode
+         yasnippet))
 
-(require 'el-get)
+(el-get 'sync bw-packages)
 
 (provide 'init-el-get)
