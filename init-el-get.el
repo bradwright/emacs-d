@@ -28,6 +28,9 @@
            :branch "emacs24"
            :pkgname "mooz/js2-mode"
            :prepare (autoload 'js2-mode "js2-mode" nil t))
+    (:name json-mode
+           :type github
+           :pkgname "joshwnj/json-mode")
     ;; this replaces the built-in package.rcp
     ;; because it clobbers the package-archives
     (:name package
@@ -55,7 +58,10 @@
              ;; this is to set up packages
              (setq package-user-dir package-install-dir)))
     (:name paredit :type elpa)
-    (:name undo-tree :type elpa)))
+    (:name undo-tree :type elpa)
+    (:name xterm-frobs
+           :type github
+           :pkgname "emacsmirror/xterm-frobs")))
 
 (defun bw-el-get-cleanup (packages)
   "Remove installed packages not explicitly declared"
@@ -102,6 +108,7 @@
          idomenu
          iedit
          js2-mode
+         json-mode
          magit
          magithub
          multiple-cursors
@@ -111,6 +118,7 @@
          undo-tree
          web-mode
          yasnippet))
+         xterm-frobs
 
 (el-get 'sync bw-packages)
 
