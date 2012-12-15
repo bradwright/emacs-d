@@ -1,9 +1,6 @@
 [submodule "vendor/json-mode"]
 	path = vendor/json-mode
 	url = https://github.com/joshwnj/json-mode.git
-[submodule "vendor/use-package"]
-	path = vendor/use-package
-	url = https://github.com/jwiegley/use-package.git
 [submodule "vendor/xterm-frobs"]
 	path = vendor/xterm-frobs
 	url = https://github.com/emacsmirror/xterm-frobs
