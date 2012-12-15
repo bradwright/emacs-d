@@ -6,7 +6,7 @@
 (bw-add-to-load-path package-base-dir)
 
 ;; my own package definitions
-(defconst el-get-sources
+(setq el-get-sources
   '((:name ack-and-a-half :type elpa)
     (:name color-theme-solarized
            :type github
@@ -55,8 +55,7 @@
              ;; this is to set up packages
              (setq package-user-dir package-install-dir)))
     (:name paredit :type elpa)
-    (:name undo-tree :type elpa))
-  "Packages I've modified the recipes for.")
+    (:name undo-tree :type elpa)))
 
 (defun bw-el-get-cleanup (packages)
   "Remove installed packages not explicitly declared"
