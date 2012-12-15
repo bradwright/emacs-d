@@ -20,11 +20,6 @@
     ;; major mode for editing `git rebase -i` files
     (use-package rebase-mode)
 
-    ;; Elisp library to interact with GitHub
-    (use-package magithub
-      ;; init immediately
-      :init)
-
     ;; magit settings
     (setq
      ;; use ido to look for branches

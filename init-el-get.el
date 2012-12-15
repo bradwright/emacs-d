@@ -111,7 +111,6 @@
          js2-mode
          json-mode
          magit
-         magithub
          multiple-cursors
          paredit
          rhtml-mode
