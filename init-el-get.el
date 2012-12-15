@@ -19,6 +19,7 @@
              (autoload 'color-theme-solarized-dark "color-theme-solarized"
                "color-theme: solarized-dark" t)))
     (:name diminish :type elpa)
+    (:name exec-path-from-shell :type elpa)
     (:name flymake-cursor :type elpa)
     (:name idomenu :type elpa)
     (:name iedit :type elpa)
@@ -117,8 +118,11 @@
          smex
          undo-tree
          web-mode
-         yasnippet))
          xterm-frobs
+         yasnippet))
+
+(if *is-a-mac*
+    (add-to-list 'bw-packages 'exec-path-from-shell))
 
 (el-get 'sync bw-packages)
 
