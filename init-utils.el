@@ -123,4 +123,23 @@ the quit."
   (goto-char (point-min))
   (ucs-insert (string-to-number "FEFF" 16)))
 
+(defun bw-git-grep (search-str)
+  "Uses `git-grep` to find `search-str`"
+  (interactive "sSearch for: ")
+  (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str)))
+
+(defun bw-find-file-git-ls-files-completing (&optional base-directory)
+  "Uses ido-completing-read to open a file from git ls-files"
+  (interactive)
+  (let ((base-directory (or base-directory default-directory))
+        (files-alist
+         (split-string
+          (shell-command-to-string "git ls-files --exclude-standard -co"))))
+    (find-file
+     (concat
+      base-directory
+      (ido-completing-read
+       (format "Find file: %s" (abbreviate-file-name base-directory))
+       files-alist)))))
+
 (provide 'init-utils)
