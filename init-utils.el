@@ -128,18 +128,29 @@ the quit."
   (interactive "sSearch for: ")
   (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str)))
 
+(defun bw-find-default-project-dir ()
+  "Finds the root of this project - at the moment this means the
+Git repo it's contained in."
+  (interactive)
+  (when (not (buffer-file-name))
+    (error "Not a real file"))
+  (let ((git-dir (locate-dominating-file (buffer-file-name) ".git")))
+    (message git-dir)
+    (when (not git-dir)
+      (error "Not in a Git directory"))
+    git-dir))
+
 (defun bw-find-file-git-ls-files-completing (&optional base-directory)
   "Uses ido-completing-read to open a file from git ls-files"
   (interactive)
-  (let ((base-directory (or base-directory default-directory))
-        (files-alist
-         (split-string
-          (shell-command-to-string "git ls-files --exclude-standard -co"))))
+  (let ((base-directory (or base-directory (bw-find-default-project-dir))))
+    (cd base-directory)
     (find-file
      (concat
       base-directory
       (ido-completing-read
        (format "Find file: %s" (abbreviate-file-name base-directory))
-       files-alist)))))
+       (split-string
+        (shell-command-to-string "git --no-pager ls-files --exclude-standard -co")))))))
 
 (provide 'init-utils)
