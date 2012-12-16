@@ -2,6 +2,16 @@
 
 ;;; My custom Emacs lisp functions
 
+(defun bw-turn-on-auto-fill ()
+  "Enables auto-fill"
+  (interactive)
+  (auto-fill-mode 1))
+
+(defun bw-turn-off-auto-fill ()
+  "Disables auto-fill"
+  (interactive)
+  (auto-fill-mode -1))
+
 (defun bw-enable-hl-line-mode ()
   "Enables hl-line-mode"
   (interactive)

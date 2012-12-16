@@ -3,7 +3,6 @@
   (progn
     ;; auto-wrap
     (add-hook 'org-mode-hook 'bw-turn-on-auto-fill)
-    (add-hook 'org-mode-hook 'bw-turn-off-trailing-whitespace)
 
     ;; edit inline code blocks natively
     (setq
