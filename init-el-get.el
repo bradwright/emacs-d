@@ -64,27 +64,18 @@
            :type github
            :pkgname "emacsmirror/xterm-frobs")))
 
-(defun bw-el-get-cleanup (packages)
-  "Remove installed packages not explicitly declared"
-  (let* ((packages-to-keep
-          (el-get-dependencies (mapcar 'el-get-as-symbol packages)))
-         (packages-to-remove
-          (set-difference (mapcar 'el-get-as-symbol
-                                  (el-get-list-package-names-with-status
-                                   "installed")) packages-to-keep)))
-    (mapc 'el-get-remove packages-to-remove)))
-
-;; init-* files are stored here
 (defconst el-get-base-dir
   (bw-join-dirs package-base-dir "el-get"))
 
 (make-directory el-get-base-dir t)
 (setq el-get-dir el-get-base-dir)
 
+;; if el-get is already installed it'll live here
 (bw-add-to-load-path (bw-join-dirs el-get-base-dir "el-get"))
 
 (eval-after-load 'el-get
   '(progn
+     ;; only take the latest commit and not the whole history
      (setq el-get-git-shallow-clone t)))
 
 (unless (require 'el-get nil 'noerror)
@@ -92,12 +83,14 @@
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (let ((el-get-master-branch)
+          ;; skip EmacsWiki recipes
           (el-get-install-skip-emacswiki-recipes))
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
 (setq bw-packages
-      '(use-package ; this has to come first
+      '(use-package ; this has to come first due to the way my config
+                    ; is set up
          ack-and-a-half
          browse-kill-ring
          color-theme-solarized
