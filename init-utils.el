@@ -123,9 +123,16 @@ the quit."
   (goto-char (point-min))
   (ucs-insert (string-to-number "FEFF" 16)))
 
+(defun bw-read-string-at-point ()
+  (interactive)
+  (let ((word (word-at-point)))
+    (set-text-properties 0 (length word) nil word)
+    word))
+
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
-  (interactive "sSearch for: ")
+  (interactive (list
+                (read-string (format "Search for (%s): " (bw-read-string-at-point)))))
   (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str)))
 
 (defun bw-find-default-project-dir ()
