@@ -131,9 +131,12 @@ the quit."
 
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
-  (interactive (list
-                (read-string (format "Search for (%s): " (bw-read-string-at-point)))))
-  (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str)))
+  (interactive
+   (list
+    (read-string (format "Search for (%s): " (bw-read-string-at-point)))))
+  (let ((search-str (if (= (length search-str) 0)
+                        (bw-read-string-at-point) search-str)))
+    (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str))))
 
 (defun bw-find-default-project-dir ()
   "Finds the root of this project - at the moment this means the
