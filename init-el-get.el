@@ -114,7 +114,9 @@
          yasnippet))
 
 (if *is-a-mac*
-    (add-to-list 'bw-packages 'exec-path-from-shell))
+    (progn
+      (add-to-list 'bw-packages 'exec-path-from-shell)
+      (add-to-list 'bw-packages 'edit-server)))
 
 (el-get 'sync bw-packages)
 
