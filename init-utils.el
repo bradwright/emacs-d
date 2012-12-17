@@ -124,10 +124,9 @@ the quit."
   (ucs-insert (string-to-number "FEFF" 16)))
 
 (defun bw-read-string-at-point ()
+  "Grabs the `symbol` currently at point"
   (interactive)
-  (let ((word (word-at-point)))
-    (set-text-properties 0 (length word) nil word)
-    word))
+  (symbol-name (symbol-at-point)))
 
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
