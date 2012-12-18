@@ -18,6 +18,6 @@
        (ruby . t)))
 
     ;; default directory
-    (setq org-directory "~/Dropbox/Org/")))
+    (setq org-directory (expand-file-name "~/Dropbox/Org/"))))
 
 (provide 'init-org)
