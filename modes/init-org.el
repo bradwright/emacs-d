@@ -1,4 +1,5 @@
 (use-package org
+  :mode ("\\.org$" . org-mode)
   :config
   (progn
     ;; auto-wrap
