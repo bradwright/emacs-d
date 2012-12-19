@@ -146,7 +146,6 @@ Git repo it's contained in."
   (when (not (buffer-file-name))
     (error "Not a real file"))
   (let ((git-dir (locate-dominating-file (buffer-file-name) ".git")))
-    (message git-dir)
     (when (not git-dir)
       (error "Not in a Git directory"))
     git-dir))
