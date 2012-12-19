@@ -120,8 +120,10 @@ the quit."
 (defun bw-insert-bom()
   "Inserts a valid UTF8 byte order mark"
   (interactive)
-  (goto-char (point-min))
-  (ucs-insert (string-to-number "FEFF" 16)))
+  (save-excursion
+    (goto-char (point-min))
+    (ucs-insert (string-to-number "FEFF" 16))
+    (message "BOM inserted")))
 
 (defun bw-read-string-at-point ()
   "Grabs the `symbol` currently at point"
