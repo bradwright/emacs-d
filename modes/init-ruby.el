@@ -27,7 +27,9 @@
  ;; don't deep indent parens
  ruby-deep-indent-paren nil
  ;; don't insert an encoding comment automatically
- ruby-insert-encoding-magic-comment nil)
+ ruby-insert-encoding-magic-comment nil
+ ;; don't deep indent lists
+ ruby-deep-arglist nil)
 
 ;; fix syntax highlighting for Cucumber Step Definition regexps
 ;; (eval-after-load 'ruby-mode
