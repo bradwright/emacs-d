@@ -131,10 +131,12 @@ the quit."
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
   (interactive
-   (list
-    (read-string (format "Search for (%s): " (bw-read-string-at-point)))))
-  (let ((search-str (if (= (length search-str) 0)
-                        (bw-read-string-at-point) search-str)))
+   (let ((default (grep-tag-default)))
+     (list
+      (read-string (format "Search for (default %s): " default)
+                   nil nil default))))
+  (let ((grep-use-null-device nil)
+        (default-directory (bw-find-default-project-dir)))
     (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str))))
 
 (defun bw-find-default-project-dir ()
@@ -152,14 +154,11 @@ Git repo it's contained in."
 (defun bw-find-file-git-ls-files-completing (&optional base-directory)
   "Uses ido-completing-read to open a file from git ls-files"
   (interactive)
-  (let ((base-directory (or base-directory (bw-find-default-project-dir))))
-    (cd base-directory)
+  (let ((default-directory (or base-directory (bw-find-default-project-dir))))
     (find-file
-     (concat
-      base-directory
-      (ido-completing-read
-       (format "Find file: %s" (abbreviate-file-name base-directory))
-       (split-string
-        (shell-command-to-string "git --no-pager ls-files --exclude-standard -co")))))))
+     (ido-completing-read
+      (format "Find file: %s" (abbreviate-file-name default-directory))
+      (split-string
+       (shell-command-to-string "git --no-pager ls-files --exclude-standard -co"))))))
 
 (provide 'init-utils)
