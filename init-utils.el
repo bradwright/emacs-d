@@ -132,6 +132,7 @@ the quit."
 
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
+  (require 'grep)
   (interactive
    (let ((default (grep-tag-default)))
      (list
