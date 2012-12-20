@@ -2,6 +2,8 @@
 
 ;;; My custom Emacs lisp functions
 
+(require 'cl)
+
 (defun bw-turn-on-auto-fill ()
   "Enables auto-fill"
   (interactive)
@@ -153,6 +155,9 @@ Git repo it's contained in."
       (error "Not in a Git directory"))
     git-dir))
 
+(defun bw-is-image (name)
+  (member (file-name-extension name) '("jpg" "png" "gif" "jpeg")))
+
 (defun bw-find-file-git-ls-files-completing (&optional base-directory)
   "Uses ido-completing-read to open a file from git ls-files"
   (interactive)
@@ -160,7 +165,7 @@ Git repo it's contained in."
     (find-file
      (ido-completing-read
       (format "Find file: %s" (abbreviate-file-name default-directory))
-      (split-string
-       (shell-command-to-string "git --no-pager ls-files --exclude-standard -co"))))))
+      (remove-if 'bw-is-image (split-string
+                         (shell-command-to-string "git --no-pager ls-files --exclude-standard -co")))))))
 
 (provide 'init-utils)
