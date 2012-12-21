@@ -94,6 +94,7 @@
          ack-and-a-half
          browse-kill-ring
          color-theme-solarized
+         csv-mode
          diminish
          eproject
          expand-region
@@ -104,9 +105,11 @@
          js2-mode
          json-mode
          magit
+         markdown-mode
          multiple-cursors
          paredit
          rhtml-mode
+         scss-mode
          smex
          undo-tree
          web-mode
