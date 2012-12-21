@@ -26,7 +26,7 @@
       ;; We don't want to compile SCSS in Rails because the asset pipeline
       ;; does it for us
       (set (make-local-variable 'scss-compile-at-save) nil)
-
+      (set (make-local-variable 'css-indent-offset) 2)
       (set (make-local-variable 'inf-ruby-default-implementation) "bundle-ruby"))
 
     (add-hook 'ruby-on-rails-git-project-file-visit-hook 'rails-eproject-hook)
