@@ -23,7 +23,9 @@
       "Set up some local variables"
       (put 'scss-sass-command 'safe-local-variable 'stringp)
 
-      ;; (shell-command "git ls-files | /usr/local/bin/ctags -e -f - -L - 1> TAGS 2> /dev/null")
+      ;; We don't want to compile SCSS in Rails because the asset pipeline
+      ;; does it for us
+      (set (make-local-variable 'scss-compile-at-save) nil)
 
       (set (make-local-variable 'inf-ruby-default-implementation) "bundle-ruby"))
 

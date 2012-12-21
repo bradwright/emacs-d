@@ -9,15 +9,6 @@
            "\\.gemspec$"))
   (add-to-list 'auto-mode-alist `(,extension . ruby-mode)))
 
-(defun eproject-rails-config ()
-  "Various settings for Rails projects"
-
-  ;; We don't want to compile SCSS in Rails because the asset pipeline
-  ;; does it for us
-  (set (make-local-variable 'scss-compile-at-save) nil))
-
-(add-hook 'ruby-on-rails-project-file-visit-hook 'eproject-rails-config)
-
 ;; Ruby has a lot of camel case
 (add-hook 'ruby-mode-hook 'bw-turn-on-subword-mode)
 
