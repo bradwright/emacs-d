@@ -3,6 +3,7 @@
 ;;; My custom Emacs lisp functions
 
 (require 'cl)
+(require 'grep)
 
 (defun bw-turn-on-auto-fill ()
   "Enables auto-fill"
@@ -134,7 +135,6 @@ the quit."
 
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
-  (require 'grep)
   (interactive
    (let ((default (grep-tag-default)))
      (list
