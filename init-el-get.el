@@ -100,6 +100,7 @@
          expand-region
          flymake-cursor
          git-modes
+         ido-ubiquitous
          idomenu
          iedit
          js2-mode

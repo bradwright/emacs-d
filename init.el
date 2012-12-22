@@ -96,6 +96,7 @@
     init-eproject
     init-expand-region
     init-iedit
+    init-ido-ubiquitous
     init-idomenu
     init-js2
     init-magit
