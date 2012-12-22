@@ -1,7 +1,8 @@
 (recentf-mode 1)
 
 (setq recentf-auto-cleanup 'never
-      recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'" "[/\\]\\.git/" "[/\\]\\.gz\\'"))
+      recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'" "[/\\]\\.git/" "[/\\]\\.gz\\'")
+      recentf-save-file (expand-file-name ".recentf" tmp-local-dir))
 
 (defun recentf-ido-find-file ()
   "Find a recent file using ido."

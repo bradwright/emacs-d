@@ -1,4 +1,6 @@
 ;; eshell
+(setq eshell-directory-name (bw-join-dirs tmp-local-dir "eshell"))
+
 (eval-after-load 'esh-opt
   '(progn
      ;; we need this to override visual commands
