@@ -18,6 +18,8 @@
     ;; Don't try and guess if the string under point is a file
     ido-use-filename-at-point nil
     ;; case-insensitive matching
-    ido-case-fold t))
+    ido-case-fold t
+    ;; go back in time if required
+    ido-use-virtual-buffers t))
 
 (provide 'init-ido)
