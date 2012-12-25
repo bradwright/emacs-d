@@ -2,7 +2,12 @@
 
 (setq recentf-auto-cleanup 'never
       recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'" "[/\\]\\.git/" "[/\\]\\.gz\\'")
-      recentf-save-file (expand-file-name ".recentf" tmp-local-dir))
+      recentf-save-file (expand-file-name ".recentf" tmp-local-dir)
+      ;; save 100 most recent files
+      recentf-max-saved-items 100)
+
+;; strip $HOME from the front of recentf files
+(add-to-list 'recentf-filename-handlers 'abbreviate-file-name)
 
 (defun recentf-ido-find-file ()
   "Find a recent file using ido."
