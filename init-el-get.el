@@ -102,7 +102,6 @@
          git-modes
          ido-ubiquitous
          idomenu
-         iedit
          js2-mode
          json-mode
          magit
