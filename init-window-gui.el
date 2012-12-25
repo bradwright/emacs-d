@@ -14,7 +14,7 @@
 ;; From:
 ;; http://emacs-fu.blogspot.co.uk/2011/01/setting-frame-title.html
 (setq frame-title-format
-      '("emacs@" (:eval (system-name)) ": "
+      '((:eval (system-name)) ": "
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
