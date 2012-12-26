@@ -5,54 +5,6 @@
 (make-directory package-base-dir t)
 (bw-add-to-load-path package-base-dir)
 
-(setq el-get-sources
-  '((:name diminish :type elpa)
-    (:name erlang :type elpa)
-    (:name exec-path-from-shell :type elpa)
-    (:name flymake-cursor :type elpa)
-    (:name idomenu :type elpa)
-    (:name iedit :type elpa)
-    ;; js2-mode changed to be better in Emacs24
-    (:name js2-mode
-           :type github
-           :branch "emacs24"
-           :pkgname "mooz/js2-mode"
-           :prepare (autoload 'js2-mode "js2-mode" nil t))
-    (:name json-mode
-           :type github
-           :pkgname "joshwnj/json-mode")
-    ;; this replaces the built-in package.rcp
-    ;; because it clobbers the package-archives
-    (:name package
-           :builtin 24
-           :features package
-           :post-init
-           (progn
-             ;; Gotten from:
-             ;; https://github.com/purcell/emacs.d/blob/master/init-elpa.el
-             (defadvice package-generate-autoloads
-               (after close-autoloads (name pkg-dir) activate)
-               "Stop package.el from leaving open autoload files lying around."
-               (let ((path (expand-file-name (concat name "-autoloads.el") pkg-dir)))
-                 (with-current-buffer (find-file-existing path)
-                   (kill-buffer nil))))
-
-             (setq package-archives
-                   '(("gnu" . "http://elpa.gnu.org/packages/")
-                     ("marmalade" . "http://marmalade-repo.org/packages/")
-                     ("melpa" . "http://melpa.milkbox.net/packages/")))
-             (defconst package-install-dir
-               (bw-join-dirs package-base-dir "elpa"))
-
-             (make-directory package-install-dir t)
-             ;; this is to set up packages
-             (setq package-user-dir package-install-dir)))
-    (:name paredit :type elpa)
-    (:name undo-tree :type elpa)
-    (:name xterm-frobs
-           :type github
-           :pkgname "emacsmirror/xterm-frobs")))
-
 (defconst el-get-base-dir
   (bw-join-dirs package-base-dir "el-get/installed"))
 
