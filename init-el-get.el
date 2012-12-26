@@ -97,6 +97,7 @@
          color-theme-solarized
          csv-mode
          diminish
+         el-get
          eproject
          expand-region
          flymake-cursor
