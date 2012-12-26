@@ -5,20 +5,8 @@
 (make-directory package-base-dir t)
 (bw-add-to-load-path package-base-dir)
 
-;; my own package definitions
 (setq el-get-sources
-  '((:name ack-and-a-half :type elpa)
-    (:name color-theme-solarized
-           :type github
-           :pkgname "sellout/emacs-color-theme-solarized"
-           :prepare
-           (progn
-             (add-to-list 'custom-theme-load-path default-directory)
-             (autoload 'color-theme-solarized-light "color-theme-solarized"
-               "color-theme: solarized-light" t)
-             (autoload 'color-theme-solarized-dark "color-theme-solarized"
-               "color-theme: solarized-dark" t)))
-    (:name diminish :type elpa)
+  '((:name diminish :type elpa)
     (:name erlang :type elpa)
     (:name exec-path-from-shell :type elpa)
     (:name flymake-cursor :type elpa)
@@ -66,7 +54,7 @@
            :pkgname "emacsmirror/xterm-frobs")))
 
 (defconst el-get-base-dir
-  (bw-join-dirs package-base-dir "el-get"))
+  (bw-join-dirs package-base-dir "el-get/installed"))
 
 (make-directory el-get-base-dir t)
 (setq el-get-dir el-get-base-dir)
@@ -76,6 +64,7 @@
 
 (eval-after-load 'el-get
   '(progn
+     (add-to-list 'el-get-recipe-path (bw-join-dirs package-base-dir "el-get/recipes"))
      ;; only take the latest commit and not the whole history
      (setq el-get-git-shallow-clone t)))
 
