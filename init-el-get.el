@@ -19,6 +19,7 @@
              (autoload 'color-theme-solarized-dark "color-theme-solarized"
                "color-theme: solarized-dark" t)))
     (:name diminish :type elpa)
+    (:name erlang :type elpa)
     (:name exec-path-from-shell :type elpa)
     (:name flymake-cursor :type elpa)
     (:name idomenu :type elpa)
