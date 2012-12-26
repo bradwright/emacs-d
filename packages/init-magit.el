@@ -21,14 +21,9 @@
   :config
   (progn
     ;; restore previously hidden windows
-    (defun magit-quit-session ()
-      "Restores the previous window configuration and kills the magit buffer"
-      (interactive)
-      (kill-buffer)
+    (defadvice magit-quit-window (around magit-restore-screen activate)
+      ad-do-it
       (jump-to-register :magit-fullscreen))
-
-    (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
 
     ;; magit extensions
     (use-package magit-blame
