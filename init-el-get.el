@@ -2,21 +2,27 @@
 
 (defconst package-base-dir
   (bw-join-dirs dotfiles-dir "packages"))
+
 (make-directory package-base-dir t)
 (bw-add-to-load-path package-base-dir)
 
 (defconst el-get-base-dir
-  (bw-join-dirs package-base-dir "el-get/installed"))
+  (bw-join-dirs package-base-dir "el-get"))
 
 (make-directory el-get-base-dir t)
-(setq el-get-dir el-get-base-dir)
+
+(defconst el-get-installed-dir
+  (bw-join-dirs el-get-base-dir "installed"))
+
+(setq el-get-dir el-get-installed-dir)
 
 ;; if el-get is already installed it'll live here
-(bw-add-to-load-path (bw-join-dirs el-get-base-dir "el-get"))
+(bw-add-to-load-path (bw-join-dirs el-get-installed-dir "el-get"))
 
 (eval-after-load 'el-get
   '(progn
-     (add-to-list 'el-get-recipe-path (bw-join-dirs package-base-dir "el-get/recipes"))
+     ;; all stored recipes are here
+     (add-to-list 'el-get-recipe-path (bw-join-dirs el-get-base-dir "recipes"))
      ;; only take the latest commit and not the whole history
      (setq el-get-git-shallow-clone t)))
 
