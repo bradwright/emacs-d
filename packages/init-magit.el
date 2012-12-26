@@ -19,10 +19,10 @@
       ad-do-it
       (delete-other-windows))
 
+    ;; don't bother with vc-mode
     (delete 'Git vc-handled-backends))
   :config
   (progn
-    ;; magit extensions
     ;; restore previously hidden windows
     (defun magit-quit-session ()
       "Restores the previous window configuration and kills the magit buffer"
@@ -33,6 +33,7 @@
     (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 
+    ;; magit extensions
     (use-package magit-blame
       :bind ("C-c C-g b" . magit-blame-mode))
 
