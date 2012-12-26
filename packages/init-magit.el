@@ -17,10 +17,7 @@
     (defadvice magit-status (around magit-fullscreen activate)
       (window-configuration-to-register :magit-fullscreen)
       ad-do-it
-      (delete-other-windows))
-
-    ;; don't bother with vc-mode
-    (delete 'Git vc-handled-backends))
+      (delete-other-windows)))
   :config
   (progn
     ;; restore previously hidden windows
