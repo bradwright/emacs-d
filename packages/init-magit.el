@@ -10,10 +10,29 @@
   :bind ("C-c g" . magit-status)
   :init
   (progn
+    ;; make magit status go full-screen but remember previous window
+    ;; settings
+
+    ;; from: http://whattheemacsd.com/setup-magit.el-01.html
+    (defadvice magit-status (around magit-fullscreen activate)
+      (window-configuration-to-register :magit-fullscreen)
+      ad-do-it
+      (delete-other-windows))
+
     (delete 'Git vc-handled-backends))
   :config
   (progn
     ;; magit extensions
+    ;; restore previously hidden windows
+    (defun magit-quit-session ()
+      "Restores the previous window configuration and kills the magit buffer"
+      (interactive)
+      (kill-buffer)
+      (jump-to-register :magit-fullscreen))
+
+    (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+
+
     (use-package magit-blame
       :bind ("C-c C-g b" . magit-blame-mode))
 
