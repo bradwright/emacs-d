@@ -69,6 +69,7 @@
     init-flymake
     init-hippie-expand
     init-ido
+    init-isearch
     init-org
     init-recentf
     init-rst
