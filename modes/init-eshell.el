@@ -15,4 +15,11 @@
 ;; launch an eshell from keys
 (global-set-key (kbd "C-c e") 'eshell)
 
+;; Eshell aliases
+(defun eshell/git-log ()
+  (magit-log))
+
+(defun eshell/e (file)
+  (find-file file))
+
 (provide 'init-eshell)
