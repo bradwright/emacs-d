@@ -22,8 +22,12 @@
   (progn
     ;; restore previously hidden windows
     (defadvice magit-quit-window (around magit-restore-screen activate)
-      ad-do-it
-      (jump-to-register :magit-fullscreen))
+      (let ((current-mode major-mode))
+        ad-do-it
+        ;; we only want to jump to register when the last seen buffer
+        ;; was a magit-status buffer.
+        (when (eq 'magit-status-mode current-mode)
+          (jump-to-register :magit-fullscreen))))
 
     ;; magit extensions
     (use-package magit-blame
