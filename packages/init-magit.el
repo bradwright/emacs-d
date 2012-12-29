@@ -2,17 +2,12 @@
 ;; (It's awesome)
 ;; https://github.com/magit/magit
 
-;; This is vendor-ised because I want the info files to be compiled
-;; along with the Emacs Lisp files, so that I can read the manual in
-;; Emacs.
-
 (use-package magit
   :bind ("C-c g" . magit-status)
   :init
   (progn
     ;; make magit status go full-screen but remember previous window
     ;; settings
-
     ;; from: http://whattheemacsd.com/setup-magit.el-01.html
     (defadvice magit-status (around magit-fullscreen activate)
       (window-configuration-to-register :magit-fullscreen)
