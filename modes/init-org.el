@@ -8,7 +8,8 @@
     ;; edit inline code blocks natively
     (setq
      org-src-fontify-natively t
-     org-src-tab-acts-natively t)
+     org-src-tab-acts-natively t
+     org-startup-indented t)
 
     ;; Show other programming languages semi-natively when embedded
     (org-babel-do-load-languages
