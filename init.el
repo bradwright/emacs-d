@@ -63,6 +63,7 @@
   '(init-abbrev
     init-ansi-color
     init-ansi-term
+    init-conf
     init-ediff
     init-emacs-lisp
     init-eshell
