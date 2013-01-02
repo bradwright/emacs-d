@@ -82,6 +82,7 @@
          markdown-mode
          multiple-cursors
          paredit
+         puppet-mode
          rhtml-mode
          scss-mode
          smex
