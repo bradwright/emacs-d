@@ -41,7 +41,8 @@
 (require 'init-editing)
 (require 'init-interface)
 
-(require 'init-el-get)
+;; all external libraries, ELPA, el-get etc.
+(require 'init-packaging)
 
 ;; use-package - used in other places
 (require 'init-use-package)
