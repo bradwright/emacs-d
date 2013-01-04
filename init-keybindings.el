@@ -35,4 +35,8 @@
 (global-set-key (kbd "C-c C-f") 'bw-find-file-git-ls-files-completing)
 (global-set-key (kbd "C-c C-s") 'bw-git-grep)
 
+;; terminal-related bindings
+(global-set-key (kbd "C-c C-t t") 'ansi-term)
+(global-set-key (kbd "C-c C-t e") 'eshell)
+
 (provide 'init-keybindings)
