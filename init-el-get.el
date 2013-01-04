@@ -66,7 +66,7 @@
                     ; is set up
          ack-and-a-half
          browse-kill-ring
-         color-theme-solarized
+         solarized-theme
          csv-mode
          diminish
          el-get
