@@ -37,6 +37,16 @@
   (add-to-list 'bw-elpa-package-list 'edit-server)
   (add-to-list 'bw-elpa-package-list 'exec-path-from-shell))
 
+;; Whitelist melpa pacjages, and provide reasons they're whitelisted.
+(setq package-archive-enable-alist
+      '(("melpa"
+         edit-server          ;; Only in MELPA
+         eproject             ;; Only in MELPA
+         exec-path-from-shell ;; Marmalade version is very old
+         expand-region        ;; Marmalade version is very old
+         web-mode             ;; Only in MELPA
+         )))
+
 ;; Packages to exclude from specific repos, and reasons for excluding
 ;; them.
 (setq package-archive-exclude-alist
