@@ -27,3 +27,6 @@ clean: clean_dir
 
 clean_all: clean
 	git clean -qfxd
+
+clean_packages:
+	git clean -dfx ./packages
