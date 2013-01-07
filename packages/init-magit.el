@@ -6,6 +6,8 @@
   :bind ("C-c g" . magit-status)
   :init
   (progn
+    ;; we no longer need vc-git
+    (delete 'Git vc-handled-backends)
     ;; make magit status go full-screen but remember previous window
     ;; settings
     ;; from: http://whattheemacsd.com/setup-magit.el-01.html
