@@ -1,23 +1,4 @@
 ;; customise solarized-dark/light themes
-(defadvice load-theme
-  (before custom-solarized-load-theme activate)
-  (let ((theme-name (ad-get-arg 0)))
-    (when (or (eq theme-name 'solarized-dark)
-              (eq theme-name 'solarized-light))
-      (progn
-        (custom-set-faces
-         '(magit-diff-add ((t (:inherit diff-added :weight normal))))
-         '(magit-diff-del ((t (:inherit diff-removed :weight normal))))
-         '(diff-refine-change ((t (:inherit diff-refine-change :background nil :weight normal))))
-         '(iedit-occurrence ((t (:inherit lazy-highlight))))
-         '(match ((t (:inherit lazy-highlight :reverse t))))
-         '(erb-face ((t (:background nil))))
-         '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
-        (when (and (display-graphic-p) *is-a-mac*)
-          ;; My Macs have the --srgb flag set
-          (custom-set-variables
-           '(solarized-broken-srgb nil)))))))
-
 (defun bw-toggle-solarized ()
   "Toggles between solarized light and dark"
   (interactive)
@@ -36,6 +17,19 @@
 (defun bw-load-solarized ()
   "Loads Solarized light and dark"
   (interactive)
+  (progn
+    (custom-set-faces
+     '(magit-diff-add ((t (:inherit diff-added :weight normal))))
+     '(magit-diff-del ((t (:inherit diff-removed :weight normal))))
+     '(diff-refine-change ((t (:inherit diff-refine-change :background nil :weight normal))))
+     '(iedit-occurrence ((t (:inherit lazy-highlight))))
+     '(match ((t (:inherit lazy-highlight :reverse t))))
+     '(erb-face ((t (:background nil))))
+     '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
+    (when (and (display-graphic-p) *is-a-mac*)
+      ;; My Macs have the --srgb flag set
+      (custom-set-variables
+       '(solarized-broken-srgb nil))))
   (load-theme 'solarized-light t t)
   (load-theme 'solarized-dark t))
 
