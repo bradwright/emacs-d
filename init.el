@@ -96,6 +96,7 @@
   '(init-ace-jump
     init-ack-and-a-half
     init-browse-kill-ring
+    init-csv-mode
     init-eproject
     init-expand-region
     init-iedit
