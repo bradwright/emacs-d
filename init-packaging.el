@@ -37,7 +37,7 @@
   (add-to-list 'bw-elpa-package-list 'edit-server)
   (add-to-list 'bw-elpa-package-list 'exec-path-from-shell))
 
-;; Whitelist melpa pacjages, and provide reasons they're whitelisted.
+;; Whitelist melpa packages, and provide reasons they're whitelisted.
 (setq package-archive-enable-alist
       '(("melpa"
          edit-server          ;; Only in MELPA
