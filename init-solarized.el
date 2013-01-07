@@ -1,6 +1,6 @@
 ;; customise solarized-dark/light themes
 (defadvice load-theme
-  (before load-theme)
+  (before load-theme activate)
   (let ((theme-name (ad-get-arg 0)))
     (when (or (eq theme-name 'solarized-dark)
               (eq theme-name 'solarized-light))
@@ -15,9 +15,8 @@
          '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
         (when (and (display-graphic-p) *is-a-mac*)
           ;; My Macs have the --srgb flag set
-          (setq solarized-broken-srgb nil))))))
-
-(ad-activate 'load-theme)
+          (custom-set-variables
+           '(solarized-broken-srgb nil)))))))
 
 (defun bw-toggle-solarized ()
   "Toggles between solarized light and dark"
