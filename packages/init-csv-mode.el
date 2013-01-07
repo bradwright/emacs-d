@@ -1,3 +1,4 @@
-(use-package csv-mode)
+(use-package csv-mode
+  :mode ("\\.csv$" . csv-mode))
 
 (provide 'init-csv-mode)
