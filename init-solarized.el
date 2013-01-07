@@ -1,6 +1,6 @@
 ;; customise solarized-dark/light themes
 (defadvice load-theme
-  (before load-theme activate)
+  (before custom-solarized-load-theme activate)
   (let ((theme-name (ad-get-arg 0)))
     (when (or (eq theme-name 'solarized-dark)
               (eq theme-name 'solarized-light))
