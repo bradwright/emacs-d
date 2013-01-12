@@ -40,6 +40,7 @@
 ;; Whitelist melpa packages, and provide reasons they're whitelisted.
 (setq package-archive-enable-alist
       '(("melpa"
+         csv-mode             ;; need more up to date version
          edit-server          ;; Only in MELPA
          eproject             ;; Only in MELPA
          exec-path-from-shell ;; Marmalade version is very old
