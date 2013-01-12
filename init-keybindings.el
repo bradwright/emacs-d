@@ -39,4 +39,8 @@
 (global-set-key (kbd "C-c C-t t") 'ansi-term)
 (global-set-key (kbd "C-c C-t e") 'eshell)
 
+;; mnemonic keybindings for window splitting (copies my tmux bindings)
+(global-set-key (kbd "C-x |") 'split-window-right)
+(global-set-key (kbd "C-x -") 'split-window-below)
+
 (provide 'init-keybindings)
