@@ -51,6 +51,9 @@
 ;; enable hl-line-mode for prog-mode
 (add-hook 'prog-mode-hook 'bw-enable-hl-line-mode)
 
+;; turn on electric-indent-mode
+(add-hook 'prog-mode-hook 'bw/turn-on-electric-indent-mode)
+
 ;; I want to use narrowing
 (put 'narrow-to-defun  'disabled nil)
 (put 'narrow-to-page   'disabled nil)

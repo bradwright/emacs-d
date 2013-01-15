@@ -25,6 +25,16 @@
   (interactive)
   (flymake-mode 1))
 
+(defun bw/turn-on-electric-indent-mode ()
+  "Turns on electric-indent-mode"
+  (interactive)
+  (electric-indent-mode 1))
+
+(defun bw/turn-off-electric-indent-mode ()
+  "Turns off electric-indent-mode"
+  (interactive)
+  (electric-indent-mode -1))
+
 (defun bw-locate-library-dir (library)
   "Locates the directory containing a loaded library"
   (file-name-directory (locate-library library)))
