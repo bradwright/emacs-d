@@ -9,7 +9,8 @@
     (setq
      org-src-fontify-natively t
      org-src-tab-acts-natively t
-     org-startup-indented t)
+     org-startup-indented t
+     org-completion-use-ido t)
 
     ;; Show other programming languages semi-natively when embedded
     (org-babel-do-load-languages
