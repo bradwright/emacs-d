@@ -16,6 +16,6 @@
     (when file
       (find-file file))))
 
-(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
 
 (provide 'init-recentf)
