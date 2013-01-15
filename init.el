@@ -79,6 +79,7 @@
     init-saveplace
     init-tramp
     init-uniquify
+    init-web-mode
     init-whitespace)
   "Configuration for core Emacs packages")
 
