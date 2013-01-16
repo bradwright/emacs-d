@@ -148,7 +148,9 @@ the quit."
   (interactive
    (let ((default (grep-tag-default)))
      (list
-      (read-string (format "Search for (default %s): " default)
+      (read-string (if (string= "" default)
+                       "Search for: "
+                     (format "Search for (default %s): " default))
                    nil nil default))))
   (let ((grep-use-null-device nil)
         (default-directory (bw-find-default-project-dir)))
