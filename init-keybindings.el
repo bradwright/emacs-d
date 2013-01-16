@@ -43,6 +43,6 @@
 (global-set-key (kbd "C-x |") 'split-window-right)
 (global-set-key (kbd "C-x -") 'split-window-below)
 
-(global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key (kbd "C-c C-b") 'org-iswitchb)
 
 (provide 'init-keybindings)
