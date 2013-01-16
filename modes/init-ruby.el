@@ -6,7 +6,8 @@
            "\\.rake$"
            "\\.rabl$"
            "[cC]apfile$"
-           "\\.gemspec$"))
+           "\\.gemspec$"
+           "\\.builder$"))
   (add-to-list 'auto-mode-alist `(,extension . ruby-mode)))
 
 ;; Ruby has a lot of camel case
