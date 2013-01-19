@@ -59,4 +59,7 @@
 (put 'narrow-to-page   'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;; defer font-lock
+(setq jit-lock-defer-time 0.05)
+
 (provide 'init-editing)
