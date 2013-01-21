@@ -131,7 +131,7 @@ by using nxml's indentation rules."
   end tell
 end tell' | osascript")))
 
-(defadvice server-edit (after server-edit-restore-previous-window activate)
+(defadvice server-buffer-done (after server-buffer-done-restore-previous-window activate)
   (bw-switch-to-last-mac-app))
 
 (defun bw-kill-emacs ()
