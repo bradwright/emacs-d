@@ -47,6 +47,7 @@
          expand-region        ;; Marmalade version is very old
          rinari               ;; Marmalade version is very old
          web-mode             ;; Only in MELPA
+         yaml-mode            ;; Marmalade version is very old
          )))
 
 ;; Packages to exclude from specific repos, and reasons for excluding
