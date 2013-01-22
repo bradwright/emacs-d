@@ -124,12 +124,12 @@ by using nxml's indentation rules."
   "Switches to the last used app"
   (interactive)
   (when (and *is-a-mac* window-system)
-    (shell-command "echo 'tell application \"System Events\"
+    (do-applescript "tell application \"System Events\"
   tell process \"finder\"
     activate
     keystroke tab using {command down}
   end tell
-end tell' | osascript")))
+end tell")))
 
 (defadvice server-buffer-done (after server-buffer-done-restore-previous-window activate)
   (bw-switch-to-last-mac-app))
