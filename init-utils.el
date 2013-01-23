@@ -138,8 +138,8 @@ end tell")))
   "If this buffer is a client, just kill it, otherwise confirm
 the quit."
   (interactive)
-  (if (frame-parameter (selected-frame) 'client)
-      (save-buffers-kill-terminal)
+  (if server-buffer-clients
+      (server-edit)
     (cond ((y-or-n-p "Quit Emacs? ")
            (save-buffers-kill-terminal)))))
 
