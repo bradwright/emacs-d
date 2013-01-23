@@ -46,6 +46,7 @@
          eproject             ;; Only in MELPA
          exec-path-from-shell ;; Marmalade version is very old
          expand-region        ;; Marmalade version is very old
+         multiple-cursors     ;; Melpa version is more up to date
          rinari               ;; Marmalade version is very old
          web-mode             ;; Only in MELPA
          yaml-mode            ;; Marmalade version is very old
