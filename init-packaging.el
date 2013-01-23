@@ -41,6 +41,7 @@
 (setq package-archive-enable-alist
       '(("melpa"
          ack-menu             ;; Only in MELPA
+         browse-kill-ring     ;; Marmalade version is very old
          csv-mode             ;; need more up to date version
          edit-server          ;; Only in MELPA
          eproject             ;; Only in MELPA
