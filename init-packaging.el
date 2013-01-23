@@ -40,6 +40,7 @@
 ;; Whitelist melpa packages, and provide reasons they're whitelisted.
 (setq package-archive-enable-alist
       '(("melpa"
+         ack-menu             ;; Only in MELPA
          csv-mode             ;; need more up to date version
          edit-server          ;; Only in MELPA
          eproject             ;; Only in MELPA
