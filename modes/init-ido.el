@@ -9,6 +9,8 @@
 
 (eval-after-load 'ido
   '(setq
+    ;; Speed up ido by using less candidates
+    ido-max-prospects 10
     ;; Match arbitrary points in strings
     ido-enable-prefix nil
     ;; Match across entire string
