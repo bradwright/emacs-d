@@ -18,7 +18,7 @@
 	      *is-cocoa-emacs*)
   ;; Mac GUI stuff
   ;; set my favourite Mac font as the default font
-  (set-face-attribute 'default nil :foundry "apple"
+  (set-face-attribute 'default nil
                       :family "Inconsolata" :height 160)
 
   ;; (set-face-attribute 'default nil :foundry "apple"
