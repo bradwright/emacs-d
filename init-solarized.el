@@ -25,6 +25,11 @@
   (interactive)
   (progn
     (custom-set-faces
+     '(erm-syn-warnline ((t (:box nil))))
+     '(erm-syn-errline  ((t (:box nil))))
+     '(enh-ruby-string-delimiter-face ((t (:foreground "#dc322f" :background nil))))
+     '(enh-ruby-regexp-delimiter-face ((t (:foreground "#dc322f" :background nil))))
+     '(enh-ruby-op-face ((t (:inherit default))))
      '(magit-diff-add ((t (:inherit diff-added :weight normal))))
      '(magit-diff-del ((t (:inherit diff-removed :weight normal))))
      '(diff-refine-change ((t (:inherit diff-refine-change :background nil :weight normal))))
