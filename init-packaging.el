@@ -45,6 +45,7 @@
          csv-mode             ;; need more up to date version
          edit-server          ;; Only in MELPA
          eproject             ;; Only in MELPA
+         evil                 ;; Melpa version is more up to date
          exec-path-from-shell ;; Marmalade version is very old
          expand-region        ;; Marmalade version is very old
          multiple-cursors     ;; Melpa version is more up to date
