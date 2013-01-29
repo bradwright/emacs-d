@@ -19,7 +19,7 @@
   ;; Mac GUI stuff
   ;; set my favourite Mac font as the default font
   (set-face-attribute 'default nil
-                      :family "Inconsolata" :height 160)
+                      :family "Inconsolata" :height 180)
 
   ;; (set-face-attribute 'default nil :foundry "apple"
   ;;                     :family "DejaVu_Sans_Mono" :height 140)
