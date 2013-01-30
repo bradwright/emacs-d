@@ -99,6 +99,7 @@
     init-browse-kill-ring
     init-csv-mode
     init-eproject
+    init-evil
     init-expand-region
     init-iedit
     init-ido-ubiquitous
