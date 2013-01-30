@@ -101,9 +101,9 @@
     init-eproject
     init-evil
     init-expand-region
-    init-iedit
     init-ido-ubiquitous
     init-idomenu
+    init-iedit
     init-js2
     init-magit
     init-markdown
