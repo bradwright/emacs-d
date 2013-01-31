@@ -41,6 +41,9 @@
 
   (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
+  (global-set-key (kbd "s-p") 'bw-find-file-git-ls-files-completing)
+  (global-set-key (kbd "s-f") 'bw-git-grep)
+
   ;; we pretty much never ever want to background emacs
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-z"))
