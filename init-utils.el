@@ -157,6 +157,7 @@ the quit."
   (interactive)
   (symbol-name (symbol-at-point)))
 
+;; FIXME: this doesn't escape things
 (defun bw-git-grep (search-str)
   "Uses `git-grep` to find `search-str`"
   (interactive
@@ -168,7 +169,7 @@ the quit."
                    nil nil default))))
   (let ((grep-use-null-device nil)
         (default-directory (bw-find-default-project-dir)))
-    (grep (concat "git --no-pager grep -i -I -nH --no-color --extended-regexp " search-str))))
+    (grep (concat "git --no-pager grep -i -I -nH --no-color '" search-str "'"))))
 
 (defun bw-find-default-project-dir ()
   "Finds the root of this project - at the moment this means the
