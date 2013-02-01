@@ -34,6 +34,9 @@
   ;; alternate characters.
   (setq ns-right-alternate-modifier nil)
 
+  ;; hyper
+  (setq ns-function-modifier 'hyper)
+
   ;; command is super
   (setq ns-command-modifier 'super)
   ;; fn does nothing special for Emacs
@@ -42,7 +45,8 @@
   (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
   (global-set-key (kbd "s-p") 'bw-find-file-git-ls-files-completing)
-  (global-set-key (kbd "s-f") 'bw-git-grep)
+  (global-set-key (kbd "s-F") 'bw-git-grep)
+  (global-set-key (kbd "H-g") 'magit-status)
 
   ;; we pretty much never ever want to background emacs
   (global-unset-key (kbd "C-z"))
