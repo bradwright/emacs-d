@@ -21,11 +21,6 @@
   (custom-set-faces
    '(default ((t (:height 180 :family "Inconsolata")))))
 
-  ;; (set-face-attribute 'default nil :foundry "apple"
-  ;;                     :family "DejaVu_Sans_Mono" :height 140)
-  ;; (set-face-attribute 'default nil :foundry "adobe"
-  ;;                     :family "Source Code Pro" :height 150)
-
   ;; meta key configuration
 
   ;; This makes left-option do M-
