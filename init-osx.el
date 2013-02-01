@@ -34,13 +34,11 @@
   ;; alternate characters.
   (setq ns-right-alternate-modifier nil)
 
-  ;; hyper
-  (setq ns-function-modifier 'hyper)
-
   ;; command is super
   (setq ns-command-modifier 'super)
-  ;; fn does nothing special for Emacs
-  (setq ns-function-modifier nil)
+
+  ;; set fn to hyper
+  (setq ns-function-modifier 'hyper)
 
   (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
