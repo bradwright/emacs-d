@@ -66,7 +66,8 @@
 (defvar bw-el-get-package-list
   '(use-package     ;; not on elpa
     el-get          ;; self-hosting
-    git-modes       ;; not on elpa
+    enh-ruby-mode   ;; not on ELPA
+    git-modes       ;; not on ELPA
     js2-mode        ;; Want specific branch on GitHub
     magit           ;; Want the info files Make gives you
     solarized-theme ;; Want specific branch on GitHub
