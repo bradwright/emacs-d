@@ -20,7 +20,7 @@
       ;; comma is leader
       (define-key evil-normal-state-map "," evil-leader-map))
 
-    (setq evil-default-state 'emacs)
+    (setq evil-default-state 'normal)
     (evil-set-initial-state 'git-commit-mode 'emacs)
     (evil-set-initial-state 'magit-log-edit-mode 'emacs)))
 
