@@ -13,6 +13,10 @@
       (define-key evil-leader-map "l" 'bw-find-file-git-ls-files-completing)
       ;; git-grep-files on <leader>s
       (define-key evil-leader-map "s" 'bw-git-grep)
+      ;; smex is <leader>x
+      (define-key evil-leader-map "x" 'smex)
+      ;; ido-switch-buffer is <leader>b
+      (define-key evil-leader-map "b" 'ido-switch-buffer)
       ;; comma is leader
       (define-key evil-normal-state-map "," evil-leader-map))
 
