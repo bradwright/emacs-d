@@ -195,4 +195,21 @@ Git repo it's contained in."
       (remove-if 'bw-is-image (split-string
                          (shell-command-to-string "git --no-pager ls-files --exclude-standard -co")))))))
 
+(defun bw-evil-escape-if-next-char (c)
+  "Watches the next letter.  If c, then switch to Evil's normal mode; otherwise insert a k and forward unpressed key to unread-command events"
+  (self-insert-command 1)
+  (let ((next-key (read-event)))
+    (if (= c next-key)
+        (progn
+          (delete-backward-char 1)
+          (do-evil-esc))
+      (setq unread-command-events (list next-key)))))
+
+(defun bw-evil-escape-if-next-char-is-j (arg)
+  "Wrapper around escape-if-next-char and the character j"
+  (interactive "p")
+  (if (= arg 1)
+      (bw-evil-escape-if-next-char ?j)
+    (self-insert-command arg)))
+
 (provide 'init-utils)

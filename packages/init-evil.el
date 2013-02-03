@@ -26,6 +26,10 @@
       ;; comma is leader
       (define-key evil-normal-state-map "," evil-leader-map))
 
+    ;; jj escapes to normal mode
+    (define-key evil-insert-state-map (kbd "j") 'bw-evil-escape-if-next-char-is-j)
+    ;; h/l wrap around to next lines
+    (setq evil-cross-lines t)
     ;; start evil-mode in normal
     (setq evil-default-state 'normal)
 
