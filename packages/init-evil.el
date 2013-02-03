@@ -26,6 +26,7 @@
       ;; comma is leader
       (define-key evil-normal-state-map "," evil-leader-map))
 
+    ;; start evil-mode in normal
     (setq evil-default-state 'normal)
 
     ;; these modes should be launched in insert
