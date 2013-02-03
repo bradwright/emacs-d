@@ -17,6 +17,8 @@
       (define-key evil-leader-map "x" 'smex)
       ;; ido-switch-buffer is <leader>b
       (define-key evil-leader-map "b" 'ido-switch-buffer)
+      ;; ack-and-a-half
+      (define-key evil-leader-map "a" 'ack-and-a-half)
       ;; comma is leader
       (define-key evil-normal-state-map "," evil-leader-map))
 
