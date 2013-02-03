@@ -1,4 +1,8 @@
 (use-package evil
+  :init
+  (progn
+    ;; if we don't have this evil overwrites the cursor color
+    (setq evil-default-cursor t))
   :config
   (progn
     ;; use ido to open files
