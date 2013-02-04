@@ -36,6 +36,8 @@
     ;; these modes should be launched in insert
     (evil-set-initial-state 'git-commit-mode 'insert)
     (evil-set-initial-state 'magit-log-edit-mode 'insert)
+    ;; these modes should be launched in regular Emacs
+    (evil-set-initial-state 'org-mode 'emacs)
     (evil-set-initial-state 'help-mode 'emacs)))
 
 (provide 'init-evil)
