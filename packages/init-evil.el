@@ -33,6 +33,15 @@
     ;; start evil-mode in normal
     (setq evil-default-state 'normal)
 
+    ;; esc should always quit: http://stackoverflow.com/a/10166400/61435
+    (define-key evil-normal-state-map [escape] 'keyboard-quit)
+    (define-key evil-visual-state-map [escape] 'keyboard-quit)
+    (define-key minibuffer-local-map [escape] 'abort-recursive-edit)
+    (define-key minibuffer-local-ns-map [escape] 'abort-recursive-edit)
+    (define-key minibuffer-local-completion-map [escape] 'abort-recursive-edit)
+    (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
+    (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
+
     ;; these modes should be launched in insert
     (evil-set-initial-state 'git-commit-mode 'insert)
     (evil-set-initial-state 'magit-log-edit-mode 'insert)
