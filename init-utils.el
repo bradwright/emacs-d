@@ -169,7 +169,7 @@ the quit."
                    nil nil default))))
   (let ((grep-use-null-device nil)
         (default-directory (bw-find-default-project-dir)))
-    (grep (concat "git --no-pager grep -i -I -nH --no-color '" search-str "'"))))
+    (grep (concat "git --no-pager grep -i -I -nH --no-color " (shell-quote-argument search-str)))))
 
 (defun bw-find-default-project-dir ()
   "Finds the root of this project - at the moment this means the
