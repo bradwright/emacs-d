@@ -19,6 +19,9 @@
     eproject
     expand-region
     flymake-cursor
+    git-commit-mode
+    gitconfig-mode
+    gitignore-mode
     ido-ubiquitous
     idomenu
     json-mode
@@ -48,6 +51,9 @@
          evil                 ;; Melpa version is more up to date
          exec-path-from-shell ;; Marmalade version is very old
          expand-region        ;; Marmalade version is very old
+         git-commit-mode      ;; Only in MELPA
+         gitconfig-mode       ;; Only in MELPA
+         gitignore-mode       ;; Only in MELPA
          multiple-cursors     ;; Melpa version is more up to date
          rinari               ;; Marmalade version is very old
          web-mode             ;; Only in MELPA
@@ -67,7 +73,6 @@
   '(use-package     ;; not on elpa
     el-get          ;; self-hosting
     enh-ruby-mode   ;; not on ELPA
-    git-modes       ;; not on ELPA
     js2-mode        ;; Want specific branch on GitHub
     magit           ;; Want the info files Make gives you
     solarized-theme ;; Want specific branch on GitHub
