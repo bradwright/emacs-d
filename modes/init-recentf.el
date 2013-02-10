@@ -1,5 +1,5 @@
 (setq recentf-auto-cleanup 'never
-      recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'" "[/\\]\\.git/" "[/\\]\\.gz\\'" "[/\\]autoloads\\.el\\'" "[/\\]archive-contents\\'")
+      recentf-exclude '("[/\\]\\.elpa/" "[/\\]\\.ido\\.last\\'" "[/\\]\\.git/" ".*\\.gz\\'" ".*-autoloads\\.el\\'" "[/\\]archive-contents\\'" "[/\\]\\.loaddefs\\.el\\'")
       recentf-save-file (expand-file-name ".recentf" tmp-local-dir)
       ;; save 100 most recent files
       recentf-max-saved-items 100)
