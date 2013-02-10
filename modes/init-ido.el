@@ -22,6 +22,6 @@
     ;; case-insensitive matching
     ido-case-fold t
     ;; go back in time if required
-    ido-use-virtual-buffers t))
+    ido-use-virtual-buffers nil))
 
 (provide 'init-ido)
