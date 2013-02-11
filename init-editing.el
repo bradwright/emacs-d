@@ -59,6 +59,9 @@
 (put 'narrow-to-page   'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;; I want to use scrolling
+(put 'scroll-left 'disabled nil)
+
 ;; defer font-lock
 (setq jit-lock-defer-time 0.05)
 
