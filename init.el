@@ -98,6 +98,7 @@
     init-ack-and-a-half
     init-browse-kill-ring
     init-csv-mode
+    init-enh-ruby
     init-eproject
     init-evil
     init-expand-region
