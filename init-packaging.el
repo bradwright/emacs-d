@@ -16,6 +16,7 @@
     browse-kill-ring
     csv-mode
     diminish
+    enh-ruby-mode
     eproject
     expand-region
     flymake-cursor
@@ -47,6 +48,7 @@
          browse-kill-ring     ;; Marmalade version is very old
          csv-mode             ;; need more up to date version
          edit-server          ;; Only in MELPA
+         enh-ruby-mode        ;; Only in MELPA
          eproject             ;; Only in MELPA
          evil                 ;; Melpa version is more up to date
          exec-path-from-shell ;; Marmalade version is very old
@@ -72,7 +74,6 @@
 (defvar bw-el-get-package-list
   '(use-package     ;; not on elpa
     el-get          ;; self-hosting
-    enh-ruby-mode   ;; not on ELPA
     js2-mode        ;; Want specific branch on GitHub
     magit           ;; Want the info files Make gives you
     solarized-theme ;; Want specific branch on GitHub
