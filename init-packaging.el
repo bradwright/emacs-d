@@ -50,7 +50,6 @@
          edit-server          ;; Only in MELPA
          enh-ruby-mode        ;; Only in MELPA
          eproject             ;; Only in MELPA
-         evil                 ;; Melpa version is more up to date
          exec-path-from-shell ;; Marmalade version is very old
          expand-region        ;; Marmalade version is very old
          git-commit-mode      ;; Only in MELPA
