@@ -39,8 +39,10 @@
      '(erb-out-delim-face ((t (:inherit erb-exec-delim-face :foreground "#b58900")))))
     (when (and (display-graphic-p) *is-a-mac*)
       ;; My Macs have the --srgb flag set
-      (custom-set-variables
-       '(solarized-broken-srgb nil))))
+      ;; so we need to check if it was compiled here.
+      (when (string-match (concat "on " (system-name)) (emacs-version))
+        (custom-set-variables
+         '(solarized-broken-srgb nil)))))
   (load-theme 'solarized-dark t))
 
 (provide 'init-solarized)
