@@ -25,6 +25,7 @@
     gitignore-mode
     ido-ubiquitous
     idomenu
+    js2-mode
     json-mode
     markdown-mode
     multiple-cursors
@@ -55,6 +56,7 @@
          git-commit-mode      ;; Only in MELPA
          gitconfig-mode       ;; Only in MELPA
          gitignore-mode       ;; Only in MELPA
+         js2-mode             ;; need latest version
          multiple-cursors     ;; Melpa version is more up to date
          rinari               ;; Marmalade version is very old
          web-mode             ;; Only in MELPA
@@ -73,7 +75,6 @@
 (defvar bw-el-get-package-list
   '(use-package     ;; not on elpa
     el-get          ;; self-hosting
-    js2-mode        ;; Want specific branch on GitHub
     magit           ;; Want the info files Make gives you
     solarized-theme ;; Want specific branch on GitHub
     xterm-frobs     ;; not on Elpa
