@@ -1,4 +1,5 @@
 (use-package multiple-cursors
+  :init (progn )
   :bind (("C-c ." . mc/mark-next-like-this)
          ("C->" . mc/mark-next-like-this)
          ("C-c ," . mc/mark-previous-like-this)
