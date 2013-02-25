@@ -40,11 +40,10 @@
     (defun flymake-jslint-init ()
       (let* ((temp-file (flymake-init-create-temp-buffer-copy
                          'flymake-create-temp-inplace))
-             (local-file (file-relative-name
-                          temp-file
-                          (file-name-directory buffer-file-name))))
-        (list "jslint" (list "--output" "simple"
-                             "--exit0"
+             (local-file (expand-file-name (file-relative-name
+                                            temp-file
+                                            (file-name-directory buffer-file-name)))))
+        (list "jslint" (list "--terse"
                              local-file))))
 
     (when (load "flymake" t)
@@ -53,8 +52,7 @@
       ;; jslint lines look like:
       ;; jslint:25:45:Missing trailing ; character
       (add-to-list 'flymake-err-line-patterns
-                   '("jslint:\\([[:digit:]]+\\):\\([[:digit:]]+\\):\\(.*\\)$"
-                     nil 1 2 3)))
+                   '("^\\(.*\\)\\(([[:digit:]]+)\\):\\(.*\\)$" 1 2 nil 3)))
 
     (add-hook 'js2-mode-hook 'bw-turn-on-flymake-mode)
 

@@ -4,6 +4,6 @@
   "version" : "0.0.1",
   "description": "Packaging just to install JS dependencies for my Emacs configuration.",
   "dependencies": {
-      "jslint": "https://github.com/bradleywright/node-jslint/tarball/alternative-output-formats"
+      "jslint": "0.1.9"
   }
 }
