@@ -111,6 +111,7 @@
     init-multiple-cursors
     init-paredit
     init-puppet
+    init-scss
     init-smex
     init-undo-tree
     init-yaml
