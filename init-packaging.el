@@ -47,6 +47,7 @@
       '(("melpa"
          ack-menu             ;; Only in MELPA
          browse-kill-ring     ;; Marmalade version is very old
+         carton               ;; Only in MELPA
          csv-mode             ;; need more up to date version
          edit-server          ;; Only in MELPA
          enh-ruby-mode        ;; Only in MELPA
@@ -58,6 +59,7 @@
          gitignore-mode       ;; Only in MELPA
          js2-mode             ;; need latest version
          multiple-cursors     ;; Melpa version is more up to date
+         pallet               ;; Only in MELPA
          rinari               ;; Marmalade version is very old
          web-mode             ;; Only in MELPA
          yaml-mode            ;; Marmalade version is very old
