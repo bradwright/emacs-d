@@ -61,6 +61,8 @@
          multiple-cursors     ;; Melpa version is more up to date
          pallet               ;; Only in MELPA
          rinari               ;; Marmalade version is very old
+         simple-httpd         ;; needed for Skewer
+         skewer-mode          ;; Only in MELPA
          web-mode             ;; Only in MELPA
          yaml-mode            ;; Marmalade version is very old
          )))
