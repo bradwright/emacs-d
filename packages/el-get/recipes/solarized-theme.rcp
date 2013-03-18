@@ -1,6 +1,0 @@
-(:name solarized-theme
-       :type github
-       :branch "ansi-term-colors"
-       :pkgname "bradleywright/emacs-color-theme-solarized"
-       :description "Solarized themes for Emacs - customised with ansi colors"
-       :prepare (add-to-list 'custom-theme-load-path default-directory))
