@@ -212,4 +212,12 @@ Git repo it's contained in."
       (bw-evil-escape-if-next-char ?j)
     (self-insert-command arg)))
 
+(defun bw-open-term (arg)
+  "Opens an ansi-term with value of $TERM - force new ansi-term
+with prefix"
+  (interactive "p")
+  (if (or (not (get-buffer "*ansi-term*")) (= arg 4))
+      (ansi-term (getenv "SHELL"))
+    (switch-to-buffer "*ansi-term*")))
+
 (provide 'init-utils)

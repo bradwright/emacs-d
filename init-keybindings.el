@@ -36,6 +36,7 @@
 (global-set-key (kbd "C-c b s") 'bw-git-grep)
 
 ;; terminal-related bindings
+(global-set-key (kbd "C-c t") 'bw-open-term)
 (global-set-key (kbd "C-c C-t t") 'ansi-term)
 (global-set-key (kbd "C-c C-t e") 'eshell)
 
