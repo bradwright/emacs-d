@@ -51,7 +51,10 @@ files, because it won't try to open any .gitignored files."
     (setq eproject-completing-read-function 'eproject--ido-completing-read)
 
     (use-package eproject-extras
-      :init "noop"
+      :init
+      (progn
+        (define-key (current-global-map) [remap eproject-switch-to-buffer] 'bw-eproject-ido-switch-buffers)
+        (define-key (current-global-map) [remap eproject-find-file] 'bw-eproject-find-files))
       :bind ("C-c f" . bw-eproject-find-files))))
 
 (provide 'init-eproject)
