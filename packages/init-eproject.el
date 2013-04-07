@@ -35,17 +35,8 @@
       "If we're in a Git project, use git ls-files to look up the
 files, because it won't try to open any .gitignored files."
       (interactive)
-      (if (member (eproject-type) '(generic-git ruby-on-rails-git))
-          (let* ((default-directory (eproject-root))
-                 (files-alist
-                  (split-string
-                   (shell-command-to-string "git ls-files --exclude-standard -co"))))
-            (find-file
-             (concat
-              (eproject-root)
-              (ido-completing-read
-               (format "Find file: %s" (abbreviate-file-name (eproject-root)))
-               files-alist))))
+      (if (member (eproject-type) '(generic-git))
+          (bw-find-file-git-ls-files-completing)
         (eproject-find-file)))
 
     (setq eproject-completing-read-function 'eproject--ido-completing-read)
@@ -54,7 +45,6 @@ files, because it won't try to open any .gitignored files."
       :init
       (progn
         (define-key (current-global-map) [remap eproject-switch-to-buffer] 'bw-eproject-ido-switch-buffers)
-        (define-key (current-global-map) [remap eproject-find-file] 'bw-eproject-find-files))
-      :bind ("C-c f" . bw-eproject-find-files))))
+        (define-key (current-global-map) [remap eproject-find-file] 'bw-eproject-find-files)))))
 
 (provide 'init-eproject)
