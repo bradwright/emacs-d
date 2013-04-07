@@ -39,6 +39,7 @@
 
   (global-set-key (kbd "s-p") 'bw-find-file-git-ls-files-completing)
   (global-set-key (kbd "s-F") 'bw-git-grep)
+  (global-set-key (kbd "s-b") 'bw-eproject-ido-switch-buffers)
   (global-set-key (kbd "H-g") 'magit-status)
 
   ;; we pretty much never ever want to background emacs
