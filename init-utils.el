@@ -212,7 +212,7 @@ Git repo it's contained in."
       (bw-evil-escape-if-next-char ?j)
     (self-insert-command arg)))
 
-(defun bw-open-term (arg)
+(defun bw-open-term (&optional arg)
   "Opens an ansi-term with value of $TERM - force new ansi-term
 with prefix"
   (interactive "p")
