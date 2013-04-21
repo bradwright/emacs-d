@@ -234,4 +234,9 @@ with prefix"
   (when (eproject-root)
     (cdr (assoc (eproject-root) (eproject--project-buffers)))))
 
+(defun bw-switch-to-scratch ()
+  "Switch to the scratch buffer if it exists"
+  (interactive)
+  (switch-to-buffer "*scratch*"))
+
 (provide 'init-utils)

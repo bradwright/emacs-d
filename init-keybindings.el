@@ -46,6 +46,8 @@
 
 (global-set-key (kbd "C-c C-b") 'org-iswitchb)
 
+(global-set-key (kbd "C-c s") 'bw-switch-to-scratch)
+
 (global-set-key (kbd "C-h C-f") 'find-function)
 
 (provide 'init-keybindings)
