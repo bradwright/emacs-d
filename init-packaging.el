@@ -45,6 +45,7 @@
 ;; Whitelist melpa packages, and provide reasons they're whitelisted.
 (setq package-archive-enable-alist
       '(("melpa"
+         ace-jump-mode
          ack-menu             ;; Only in MELPA
          browse-kill-ring     ;; Marmalade version is very old
          carton               ;; Only in MELPA
@@ -63,9 +64,10 @@
          rinari               ;; Marmalade version is very old
          simple-httpd         ;; needed for Skewer
          skewer-mode          ;; Only in MELPA
-         web-mode             ;; Only in MELPA
          visual-regexp        ;; Only in MELPA
+         web-mode             ;; Only in MELPA
          yaml-mode            ;; Marmalade version is very old
+         zenburn-theme        ;; Latest
          )))
 
 ;; Packages to exclude from specific repos, and reasons for excluding
