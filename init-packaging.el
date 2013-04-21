@@ -64,6 +64,7 @@
          simple-httpd         ;; needed for Skewer
          skewer-mode          ;; Only in MELPA
          web-mode             ;; Only in MELPA
+         visual-regexp        ;; Only in MELPA
          yaml-mode            ;; Marmalade version is very old
          )))
 
