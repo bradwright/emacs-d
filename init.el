@@ -73,6 +73,7 @@
     init-ido
     init-isearch
     init-org
+    init-python
     init-recentf
     init-rst
     init-ruby
