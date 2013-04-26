@@ -62,9 +62,6 @@
 ;; I want to use scrolling
 (put 'scroll-left 'disabled nil)
 
-;; defer font-lock
-(setq jit-lock-defer-time 0.05)
-
 ;; Make rectangle selection better
 (cua-selection-mode 1)
 
