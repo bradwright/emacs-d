@@ -13,6 +13,7 @@
 ;; Packages I always want
 (defvar bw-elpa-package-list
   '(ack-and-a-half
+    bind-key ;; this is required by use-package, but isn't auto-installed
     browse-kill-ring
     csv-mode
     diminish
@@ -34,6 +35,7 @@
     scss-mode
     smex
     undo-tree
+    use-package
     web-mode)
   "Packages from ELPA that I always want to install.")
 
@@ -47,6 +49,7 @@
       '(("melpa"
          ace-jump-mode
          ack-menu             ;; Only in MELPA
+         bind-key             ;; Dependency of use-package :(
          browse-kill-ring     ;; Marmalade version is very old
          carton               ;; Only in MELPA
          csv-mode             ;; need more up to date version
@@ -64,6 +67,7 @@
          rinari               ;; Marmalade version is very old
          simple-httpd         ;; needed for Skewer
          skewer-mode          ;; Only in MELPA
+         use-package          ;; Prefer MELPA for auto updates
          visual-regexp        ;; Only in MELPA
          web-mode             ;; Only in MELPA
          yaml-mode            ;; Marmalade version is very old
@@ -80,8 +84,7 @@
 
 ;; el-get packages to install, and reasons for wanting them.
 (defvar bw-el-get-package-list
-  '(use-package     ;; not on elpa
-    el-get          ;; self-hosting
+  '(el-get          ;; self-hosting
     magit           ;; Want the info files Make gives you
     solarized-theme ;; Want specific branch on GitHub
     xterm-frobs     ;; not on Elpa
