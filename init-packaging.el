@@ -45,42 +45,16 @@
   (add-to-list 'bw-elpa-package-list 'edit-server)
   (add-to-list 'bw-elpa-package-list 'exec-path-from-shell))
 
-;; Whitelist melpa packages, and provide reasons they're whitelisted.
-(setq package-archive-enable-alist
-      '(("melpa"
-         ace-jump-mode
-         ack-menu             ;; Only in MELPA
-         bind-key             ;; Dependency of use-package :(
-         browse-kill-ring     ;; Marmalade version is very old
-         carton               ;; Only in MELPA
-         csv-mode             ;; need more up to date version
-         edit-server          ;; Only in MELPA
-         enh-ruby-mode        ;; Only in MELPA
-         eproject             ;; Only in MELPA
-         exec-path-from-shell ;; Marmalade version is very old
-         expand-region        ;; Marmalade version is very old
-         git-commit-mode      ;; Only in MELPA
-         gitconfig-mode       ;; Only in MELPA
-         gitignore-mode       ;; Only in MELPA
-         js2-mode             ;; need latest version
-         multiple-cursors     ;; Melpa version is more up to date
-         pallet               ;; Only in MELPA
-         rinari               ;; Marmalade version is very old
-         simple-httpd         ;; needed for Skewer
-         skewer-mode          ;; Only in MELPA
-         use-package          ;; Prefer MELPA for auto updates
-         visual-regexp        ;; Only in MELPA
-         web-mode             ;; Only in MELPA
-         yaml-mode            ;; Marmalade version is very old
-         zenburn-theme        ;; Latest
-         )))
-
-;; Packages to exclude from specific repos, and reasons for excluding
-;; them.
+;; Blacklist some non-melpa packages
 (setq package-archive-exclude-alist
       '(("melpa"
-         ruby-mode ;; they have ruby-mode 1.1, which is out of sync
-                   ;; with Emacs.
+         ack-and-a-half ;; not updated in ages
+         diminish       ;; not updated in ages
+         evil            ;; want stable version
+         flymake-cursor  ;; Melpa version is on wiki
+         idomenu         ;; not updated in ages
+         json-mode       ;; not on Melpa
+         melpa           ;; don't want to self-host this
          )))
 
 ;; el-get packages to install, and reasons for wanting them.
