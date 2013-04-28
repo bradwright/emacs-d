@@ -20,6 +20,7 @@
     enh-ruby-mode
     eproject
     expand-region
+    evil
     flymake-cursor
     git-commit-mode
     gitconfig-mode
