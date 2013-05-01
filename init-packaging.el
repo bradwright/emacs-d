@@ -19,12 +19,14 @@
     diminish
     enh-ruby-mode
     eproject
-    expand-region
     evil
+    expand-region
     flymake-cursor
+    flymake-go
     git-commit-mode
     gitconfig-mode
     gitignore-mode
+    go-mode
     ido-ubiquitous
     idomenu
     js2-mode

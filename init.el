@@ -69,6 +69,7 @@
     init-emacs-lisp
     init-eshell
     init-flymake
+    init-go
     init-hippie-expand
     init-ido
     init-isearch
