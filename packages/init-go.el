@@ -3,3 +3,5 @@
   :config
   (progn
     (use-package flymake-go)))
+
+(provide 'init-go)
