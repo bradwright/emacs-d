@@ -42,7 +42,8 @@
     (when (string-match (concat "on " (system-name)) (emacs-version))
       (custom-set-variables
        '(solarized-broken-srgb nil))))
-  (load-theme 'solarized-dark t)
+  (custom-set-variables '(frame-background-mode 'dark))
+  (load-theme 'solarized t)
   (custom-set-faces
    `(term-color-black ((t (:inherit term-color-black :background ,(face-attribute 'term-color-black :foreground)))))
    `(term-color-red ((t (:inherit term-color-red :background ,(face-attribute 'term-color-red :foreground)))))
