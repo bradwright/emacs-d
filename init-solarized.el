@@ -16,7 +16,11 @@
 (defun bw-toggle-solarized ()
   "Toggles between solarized light and dark"
   (interactive)
-  (bw/toggle-theme 'solarized-dark 'solarized-light))
+  (setq frame-background-mode (if
+                                  (equal frame-background-mode 'dark)
+                                  'light
+                                'dark))
+  (enable-theme 'solarized))
 
 ;; We load the theme after init because we might have changed some
 ;; variables in customize.
