@@ -43,11 +43,16 @@
       (custom-set-variables
        '(solarized-broken-srgb nil))))
   (load-theme 'solarized t)
+
   (add-hook 'after-make-frame-functions
             (lambda (frame)
+              "Reenable solarized"
               (enable-theme 'solarized)))
+
+  (setq-default frame-background-mode 'dark)
   (set-frame-parameter nil 'background-mode 'dark)
   (enable-theme 'solarized)
+
   (custom-set-faces
    `(term-color-black ((t (:inherit term-color-black :background ,(face-attribute 'term-color-black :foreground)))))
    `(term-color-red ((t (:inherit term-color-red :background ,(face-attribute 'term-color-red :foreground)))))
