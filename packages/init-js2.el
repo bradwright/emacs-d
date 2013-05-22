@@ -7,6 +7,8 @@
   :mode ("\\.js\\'" . js2-mode)
   :config
   (progn
+    (rename-modeline "js2-mode" js2-mode "JS2")
+
     ;; Use Node.js REPL for JS shells
     (setq inferior-js-program-command "node")
 
