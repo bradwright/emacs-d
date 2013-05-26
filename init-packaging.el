@@ -31,6 +31,7 @@
     idomenu
     js2-mode
     json-mode
+    magit
     markdown-mode
     multiple-cursors
     paredit
@@ -62,7 +63,6 @@
 ;; el-get packages to install, and reasons for wanting them.
 (defvar bw-el-get-package-list
   '(el-get          ;; self-hosting
-    magit           ;; Want the info files Make gives you
     solarized-theme ;; Want specific branch on GitHub
     xterm-frobs     ;; not on Elpa
     )
