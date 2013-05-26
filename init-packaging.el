@@ -51,8 +51,8 @@
 ;; Blacklist some non-melpa packages
 (setq package-archive-exclude-alist
       '(("melpa"
-         ack-and-a-half ;; not updated in ages
-         diminish       ;; not updated in ages
+         ack-and-a-half  ;; not updated in ages
+         diminish        ;; not updated in ages
          evil            ;; want stable version
          flymake-cursor  ;; Melpa version is on wiki
          idomenu         ;; not updated in ages
