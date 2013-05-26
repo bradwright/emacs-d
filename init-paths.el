@@ -10,4 +10,10 @@
 ;; tmp directory for storing stupid crap
 (make-directory (setq tmp-local-dir (bw-join-dirs dotfiles-dir ".tmp/")) t)
 
+(defconst vendor-dotfiles-dir
+  (bw-join-dirs dotfiles-dir "vendor")
+  "External modules vendor-ised")
+
+(bw-add-to-load-path vendor-dotfiles-dir)
+
 (provide 'init-paths)

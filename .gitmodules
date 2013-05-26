@@ -1,0 +1,3 @@
+[submodule "vendor/themes/solarized"]
+	path = vendor/themes/solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized.git

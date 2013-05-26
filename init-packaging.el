@@ -63,7 +63,6 @@
 ;; el-get packages to install, and reasons for wanting them.
 (defvar bw-el-get-package-list
   '(el-get          ;; self-hosting
-    solarized-theme ;; Want specific branch on GitHub
     xterm-frobs     ;; not on Elpa
     )
   "Packages from el-get that I always want to install.")

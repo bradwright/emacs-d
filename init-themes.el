@@ -13,7 +13,7 @@
         (when (and (file-directory-p name)
                    (not (equal f ".."))
                    (not (equal f ".")))
-          (add-to-list 'custom-theme-load-path name))))))
+          (bw-add-to-custom-theme-load-path name))))))
 
 (load-custom-themes)
 
