@@ -1,3 +1,0 @@
-(:name json-mode
-       :type github
-       :pkgname "joshwnj/json-mode")

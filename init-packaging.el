@@ -1,4 +1,4 @@
-;; Packaging, el-get, and vendor configuration
+;; Packaging and vendor configuration
 
 (defconst bw-package-base-dir
   (bw-join-dirs dotfiles-dir "packages")
@@ -7,8 +7,6 @@
 (bw-add-to-load-path bw-package-base-dir)
 
 ;; package lists
-;; As a general rule, always install from ELPA unless there's a
-;; specific reason to get it from el-get.
 
 ;; Packages I always want
 (defvar bw-elpa-package-list
@@ -60,12 +58,6 @@
          json-mode       ;; not on Melpa
          melpa           ;; don't want to self-host this
          )))
-
-;; el-get packages to install, and reasons for wanting them.
-(defvar bw-el-get-package-list
-  '(el-get          ;; self-hosting
-    )
-  "Packages from el-get that I always want to install.")
 
 ;;; ELPA directory structure and loading
 (eval-after-load 'package
@@ -122,37 +114,5 @@
              (package-install p)))))
 
      (install-essential-packages)))
-
-;; el-get directory structure
-(defconst bw-el-get-base-dir
-  (bw-join-dirs bw-package-base-dir "el-get"))
-
-(defconst bw-el-get-installed-dir
-  (bw-join-dirs bw-el-get-base-dir "installed"))
-
-(setq el-get-dir bw-el-get-installed-dir)
-
-;; if el-get is already installed it'll live here
-(bw-add-to-load-path (bw-join-dirs bw-el-get-installed-dir "el-get"))
-
-(eval-after-load 'el-get
-  '(progn
-     ;; all stored recipes are here
-     (add-to-list 'el-get-recipe-path (bw-join-dirs bw-el-get-base-dir "recipes"))
-     ;; only take the latest commit and not the whole history
-     (setq el-get-git-shallow-clone t)))
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let ((el-get-master-branch)
-          ;; skip EmacsWiki recipes
-          (el-get-install-skip-emacswiki-recipes))
-      (goto-char (point-max))
-      (eval-print-last-sexp))))
-
-;; It should have been installed by now - initialise
-(el-get 'sync bw-el-get-package-list)
 
 (provide 'init-packaging)
