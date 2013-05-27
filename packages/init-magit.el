@@ -3,7 +3,8 @@
 ;; https://github.com/magit/magit
 
 (use-package magit
-  :bind ("C-c g" . magit-status)
+  :bind (("C-c g" . magit-status)
+         ("C-c C-g l" . magit-file-log))
   :init
   (progn
     ;; magit extensions
