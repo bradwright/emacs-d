@@ -115,4 +115,6 @@
 
      (install-essential-packages)))
 
+(require 'package nil t)
+
 (provide 'init-packaging)
