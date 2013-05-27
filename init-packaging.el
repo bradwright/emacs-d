@@ -40,7 +40,8 @@
     smex
     undo-tree
     use-package
-    web-mode)
+    web-mode
+    xterm-frobs)
   "Packages from ELPA that I always want to install.")
 
 ;; Mac specific packages
@@ -63,7 +64,6 @@
 ;; el-get packages to install, and reasons for wanting them.
 (defvar bw-el-get-package-list
   '(el-get          ;; self-hosting
-    xterm-frobs     ;; not on Elpa
     )
   "Packages from el-get that I always want to install.")
 
