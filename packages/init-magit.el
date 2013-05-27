@@ -6,30 +6,14 @@
   :bind ("C-c g" . magit-status)
   :init
   (progn
-    ;; we no longer need vc-git
-    (delete 'Git vc-handled-backends)
-    ;; make magit status go full-screen but remember previous window
-    ;; settings
-    ;; from: http://whattheemacsd.com/setup-magit.el-01.html
-    (defadvice magit-status (around magit-fullscreen activate)
-      (window-configuration-to-register :magit-fullscreen)
-      ad-do-it
-      (delete-other-windows)))
-  :config
-  (progn
-    ;; restore previously hidden windows
-    (defadvice magit-quit-window (around magit-restore-screen activate)
-      (let ((current-mode major-mode))
-        ad-do-it
-        ;; we only want to jump to register when the last seen buffer
-        ;; was a magit-status buffer.
-        (when (eq 'magit-status-mode current-mode)
-          (jump-to-register :magit-fullscreen))))
-
     ;; magit extensions
     (use-package magit-blame
       :bind ("C-c C-g b" . magit-blame-mode))
 
+    ;; we no longer need vc-git
+    (delete 'Git vc-handled-backends))
+  :config
+  (progn
     ;; major mode for editing `git rebase -i` files
     (use-package rebase-mode)
 
