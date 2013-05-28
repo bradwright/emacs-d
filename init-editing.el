@@ -31,6 +31,9 @@
 ;; nuke trailing whitespace when writing to a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
+;; always add a trailing newline - it's POSIX
+(setq require-final-newline t)
+
 ;; http://emacs-fu.blogspot.hk/2009/11/copying-lines-without-selecting-them.html
 (defadvice kill-ring-save (before slick-copy activate compile)
   "When called interactively with no active region, copy a single line instead."
