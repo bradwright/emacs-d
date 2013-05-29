@@ -19,6 +19,7 @@
     eproject
     evil
     expand-region
+    flx
     flymake-cursor
     flymake-go
     git-commit-mode
@@ -26,6 +27,7 @@
     gitignore-mode
     go-mode
     ido-ubiquitous
+    ido-vertical-mode
     idomenu
     js2-mode
     json-mode
