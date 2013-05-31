@@ -104,7 +104,9 @@
     init-eproject
     init-evil
     init-expand-region
+    init-flx
     init-ido-ubiquitous
+    init-ido-vertical
     init-idomenu
     init-iedit
     init-js2
