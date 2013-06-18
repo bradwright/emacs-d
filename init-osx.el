@@ -60,7 +60,10 @@
       ;; copy SHELL correctly
       (setq exec-path-from-shell-variables '("PATH" "MANPATH" "SHELL"))
       ;; copy shell PATH across to exec-path
-      (exec-path-from-shell-initialize))))
+      (exec-path-from-shell-initialize)))
+
+  ;; load some OSX things
+  (require 'init-edit-server))
 
 (unless (display-graphic-p)
   ;; Configuration to make Emacs run semi-normally in an OS X
