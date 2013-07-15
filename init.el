@@ -81,8 +81,7 @@
     init-saveplace
     init-tramp
     init-uniquify
-    init-web-mode
-    init-whitespace)
+    init-web-mode)
   "Configuration for core Emacs packages")
 
 (bw-require-list core-modes)
