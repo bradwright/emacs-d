@@ -69,7 +69,6 @@
     init-emacs-lisp
     init-eshell
     init-flymake
-    init-go
     init-hippie-expand
     init-ido
     init-isearch
@@ -80,8 +79,7 @@
     init-ruby
     init-saveplace
     init-tramp
-    init-uniquify
-    init-web-mode)
+    init-uniquify)
   "Configuration for core Emacs packages")
 
 (bw-require-list core-modes)
@@ -104,6 +102,7 @@
     init-evil
     init-expand-region
     init-flx
+    init-go
     init-ido-ubiquitous
     init-ido-vertical
     init-idomenu
@@ -117,6 +116,7 @@
     init-scss
     init-smex
     init-undo-tree
+    init-web-mode
     init-yaml
     init-yasnippet)
   "Configuration for modes loaded via package.el")
