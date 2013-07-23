@@ -20,6 +20,7 @@
     evil
     expand-region
     flx
+    flx-ido
     flymake-cursor
     flymake-go
     git-commit-mode
