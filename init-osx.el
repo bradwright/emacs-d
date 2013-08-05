@@ -10,12 +10,11 @@
 (fset 'insert-pound "#")
 (define-key global-map "\M-3" 'insert-pound)
 
-;; Run Solarized Dark on OS X. Note: this function isn't defined yet,
-;; but is loaded in `init-solarized`
-;;(add-hook 'after-init-hook 'bw-load-solarized)
-
 (when (or *is-carbon-emacs*
 	      *is-cocoa-emacs*)
+  ;; Use solarized-dark from solarized-theme
+  (load-theme 'solarized-dark t)
+
   ;; Mac GUI stuff
   ;; set my favourite Mac font as the default font
   (custom-set-faces

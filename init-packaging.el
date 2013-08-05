@@ -38,6 +38,7 @@
     puppet-mode
     scss-mode
     smex
+    solarized-theme
     undo-tree
     use-package
     web-mode
