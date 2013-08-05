@@ -12,7 +12,7 @@
 
 ;; Run Solarized Dark on OS X. Note: this function isn't defined yet,
 ;; but is loaded in `init-solarized`
-(add-hook 'after-init-hook 'bw-load-solarized)
+;;(add-hook 'after-init-hook 'bw-load-solarized)
 
 (when (or *is-carbon-emacs*
 	      *is-cocoa-emacs*)
