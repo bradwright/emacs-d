@@ -1,15 +1,4 @@
 ;; Detect some extra file types
-(dolist (extension
-         '("[vV]agrantfile$"
-           "[gG]emfile$"
-           "[rR]akefile$"
-           "\\.rake$"
-           "\\.rabl$"
-           "[cC]apfile$"
-           "\\.gemspec$"
-           "\\.builder$"))
-  (add-to-list 'auto-mode-alist `(,extension . ruby-mode)))
-
 ;; Ruby has a lot of camel case
 (add-hook 'ruby-mode-hook 'bw-turn-on-subword-mode)
 
