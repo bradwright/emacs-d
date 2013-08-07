@@ -15,6 +15,7 @@
     browse-kill-ring
     csv-mode
     diminish
+    enh-ruby-mode
     eproject
     evil
     expand-region
