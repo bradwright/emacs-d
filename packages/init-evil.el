@@ -15,26 +15,27 @@
         (setq evil-leader/in-all-states t)
         ;; keyboard shortcuts
         (evil-leader/set-key
-         "a" 'ag
-         "b" 'ido-switch-buffer
-         "c" 'mc/mark-next-like-this
-         "C" 'mc/edit-lines
-         "e" 'er/expand-region
-         "f" 'ido-find-file
-         "g" 'magit-status
-         "i" 'idomenu
-         "j" 'ace-jump-mode
-         "k" 'kill-buffer
-         "K" 'kill-this-buffer
-         "o" 'occur
-         "p" 'bw-find-file-git-ls-files-completing
-         "r" 'recentf-ido-find-file
-         "s" 'ag-project
-         "t" 'bw-open-term
-         "T" 'eshell
-         "w" 'save-buffer
-         "x" 'smex
-         )))
+          "a" 'ag-project
+          "A" 'ag
+          "b" 'ido-switch-buffer
+          "c" 'mc/mark-next-like-this
+          "C" 'mc/edit-lines
+          "e" 'er/expand-region
+          "f" 'ido-find-file
+          "g" 'magit-status
+          "i" 'idomenu
+          "j" 'ace-jump-mode
+          "k" 'kill-buffer
+          "K" 'kill-this-buffer
+          "o" 'occur
+          "p" 'bw-find-file-git-ls-files-completing
+          "r" 'recentf-ido-find-file
+          "s" 'ag-project
+          "t" 'bw-open-term
+          "T" 'eshell
+          "w" 'save-buffer
+          "x" 'smex
+          )))
 
     ;; boot evil by default
     (evil-mode 1))
