@@ -5,6 +5,9 @@
     (setq evil-default-cursor t)
 
     ;; leader shortcuts
+
+    ;; This has to be before we invoke evil-mode due to:
+    ;; https://github.com/cofi/evil-leader/issues/10
     (use-package evil-leader
       :init (global-evil-leader-mode)
       :config
