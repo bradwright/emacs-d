@@ -45,10 +45,11 @@
 
     ;; jj escapes to normal mode
     (define-key evil-insert-state-map (kbd "j") 'bw-evil-escape-if-next-char-is-j)
-    ;; h/l wrap around to next lines
-    (setq evil-cross-lines t)
-    ;; start evil-mode in emacs mode
-    (setq evil-default-state 'emacs)
+    (setq
+     ;; h/l wrap around to next lines
+     evil-cross-lines t
+     ;; Training wheels: start evil-mode in emacs mode
+     evil-default-state 'emacs)
 
     ;; esc should always quit: http://stackoverflow.com/a/10166400/61435
     (define-key evil-normal-state-map [escape] 'keyboard-quit)
