@@ -32,6 +32,7 @@
          "s" 'ag-project
          "t" 'bw-open-term
          "T" 'eshell
+         "w" 'save-buffer
          "x" 'smex
          )))
 
