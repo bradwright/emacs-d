@@ -15,9 +15,9 @@
          "b" 'ido-switch-buffer
          "g" 'magit-status
          "l" 'bw-find-file-git-ls-files-completing
-         "s" 'bw-git-grep
+         "s" 'ag-project
          "x" 'smex
-         "a" 'ack-and-a-half)))
+         "a" 'ag)))
 
     ;; boot evil by default
     (evil-mode 1))
