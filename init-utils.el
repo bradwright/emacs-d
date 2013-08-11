@@ -161,38 +161,13 @@ the quit."
   (interactive)
   (symbol-name (symbol-at-point)))
 
-;; FIXME: this doesn't escape things
-(defun bw-git-grep (search-str)
-  "Uses `git-grep` to find `search-str`"
-  (interactive
-   (let ((default (grep-tag-default)))
-     (list
-      (read-string (if (string= "" default)
-                       "Search for: "
-                     (format "Search for (default %s): " default))
-                   nil nil default))))
-  (let ((grep-use-null-device nil)
-        (default-directory (bw-find-default-project-dir)))
-    (grep (concat "git --no-pager grep -i -I -nH --no-color " (shell-quote-argument search-str)))))
-
-(defun bw-find-default-project-dir ()
-  "Finds the root of this project - at the moment this means the
-Git repo it's contained in."
-  (interactive)
-  (when (not (buffer-file-name))
-    (error "Not a real file"))
-  (let ((git-dir (locate-dominating-file (buffer-file-name) ".git")))
-    (when (not git-dir)
-      (error "Not in a Git directory"))
-    git-dir))
-
 (defun bw-is-image (name)
   (member (file-name-extension name) '("jpg" "png" "gif" "jpeg")))
 
 (defun bw-find-file-git-ls-files-completing (&optional base-directory)
   "Uses ido-completing-read to open a file from git ls-files"
   (interactive)
-  (let ((default-directory (or base-directory (bw-find-default-project-dir))))
+  (let ((default-directory (or base-directory (magit-get-top-dir))))
     (find-file
      (ido-completing-read
       (format "Find file: %s" (abbreviate-file-name default-directory))

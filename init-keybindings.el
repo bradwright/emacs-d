@@ -31,10 +31,6 @@
 (define-key occur-mode-map (kbd "n") 'next-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
 
-;; my custom search/find-file functions
-(global-set-key (kbd "C-c b f") 'bw-find-file-git-ls-files-completing)
-(global-set-key (kbd "C-c b s") 'bw-git-grep)
-
 ;; terminal-related bindings
 (global-set-key (kbd "C-c t") 'bw-open-term)
 (global-set-key (kbd "C-c C-t t") 'ansi-term)
