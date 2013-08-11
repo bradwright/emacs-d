@@ -50,7 +50,6 @@
 
 (global-set-key (kbd "C-h C-f") 'find-function)
 
-(global-set-key (kbd "C-c f") 'bw-git-grep)
 (global-set-key (kbd "M-p") 'bw-find-file-git-ls-files-completing)
 
 (provide 'init-keybindings)

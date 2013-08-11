@@ -3,8 +3,10 @@
 ;; https://github.com/magit/magit
 
 (use-package magit
+  :commands magit-get-top-dir
   :bind (("C-c g" . magit-status)
-         ("C-c C-g l" . magit-file-log))
+         ("C-c C-g l" . magit-file-log)
+         ("C-c f" . magit-grep))
   :init
   (progn
     ;; magit extensions
