@@ -37,7 +37,7 @@
   (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
 
   (global-set-key (kbd "s-p") 'bw-find-file-git-ls-files-completing)
-  (global-set-key (kbd "s-F") 'magit-grep)
+  (global-set-key (kbd "s-F") 'ag-project)
   (global-set-key (kbd "s-b") 'bw-eproject-ido-switch-buffers)
   (global-set-key (kbd "H-g") 'magit-status)
 
