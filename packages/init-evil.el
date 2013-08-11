@@ -13,11 +13,18 @@
         (evil-leader/set-key
          "a" 'ag
          "b" 'ido-switch-buffer
-         "e" 'ido-find-file
+         "c" 'mc/mark-next-like-this
+         "C" 'mc/edit-lines
+         "e" 'er/expand-region
+         "f" 'ido-find-file
          "g" 'magit-status
-         "l" 'bw-find-file-git-ls-files-completing
+         "k" 'kill-buffer
+         "K" 'kill-this-buffer
+         "p" 'bw-find-file-git-ls-files-completing
          "r" 'recentf-ido-find-file
          "s" 'ag-project
+         "t" 'bw-open-term
+         "T" 'eshell
          "x" 'smex
          )))
 
