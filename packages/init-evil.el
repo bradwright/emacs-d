@@ -11,13 +11,15 @@
       (progn
         ;; keyboard shortcuts
         (evil-leader/set-key
-         "e" 'ido-find-file
+         "a" 'ag
          "b" 'ido-switch-buffer
+         "e" 'ido-find-file
          "g" 'magit-status
          "l" 'bw-find-file-git-ls-files-completing
+         "r" 'recentf-ido-find-file
          "s" 'ag-project
          "x" 'smex
-         "a" 'ag)))
+         )))
 
     ;; boot evil by default
     (evil-mode 1))
