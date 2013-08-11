@@ -171,7 +171,7 @@ the quit."
     (find-file
      (ido-completing-read
       (format "Find file: %s" (abbreviate-file-name default-directory))
-      (remove-if 'bw-is-image (magit-git-lines "ls-files"))))))
+      (remove-if 'bw-is-image (magit-git-lines "ls-files" "--exclude-standard" "-co"))))))
 
 (defun bw-evil-escape-if-next-char (c)
   "Watches the next letter.  If c, then switch to Evil's normal mode; otherwise insert a k and forward unpressed key to unread-command events"
