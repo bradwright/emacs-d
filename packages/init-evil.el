@@ -47,6 +47,8 @@
 
     ;; ansi-term and term-mode have to be in Emacs
     (evil-set-initial-state 'term-mode 'emacs)
-    (evil-set-initial-state 'eshell-mode 'emacs)))
+    (evil-set-initial-state 'eshell-mode 'emacs)
+    ;; help-mode is better in Emacs
+    (evil-set-initial-state 'help-mode 'emacs)))
 
 (provide 'init-evil)
