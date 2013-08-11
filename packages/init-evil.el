@@ -41,13 +41,6 @@
     (define-key minibuffer-local-ns-map [escape] 'abort-recursive-edit)
     (define-key minibuffer-local-completion-map [escape] 'abort-recursive-edit)
     (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
-    (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
-
-    ;; these modes should be launched in insert
-    (evil-set-initial-state 'git-commit-mode 'insert)
-    (evil-set-initial-state 'magit-log-edit-mode 'insert)
-    ;; these modes should be launched in regular Emacs
-    (evil-set-initial-state 'org-mode 'emacs)
-    (evil-set-initial-state 'help-mode 'emacs)))
+    (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)))
 
 (provide 'init-evil)
