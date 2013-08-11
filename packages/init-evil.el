@@ -22,8 +22,11 @@
          "e" 'er/expand-region
          "f" 'ido-find-file
          "g" 'magit-status
+         "i" 'idomenu
+         "j" 'ace-jump-mode
          "k" 'kill-buffer
          "K" 'kill-this-buffer
+         "o" 'occur
          "p" 'bw-find-file-git-ls-files-completing
          "r" 'recentf-ido-find-file
          "s" 'ag-project
