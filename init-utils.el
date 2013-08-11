@@ -196,8 +196,7 @@ Git repo it's contained in."
     (find-file
      (ido-completing-read
       (format "Find file: %s" (abbreviate-file-name default-directory))
-      (remove-if 'bw-is-image (split-string
-                         (shell-command-to-string "git --no-pager ls-files --exclude-standard -co")))))))
+      (remove-if 'bw-is-image (magit-git-lines "ls-files"))))))
 
 (defun bw-evil-escape-if-next-char (c)
   "Watches the next letter.  If c, then switch to Evil's normal mode; otherwise insert a k and forward unpressed key to unread-command events"
