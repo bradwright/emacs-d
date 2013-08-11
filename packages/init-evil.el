@@ -41,6 +41,10 @@
     (define-key minibuffer-local-ns-map [escape] 'abort-recursive-edit)
     (define-key minibuffer-local-completion-map [escape] 'abort-recursive-edit)
     (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
-    (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)))
+    (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
+
+    ;; ansi-term and term-mode have to be in Emacs
+    (evil-set-initial-state 'term-mode 'emacs)
+    (evil-set-initial-state 'eshell-mode 'emacs)))
 
 (provide 'init-evil)
