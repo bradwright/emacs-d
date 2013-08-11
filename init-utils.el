@@ -164,12 +164,17 @@ the quit."
 (defun bw-is-image (name)
   (member (file-name-extension name) '("jpg" "png" "gif" "jpeg")))
 
+(defun bw-completing-read (prompt index)
+  (ido-completing-read prompt index)
+  ;;(grizzl-completing-read prompt (grizzl-make-index index))
+  )
+
 (defun bw-find-file-git-ls-files-completing (&optional base-directory)
-  "Uses ido-completing-read to open a file from git ls-files"
+  "Uses a completing read to open a file from git ls-files"
   (interactive)
   (let ((default-directory (or base-directory (magit-get-top-dir))))
     (find-file
-     (ido-completing-read
+     (bw-completing-read
       (format "Find file: %s" (abbreviate-file-name default-directory))
       (remove-if 'bw-is-image (magit-git-lines "ls-files" "--exclude-standard" "-co"))))))
 
@@ -204,7 +209,7 @@ with prefix"
   (if (not (eproject-root))
       (error "No active project was found")
     (switch-to-buffer
-     (ido-completing-read
+     (bw-completing-read
       (concat (eproject-name) " buffers: ")
       (mapcar #'buffer-name (--eproject-buffers))))))
 
