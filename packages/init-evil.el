@@ -9,6 +9,7 @@
       :init (global-evil-leader-mode)
       :config
       (progn
+        (setq evil-leader/in-all-states t)
         ;; keyboard shortcuts
         (evil-leader/set-key
          "a" 'ag
