@@ -109,6 +109,7 @@
     init-idomenu
     init-iedit
     init-js2
+    init-linum-relative
     init-magit
     init-markdown
     init-multiple-cursors
