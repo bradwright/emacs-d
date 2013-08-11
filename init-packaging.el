@@ -10,7 +10,7 @@
 
 ;; Packages I always want
 (defvar bw-elpa-package-list
-  '(ack-and-a-half
+  '(ag
     bind-key ;; this is required by use-package, but isn't auto-installed
     browse-kill-ring
     csv-mode

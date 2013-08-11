@@ -95,6 +95,7 @@
 (defconst elpa-modes
   '(init-ace-jump
     init-ack-and-a-half
+    init-ag
     init-browse-kill-ring
     init-csv-mode
     init-enh-ruby
