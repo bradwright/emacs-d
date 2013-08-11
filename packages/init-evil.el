@@ -59,10 +59,11 @@
     (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
     (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
-    ;; ansi-term and term-mode have to be in Emacs
-    (evil-set-initial-state 'term-mode 'emacs)
-    (evil-set-initial-state 'eshell-mode 'emacs)
-    ;; help-mode is better in Emacs
-    (evil-set-initial-state 'help-mode 'emacs)))
+    ;; modes to map to different default states
+    (dolist (mode-map '((comint-mode . emacs)
+                        (term-mode . emacs)
+                        (eshell-mode . emacs)
+                        (help-mode . emacs)))
+      (evil-set-initial-state `,(car mode-map) `,(cdr mode-map)))))
 
 (provide 'init-evil)
