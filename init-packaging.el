@@ -18,6 +18,7 @@
     enh-ruby-mode
     eproject
     evil
+    evil-leader
     expand-region
     flx
     flx-ido
