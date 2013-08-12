@@ -20,8 +20,7 @@
     evil
     evil-leader
     expand-region
-    flx
-    flx-ido
+    flx-ido ;; flx is included as a dependency
     flymake-cursor
     flymake-go
     git-commit-mode
