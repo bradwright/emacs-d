@@ -127,7 +127,6 @@
 
 ;; Custom theme support
 (require 'init-themes)
-(require 'init-solarized)
 
 (require 'init-keybindings)
 
