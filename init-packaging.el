@@ -33,6 +33,7 @@
     js2-mode
     json-mode
     magit
+    magit-find-file
     markdown-mode
     multiple-cursors
     paredit

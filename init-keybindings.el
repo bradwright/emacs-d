@@ -46,6 +46,6 @@
 
 (global-set-key (kbd "C-h C-f") 'find-function)
 
-(global-set-key (kbd "M-p") 'bw-find-file-git-ls-files-completing)
+(global-set-key (kbd "M-p") 'magit-find-file-completing-read)
 
 (provide 'init-keybindings)

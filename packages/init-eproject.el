@@ -36,7 +36,7 @@
 files, because it won't try to open any .gitignored files."
       (interactive)
       (if (member (eproject-type) '(generic-git))
-          (bw-find-file-git-ls-files-completing)
+          (magit-find-file-completing-read)
         (eproject-find-file)))
 
     (setq eproject-completing-read-function 'eproject--ido-completing-read)

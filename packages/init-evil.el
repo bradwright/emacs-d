@@ -28,7 +28,7 @@
           "k" 'kill-buffer
           "K" 'kill-this-buffer
           "o" 'occur
-          "p" 'bw-find-file-git-ls-files-completing
+          "p" 'magit-find-file-completing-read
           "r" 'recentf-ido-find-file
           "s" 'ag-project
           "t" 'bw-open-term
