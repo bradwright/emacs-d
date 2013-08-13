@@ -19,3 +19,4 @@ eshell/
 local/
 /.mc-lists.el
 /.org-id-locations
+venv
