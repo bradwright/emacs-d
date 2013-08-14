@@ -19,6 +19,7 @@
     eproject
     evil
     evil-leader
+    evil-nerd-commenter
     expand-region
     flx-ido ;; flx is included as a dependency
     flymake-cursor
@@ -55,13 +56,14 @@
 ;; Blacklist some non-melpa packages
 (setq package-archive-exclude-alist
       '(("melpa"
-         ack-and-a-half  ;; not updated in ages
-         diminish        ;; not updated in ages
-         evil            ;; want stable version
-         flymake-cursor  ;; Melpa version is on wiki
-         idomenu         ;; not updated in ages
-         json-mode       ;; not on Melpa
-         melpa           ;; don't want to self-host this
+         ack-and-a-half      ;; not updated in ages
+         diminish            ;; not updated in ages
+         evil                ;; want stable version
+         evil-nerd-commenter ;; want stable version
+         flymake-cursor      ;; Melpa version is on wiki
+         idomenu             ;; not updated in ages
+         json-mode           ;; not on Melpa
+         melpa               ;; don't want to self-host this
          )))
 
 ;;; ELPA directory structure and loading
