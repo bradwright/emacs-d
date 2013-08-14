@@ -59,6 +59,7 @@
          ack-and-a-half      ;; not updated in ages
          diminish            ;; not updated in ages
          evil                ;; want stable version
+         evil-leader         ;; want stable version
          evil-nerd-commenter ;; want stable version
          flymake-cursor      ;; Melpa version is on wiki
          idomenu             ;; not updated in ages
