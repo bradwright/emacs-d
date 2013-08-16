@@ -66,7 +66,8 @@
     (dolist (mode-map '((comint-mode . emacs)
                         (term-mode . emacs)
                         (eshell-mode . emacs)
-                        (help-mode . emacs)))
+                        (help-mode . emacs)
+                        (fundamental-mode . emacs)))
       (evil-set-initial-state `,(car mode-map) `,(cdr mode-map)))))
 
 (provide 'init-evil)
