@@ -54,9 +54,8 @@
   :if *is-a-mac*)
 (use-package init-linux
   :if *is-linux*)
-;; this uses require to work around https://github.com/jwiegley/use-package/issues/44
-(when (not (display-graphic-p))
-  (require 'init-xterm))
+(use-package init-xterm
+  :if (not (display-graphic-p)))
 
 ;; Mode configuration
 

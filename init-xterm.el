@@ -2,7 +2,6 @@
 
 ;; xterm-frobs is a vendorised library
 (use-package xterm-frobs
-  :if (not (display-graphic-p))
   :init
   (progn
     (defun bw-xterm-title ()
