@@ -12,6 +12,7 @@
   (progn
     ;; Ruby has a lot of camel case
     (add-hook 'enh-ruby-mode-hook 'bw-turn-on-subword-mode)
+    (setq enh-ruby-use-encoding-map nil)
     (custom-set-faces
      '(erm-syn-errline ((t (:box nil))))
      '(erm-syn-warnline ((t (:box nil))))
