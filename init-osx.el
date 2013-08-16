@@ -34,7 +34,8 @@
   ;; set fn to hyper
   (setq ns-function-modifier 'hyper)
 
-  (global-set-key (kbd "s-<return>") 'ns-toggle-fullscreen)
+  (when (fboundp 'toggle-frame-fullscreen)
+    (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen))
 
   (global-set-key (kbd "s-p") 'magit-find-file-completing-read)
   (global-set-key (kbd "s-F") 'ag-project)
