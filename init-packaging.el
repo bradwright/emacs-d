@@ -56,7 +56,6 @@
 ;; Blacklist some non-melpa packages
 (setq package-archive-exclude-alist
       '(("melpa"
-         ack-and-a-half      ;; not updated in ages
          diminish            ;; not updated in ages
          evil                ;; want stable version
          evil-leader         ;; want stable version
