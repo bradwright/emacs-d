@@ -24,9 +24,6 @@
     flx-ido ;; flx is included as a dependency
     flymake-cursor
     flymake-go
-    git-commit-mode
-    gitconfig-mode
-    gitignore-mode
     go-mode
     ido-ubiquitous
     ido-vertical-mode
