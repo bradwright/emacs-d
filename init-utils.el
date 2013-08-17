@@ -124,20 +124,6 @@ by using nxml's indentation rules."
         (make-frame-invisible nil t))
     (bw-kill-emacs)))
 
-(defun bw-switch-to-last-mac-app ()
-  "Switches to the last used app"
-  (interactive)
-  (when (and *is-a-mac* window-system)
-    (do-applescript "tell application \"System Events\"
-  tell process \"finder\"
-    activate
-    keystroke tab using {command down}
-  end tell
-end tell")))
-
-(defadvice git-commit-end-session (after server-buffer-done-restore-previous-window activate)
-  (bw-switch-to-last-mac-app))
-
 (defun bw-kill-emacs ()
   "If this buffer is a client, just kill it, otherwise confirm
 the quit."
