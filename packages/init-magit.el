@@ -13,15 +13,6 @@
     (use-package magit-blame
       :bind ("C-c C-g b" . magit-blame-mode))
 
-    (defun magit-maybe-commit (&optional show-options)
-      "Runs magit-commit unless prefix is passed"
-      (interactive "P")
-      (if show-options
-          (magit-key-mode-popup-committing)
-        (magit-commit)))
-
-    (define-key magit-mode-map "c" 'magit-maybe-commit)
-
     ;; we no longer need vc-git
     (delete 'Git vc-handled-backends)
     ;; make magit status go full-screen but remember previous window
@@ -41,6 +32,15 @@
         ;; was a magit-status buffer.
         (when (eq 'magit-status-mode current-mode)
           (jump-to-register :magit-fullscreen))))
+
+    (defun magit-maybe-commit (&optional show-options)
+      "Runs magit-commit unless prefix is passed"
+      (interactive "P")
+      (if show-options
+          (magit-key-mode-popup-committing)
+        (magit-commit)))
+
+    (define-key magit-mode-map "c" 'magit-maybe-commit)
 
     ;; major mode for editing `git rebase -i` files
     (use-package rebase-mode)
