@@ -60,6 +60,9 @@
      ;; ask me to save buffers
      magit-save-some-buffers t
      ;; pop the process buffer if we're taking a while to complete
-     magit-process-popup-time 10)))
+     magit-process-popup-time 10
+     ;; ask me if I want a tracking upstream
+     magit-set-upstream-on-push 'askifnotset
+     )))
 
 (provide 'init-magit)
