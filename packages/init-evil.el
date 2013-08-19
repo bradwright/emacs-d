@@ -19,8 +19,9 @@
           "A" 'ag
           "b" 'ido-switch-buffer
           "c" 'mc/mark-next-like-this
-          "C" 'mc/edit-lines
+          "C" 'mc/mark-all-like-this
           "e" 'er/expand-region
+          "E" 'mc/edit-lines
           "f" 'ido-find-file
           "g" 'magit-status
           "i" 'idomenu
