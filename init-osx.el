@@ -13,7 +13,9 @@
 (when (or *is-carbon-emacs*
 	      *is-cocoa-emacs*)
   ;; Use solarized-dark from solarized-theme
-  (load-theme 'solarized-dark t)
+  (defun load-solarized ()
+    (load-theme 'solarized-dark t))
+  (add-hook 'after-init-hook 'load-solarized)
 
   ;; Mac GUI stuff
   ;; set my favourite Mac font as the default font
