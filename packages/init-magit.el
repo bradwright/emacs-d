@@ -27,7 +27,16 @@
     ;; hanging around
     ;; From: http://git.io/rPBE0Q
     (defadvice git-commit-commit (after delete-window activate)
-      (delete-window)))
+      (delete-window))
+
+    ;; these two force a new line to be inserted into a commit window,
+    ;; which stops the invalid style showing up.
+    ;; From: http://git.io/rPBE0Q
+    (defun magit-commit-mode-init ()
+      (when (looking-at "\n")
+        (open-line 1)))
+
+    (add-hook 'git-commit-mode-hook 'magit-commit-mode-init))
   :config
   (progn
     ;; restore previously hidden windows
