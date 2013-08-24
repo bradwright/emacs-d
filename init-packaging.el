@@ -115,7 +115,8 @@
          (package-refresh-contents)
          (dolist (p bw-elpa-package-list)
            (unless (package-installed-p p)
-             (package-install p)))))
+             (package-install p)))
+         (delete-other-windows)))
 
      (install-essential-packages)))
 
