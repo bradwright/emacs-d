@@ -1,13 +1,5 @@
 ;; Packaging and vendor configuration
 
-(defconst bw-package-base-dir
-  (bw-join-dirs dotfiles-dir "packages")
-  "Base path for all packaging stuff")
-
-(bw-add-to-load-path bw-package-base-dir)
-
-;; package lists
-
 ;; Packages I always want
 (defvar bw-elpa-package-list
   '(ag
@@ -51,21 +43,28 @@
   (add-to-list 'bw-elpa-package-list 'exec-path-from-shell))
 
 ;; Blacklist some non-melpa packages
-(setq package-archive-exclude-alist
-      '(("melpa"
-         diminish            ;; not updated in ages
-         evil                ;; want stable version
-         evil-leader         ;; want stable version
-         evil-nerd-commenter ;; want stable version
-         flymake-cursor      ;; Melpa version is on wiki
-         idomenu             ;; not updated in ages
-         json-mode           ;; not on Melpa
-         melpa               ;; don't want to self-host this
-         )))
+(eval-after-load 'melpa
+  '(setq package-archive-exclude-alist
+         '(("melpa"
+            diminish           ;; not updated in ages
+            evil               ;; want stable version
+            evil-leader        ;; want stable version
+            evil-nerd-commenter ;; want stable version
+            flymake-cursor      ;; Melpa version is on wiki
+            idomenu             ;; not updated in ages
+            json-mode           ;; not on Melpa
+            melpa               ;; don't want to self-host this
+            ))))
 
 ;;; ELPA directory structure and loading
 (eval-after-load 'package
   '(progn
+     (defconst bw-package-base-dir
+       (bw-join-dirs dotfiles-dir "packages")
+       "Base path for all packaging stuff")
+
+     (bw-add-to-load-path bw-package-base-dir)
+
      (defvar bw-package-elpa-base-dir
        (bw-join-dirs bw-package-base-dir "elpa")
        "Where Emacs packaging.el packages are installed.")
@@ -102,23 +101,23 @@
            "https://raw.github.com/milkypostman/melpa/master/melpa.el"))
          (package-install-from-buffer (package-buffer-info) 'single)))
 
-     (defun essential-packages-installed-p ()
+     (defun essential-packages-installed-p (to-install)
        "Checks whether all my essential packages are installed."
-       (loop for p in bw-elpa-package-list
+       (loop for p in to-install
              when (not (package-installed-p p)) do (return nil)
              finally (return t)))
 
-     (defun install-essential-packages ()
+     (defun install-essential-packages (to-install)
        "Auto-installs all my packages"
-       (unless (essential-packages-installed-p)
+       (unless (essential-packages-installed-p to-install)
          (message "%s" "Installing essential packages...")
          (package-refresh-contents)
-         (dolist (p bw-elpa-package-list)
+         (dolist (p to-install)
            (unless (package-installed-p p)
              (package-install p)))
          (delete-other-windows)))
 
-     (install-essential-packages)))
+     (install-essential-packages bw-elpa-package-list)))
 
 (require 'package nil t)
 
