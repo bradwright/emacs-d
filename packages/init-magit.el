@@ -21,7 +21,13 @@
     (defadvice magit-status (around magit-fullscreen activate)
       (window-configuration-to-register :magit-fullscreen)
       ad-do-it
-      (delete-other-windows)))
+      (delete-other-windows))
+
+    ;; Close popup when commiting - this stops the commit window
+    ;; hanging around
+    ;; From: http://git.io/rPBE0Q
+    (defadvice git-commit-commit (after delete-window activate)
+      (delete-window)))
   :config
   (progn
     ;; restore previously hidden windows
