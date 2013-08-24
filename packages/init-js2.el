@@ -12,12 +12,6 @@
     ;; Use Node.js REPL for JS shells
     (setq inferior-js-program-command "node")
 
-    ;; Add node_modules to exec-path
-    (progn
-      (let ((node-bin (concat dotfiles-dir "node_modules/.bin")))
-        (add-to-list 'exec-path node-bin)
-        (setenv "PATH" (concat node-bin ":" (getenv "PATH")))))
-
     ;; modify js-related modes at runtime
     (defun bw-js-mode-hook ()
       "Setup for JS inferior mode"
@@ -44,9 +38,10 @@
                          'flymake-create-temp-inplace))
              (local-file (expand-file-name (file-relative-name
                                             temp-file
-                                            (file-name-directory buffer-file-name)))))
-        (list "jslint" (list "--terse"
-                             local-file))))
+                                            (file-name-directory buffer-file-name))))
+             (node-bin (concat dotfiles-dir "node_modules/.bin"))
+             (exec-path (add-to-list 'exec-path node-bin)))
+        (list "jslint" (list "--terse" local-file))))
 
     (when (load "flymake" t)
       (add-to-list 'flymake-allowed-file-name-masks
