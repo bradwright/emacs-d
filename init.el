@@ -10,6 +10,11 @@
 
 (add-to-list 'load-path dotfiles-dir)
 
+;; start a server, unless one is already running
+(when (require 'server nil t)
+  (unless (server-running-p)
+    (server-start)))
+
 ;; What OS/window system am I using?
 
 ;; Adapted from:
@@ -129,11 +134,6 @@
 (require 'init-themes)
 
 (require 'init-keybindings)
-
-;; start a server, unless one is already running
-(when (require 'server nil t)
-  (unless (server-running-p)
-    (server-start)))
 
 ;; local overrides
 (require 'init-local)
