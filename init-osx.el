@@ -15,6 +15,7 @@
   ;; Use solarized-dark from solarized-theme
   (defun load-solarized ()
     (load-theme 'solarized-dark t))
+  (setq solarized-high-contrast-mode-line t)
   (add-hook 'after-init-hook 'load-solarized)
 
   ;; Mac GUI stuff
